@@ -441,6 +441,35 @@ Other than the title, there are two main differences between the present version
 
 著者は, この教程が, 科学者に思考や情報伝達に用いる新しい語彙と, 数学の中に存在していて大いに強力だと考えられている大量の整備された定理への経路をもたらすことを期待している. これらの定理は科学の世界ではこれまでのところは真価を発揮しているとは言えないが, そこに直接適用することができる. 階層性はpartial orderであり, 対称性は群の要素であり, データ模型は圏であり, agent actionはモノイドの作用であり, local-to-global\index{local-to-global}原理は層(sheve)であり, 自己相似性はoperandによってモデル化され, 文脈はモナドによってモデル化される.
 
+%%%%%% Section %%%%%%
+
+%\section{A brief history of category theory}
+
+\section{圏論の簡潔な歴史}
+
+%The paradigm shift brought on by Einstein's theory of relativity brought on the realization that there is no single perspective from which to view the world. There is no background framework that we need to find; there are infinitely many different frameworks and perspectives, and the real power lies in being able to translate between them. It is in this historical context that category theory got its start.
+%\footnote{The following history of category theory is far too brief, and perhaps reflects more of the author's aesthetic than any kind of objective truth, whatever that may mean. Here are some much better references: \cite{Kro}, \cite{Mar1}, \cite{LM}.}
+
+Einsteinの相対性理論によってもたらされたパラダイムシフトは, 世界を観るにあたって唯一の観点というものは存在しないという認識をもたらした. 我々が探し求めなければならない背景の枠組みというものは存在しない. 無限に多い異なった枠組みと観点が存在しており, 真なる力はそれらの間を翻訳するというところに存在している. 歴史的には, 圏論はこの文脈から開始した.
+\footnote{以下の圏論の歴史は簡潔に過ぎ, それが何を意味するかは別にして, おそらく客観的な真実の類よりも著者の美的感覚を反映していることだろう. はるかによい参考文献を次に挙げる: \cite{Kro}, \cite{Mar1}, \cite{LM}.}. 
+
+%Category theory was invented in the early 1940s by Samuel Eilenberg\index{Eilenberg, Samuel} and Saunders Mac Lane.\index{Mac Lane, Saunders} It was specifically designed to bridge what may appear to be two quite different fields: topology and algebra. Topology is the study of abstract shapes such as 7-dimensional spheres; algebra is the study of abstract equations such as $y^2z=x^3-xz^2$. People had already created important and useful links (e.g. cohomology theory) between these fields, but Eilenberg and Mac Lane needed to precisely compare different links with one another. To do so they first needed to boil down and extract the fundamental nature of these two fields. But the ideas they worked out amounted to a framework that fit not only topology and algebra, but many other mathematical disciplines as well.
+
+圏論は1940年代始めにSamuel Eilenberg\index{Eilenberg, Samuel}とSaunders Mac Lane\index{Mac Lane, Saunders}によって発明された. 圏論は, 具体的には, トポロジーと代数という非常に異なったように見える二つの分野の間に橋を架けるために設計された. トポロジーは, 例えば7次元球のような抽象的な形の研究であり, 代数は$y^2z=x^3-xz^2$のような抽象的な方程式の研究である. これらの分野の間には, 重要で便利な結び付き(e.g. コホモロジー理論)が既に発見され存在していた. しかしEilenbergとMac Laneはそれぞれの結び付きを正確に比較する必要があった. これを遂行するために, 彼等は最初にこれら二つの分野から基本的な性質を煮詰めて抽出する必要があった. ところが, 彼等が考え出した枠組みはトポロジーと代数だけでなく, 他の多くの数学分野にも適用できるものになっていた.
+
+%At first category theory was little more than a deeply clarifying language for existing difficult mathematical ideas. However, in 1957 Alexander Grothendieck\index{Grothendieck!in history} used category theory to build new mathematical machinery (new cohomology theories) that granted unprecedented insight into the behavior of algebraic equations. Since that time, categories have been built specifically to zoom in on particular features of mathematical subjects and study them with a level of acuity that is simply unavailable elsewhere.
+
+圏論は, 最初は既に存在する数学的アイデアを非常に明確するする言語という以上のものではなかった. しかし, 1957年に, Alexander Grothendieck\index{Grothendieck!in history}は圏論を用いて, 代数方程式のふるまいに対してこれまで存在しなかった洞察をもたらす新しい数学的手続き(新しいコホモロジー理論)を構築した. その瞬間から, 圏はとりわけ数学的対象の詳しい特徴を拡大するために, また他では簡単には得られないような鋭敏さのレベルでもって研究を行うために, 構築されてきた.
+
+Bill Lawvere\index{Lawvere, William} saw category theory as a new foundation for all mathematical thought. Mathematicians had been searching for foundations in the 19th century and were reasonably satisfied with set theory as {\em the foundation}. But Lawvere showed that the category of sets is simply a category with certain nice properties, not necessarily the center of the mathematical universe. He explained how whole algebraic theories can be viewed as examples of a single system. He and others went on to show that higher order logic was beautifully captured in the setting of category theory (more specifically toposes). It is here also that Grothendieck and his school worked out major results in algebraic geometry. 
+
+In 1980 Joachim Lambek\index{Lambek, Joachim} showed that the types and programs used in computer science form a specific kind of category. This provided a new semantics for talking about programs, allowing people to investigate how programs combine and compose to create other programs, without caring about the specifics of implementation. Eugenio Moggi\index{Moggi, Eugenio} brought the category theoretic notion of monads into computer science to encapsulate ideas that up to that point were considered outside the realm of such theory..
+
+It is difficult to explain the clarity and beauty brought to category theory by people like Daniel Kan\index{Kan, Daniel} and Andr\'{e} Joyal\index{Joyal, Andr\'{e}}. They have each repeatedly extracted the essence of a whole mathematical subject to reveal and formalize a stunningly simple yet extremely powerful pattern of thinking, revolutionizing how mathematics is done. 
+
+All this time, however, category theory was consistently seen by much of the mathematical community as ridiculously abstract. But in the 21st century it has finally come to find healthy respect within the larger community of pure mathematics. It is the language of choice for graduate-level algebra and topology courses, and in my opinion will continue to establish itself as the basic framework in which mathematics is done.
+
+As mentioned above category theory has branched out into certain areas of science as well. Baez\index{Baez, John} and Dolan\index{Dolan, James} have shown its value in making sense of quantum physics, it is well established in computer science, and it has found proponents in several other fields as well. But to my mind, we are the very beginning of its venture into scientific methodology. Category theory was invented as a bridge and it will continue to serve in that role. 
 
 
 \end{document}
