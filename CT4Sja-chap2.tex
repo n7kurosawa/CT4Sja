@@ -74,63 +74,101 @@ $A=\{1,2,3\}$とする. $A$の部分集合を全て求めよ. ヒント: 8つあ
 
 %%%% Subsection %%%%
 
-\subsection{Functions}\label{sec:functions}
+%\subsection{Functions}\label{sec:functions}
+\subsection{函数}\label{sec:functions}
 
-If $X$ and $Y$ are sets, then a {\em function $f$ from $X$ to $Y$},\index{function} denoted $f\taking X\to Y$, is a mapping that sends each element $x\in X$ to an element of $Y$, denoted $f(x)\in Y$. We call $X$ the {\em domain}\index{function!domain} of the function $f$ and we call $Y$ the {\em codomain}\index{function!codomain} of $f$. 
+%If $X$ and $Y$ are sets, then a {\em function $f$ from $X$ to $Y$},\index{function} denoted $f\taking X\to Y$, is a mapping that sends each element $x\in X$ to an element of $Y$, denoted $f(x)\in Y$. We call $X$ the {\em domain}\index{function!domain} of the function $f$ and we call $Y$ the {\em codomain}\index{function!codomain} of $f$. 
+
+$X$と$Y$が集合であるならば, \emph{$X$から$Y$への函数$f$}\index{function}は$f\taking X\to Y$と表記され, これはそれぞれの要素$x\in X$を$f(x)\in Y$と表記される$Y$の要素へ送る写像である. $X$は函数$f$の\emph{始域(domain)}\index{function!domain}と呼ばれ, $Y$は$f$の\emph{終域(codomain)}\index{function!codomain}と呼ばれる.
 
 \begin{align}\label{dia:setmap}
 \parbox{2.3in}{\includegraphics[height=2in]{SetMap}}
 \end{align}
 
-Note that for every element $x\in X$, there is exactly one arrow emanating from $x$, but for an element $y\in Y$, there can be several arrows pointing to $y$, or there can be no arrows pointing to $y$. 
+%Note that for every element $x\in X$, there is exactly one arrow emanating from $x$, but for an element $y\in Y$, there can be several arrows pointing to $y$, or there can be no arrows pointing to $y$. 
+
+全ての要素$x\in X$に対して, $x$から出る矢印が正確に一本存在するが, しかしある要素$y\in Y$に対しては, $y$を指す矢印が何本も存在するかもしれないし, また$y$を指す矢印が存在しないかもしれないことに注意しよう.
 
 \begin{application}\label{app:force-extension}\index{materials!force-extension curves}
 
-In studying the mechanics of materials, one wishes to know how a material responds to tension. For example a rubber band responds to tension differently than a spring does. To each material we can associate a \href{http://en.wikipedia.org/wiki/Stressﾐstrain_curve}{\text force-extension curve}, recording how much force the material carries when extended to various lengths. Once we fix a methodology for performing experiments, finding a material's force-extension curve would ideally constitute a function from the set of materials to the set of curves.
-\footnote{In reality, different samples of the same material, say samples of different sizes or at different temperatures, may have different force-extension curves. If we want to see this as a true function whose codomain is curves it should have as domain something like the set of material samples.}
+%In studying the mechanics of materials, one wishes to know how a material responds to tension. For example a rubber band responds to tension differently than a spring does. To each material we can associate a \href{http://en.wikipedia.org/wiki/Stress–strain_curve}{\text force-extension curve}, recording how much force the material carries when extended to various lengths. Once we fix a methodology for performing experiments, finding a material's force-extension curve would ideally constitute a function from the set of materials to the set of curves.
+%\footnote{In reality, different samples of the same material, say samples of different sizes or at different temperatures, may have different force-extension curves. If we want to see this as a true function whose codomain is curves it should have as domain something like the set of material samples.}
+
+物質の力学を研究する時に, 張力に対する応答を知りたくなることがある. 例えばゴムバンドは張力に対してバネとは違う応答を示す. いろいろな長さに伸ばした時に, 物質がどれだけ力を生みだしたかを記録することによって, 我々はそれぞれの物質に対して\href{http://en.wikipedia.org/wiki/Stress–strain_curve}{応力-ひずみ曲線(force-extension curve)}を関連付けることができる. 一度実験を行なう方法を固定したのならば, 物質の応力-ひずみ曲線の探索は理想的には物質の集合から曲線の集合への函数の構築となるであろう.
+\footnote{実際には, 同じ物質の異なったサンプル, 例えば異なった大きさのサンプルやあるいは異なった温度でのサンプルは異なった応力-ひずみ曲線を持つだろう. もし我々がこれをその終域が曲線である本物の函数であると見なしたいのであれば, それは物質のサンプルの集合といったものを始域としているべきである.}
 
 \end{application}
 
 \begin{exercise}
 
-Here is a simplified account of how the \href{http://en.wikipedia.org/wiki/Retina}{\text brain receives light}. The eye contains about 100 million photoreceptor (PR) cells. Each connects to a retinal ganglion (RG) cell. No PR cell connects to two different RG cells, but usually many PR cells can attach to a single RG cell. 
+%Here is a simplified account of how the \href{http://en.wikipedia.org/wiki/Retina}{\text brain receives light}. The eye contains about 100 million photoreceptor (PR) cells. Each connects to a retinal ganglion (RG) cell. No PR cell connects to two different RG cells, but usually many PR cells can attach to a single RG cell. 
 
-Let $PR$ denote the set of photoreceptor cells and let $RG$ denote the set of retinal ganglion cells. 
-\sexc According to the above account, does the connection pattern constitute a function $RG\to PR$, a function $PR\to RG$ or neither one? 
-\next Would you guess that the connection pattern that exists between other areas of the brain are ``function-like"?
+以下の記述は, どのようにして\href{http://en.wikipedia.org/wiki/Retina}{脳が光を感じとるか}を単純化したものである. 眼には約1億個の光受容細胞(photoreceptor cell)が含まれている. それぞれの細胞は網膜神経節細胞(retinal ganglion cell)に繋がっている. 二つの異なった網膜神経節細胞に繋がっている光受容細胞は存在しないが, 通常は複数の光受容細胞が一つの網膜神経節細胞に接続することができる.
+
+%Let $PR$ denote the set of photoreceptor cells and let $RG$ denote the set of retinal ganglion cells. 
+%\sexc According to the above account, does the connection pattern constitute a function $RG\to PR$, a function $PR\to RG$ or neither one? 
+%\next Would you guess that the connection pattern that exists between other areas of the brain are ``function-like"?
+%\endsexc
+
+$\mathit{PR}$は光受容細胞の集合, $\textit{RG}$は網膜神経節細胞の集合を示すものとする.
+\sexc 上記の記述に従えば, 結合パターンは函数$\textit{RG}\to \textit{PR}$, あるいは函数$\textit{PR}\to \textit{RG}$を構成するだろうか? もしくはどちらも函数ではないのだろうか?
+\next 脳の他の領域の間に存在する結合パターンが``函数のように''ふるまうかを推測してみよう.
 \endsexc
 \end{exercise}
 
 \begin{example}\label{ex:subset as function}\index{subset!as function}
 
-Suppose that $X$ is a set and $X'\ss X$ is a subset. Then we can consider the function $X'\to X$ given by sending every element of $X'$ to ``itself" as an element of $X$. For example if $X=\{a,b,c,d,e,f\}$ and $X'=\{b,d,e\}$ then $X'\ss X$ and we turn that into the function $X'\to X$ given by $b\mapsto b, d\mapsto d, e\mapsto e$.
-\footnote{This kind of arrow,\;\;$\mapsto$\;\;, is read aloud as ``maps to". A function $f\taking X\to Y$ means a rule for assigning to each element $x\in X$ an element $f(x)\in Y$. We say that ``$x$ maps to $f(x)$" and write $x\mapsto f(x)$.}\index{a symbol!$\mapsto$}
+%Suppose that $X$ is a set and $X'\ss X$ is a subset. Then we can consider the function $X'\to X$ given by sending every element of $X'$ to ``itself" as an element of $X$. For example if $X=\{a,b,c,d,e,f\}$ and $X'=\{b,d,e\}$ then $X'\ss X$ and we turn that into the function $X'\to X$ given by $b\mapsto b, d\mapsto d, e\mapsto e$.
+%\footnote{This kind of arrow,\;\;$\mapsto$\;\;, is read aloud as ``maps to". A function $f\taking X\to Y$ means a rule for assigning to each element $x\in X$ an element $f(x)\in Y$. We say that ``$x$ maps to $f(x)$" and write $x\mapsto f(x)$.}\index{a symbol!$\mapsto$}
 
-As a matter of notation, we may sometimes say something like the following: Let $X$ be a set and let $i\taking X'\ss X$ be a subset. Here we are making clear that $X'$ is a subset of $X$, but that $i$ is the name of the associated function.
+$X$が集合で$X'\ss X$がその部分集合であると仮定する. そのときには$X'$の全ての要素を$X$における``要素それ自身''に対応付ける函数$X'\to X$を考えることができる. 例えば, $X=\{a,b,c,d,e,f\}$として$X'=\{b,d,e\}$としたならば$X'\ss X$
+であり, そこから函数$X'\to X$を$b\mapsto b, d\mapsto d, e\mapsto e$とすることによって得ることができる.
+\footnote{この\;\;$\mapsto$\;\;という種類の矢印は, ``対応付ける(maps to)''と音読される. 函数$f\taking X\to Y$はそれぞれの要素$x\in X$に要素$f(x)\in Y$を割りあてる法則を意味している. 我々はこれを``$x$を$f(x)$に対応付ける''と読み, $x\mapsto f(x)$と書く.}\index{a symbol!$\mapsto$}
+
+%As a matter of notation, we may sometimes say something like the following: Let $X$ be a set and let $i\taking X'\ss X$ be a subset. Here we are making clear that $X'$ is a subset of $X$, but that $i$ is the name of the associated function.
+
+記法として, 我々は時々``$X$を集合, $i\taking X'\ss X$を部分集合とする''というようなことを言うだろう. ここで$X'$は$X$の部分集合であり, $i$はそれに関連付けられた函数であることを, ここで明確に述べておく.
 
 \end{example}
 
 \begin{exercise}
-Let $f\taking\NN\to\NN$ be the function that sends every natural number to its square, e.g. $f(6)=36$. First fill in the blanks below, then answer a question.
+%Let $f\taking\NN\to\NN$ be the function that sends every natural number to its square, e.g. $f(6)=36$. First fill in the blanks below, then answer a question.
+%\sexc $2\mapsto\ul{\hspace{.5in}}$
+%\next $0\mapsto\ul{\hspace{.5in}}$
+%\next $-2\mapsto\ul{\hspace{.5in}}$
+%\next $5\mapsto\ul{\hspace{.5in}}$
+%\next Consider the symbol $\to$ and the symbol $\mapsto$. What is the difference between how these two symbols are used in this book?
+%\endsexc
+$f\taking\NN\to\NN$を, 全ての自然数をその二乗に対応付ける函数とする, e.g. $f(6)=36$. 最初に以下の空白を埋め, それから問題に答えよ.
 \sexc $2\mapsto\ul{\hspace{.5in}}$
 \next $0\mapsto\ul{\hspace{.5in}}$
 \next $-2\mapsto\ul{\hspace{.5in}}$
 \next $5\mapsto\ul{\hspace{.5in}}$
-\next Consider the symbol $\to$ and the symbol $\mapsto$. What is the difference between how these two symbols are used in this book?
+\next 記号$\to$と記号$\mapsto$について考えよ. この本の中において, 二つの記号の使用され方の間にある違いはなんだろうか?
 \endsexc
 \end{exercise}
 
-Given a function $f\taking X\to Y$, the elements of $Y$ that have at least one arrow pointing to them are said to be {\em in the image} of $f$; that is we have \index{image}
+%Given a function $f\taking X\to Y$, the elements of $Y$ that have at least one arrow pointing to them are said to be {\em in the image} of $f$; that is we have \index{image}
+%\begin{align}\label{dia:image}
+%\im(f):=\{y\in Y\| \exists x\in X \tn{ such that } f(x)=y\}.
+%\end{align} 
+
+函数$f\taking X\to Y$が与えられたとき, $Y$の要素でそれを指す矢印が一つ以上あるものの集合を$f$の\emph{像(image)}と呼ぶ. これは\index{image}
 \begin{align}\label{dia:image}
-\im(f):=\{y\in Y\| \exists x\in X \tn{ such that } f(x)=y\}.
-\end{align} 
+\im(f):=\{y\in Y\| \exists x\in X \tn{ such that } f(x)=y\}
+\end{align}
+と書ける.
 
 \begin{exercise}
-If $f\taking X\to Y$ is depicted by (\ref{dia:setmap}) above, write its image, $\im(f)$ as a set.
+%If $f\taking X\to Y$ is depicted by (\ref{dia:setmap}) above, write its image, $\im(f)$ as a set.
+$f\taking X\to Y$が\eqref{dia:setmap}で描写されるとき, 像$\im(f)$を集合として書け.
 \end{exercise}
 
-Given a function $f\taking X\to Y$ and a function $g\taking Y\to Z$, where the codomain of $f$ is the same set as the domain of $g$ (namely $Y$), we say that $f$ and $g$ are composable 
-$$X\Too{f}Y\Too{g}Z.$$ The {\em composition of $f$ and $g$}\label{function composition}\index{function!composition}\index{composition!of functions}\index{a symbol!$\circ$} is denoted by $g\circ f\taking X\to Z$. 
+%Given a function $f\taking X\to Y$ and a function $g\taking Y\to Z$, where the codomain of $f$ is the same set as the domain of $g$ (namely $Y$), we say that $f$ and $g$ are composable 
+%$$X\Too{f}Y\Too{g}Z.$$ The {\em composition of $f$ and $g$}\label{function composition}\index{function!composition}\index{composition!of functions}\index{a symbol!$\circ$} is denoted by $g\circ f\taking X\to Z$. 
+
+函数$f\taking X\to Y$と函数$g\taking Y\to Z$が与えられ, $f$の終域が$g$の始域と同じ集合($Y$)であるとき, 我々は$f$と$g$は合成可能(composable)であるという.
+$$X\Too{f}Y\Too{g}Z.$$ \emph{$f$と$g$の合成(composition of $f$ and $g$)}\label{function composition}\index{function!composition}\index{composition!of functions}\index{a symbol!$\circ$}は$g\circ f\taking X\to Z$と表記される. 
 
 \begin{figure}[h]
 \begin{center}
@@ -139,34 +177,52 @@ $$X\Too{f}Y\Too{g}Z.$$ The {\em composition of $f$ and $g$}\label{function compo
 \caption{Functions $f\taking X\to Y$ and $g\taking Y\to Z$ compose to a function $g\circ f\taking X\to Z$; just follow the arrows.}
 \end{figure}
 
-Let $X$ and $Y$ be sets. We write $\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$} to denote the set of functions $X\to Y$.
-\footnote{The strange notation $\Hom_\Set(-,-)$ will make more sense later, when it is seen as part of a bigger story.} 
-Note that two functions $f,g\taking X\to Y$ are equal\index{function!equality of} if and only if for every element $x\in X$ we have $f(x)=g(x)$. 
+%Let $X$ and $Y$ be sets. We write $\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$} to denote the set of functions $X\to Y$.
+%\footnote{The strange notation $\Hom_\Set(-,-)$ will make more sense later, when it is seen as part of a bigger story.} 
+%Note that two functions $f,g\taking X\to Y$ are equal\index{function!equality of} if and only if for every element $x\in X$ we have $f(x)=g(x)$. 
+
+$X$と$Y$を集合とする. 我々は函数$X\to Y$の集合を$\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$}と書く.
+\footnote{後程, より大きな筋書きの一部として見たときに, $\Hom_\Set(-,-)$という奇妙な記法がさらなる意味を持つことになる.}
+二つの函数$f,g\taking X\to Y$が等しい\index{function!equality of}とは, 全ての要素$x\in X$に対して$f(x)=g(x)$が得られるときであり, かつその時に限ることに注意しよう.
 
 \begin{exercise}
-Let $A=\{1,2,3,4,5\}$ and $B=\{x,y\}.$ 
-\sexc How many elements does $\Hom_\Set(A,B)$ have? 
-\next How many elements does $\Hom_\Set(B,A)$ have?
+%Let $A=\{1,2,3,4,5\}$ and $B=\{x,y\}.$ 
+%\sexc How many elements does $\Hom_\Set(A,B)$ have? 
+%\next How many elements does $\Hom_\Set(B,A)$ have?
+%\endsexc
+$A=\{1,2,3,4,5\}$で$B=\{x,y\}$であるとする.
+\sexc $\Hom_\Set(A,B)$の要素はいくつあるか?
+\next $\Hom_\Set(B,A)$の要素はいくつあるか?
 \endsexc
 \end{exercise}
 
 \begin{exercise}~
-\sexc Find a set $A$ such that for all sets $X$ there is exactly one element in $\Hom_\Set(X,A)$. Hint: draw a picture of proposed $A$'s and $X$'s.
-\next Find a set $B$ such that for all sets $X$ there is exactly one element in $\Hom_\Set(B,X)$.
-\endsexc 
+%\sexc Find a set $A$ such that for all sets $X$ there is exactly one element in $\Hom_\Set(X,A)$. Hint: draw a picture of proposed $A$'s and $X$'s.
+%\next Find a set $B$ such that for all sets $X$ there is exactly one element in $\Hom_\Set(B,X)$.
+%\endsexc 
+\sexc 全ての集合$X$に対して$\Hom_\Set(X,A)$がただ一つだけ要素を持つ, そのような集合$A$を求めよ. ヒント: 考えた $A$と$X$の要素に関しての絵を書け.
+\next 全ての集合$X$に対して$\Hom_\Set(B, X)$がただ一つだけ要素を持つ, そのような集合$B$を求めよ.
+\endsexc
 \end{exercise}
 
-For any set $X$, we define the {\em identity function on $X$}\index{function!identity}, denoted $\id_X\taking X\to X$, to be the function such that for all $x\in X$ we have $\id_X(x)=x$.\index{a symbol!$\id_X$}
+%For any set $X$, we define the {\em identity function on $X$}\index{function!identity}, denoted $\id_X\taking X\to X$, to be the function such that for all $x\in X$ we have $\id_X(x)=x$.\index{a symbol!$\id_X$}
 
-\begin{definition}[Isomorphism]\label{def:iso in set}
+任意の集合$X$に対して, \emph{$X$上の恒等写像(identity function on $X$)}\index{function!identity}を, 全ての$x\in X$に対して$\id_X(x)=x$.\index{a symbol!$\id_X$}である函数として定義し, $\id_X\taking X\to X$で示す.
 
-Let $X$ and $Y$ be sets. A function $f\taking X\to Y$ is called an {\em isomorphism}\index{function!isomorphism}\index{isomorphism!of sets}, denoted $f\taking X\To{\iso}Y$, if there exists a function $g\taking Y\to X$ such that $g\circ f=\id_X$ and $f\circ g=\id_Y$. We also say that $f$ is {\em invertible} and we say that $g$ is {\em the inverse}\index{function!inverse} of $f$. If there exists an isomorphism $X\To\iso Y$ we say that $X$ and $Y$ are {\em isomorphic} sets and may write $X\iso Y$. \index{a symbol!$\iso$}
+%\begin{definition}[Isomorphism]\label{def:iso in set}
+\begin{definition}[同型写像(Isomorphism)]\label{def:iso in set}
+
+%Let $X$ and $Y$ be sets. A function $f\taking X\to Y$ is called an {\em isomorphism}\index{function!isomorphism}\index{isomorphism!of sets}, denoted $f\taking X\To{\iso}Y$, if there exists a function $g\taking Y\to X$ such that $g\circ f=\id_X$ and $f\circ g=\id_Y$. We also say that $f$ is {\em invertible} and we say that $g$ is {\em the inverse}\index{function!inverse} of $f$. If there exists an isomorphism $X\To\iso Y$ we say that $X$ and $Y$ are {\em isomorphic} sets and may write $X\iso Y$. \index{a symbol!$\iso$}
+
+$X$と$Y$を集合とする. 函数$f\taking X\to Y$は, $g\circ f=\id_X$かつ$f\circ g=\id_Y$である函数$g\taking Y\to X$が存在するとき, \emph{同型写像(isomorphism)}\index{function!isomorphism}\index{isomorphism!of sets}であるといい, $f\taking X\To{\iso}Y$と書いて示す. またこのとき$f$は\emph{可逆(invertible)}であるといい, $g$は$f$の\emph{逆函数(the inverse)}\index{function!inverse}であるという. 同型$X\To\iso Y$が存在するとき, $X$と$Y$は\emph{同型(isomorphic)}な集合であるといい, $X\iso Y$と書くこともある. \index{a symbol!$\iso$}
 
 \end{definition}
 
 \begin{example}
 
-If $X$ and $Y$ are sets and $f\taking X\to Y$ is an isomorphism then the analogue of Diagram \ref{dia:setmap} will look like a perfect matching, more often called a {\em one-to-one correspondence}\index{one-to-one correspondence}\index{correspondence!one-to-one}. That means that no two arrows will hit the same element of $Y$, and every element of $Y$ will be in the image. For example, the following depicts an isomorphism $X\To{\iso}Y$.
+%If $X$ and $Y$ are sets and $f\taking X\to Y$ is an isomorphism then the analogue of Diagram \ref{dia:setmap} will look like a perfect matching, more often called a {\em one-to-one correspondence}\index{one-to-one correspondence}\index{correspondence!one-to-one}. That means that no two arrows will hit the same element of $Y$, and every element of $Y$ will be in the image. For example, the following depicts an isomorphism $X\To{\iso}Y$.
+
+$X$と$Y$が集合で$f\taking X\to Y$が同型写像であるならば, 図形\ref{dia:setmap}の類似物は完全対応となり, よりしばしば\emph{一対一対応(one-to-one correspondence)}\index{one-to-one correspondence}\index{correspondence!one-to-one}と呼ばれる. これが意味するところは, どの二つの矢印も$Y$の同じ要素に当たることがなく, $Y$の全ての要素がその像の中に含まれるということである. 例えば, 次の図は同型写像$X\To{\iso}Y$を描いている.
 
 \begin{align}\label{dia:setmapiso}
 \parbox{2.3in}{\includegraphics[height=2in]{SetMapIso}}
@@ -176,41 +232,73 @@ If $X$ and $Y$ are sets and $f\taking X\to Y$ is an isomorphism then the analogu
 
 \begin{application}\label{app:DNA RNA}\index{RNA transcription}
 
-There is an isomorphism between the set $\tn{Nuc}_\tn{DNA}$ of \href{http://en.wikipedia.org/wiki/Nucleotides}{\text nucleotides} found in DNA and the set $\tn{Nuc}_\tn{RNA}$ of nucleotides found in RNA. Indeed both sets have four elements, so there are 24 different isomorphisms. But only one is useful. Before we say which one it is, let us say there is also an isomorphism $\tn{Nuc}_\tn{DNA}\iso\{A,C,G,T\}$ and an isomorphism $\tn{Nuc}_\tn{RNA}\iso\{A,C,G,U\}$, and we will use the letters as abbreviations for the nucleotides. 
+%There is an isomorphism between the set $\tn{Nuc}_\tn{DNA}$ of \href{http://en.wikipedia.org/wiki/Nucleotides}{\text nucleotides} found in DNA and the set $\tn{Nuc}_\tn{RNA}$ of nucleotides found in RNA. Indeed both sets have four elements, so there are 24 different isomorphisms. But only one is useful. Before we say which one it is, let us say there is also an isomorphism $\tn{Nuc}_\tn{DNA}\iso\{A,C,G,T\}$ and an isomorphism $\tn{Nuc}_\tn{RNA}\iso\{A,C,G,U\}$, and we will use the letters as abbreviations for the nucleotides. 
 
-The convenient isomorphism $\tn{Nuc}_\tn{DNA}\To{\iso}\tn{Nuc}_\tn{RNA}$ is that given by RNA transcription; it sends 
+DNAの中にある\href{http://en.wikipedia.org/wiki/Nucleotides}{ヌクレオチド(nucleotides)}の集合$\tn{Nuc}_\tn{DNA}$と, RNAの中にあるヌクレオチドの集合$\tn{Nuc}_\tn{RNA}$の間には, 同型写像が存在している. 実際にはどちらの集合も4つの要素を持つから, 24個の異なった同型写像が存在しうる. しかしその中で一つだけが有用である. どれがその一つかを述べる前に, また別の同型写像$\tn{Nuc}_\tn{DNA}\iso\{A,C,G,T\}$および同型写像$\tn{Nuc}_\tn{RNA}\iso\{A,C,G,U\}$が存在するということを述べておこう. 今後はこれらの文字をヌクレオチドの略記として用いることにする.
+
+%The convenient isomorphism $\tn{Nuc}_\tn{DNA}\To{\iso}\tn{Nuc}_\tn{RNA}$ is that given by RNA transcription; it sends 
+%$$A\mapsto U, C\mapsto G, G\mapsto C, T\mapsto A.$$ 
+%(See also Application \ref{app:polymerase}.) There is also an isomorphism $\tn{Nuc}_\tn{DNA}\To{\iso}\tn{Nuc}_\tn{DNA}$ (the matching in the double-helix) given by 
+%$$A\mapsto T, C\mapsto G, G\mapsto C, T\mapsto A.$$
+
+有用な同型写像$\tn{Nuc}_\tn{DNA}\To{\iso}\tn{Nuc}_\tn{RNA}$はRNA転写によって与えられる. これは
 $$A\mapsto U, C\mapsto G, G\mapsto C, T\mapsto A.$$ 
-(See also Application \ref{app:polymerase}.) There is also an isomorphism $\tn{Nuc}_\tn{DNA}\To{\iso}\tn{Nuc}_\tn{DNA}$ (the matching in the double-helix) given by 
+と移す. (Application \ref{app:polymerase}も見よ.) また同型写像$\tn{Nuc}_\tn{DNA}\To{\iso}\tn{Nuc}_\tn{DNA}$ (二重螺旋の対合)が存在し, 
 $$A\mapsto T, C\mapsto G, G\mapsto C, T\mapsto A.$$
+で与えられる.
 
-Protein production can be modeled as a function from the set of 3-nucleotide sequences to the set of eukaryotic amino acids. However, it cannot be an isomorphism because there are $4^3=64$ triplets of RNA nucleotides, but only 21 eukaryotic amino acids. 
+%Protein production can be modeled as a function from the set of 3-nucleotide sequences to the set of eukaryotic amino acids. However, it cannot be an isomorphism because there are $4^3=64$ triplets of RNA nucleotides, but only 21 eukaryotic amino acids. 
+
+たんぱく質の合成は, 3要素のヌクレオチド列から真核生物の持つアミノ酸の集合への函数として模型化される. しかしこれは同型写像ではない. なぜならばRNAの三つ組は$4^3=64$種類存在しているが, 真核生物の持つアミノ酸は21種類しかないからだ.
 
 \end{application}
 
 \begin{exercise}
-Let $n\in\NN$ be a natural number and let $X$ be a set with exactly $n$ elements. 
-\sexc How many isomorphisms are there from $X$ to itself? 
-\next Does your formula from part a.) hold when $n=0$?
+%Let $n\in\NN$ be a natural number and let $X$ be a set with exactly $n$ elements. 
+%\sexc How many isomorphisms are there from $X$ to itself? 
+%\next Does your formula from part a.) hold when $n=0$?
+%\endsexc
+
+$n\in\NN$を自然数とし, $X$を正確に$n$個の要素を持つ集合とする.
+\sexc $X$から$X$自身への同型写像はいくつあるか? 
+\next a.) での式は$n=0$の時にも成立するか?
 \endsexc
 \end{exercise}
 
 \begin{lemma}\label{lemma:isomorphic ER in Set}
 
-The following facts hold about isomorphism.
+%The following facts hold about isomorphism.
+%\begin{enumerate}
+%\item Any set $A$ is isomorphic to itself; i.e. there exists an isomorphism $A\To{\iso} A$.
+%\item For any sets $A$ and $B$, if $A$ is isomorphic to $B$ then $B$ is isomorphic to $A$.
+%\item For any sets $A, B,$ and $C$, if $A$ is isomorphic to $B$ and $B$ is isomorphic to $C$ then $A$ is isomorphic to $C$.
+%\end{enumerate}
+
+同型写像に関して以下が成立する.
 \begin{enumerate}
-\item Any set $A$ is isomorphic to itself; i.e. there exists an isomorphism $A\To{\iso} A$.
-\item For any sets $A$ and $B$, if $A$ is isomorphic to $B$ then $B$ is isomorphic to $A$.
-\item For any sets $A, B,$ and $C$, if $A$ is isomorphic to $B$ and $B$ is isomorphic to $C$ then $A$ is isomorphic to $C$.
+\item 任意の集合$A$はそれ自身に対して同型である. i.e. 同型写像$A\To{\iso} A$が存在する.
+\item 任意の集合$A$と$B$に対して, $A$が$B$に同型ならば$B$は$A$に同型である.
+\item 任意の集合$A, B,$および$C$に対して, もし$A$が$B$に同型で$B$が$C$に同型ならば, $A$は$C$に同型である.
 \end{enumerate}
 
 \end{lemma}
 
 \begin{proof}
 
+%\begin{enumerate}
+%\item The identity function $\id_A\taking A\to A$ is invertible; its inverse is $\id_A$ because $\id_A\circ\id_A=\id_A$.
+%\item If $f\taking A\to B$ is invertible with inverse $g\taking B\to A$ then $g$ is an isomorphism with inverse $f$.
+%\item If $f\taking A\to B$ and $f'\taking B\to C$ are each invertible with inverses $g\taking B\to A$ and $g'\taking C\to B$ then the following calculations show that $f'\circ f$ is invertible with inverse $g\circ g'$: 
+%\begin{align*}
+%(f'\circ f)\circ(g\circ g')=f'\circ(f\circ g)\circ g'=f'\circ\id_B\circ g'=f'\circ g'=\id_C\\
+%(g\circ g')\circ(f'\circ f)=g\circ(g'\circ f')\circ f=g\circ\id_B\circ f=g\circ f=\id_A
+%\end{align*}
+%\end{enumerate}
+
 \begin{enumerate}
-\item The identity function $\id_A\taking A\to A$ is invertible; its inverse is $\id_A$ because $\id_A\circ\id_A=\id_A$.
-\item If $f\taking A\to B$ is invertible with inverse $g\taking B\to A$ then $g$ is an isomorphism with inverse $f$.
-\item If $f\taking A\to B$ and $f'\taking B\to C$ are each invertible with inverses $g\taking B\to A$ and $g'\taking C\to B$ then the following calculations show that $f'\circ f$ is invertible with inverse $g\circ g'$: 
+\item 恒等写像$\id_A\taking A\to A$は可逆である. $\id_A\circ\id_A=\id_A$であるから逆函数は$\id_A$である.
+\item もし$f\taking A\to B$が可逆でその逆函数が$g\taking B\to A$であるならば, $g$は同型写像でその逆函数は$f$である.
+\item もし$f\taking A\to B$および$f'\taking B\to C$が可逆でそれぞれの逆函数が$g\taking B\to A$および$g'\taking C\to B$であるならば, 以下の計算によって$f'\circ f$が可逆でありその逆函数が$g\circ g'$であることが示される.
 \begin{align*}
 (f'\circ f)\circ(g\circ g')=f'\circ(f\circ g)\circ g'=f'\circ\id_B\circ g'=f'\circ g'=\id_C\\
 (g\circ g')\circ(f'\circ f)=g\circ(g'\circ f')\circ f=g\circ\id_B\circ f=g\circ f=\id_A
@@ -220,56 +308,87 @@ The following facts hold about isomorphism.
 \end{proof}
 
 \begin{exercise}\label{exc:functions are not iso invariant}
-Let $A$ and $B$ be the sets drawn below:
+%Let $A$ and $B$ be the sets drawn below:
+%$$
+%\parbox{1.1in}{\boxtitle{A:=}\fbox{\xymatrix@=1pt{\\&\LMO{\;a\;}&&&\LMO{\;\;\;7\;\;}&\\\\\\&&&\LMO{Q}\\&}}}
+%\hspace{.8in}
+%\parbox{1.2in}{\boxtitle{B:=}\fbox{\xymatrix@=1pt{&&&\LMO{r8}&&\\\\\\\\&\LMO{``Bob"}\\&&\LMO{\clubsuit}}}}
+%$$
+%Note that the sets $A$ and $B$ are isomorphic. Supposing that $f\taking B\to\{1,2,3,4,5\}$ sends ``Bob" to $1$, sends $\clubsuit$ to $3$, and sends $r8$ to $4$, is there a canonical function $A\to\{1,2,3,4,5\}$ corresponding to $f$?
+%\footnote{Canonical means something like ``best choice", a choice that stands out as the only reasonable one.}\index{canonical}
+$A$と$B$が集合であり以下のように描写されるとする.
 $$
 \parbox{1.1in}{\boxtitle{A:=}\fbox{\xymatrix@=1pt{\\&\LMO{\;a\;}&&&\LMO{\;\;\;7\;\;}&\\\\\\&&&\LMO{Q}\\&}}}
 \hspace{.8in}
 \parbox{1.2in}{\boxtitle{B:=}\fbox{\xymatrix@=1pt{&&&\LMO{r8}&&\\\\\\\\&\LMO{``Bob"}\\&&\LMO{\clubsuit}}}}
 $$
-Note that the sets $A$ and $B$ are isomorphic. Supposing that $f\taking B\to\{1,2,3,4,5\}$ sends ``Bob" to $1$, sends $\clubsuit$ to $3$, and sends $r8$ to $4$, is there a canonical function $A\to\{1,2,3,4,5\}$ corresponding to $f$?
-\footnote{Canonical means something like ``best choice", a choice that stands out as the only reasonable one.}\index{canonical}
+$A$と$B$が同型であることに注意しよう. $f\taking B\to\{1,2,3,4,5\}$が, ``Bob''を$1$に移し, $\clubsuit$を$3$に移し, $r8$を$4$に移すと仮定したとき, $f$に対応する標準函数(canonical function)$A\to\{1,2,3,4,5\}$は存在するだろうか?
+\footnote{標準(canonical)とは, 唯一の妥当なものとして際だっているような選びかたである, すなわち``もっともよい選択''であるというような意味である.}\index{canonical}
 \end{exercise}
 
 \begin{exercise}\label{exc:generator for set}
-Find a set $A$ such that for any set $X$ there is a isomorphism of sets $$X\iso\Hom_\Set(A,X).$$ Hint: draw a picture of proposed $A$'s and $X$'s.
+%Find a set $A$ such that for any set $X$ there is a isomorphism of sets $$X\iso\Hom_\Set(A,X).$$ Hint: draw a picture of proposed $A$'s and $X$'s.
+任意の集合$X$に対して同型写像$$X\iso\Hom_\Set(A,X).$$が存在する集合$A$を求めよ. ヒント: 考えた$A$の要素と$X$の要素についての絵を描け.
 \end{exercise}
 
-For any natural number $n\in\NN$, define a set 
+%For any natural number $n\in\NN$, define a set 
+%\begin{align}\label{dia:underline n}\index{a symbol!$\ul{n}$}
+%\ul{n}:=\{1,2,3,\ldots,n\}.
+%\end{align}
+%So, in particular, $\ul{2}=\{1,2\}, \ul{1}=\{1\}$, and $\ul{0}=\emptyset$. 
+
+任意の自然数$n\in\NN$に対して, 集合 
 \begin{align}\label{dia:underline n}\index{a symbol!$\ul{n}$}
 \ul{n}:=\{1,2,3,\ldots,n\}.
 \end{align}
-So, in particular, $\ul{2}=\{1,2\}, \ul{1}=\{1\}$, and $\ul{0}=\emptyset$. 
+を定義する. よって, 特に$\ul{2}=\{1,2\}, \ul{1}=\{1\}$および$\ul{0}=\emptyset$である.
 
-Let $A$ be any set. A function $f\taking\ul{n}\to A$ can be written as a sequence $$f=(f(1),f(2),\ldots,f(n)).$$
+%Let $A$ be any set. A function $f\taking\ul{n}\to A$ can be written as a sequence $$f=(f(1),f(2),\ldots,f(n)).$$
+
+$A$を任意の集合とする. 函数$f\taking\ul{n}\to A$は列$$f=(f(1),f(2),\ldots,f(n)).$$として書くことができる.
 
 \begin{exercise}\label{exc:sequence}~
-\sexc Let $A=\{a,b,c,d\}$. If $f\taking\ul{10}\to A$ is given by $(a,b,c,c,b,a,d,d,a,b)$, what is $f(4)$?
-\next Let $s\taking\ul{7}\to\NN$ be given by $s(i)=i^2$. Write $s$ out as a sequence.
+%\sexc Let $A=\{a,b,c,d\}$. If $f\taking\ul{10}\to A$ is given by $(a,b,c,c,b,a,d,d,a,b)$, what is $f(4)$?
+%\next Let $s\taking\ul{7}\to\NN$ be given by $s(i)=i^2$. Write $s$ out as a sequence.
+%\endsexc
+\sexc $A=\{a,b,c,d\}$とする. もし$f\taking\ul{10}\to A$が$(a,b,c,c,b,a,d,d,a,b)$で与えられたならば, $f(4)$はどうなるか? 
+\next $s\taking\ul{7}\to\NN$が$s(i)=i^2$で与えられるとする. $s$を列として書き下せ.
 \endsexc
 \end{exercise}
 
-\begin{definition}Cardinality of finite sets]\label{def:cardinality}[
+%\begin{definition}[Cardinality of finite sets]\label{def:cardinality}
+\begin{definition}[有限集合の濃度(Cardinality)]\label{def:cardinality}
 
-Let $A$ be a set and $n\in\NN$ a natural number. We say that $A$ is {\em has cardinality $n$}\index{cardinality}, denoted $$|A|=n,$$ if there exists an isomorphism of sets $A\iso\ul{n}$. If there exists some $n\in\NN$ such that $A$ has cardinality $n$ then we say that $A$ is {\em finite}. Otherwise, we say that $A$ is {\em infinite} and write $|A|\geq\infty$.
+%Let $A$ be a set and $n\in\NN$ a natural number. We say that $A$ is {\em has cardinality $n$}\index{cardinality}, denoted $$|A|=n,$$ if there exists an isomorphism of sets $A\iso\ul{n}$. If there exists some $n\in\NN$ such that $A$ has cardinality $n$ then we say that $A$ is {\em finite}. Otherwise, we say that $A$ is {\em infinite} and write $|A|\geq\infty$.
+
+$A$を集合とし$n\in\NN$を自然数とする. 集合間の同型写像$A\iso\ul{n}$が存在するならば, $A$の\emph{濃度(cardinality)は$n$}\index{cardinality}であると言い, $$|A|=n,$$と書く. もし$A$の濃度が$n$である$n\in\NN$が存在するならば$A$は\emph{有限である}と言う. そうでなければ, $A$は\emph{無限である}と言い, $|A|\geq\infty$と書く.
 
 \end{definition}
 
 \begin{exercise}~
-\sexc Let $A=\{5,6,7\}$. What is $|A|$? 
-\next What is $|\NN|$? 
-\next What is $|\{n\in\NN\|n\leq 5\}|$?
+%\sexc Let $A=\{5,6,7\}$. What is $|A|$? 
+%\next What is $|\NN|$? 
+%\next What is $|\{n\in\NN\|n\leq 5\}|$?
+%\endsexc
+\sexc $A=\{5,6,7\}$とする. $|A|$はどうなるか?
+\next $|\NN|$はどうなるか? 
+\next $|\{n\in\NN\|n\leq 5\}|$はどうなるか?
 \endsexc
 \end{exercise}
 
 \begin{lemma}
 
-Let $A$ and $B$ be finite sets. If there is an isomorphism of sets $f\taking A\to B$ then the two sets have the same cardinality, $|A|=|B|$.
+%Let $A$ and $B$ be finite sets. If there is an isomorphism of sets $f\taking A\to B$ then the two sets have the same cardinality, $|A|=|B|$.
+
+$A$と$B$を有限集合とする. もし集合間の同型写像$f\taking A\to B$が存在したならば, 二つの集合は同じ濃度を持つ, すなわち$|A|=|B|$である.
 
 \end{lemma}
 
 \begin{proof}
 
-Suppose $f\taking A\to B$ is an isomorphism. If there exists natural numbers $m,n\in\NN$ and isomorphisms $a\taking\ul{m}\To\iso A$ and $b\taking\ul{n}\To\iso B$ then $\ul{m}\To{a^\m1}A\To{f}B\To{b}\ul{n}$ is an isomorphism. One can prove by induction that the sets $\ul{m}$ and $\ul{n}$ are isomorphic if and only if $m=n$. 
+%Suppose $f\taking A\to B$ is an isomorphism. If there exists natural numbers $m,n\in\NN$ and isomorphisms $a\taking\ul{m}\To\iso A$ and $b\taking\ul{n}\To\iso B$ then $\ul{m}\To{a^\m1}A\To{f}B\To{b}\ul{n}$ is an isomorphism. One can prove by induction that the sets $\ul{m}$ and $\ul{n}$ are isomorphic if and only if $m=n$. 
+
+$f\taking A\to B$が同型写像であると仮定する. もし自然数$m,n\in\NN$が存在して同型写像$a\taking\ul{m}\To\iso A$および$b\taking\ul{n}\To\iso B$が存在するならば, $\ul{m}\To{a^\m1}A\To{f}B\To{b}\ul{n}$も同型写像である. 帰納法により, 集合$\ul{m}$と$\ul{n}$が同型であるのは$m=n$である時かつその時に限られることが証明できる.
 
 \end{proof}
 
