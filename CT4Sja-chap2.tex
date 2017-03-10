@@ -8,7 +8,7 @@
 
 %The theory of sets was invented as a foundation for all of mathematics. The notion of sets and functions serves as a basis on which to build our intuition about categories in general. In this chapter we will give examples of sets and functions and then move on to discuss commutative diagrams. At this point we can introduce ologs which will allow us to use the language of category theory to speak about real world concepts. Then we will introduce limits and colimits, and their universal properties. All of this material is basic set theory, but it can also be taken as an investigation of our first category, the {\em category of sets}, which we call $\Set$. We will end this chapter with some other interesting constructions in $\Set$ that do not fit into the previous sections.
 
-集合論は全数学の基礎として発明された. 集合と函数についての記述は一般の圏について我々の直感を構築するための基礎となる. この章では我々は集合と函数の例を出した後に, 可換図形(commutative diagram)の議論に移行する. この時点で我々はologを導入することができるようになる. ologにより我々は現実世界の概念について語る際に圏論の言葉を使うことができるようになる. 続いて我々は極限(limit)と余極限(colimit), およびその普遍的な性質(universal properties)を導入する. これらの全ては基本的な集合論であるが, 一方で我々の最初の圏---集合の圏$\Set$---の調査ともとらえることができる.
+集合論は全数学の基礎として発明された. 集合と函数についての記述は一般の圏について我々の直感を構築するための基礎となる. この章では我々は集合と函数の例を出した後に, 可換図式(commutative diagram)の議論に移行する. この時点で我々はologを導入することができるようになる. ologにより我々は現実世界の概念について語る際に圏論の言葉を使うことができるようになる. 続いて我々は極限(limit)と余極限(colimit), およびその普遍的な性質(universal properties)を導入する. これらの全ては基本的な集合論であるが, 一方で我々の最初の圏---集合の圏$\Set$---の調査ともとらえることができる.
 %
 それまでの各章にはうまく当てはまらない, また別の興味深い$\Set$の構成をもって, 我々の本章を終えることにする.
 
@@ -222,7 +222,7 @@ $X$と$Y$を集合とする. 函数$f\taking X\to Y$は, $g\circ f=\id_X$かつ$
 
 %If $X$ and $Y$ are sets and $f\taking X\to Y$ is an isomorphism then the analogue of Diagram \ref{dia:setmap} will look like a perfect matching, more often called a {\em one-to-one correspondence}\index{one-to-one correspondence}\index{correspondence!one-to-one}. That means that no two arrows will hit the same element of $Y$, and every element of $Y$ will be in the image. For example, the following depicts an isomorphism $X\To{\iso}Y$.
 
-$X$と$Y$が集合で$f\taking X\to Y$が同型写像であるならば, 図形\ref{dia:setmap}の類似物は完全対応となり, よりしばしば\emph{一対一対応(one-to-one correspondence)}\index{one-to-one correspondence}\index{correspondence!one-to-one}と呼ばれる. これが意味するところは, どの二つの矢印も$Y$の同じ要素に当たることがなく, $Y$の全ての要素がその像の中に含まれるということである. 例えば, 次の図は同型写像$X\To{\iso}Y$を描いている.
+$X$と$Y$が集合で$f\taking X\to Y$が同型写像であるならば, 図式\ref{dia:setmap}の類似物は完全対応となり, よりしばしば\emph{一対一対応(one-to-one correspondence)}\index{one-to-one correspondence}\index{correspondence!one-to-one}と呼ばれる. これが意味するところは, どの二つの矢印も$Y$の同じ要素に当たることがなく, $Y$の全ての要素がその像の中に含まれるということである. 例えば, 次の図は同型写像$X\To{\iso}Y$を描いている.
 
 \begin{align}\label{dia:setmapiso}
 \parbox{2.3in}{\includegraphics[height=2in]{SetMapIso}}
@@ -391,4 +391,75 @@ $A$と$B$を有限集合とする. もし集合間の同型写像$f\taking A\to 
 $f\taking A\to B$が同型写像であると仮定する. もし自然数$m,n\in\NN$が存在して同型写像$a\taking\ul{m}\To\iso A$および$b\taking\ul{n}\To\iso B$が存在するならば, $\ul{m}\To{a^\m1}A\To{f}B\To{b}\ul{n}$も同型写像である. 帰納法により, 集合$\ul{m}$と$\ul{n}$が同型であるのは$m=n$である時かつその時に限られることが証明できる.
 
 \end{proof}
+
+
+%%%%%% Section %%%%%%
+
+%\section{Commutative diagrams}\label{sec:comm diag}
+\section{可換図式}\label{sec:comm diag}
+%\addtocounter{subsection}{1}\setcounter{subsubsection}{0}
+
+%At this point it is difficult to precisely define diagrams or commutative diagrams in general, but we can give the heuristic idea.
+%\footnote{We will define commutative diagrams precisely in Section \ref{sec:diagrams in a category}.}
+%Consider the following picture: 
+%\begin{align}\label{dia:triangle}
+%\xymatrix{A\ar[r]^f\ar[rd]_h&B\ar[d]^g\\&C}
+%\end{align}
+%We say this is a {\em diagram of sets}\index{diagram!in $\Set$} if each of $A,B,C$ is a set and each of $f,g,h$ is a function. We say this diagram {\em commutes}\index{commuting diagram}\index{diagam!commutes} if $g\circ f = h$. In this case we refer to it as a commutative triangle of sets.
+
+この段階では, 図式(diagram)あるいは可換図式(commutative diagram)を正確に定義するのは一般には難しいが, 
+heuristicな考えを与えることならばできる.
+\footnote{我々は第\ref{sec:diagrams in a category}章で可換図式を正確に定義することになる.}
+次の絵を考える.
+\begin{align}\label{dia:triangle}
+\xymatrix{A\ar[r]^f\ar[rd]_h&B\ar[d]^g\\&C}
+\end{align}
+$A,B,C$が集合で$f,g,h$が函数であるとき, 我々はこれを\emph{集合の図式(diagram of sets)}\index{diagram!in $\Set$}と言う. もし$g\circ f = h$であるならば, この図式は\emph{可換である(commutes)}\index{commuting diagram}\index{diagam!commutes}と言う. 可換な場合の上図を, 我々は集合の可換三角形として参照する.
+
+\begin{application}
+
+%\href{http://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology}{\text The central dogma of molecular biology} is that ``DNA codes for RNA codes for protein". That is, there is a function from DNA triplets to RNA triplets and a function from RNA triplets to amino acids. But sometimes we just want to discuss the translation from DNA to amino acids, and this is the composite of the other two. The commutative diagram is a picture of this fact.
+
+\href{http://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology}{分子生物学のセントラルドグマ}は``DNAはRNAを符号化しRNAはたんぱく質を符号化する''. これは, DNAの三つ組からRNAの三つ組への函数と, RNAの三つ組からアミノ酸への函数が存在しているということである. しかし, DNAからアミノ酸への変換だけを議論したいこともしばしばある. そしてこれは二つの函数の合成である. 可換図式はこの事実に関する絵である.
+
+\end{application}
+
+%Consider the following picture:
+%$$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$
+%We say this is a {\em diagram of sets} if each of $A,B,C,D$ is a set and each of $f,g,h,i$ is a function. We say this diagram {\em commutes} if $g\circ f=i\circ h$. In this case we refer to it as a commutative square of sets.
+
+次の絵を考える.
+$$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$
+$A,B,C,D$が集合であり$f,g,h,i$が函数であるとき, 我々はこれを\emph{集合の図式}と言う. もし$g\circ f=i\circ h$であるならば, この図式は\emph{可換である}と言う. 可換な場合の上図を, 我々は集合の可換四角形として参照する.
+
+\begin{application}
+
+%Given a physical system $S$, there may be two mathematical approaches $f\taking S\to A$ and $g\taking S\to B$ that can be applied to it. Either of those results in a prediction of the same sort, $f'\taking A\to P$ and $g'\taking B\to P$. For example, in \href{http://en.wikipedia.org/wiki/Hamiltonian_mechanics#As_a_reformulation_of_Lagrangian_mechanics}{\text mechanics} we can use either Lagrangian approach or the Hamiltonian approach to predict future states. To say that the diagram 
+%$$
+%\xymatrix{S\ar[r]\ar[d]&A\ar[d]\\B\ar[r]&P}
+%$$
+%commutes would say that these approaches give the same result.
+
+物理系$S$が与えられたとき, 適用できる数学的な取り組み方に$f\taking S\to A$と$g\taking S\to B$という二種類があるかもしれない. そのどちらからも, 同じ種類の予言が得られる. すなわち$f'\taking A\to P$と$g'\taking B\to P$. 例えば
+\href{http://en.wikipedia.org/wiki/Hamiltonian_mechanics#As_a_reformulation_of_Lagrangian_mechanics}{力学}において, 未来の状態を予言するために我々はLagrangian形式とHamiltonian形式のどちらかを使うことができる. 図式
+$$
+\xymatrix{S\ar[r]\ar[d]&A\ar[d]\\B\ar[r]&P}
+$$
+は可換であると言えるならば, どちらの方法をとっても同じ結果が得られることが言えるだろう.
+
+\end{application}
+
+%And so on. Note that diagram (\ref{dia:triangle}) is considered to be the same diagram as each of the following:
+%$$
+%\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[dl]^g\\C}\hspace{.8in}
+%\xymatrix{A\ar[r]^f\ar@/_1pc/[rr]_h&B\ar[r]^g&C}\hspace{.8in}
+%\xymatrix{B\ar[rd]^g\\&C\\A\ar[ru]_h\ar[uu]^f}$$
+
+以下も同様である. 図式\eqref{dia:triangle}は次のそれぞれと同じ図式であることに注意しよう.
+$$
+\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[dl]^g\\C}\hspace{.8in}
+\xymatrix{A\ar[r]^f\ar@/_1pc/[rr]_h&B\ar[r]^g&C}\hspace{.8in}
+\xymatrix{B\ar[rd]^g\\&C\\A\ar[ru]_h\ar[uu]^f}$$
+
+
 
