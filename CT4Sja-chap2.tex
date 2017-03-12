@@ -462,4 +462,267 @@ $$
 \xymatrix{B\ar[rd]^g\\&C\\A\ar[ru]_h\ar[uu]^f}$$
 
 
+\section{Olog}\label{sec:ologs}\index{olog}
+
+%In this course we will ground the mathematical ideas in applications whenever possible. To that end we introduce ologs, which will serve as a bridge between mathematics and various conceptual landscapes. The following material is taken from \cite{SK}, an introduction to ologs.
+%\begin{align}\label{dia:arginine}\fbox{\xymatrixnocompile{\obox{D}{1in}{\rr an amino acid found in dairy}\LAL{dr}{is}&\obox{A}{.5in}{arginine}\ar@{}[dl]|(.3){\checkmark}\ar@{}[dr]|(.3){\checkmark}\LA{r}{has}\LAL{l}{is}\LA{d}{is}&\obox{E}{.9in}{\rr an electrically-charged side chain}\LA{d}{is}\\&\obox{X}{.9in}{an amino acid}\LAL{dl}{has}\LA{dr}{has}\LA{r}{has}&\smbox{R}{a side chain}\\\mebox{N}{an amine group}&&\mebox{C}{a carboxylic acid}}}\end{align}  
+
+この教程では, 我々は数学的なアイデアを可能な限り実際の応用に基づかせようとしている. その目的に沿って, 我々はologを導入する. ologは様々な数学と概念の風景との間への架け橋となる. 以下の題材はologの入門書である\cite{SK}から取っている.
+\footnote{訳注: ologは英語で記述されることを前提としているようである. 訳においては, 日本語でologを記述することは試みておらず, また日本語用に文章を置き換えたりもしていない.}
+\begin{align}\label{dia:arginine}\fbox{\xymatrixnocompile{\obox{D}{1in}{\rr an amino acid found in dairy}\LAL{dr}{is}&\obox{A}{.5in}{arginine}\ar@{}[dl]|(.3){\checkmark}\ar@{}[dr]|(.3){\checkmark}\LA{r}{has}\LAL{l}{is}\LA{d}{is}&\obox{E}{.9in}{\rr an electrically-charged side chain}\LA{d}{is}\\&\obox{X}{.9in}{an amino acid}\LAL{dl}{has}\LA{dr}{has}\LA{r}{has}&\smbox{R}{a side chain}\\\mebox{N}{an amine group}&&\mebox{C}{a carboxylic acid}}}\end{align}  
+
+
+%\cite{SGWB}. 
+%\newpage
+%\newgeometry{left=.7in,right=.4in,top=1.4in,bottom=1.4in}
+%\begin{figure}
+%\includegraphics[height=7in]{olog--ProteinSocial}
+%\caption{This olog, taken from \cite{SGWB}, describes both a particular kind of social network and a particular kind of protein material in terms of the same arrangement of 23 sets and 44 functions. The elements of these sets should be known to the olog's author, but may not be interpretable by an arbitrary reader of the olog; for example, {\bf V}=\fakebox{a real number} should be interpretable by most readers, but it is unlikely that {\bf U}=\fakebox{a building block} is interpretable without reading that paper.}
+%\label{fig:protein social olog}
+%\end{figure}
+%\newgeometry{left=1.6in,right=1.6in,top=1.4in,bottom=1.4in}
+
+%%%% Subsection %%%%
+
+%\subsection{Types}\index{olog!types}
+\subsection{型}\index{olog!types}
+
+%A type is an abstract concept, a distinction the author has made.  We represent each type as a box containing a {\em singular indefinite noun phrase.}   Each of the following four boxes is a type: \begin{align}\label{dia:types}\xymatrixnocompile{\fbox{a man}&\fbox{an automobile}\\\obox{}{1.5in}{a pair $(a,w)$, where $w$ is a woman and $a$ is an automobile}&\obox{}{1.5in}{a pair $(a,w)$ where $w$ is a woman and $a$ is a blue automobile owned by $w$}}\end{align}
+
+型(type)は抽象的な概念であり, ologの作者が行なった区分を示す. 我々はそれぞれの型を\emph{不定な(定冠詞をともなわない)単数の名詞句}を含む箱で表現する. 次の四つの箱は型である. \begin{align}\label{dia:types}\xymatrixnocompile{\fbox{a man}&\fbox{an automobile}\\\obox{}{1.5in}{a pair $(a,w)$, where $w$ is a woman and $a$ is an automobile}&\obox{}{1.5in}{a pair $(a,w)$ where $w$ is a woman and $a$ is a blue automobile owned by $w$}}\end{align}
+
+Each of the four boxes in (\ref{dia:types}) represents a type of thing, a whole class of things, and the label on that box is what one should call {\em each example} of that class.  Thus \fakebox{a man} does not represent a single man, but the set of men, each example of which is called ``a man".  Similarly, the bottom right box represents an abstract type of thing, which probably has more than a million examples, but the label on the box indicates the common name for each such example.  
+
+Typographical problems emerge when writing a text-box in a line of text, e.g. the text-box \fbox{a man} seems out of place here, and the more in-line text-boxes there are, the worse it gets.  To remedy this, I will denote types which occur in a line of text with corner-symbols; e.g. I will write \fakebox{a man} instead of \fbox{a man}.
+
+%% Subsubsection %%
+
+\subsubsection{Types with compound structures}
+
+Many types have compound structures; i.e. they are composed of smaller units.  Examples include \begin{align}\label{dia:compound}\xymatrixnocompile{\obox{}{.7in}{\rr a man and a woman}&\obox{}{1.3in}{\rr a food portion $f$ and a child $c$ such that $c$ ate all of $f$}&\labox{}{a triple $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}}\end{align}  It is good practice to declare the variables in a ``compound type", as I did in the last two cases of (\ref{dia:compound}).  In other words, it is preferable to replace the first box above with something like $$\obox{}{.8in}{a man $m$ and a woman $w$}\hsp\tn{or}\hsp\obox{}{1.1in}{\rr a pair $(m,w)$ where $m$ is a man and $w$ is a woman}$$ so that the variables $(m,w)$ are clear.
+
+\begin{rules}\label{rules:types}\index{olog!rules}
+
+A type is presented as a text box.  The text in that box should 
+\begin{enumerate}[(i)]
+\item begin with the word ``a" or ``an";
+\item refer to a distinction made and recognizable by the olog's author;
+\item refer to a distinction for which instances can be documented;
+\item declare all variables in a compound structure. 
+\end{enumerate}
+
+\end{rules}
+
+The first, second, and third rules ensure that the class of things represented by each box appears to the author as a well-defined set.  The fourth rule encourages good ``readability" of arrows, as will be discussed next in Section \ref{sec:aspects}.  
+
+I will not always follow the rules of good practice throughout this document.  I think of these rules being followed ``in the background" but that I have ``nicknamed" various boxes.  So \fakebox{Steve} may stand as a nickname for \fakebox{a thing classified as Steve} and \fakebox{arginine} as a nickname for \fakebox{a molecule of arginine}. However, when pressed, one should always be able to rename each type according to the rules of good practice.
+
+%%%% Subsection %%%%
+
+\subsection{Aspects}\label{sec:aspects}\index{olog!aspects}
+
+An aspect of a thing $x$ is a way of viewing it, a particular way in which $x$ can be regarded or measured.  For example, a woman can be regarded as a person; hence ``being a person" is an aspect of a woman.  A molecule has a molecular mass (say in daltons), so ``having a molecular mass" is an aspect of a molecule.  In other words, by {\em aspect} we simply mean a function. The domain $A$ of the function $f\taking A\to B$ is the thing we are measuring, and the codomain is the set of possible ``answers" or results of the measurement. 
+\begin{align}\label{dia:aspect 1}\xymatrixnocompile{\fbox{a woman}\LA{r}{is}&\fbox{a person}}\end{align}\begin{align}\label{dia:aspect 2}\xymatrixnocompile{\fbox{a molecule}\LA{rr}{has as molecular mass (Da)}&\hspace{.7in}&\fbox{a positive real number}}\end{align}
+
+So for the arrow in (\ref{dia:aspect 1}), the domain is the set of women (a set with perhaps 3 billion elements); the codomain is the set of persons (a set with perhaps 6 billion elements).   We can imagine drawing an arrow from each dot in the ``woman" set to a unique dot in the ``person" set, just as in (\ref{dia:setmap}).  No woman points to two different people, nor to zero people --- each woman is exactly one person --- so the rules for a function are satisfied.  Let us now concentrate briefly on the arrow in (\ref{dia:aspect 2}).  The domain is the set of molecules, the codomain is the set $\RR_{>0}$ of positive real numbers.  We can imagine drawing an arrow from each dot in the ``molecule" set to a single dot in the ``positive real number" set.  No molecule points to two different masses, nor can a molecule have no mass: each molecule has exactly one mass.  Note however that two different molecules can point to the same mass.
+
+%% Subsubsection %%
+
+\subsubsection{Invalid aspects}\label{sec:invalid aspect}\index{olog!invalid aspects}
+
+I tried above to clarify what it is that makes an aspect ``valid", namely that it must be a ``functional relationship."  In this subsection I will show two arrows which on their face may appear to be aspects, but which on closer inspection are not functional (and hence are not valid as aspects).  
+ 
+Consider the following two arrows:
+\begin{align}\tag{\arabic{subsection}.\arabic{equation}*}\addtocounter{equation}{1}\label{dia:invalid 1}
+\xymatrixnocompile{\fbox{a person}\LA{r}{has}&\fbox{a child}}
+\end{align}
+\vspace{-.13in}
+\begin{align}\tag{\arabic{subsection}.\arabic{equation}*}\addtocounter{equation}{1}\label{dia:invalid 2}
+\xymatrixnocompile{\fbox{a mechanical pencil}\LA{r}{uses}&\fbox{a piece of lead}}
+\end{align}  
+A person may have no children or may have more than one child, so the first arrow is invalid: it is not a function.  Similarly, if we drew an arrow from each mechanical pencil to each piece of lead it uses, it would not be a function.
+
+\begin{warning}\label{warn:worldview}\index{a warning!different worldviews}
+
+The author of an olog has a world-view, some fragment of which is captured in the olog.  When person A examines the olog of person B, person A may or may not ``agree with it."  For example, person B may have the following olog $$\fbox{\xymatrix{&\fbox{a marriage}\LA{dr}{ includes}\LAL{dl}{includes }\\\fbox{a man}&&\fbox{a woman}}}$$ which associates to each marriage a man and a woman.  Person A may take the position that some marriages involve two men or two women, and thus see B's olog as ``wrong."  Such disputes are not ``problems" with either A's olog or B's olog, they are discrepancies between world-views.  Hence, throughout this paper, a reader R may see a displayed olog and notice a discrepancy between R's world-view and my own, but R should not worry that this is a problem.  This is not to say that ologs need not follow rules, but instead that the rules are enforced to ensure that an olog is structurally sound, rather than that it ``correctly reflects reality," whatever that may mean.
+
+Consider the aspect $\fakebox{an object}\Too{\tn{has}}\fakebox{a weight}$. At some point in history, this would have been considered a valid function. Now we know that the same object would have a different weight on the moon than it has on earth. Thus as world-views change, we often need to add more information to our olog. Even the validity of $\fakebox{an object on earth}\Too{\tn{has}}\fakebox{a weight}$ is questionable. However to build a model we need to choose a level of granularity and try to stay within it, or the whole model evaporates into the nothingness of truth!
+
+\end{warning}
+
+\begin{remark}
+
+In keeping with Warning \ref{warn:worldview}, the arrows (\ref{dia:invalid 1}) and (\ref{dia:invalid 2}) may not be wrong but simply reflect that the author has a strange world-view or a strange vocabulary.  Maybe the author believes that every mechanical pencil uses exactly one piece of lead.  If this is so, then $\fakebox{a mechanical pencil}\To{\tn{uses}}\fakebox{a piece of lead}$ is indeed a valid aspect!   Similarly, suppose the author meant to say that each person {\em was once} a child, or that a person has an inner child.  Since every person has one and only one inner child (according to the author), the map $\fakebox{a person}\To{\tn{has as inner child}}\fakebox{a child}$ is a valid aspect.  We cannot fault the olog if the author has a view, but note that we have changed the name of the label to make his or her intention more explicit.
+
+\end{remark}
+
+%% Subsubsection %%
+
+\subsubsection{Reading aspects and paths as English phrases}
+
+Each arrow (aspect) $X\To{f} Y$ can be read by first reading the label on its source box (domain of definition) $X$, then the label on the arrow $f$, and finally the label on its target box (set of values) $Y$.  For example, the arrow \begin{align}\label{dia:first author}\fbox{\xymatrixnocompile{\smbox{}{a book}\LA{rrr}{has as first author}&&&\smbox{}{a person}}}\end{align} is read ``a book has as first author a person".  
+
+\begin{remark}
+
+Note that the map in (\ref{dia:first author}) is a valid aspect, but that a similarly benign-looking map $\fakebox{a book}\To{\tn{has as author}}\fakebox{a person}$ would not be valid, because it is not functional.  The authors of an olog must be vigilant about this type of mistake because it is easy to miss and it can corrupt the olog.
+
+\end{remark}
+
+Sometimes the label on an arrow can be shortened or dropped altogether if it is obvious from context.  We will discuss this more in Section \ref{sec:facts} but here is a common example from the way I write ologs. \begin{align}\label{dia:pair of integers}\fbox{\xymatrixnocompile{&\obox{A}{1.2in}{\rr a pair $(x,y)$ where $x$ and $y$ are integers}\ar[dl]_x\ar[dr]^y\\\smbox{B}{an integer}&&\smbox{B}{an integer}}}\end{align}  Neither arrow is readable by the protocol given above (e.g. ``a pair $(x,y)$ where $x$ and $y$ are integers $x$ an integer" is not an English sentence), and yet it is obvious what each map means.  For example, given $(8,11)$ in $A$, arrow $x$ would yield $8$ and arrow $y$ would yield $11$.  The label $x$ can be thought of as a nickname for the full name ``yields, via the value of $x$," and similarly for $y$.  I do not generally use the full name for fear that the olog would become cluttered with text.
+
+One can also read paths through an olog by inserting the word ``which" after each intermediate box.
+\footnote{If the intended elements of an intermediate box are humans, it is polite to use ``who" rather than ``which", and other such conventions may be upheld if one so desires.}
+For example the following olog has two paths of length 3 (counting arrows in a chain): \small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{a child}\LA{r}{is}&\fbox{a person}\LA{rr}{has as parents}\LAL{dr}{has, as birthday}&&\obox{}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\LA{r}{$w$}&\fbox{a woman}\\&&\fbox{a date}\LA{r}{includes}&\fbox{a year}}}\end{align}  \normalsize The top path is read ``a child is a person, who has as parents a pair $(w,m)$ where $w$ is a woman and $m$ is a man, which yields, via the value of $w$, a woman."  The reader should read and understand the content of the bottom path, which associates to every child a year.  
+
+
+%% Subsubsection %%
+
+\subsubsection{Converting non-functional relationships to aspects}\label{sec:relations}
+
+There are many relationships that are not functional, and these cannot be considered aspects.  Often the word ``has" indicates a relationship --- sometimes it is functional as in $\fakebox{a person}\To{\tn{ has }}\fakebox{a stomach}$, and sometimes it is not, as in $\fakebox{a father}\To{\tn{has}}\fakebox{a child}$. Obviously, a father may have more than one child. This one is easily fixed by realizing that the arrow should go the other way: there is a function $\fakebox{a child}\To{\tn{has}}\fakebox{a father}$. 
+
+What about $\fakebox{a person}\To{\tn{owns}}\fakebox{a car}$. Again, a person may own no cars or more than one car, but this time a car can be owned by more than one person too. A quick fix would be to replace it by $\fakebox{a person}\To{\tn{owns}}\fakebox{a set of cars}$.   This is ok, but the relationship between \fakebox{a car} and \fakebox{a set of cars} then becomes an issue to deal with later.  There is another way to indicate such ``non-functional" relationships. In this case it would look like this:
+$$
+\fbox{\xymatrix{&\obox{}{1.15in}{a pair $(p,c)$ where $p$ is a person, $c$ is a car, and $p$ owns $c$.}\ar[ddl]_p\ar[ddr]^c\\\\
+\obox{}{.5in}{a person}&&\obox{}{.3in}{a car}}}
+$$
+This setup will ensure that everything is properly organized. In general, relationships can involve more than two types, and the general situation looks like this $$\fbox{\xymatrixnocompile{&&\fbox{$R$}\ar[ddll]\ar[ddl]\ar[ddr]\\\\\fbox{$A_1$}&\fbox{$A_2$}&\cdots&\fbox{$A_n$}}}$$  For example, $$\fbox{\xymatrixnocompile{&\labox{R}{a sequence $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}\ar[ddl]_p\ar[dd]_a\ar[ddr]^j\\\\\smbox{A_1}{a paper}&\smbox{A_2}{an author}&\smbox{A_3}{a journal}}}$$ 
+
+\begin{exercise}
+On page \pageref{dia:invalid 1} we indicate a so-called invalid aspect, namely 
+\begin{align}\tag{\ref{dia:invalid 1}}\xymatrixnocompile{\fbox{a person}\LA{r}{has}&\fbox{a child}}
+\end{align}
+Create a (valid) olog that captures the parent-child relationship; your olog should still have boxes \fakebox{a person} and \fakebox{a child} but may have an additional box.
+\end{exercise}
+
+\begin{rules}\label{rules:aspects}\index{olog!rules}
+
+An aspect is presented as a labeled arrow, pointing from a source box to a target box.  The arrow text should
+
+\begin{enumerate}[(i)]
+\item begin with a verb;
+\item yield an English sentence, when the source-box text followed by the arrow text followed by the target-box text is read; and
+\item refer to a functional relationship: each instance of the source type should give rise to a specific instance of the target type.
+\end{enumerate}
+
+\end{rules}
+
+%%%% Subsection %%%%
+
+\subsection{Facts}\label{sec:facts}\index{olog!facts}
+
+In this section I will discuss facts, which are simply ``path equivalences" in an olog. It is the notion of path equivalences that make category theory so powerful. 
+
+A {\em path}\index{olog!path in} in an olog is a head-to-tail sequence of arrows. That is, any path starts at some box $B_0$, then follows an arrow emanating from $B_0$ (moving in the appropriate direction), at which point it lands at another box $B_1$, then follows any arrow emanating from $B_1$, etc, eventually landing at a box $B_n$ and stopping there. The number of arrows is the {\em length} of the path. So a path of length 1 is just an arrow, and a path of length 0 is just a box. We call $B_0$ the {\em source} and $B_n$ the {\em target} of the path.
+
+Given an olog, the author may want to declare that two paths are equivalent.  For example consider the two paths from $A$ to $C$ in the olog 
+\begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has as parents}\LAL{drr}{\parbox{.8in}{has as mother}}&&\obox{B}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\ar@{}[dll]|(.4){\checkmark}\LA{d}{yields as $w$}\\&&\smbox{C}{a woman}}}\end{align}  We know as English speakers that a woman parent is called a mother, so these two paths $A\to C$ should be equivalent.  A more mathematical way to say this is that the triangle in Olog (\ref{olog:commute}) {\em commutes}. That is, path equivalences are simply commutative diagrams as in Section \ref{sec:comm diag}. In the example above we concisely say ``a woman parent is equivalent to a mother."  We declare this by defining the diagonal map in (\ref{olog:commute}) to be {\em the composition} of the horizontal map and the vertical map. 
+
+I generally prefer to indicate a commutative diagram by drawing a check-mark, $\checkmark$, in the region bounded by the two paths, as in Olog (\ref{olog:commute}).  Sometimes, however, one cannot do this unambiguously on the 2-dimensional page.  In such a case I will indicate the commutative diagrams (fact) by writing an equation.  For example to say that the diagram $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ commutes, we could either draw a checkmark inside the square or write the equation $A\;f\;g\simeq A\;h\;i$ above it\index{a symbol!$\simeq$}.
+\footnote{We defined function composition on page \ref{function composition}, but here we're using a different notation.\index{a warning!notation for composition} There we would have said $g\circ f = i\circ h$, which is in the backwards-seeming {\em classical order}.\index{composition!classical order} Category theorists and others often prefer the {\em diagrammatic order}\index{composition!diagrammatic order} for writing compositions, which is $f;g = h;i$. For ologs, we follow the latter because it makes for better English sentences, and for the same reason we add the source object to the equation, writing $A f g \simeq A h i$.}
+  Either way, it means that ``$f$ then $g$" is equivalent to ``$h$ then $i$".  
+
+Here is another, more scientific example:
+\begin{align*}
+\fbox{\xymatrix{
+\obox{}{1in}{a DNA sequence}\LA{rr}{is transcribed to}\LAL{drr}{codes for}&\hspace{.1in}&\obox{}{1.1in}{an RNA sequence}\ar@{}[dll]|(.35){\checkmark}\LA{d}{is translated to}\\
+&&\obox{}{.6in}{a protein}}}
+\end{align*}
+Note how this diagram gives us the established terminology for the various ways in which DNA, RNA, and protein are related in this context.
+
+\begin{exercise}\label{exc:family olog}
+
+Create an olog for human nuclear biological families that includes the concept of person, man, woman, parent, father, mother, and child. Make sure to label all the arrows, and make sure each arrow indicates a valid aspect in the sense of Section \ref{sec:invalid aspect}. Indicate with check-marks ($\checkmark$) the diagrams that are intended to commute. If the 2-dimensionality of the page prevents a check-mark from being unambiguous, indicate the intended commutativity with an equation.
+\end{exercise}
+
+\begin{example}[Non-commuting diagram]
+
+In my conception of the world, the following diagram does not commute:
+\begin{align}\label{dia:non-commuting}
+\xymatrixnocompile@=50pt{\obox{}{.5in}{a person}\LA{r}{has as father}\LAL{dr}{lives in}&\obox{}{.4in}{a man}\LA{d}{lives in}\\&\obox{}{.4in}{a city}}
+\end{align}
+The non-commutativity of Diagram (\ref{dia:non-commuting}) does not imply that, in my conception, no person lives in the same city as his or her father. Rather it implies that, in my conception, it is not the case that {\em every} person lives in the same city as his or her father.
+
+\end{example}
+
+\begin{exercise}
+Create an olog about a scientific subject, preferably one you think about often. The olog should have at least five boxes, five arrows, and one commutative diagram. 
+\end{exercise}
+
+%% Subsubsection %%
+
+\subsubsection{A formula for writing facts as English}\index{olog!facts in English}
+
+Every fact consists of two paths, say $P$ and $Q$, that are to be declared equivalent. The paths $P$ and $Q$ will necessarily have the same source, say $s$, and target, say $t$, but their lengths may be different, say $m$ and $n$ respectively.
+\footnote{If the source equals the target, $s=t$, then it is possible  to have $m=0$ or $n=0$, and the ideas below still make sense.} 
+We draw these paths as 
+\begin{align}\label{dia:two paths for equivalence}
+P:&\hsp\xymatrix@=22pt{\LMO{a_0=s}\ar[r]^{f_1}&\LMO{a_1}\ar[r]^{f_2}&\LMO{a_2}\ar[r]^{f_3}&\cdots\ar[r]^{f_{m-1}}&\LMO{a_{m-1}}\ar[r]^{f_m}&\LMO{a_m=t}}\\\nonumber
+Q:&\hsp\xymatrix@=23pt{\LMO{b_0=s}\ar[r]^{g_1}&\LMO{b_1}\ar[r]^{g_2}&\LMO{b_2}\ar[r]^{g_3}&\cdots\ar[r]^{g_{n-1}}&\LMO{b_{n-1}}\ar[r]^{g_n}&\LMO{b_n=t}}
+\end{align}
+Every part $\ell$ of an olog (i.e. every box and every arrow) has an associated English phrase, which we write as $\qt{\ell}$. Using a dummy variable $x$ we can convert a fact into English too. The following general formula is a bit difficult to understand, see Example \ref{ex:English fact}, but here goes. The fact $P\simeq Q$ from (\ref{dia:two paths for equivalence}) can be Englishified as follows:
+
+\begin{align}\label{dia:Englishification}\index{Englishification}
+&\tn{Given }x,\qt{s},\tn{ consider the following. We know that }x\tn{ is }\qt{s}, \\
+\nonumber&\tn {which } \qt{f_1}\;\qt{a_1}, \tn{ which } \qt{f_2}\;\qt{a_2}, \tn { which }\ldots \; \qt{f_{m-1}}\;\qt{a_{m-1}}, \tn { which } \qt{f_m}\;\qt{t}\\
+\nonumber&\tn{that we'll call } P(x).\\
+\nonumber&\tn{We also know that }x\tn{ is } \qt{s},\\
+\nonumber&\tn {which } \qt{g_1}\;\qt{b_1}, \tn{ which }\qt{g_2}\;\qt{b_2}, \tn { which }\ldots\;\qt{g_{n-1}}\;\qt{b_{n-1}}, \tn { which } \qt{g_n}\;\qt{t}\\
+\nonumber&\tn{that we'll call } Q(x).\\
+\nonumber&\tn{Fact: whenever }x\tn{ is }``s",\tn{ we will have }P(x)=Q(x).
+\end{align}
+
+\begin{example}\label{ex:English fact}
+
+Consider the olog
+\begin{align}\label{olog:commute2}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has}\LAL{drr}{\parbox{.8in}{lives in}}&&\obox{B}{.7in}{\rr an address}\ar@{}[dll]|(.4){\checkmark}\LA{d}{is in}\\&&\smbox{C}{a city}}}
+\end{align}
+To put the fact that Diagram \ref{olog:commute2} commutes into English, we first Englishify the two paths: $F$=``a person has an address which is in a city" and $G$=``a person lives in a city". The source of both is $s$=``a person" and the target of both is $t$=``a city".
+write:
+\begin{align*}
+&\tn{Given }x,\tn{a person, consider the following. We know that } x\tn{ is a person,}\\
+&\tn{which has an address, which is in a city}\\
+&\tn{that we'll call } P(x).\\
+&\tn{We also know that }x\tn{ is a person,}\\
+&\tn{which lives in a city}\\
+&\tn{that we'll call } Q(x).\\
+&\tn{Fact: whenever }x\tn{ is a person, we will have }P(x)=Q(x).
+\end{align*}
+
+\end{example}
+
+\begin{exercise}
+This olog was taken from \cite{Sp1}.
+\begin{align}\label{dia:phone paths}\xymatrix{&\obox{N}{1in}{a phone number}\LA{rr}{has}&&\obox{C}{.8in}{an area code}\ar@{}[dll]|{\checkmark}\LA{d}{corresponds to}\\\obox{OLP}{1.2in}{an operational landline phone}\LA{ru}{is assigned}\LAL{r}{is}&\obox{P}{1in}{a physical phone}\LAL{rr}{\parbox{.55in}{\scriptsize is currently located in}}&&\obox{R}{.5in}{a region}}
+\end{align} 
+It says that a landline phone is physically located in the region that its phone number is assigned. Translate this fact into English using the formula from \ref{dia:Englishification}.
+\end{exercise}
+
+\begin{exercise}
+In the above olog (\ref{dia:phone paths}), suppose that the box \fakebox{an operational landline phone} is replaced with the box \fakebox{an operational mobile phone}. Would the diagram still commute?
+\end{exercise}
+
+%% Subsubsection %%
+
+\subsubsection{Images}\label{sec:images}\index{olog!images}\index{image!in olog}
+
+In this section we discuss a specific kind of fact, generated by any aspect. Recall that every function has an image, meaning the subset of elements in the codomain that are ``hit" by the function. For example the function $f(x)=2*x\taking \ZZ\to\ZZ$ has as image the set of all even numbers.
+
+Similarly the set of mothers arises as is the image of the ``has as mother" function, as shown below 
+$$
+\xymatrix{\obox{P}{.5in}{a person}\LAL{rd}{has}\LA{rr}{$\stackrel{f\taking P\to P}{\tn{has as mother}}$}&&\obox{P}{.5in}{a person}\\
+&\obox{M=\im(f)}{.6in}{a mother}\LAL{ur}{is}\ar@{}[u]|(.6){\checkmark}
+}$$
+
+\begin{exercise}
+For each of the following types, write down a function for which it is the image, or say ``not clearly an image type" 
+\sexc \fakebox{a book}
+\next \fakebox{a material that has been fabricated by a process of type $T$}
+\next \fakebox{a bicycle owner}
+\next \fakebox{a child}
+\next \fakebox{a used book}
+\next \fakebox{an inhabited residence}
+\endsexc
+\end{exercise}
+
 
