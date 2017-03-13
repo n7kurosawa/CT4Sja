@@ -491,31 +491,50 @@ $$
 
 型(type)は抽象的な概念であり, ologの作者が行なった区分を示す. 我々はそれぞれの型を\emph{不定な(定冠詞をともなわない)単数の名詞句}を含む箱で表現する. 次の四つの箱は型である. \begin{align}\label{dia:types}\xymatrixnocompile{\fbox{a man}&\fbox{an automobile}\\\obox{}{1.5in}{a pair $(a,w)$, where $w$ is a woman and $a$ is an automobile}&\obox{}{1.5in}{a pair $(a,w)$ where $w$ is a woman and $a$ is a blue automobile owned by $w$}}\end{align}
 
-Each of the four boxes in (\ref{dia:types}) represents a type of thing, a whole class of things, and the label on that box is what one should call {\em each example} of that class.  Thus \fakebox{a man} does not represent a single man, but the set of men, each example of which is called ``a man".  Similarly, the bottom right box represents an abstract type of thing, which probably has more than a million examples, but the label on the box indicates the common name for each such example.  
+%Each of the four boxes in (\ref{dia:types}) represents a type of thing, a whole class of things, and the label on that box is what one should call {\em each example} of that class.  Thus \fakebox{a man} does not represent a single man, but the set of men, each example of which is called ``a man".  Similarly, the bottom right box represents an abstract type of thing, which probably has more than a million examples, but the label on the box indicates the common name for each such example.  
 
-Typographical problems emerge when writing a text-box in a line of text, e.g. the text-box \fbox{a man} seems out of place here, and the more in-line text-boxes there are, the worse it gets.  To remedy this, I will denote types which occur in a line of text with corner-symbols; e.g. I will write \fakebox{a man} instead of \fbox{a man}.
+\eqref{dia:types}の四つの箱はそれぞれ物の型, すなわち物の種類の全てを表しており, 箱の上の見出しはその種類の\emph{例の一つ}と呼ばれるべきものである. それゆえに, \fakebox{a man}は一人の人間を示しているわければなく, その例の一つが``a man''と呼ばれるであろう人間の集合を表わしており. 同様に右下の箱は抽象的の物---百万以上の例がありうるだろう---の型を示しており, 箱の見出しはそれぞれの個々の例をまとめた一般的な名前を示している.
+
+%Typographical problems emerge when writing a text-box in a line of text, e.g. the text-box \fbox{a man} seems out of place here, and the more in-line text-boxes there are, the worse it gets.  To remedy this, I will denote types which occur in a line of text with corner-symbols; e.g. I will write \fakebox{a man} instead of \fbox{a man}.
+
+一行の中に文章が入った箱を書くときには組版上の問題が生じてくる. 例えば\fbox{a man}という文章が入った箱はここであるべき場所からはみだしているように見えるし, 文書が入った箱がもっとたくさん本文中にある場合には状況はますます悪くなる. これを直すために, 本文中では上隅の鉤の記号をともなった文書で型を示すことにする. 例えば, \fbox{a man}の代わりに\fakebox{a man}と書く.
 
 %% Subsubsection %%
 
-\subsubsection{Types with compound structures}
+%\subsubsection{Types with compound structures}
+\subsubsection{複合的な構造を持つ型}
 
-Many types have compound structures; i.e. they are composed of smaller units.  Examples include \begin{align}\label{dia:compound}\xymatrixnocompile{\obox{}{.7in}{\rr a man and a woman}&\obox{}{1.3in}{\rr a food portion $f$ and a child $c$ such that $c$ ate all of $f$}&\labox{}{a triple $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}}\end{align}  It is good practice to declare the variables in a ``compound type", as I did in the last two cases of (\ref{dia:compound}).  In other words, it is preferable to replace the first box above with something like $$\obox{}{.8in}{a man $m$ and a woman $w$}\hsp\tn{or}\hsp\obox{}{1.1in}{\rr a pair $(m,w)$ where $m$ is a man and $w$ is a woman}$$ so that the variables $(m,w)$ are clear.
+%Many types have compound structures; i.e. they are composed of smaller units.  Examples include \begin{align}\label{dia:compound}\xymatrixnocompile{\obox{}{.7in}{\rr a man and a woman}&\obox{}{1.3in}{\rr a food portion $f$ and a child $c$ such that $c$ ate all of $f$}&\labox{}{a triple $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}}\end{align}  It is good practice to declare the variables in a ``compound type", as I did in the last two cases of (\ref{dia:compound}).  In other words, it is preferable to replace the first box above with something like $$\obox{}{.8in}{a man $m$ and a woman $w$}\hsp\tn{or}\hsp\obox{}{1.1in}{\rr a pair $(m,w)$ where $m$ is a man and $w$ is a woman}$$ so that the variables $(m,w)$ are clear.
+
+多くの型は複合的な構造を持つ. i.e. それらはより小さな単位から構成されている. 例としては, 以下のようなものがある. \begin{align}\label{dia:compound}\xymatrixnocompile{\obox{}{.7in}{\rr a man and a woman}&\obox{}{1.3in}{\rr a food portion $f$ and a child $c$ such that $c$ ate all of $f$}&\labox{}{a triple $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}}\end{align} \eqref{dia:compound}の後半二つの例で行なっているように, ``複合的な型''では変数(variable)を宣言するのがよい習慣である. 言いかえれば, 上記の例での最初の箱は$$\obox{}{.8in}{a man $m$ and a woman $w$}\hsp\tn{or}\hsp\obox{}{1.1in}{\rr a pair $(m,w)$ where $m$ is a man and $w$ is a woman}$$のように置き換えるのがよい. これは変数$(m,w)$を明確にするためである.
 
 \begin{rules}\label{rules:types}\index{olog!rules}
 
-A type is presented as a text box.  The text in that box should 
+%A type is presented as a text box.  The text in that box should 
+%\begin{enumerate}[(i)]
+%\item begin with the word ``a" or ``an";
+%\item refer to a distinction made and recognizable by the olog's author;
+%\item refer to a distinction for which instances can be documented;
+%\item declare all variables in a compound structure. 
+%\end{enumerate}
+
+型は文章が入った箱で表現される. 箱の中の文章は以下の規則を守ることが望ましい.
 \begin{enumerate}[(i)]
-\item begin with the word ``a" or ``an";
-\item refer to a distinction made and recognizable by the olog's author;
-\item refer to a distinction for which instances can be documented;
-\item declare all variables in a compound structure. 
+\item 不定冠詞``a''か``an''で始まるべし.
+\item ologの作者がなしている区分と認識を反映しているべし.
+\item 区分を目的として事例を説明文章化できる, そのような区分の仕方を反映すべし.
+\item 複合的な構造を持っている場合は全ての変数を宣言するべし.
 \end{enumerate}
 
 \end{rules}
 
-The first, second, and third rules ensure that the class of things represented by each box appears to the author as a well-defined set.  The fourth rule encourages good ``readability" of arrows, as will be discussed next in Section \ref{sec:aspects}.  
+%The first, second, and third rules ensure that the class of things represented by each box appears to the author as a well-defined set.  The fourth rule encourages good ``readability" of arrows, as will be discussed next in Section \ref{sec:aspects}.  
 
-I will not always follow the rules of good practice throughout this document.  I think of these rules being followed ``in the background" but that I have ``nicknamed" various boxes.  So \fakebox{Steve} may stand as a nickname for \fakebox{a thing classified as Steve} and \fakebox{arginine} as a nickname for \fakebox{a molecule of arginine}. However, when pressed, one should always be able to rename each type according to the rules of good practice.
+一番目, 二番目, そして三番目の規則は, それぞれの箱が表現している物の種類が, well-definedな集合として作者には見えていることを保証している. 四番目の規則は矢印の''読み易さ(readability)''が高くあるべきということを推奨している. それについては次の\ref{sec:aspects}章で議論しよう.
+
+%I will not always follow the rules of good practice throughout this document.  I think of these rules being followed ``in the background" but that I have ``nicknamed" various boxes.  So \fakebox{Steve} may stand as a nickname for \fakebox{a thing classified as Steve} and \fakebox{arginine} as a nickname for \fakebox{a molecule of arginine}. However, when pressed, one should always be able to rename each type according to the rules of good practice.
+
+我々はこの文書全体を通して常にこのよき実践のための規則に従うわけではない. これらの規則は``背後では''守られているべきではあると思うが, しかしながら``別名を持つ''様々な箱も使うことにする. だから\fakebox{Steve}は\fakebox{a thing classified as Steve}の別名として, \fakebox{arginine}は\fakebox{a molecule of arginine}の別名として理解されるだろう. しかしながら, 求められた際には, 常によき実践のための規則に従って, それぞれの型を改名できてしかるべきだ.
 
 %%%% Subsection %%%%
 
