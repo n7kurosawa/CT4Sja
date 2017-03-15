@@ -611,45 +611,75 @@ Warning \ref{warn:worldview}を念頭に置くと, \eqref{dia:invalid 1}およ�
 
 \begin{remark}
 
-Note that the map in (\ref{dia:first author}) is a valid aspect, but that a similarly benign-looking map $\fakebox{a book}\To{\tn{has as author}}\fakebox{a person}$ would not be valid, because it is not functional.  The authors of an olog must be vigilant about this type of mistake because it is easy to miss and it can corrupt the olog.
+%Note that the map in (\ref{dia:first author}) is a valid aspect, but that a similarly benign-looking map $\fakebox{a book}\To{\tn{has as author}}\fakebox{a person}$ would not be valid, because it is not functional.  The authors of an olog must be vigilant about this type of mistake because it is easy to miss and it can corrupt the olog.
+
+\eqref{dia:first author}での写像は有効な様相であるが, よく似ていて一見害はなさそうに見える写像$\fakebox{a book}\To{\tn{has as author}}\fakebox{a person}$は函数的ではなく, それゆえに有効ではないことに注意しよう. この種の間違いは非常に犯しやすくかつologを破壊するものであるから, ologの作者は必ず警戒しなければならない.
 
 \end{remark}
 
-Sometimes the label on an arrow can be shortened or dropped altogether if it is obvious from context.  We will discuss this more in Section \ref{sec:facts} but here is a common example from the way I write ologs. \begin{align}\label{dia:pair of integers}\fbox{\xymatrixnocompile{&\obox{A}{1.2in}{\rr a pair $(x,y)$ where $x$ and $y$ are integers}\ar[dl]_x\ar[dr]^y\\\smbox{B}{an integer}&&\smbox{B}{an integer}}}\end{align}  Neither arrow is readable by the protocol given above (e.g. ``a pair $(x,y)$ where $x$ and $y$ are integers $x$ an integer" is not an English sentence), and yet it is obvious what each map means.  For example, given $(8,11)$ in $A$, arrow $x$ would yield $8$ and arrow $y$ would yield $11$.  The label $x$ can be thought of as a nickname for the full name ``yields, via the value of $x$," and similarly for $y$.  I do not generally use the full name for fear that the olog would become cluttered with text.
+%Sometimes the label on an arrow can be shortened or dropped altogether if it is obvious from context.  We will discuss this more in Section \ref{sec:facts} but here is a common example from the way I write ologs. \begin{align}\label{dia:pair of integers}\fbox{\xymatrixnocompile{&\obox{A}{1.2in}{\rr a pair $(x,y)$ where $x$ and $y$ are integers}\ar[dl]_x\ar[dr]^y\\\smbox{B}{an integer}&&\smbox{B}{an integer}}}\end{align}  Neither arrow is readable by the protocol given above (e.g. ``a pair $(x,y)$ where $x$ and $y$ are integers $x$ an integer" is not an English sentence), and yet it is obvious what each map means.  For example, given $(8,11)$ in $A$, arrow $x$ would yield $8$ and arrow $y$ would yield $11$.  The label $x$ can be thought of as a nickname for the full name ``yields, via the value of $x$," and similarly for $y$.  I do not generally use the full name for fear that the olog would become cluttered with text.
 
-One can also read paths through an olog by inserting the word ``which" after each intermediate box.
-\footnote{If the intended elements of an intermediate box are humans, it is polite to use ``who" rather than ``which", and other such conventions may be upheld if one so desires.}
-For example the following olog has two paths of length 3 (counting arrows in a chain): \small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{a child}\LA{r}{is}&\fbox{a person}\LA{rr}{has as parents}\LAL{dr}{has, as birthday}&&\obox{}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\LA{r}{$w$}&\fbox{a woman}\\&&\fbox{a date}\LA{r}{includes}&\fbox{a year}}}\end{align}  \normalsize The top path is read ``a child is a person, who has as parents a pair $(w,m)$ where $w$ is a woman and $m$ is a man, which yields, via the value of $w$, a woman."  The reader should read and understand the content of the bottom path, which associates to every child a year.  
+文脈が明らかな場合には, 矢印の上の見出しはしばしば縮められたりあるいは完全に落とされてしまいうる. 我々は\ref{sec:facts}章でさらなる議論を行なうが, ここでは著者がologを書く方法から一般的な例をとりあげよう. \begin{align}\label{dia:pair of integers}\fbox{\xymatrixnocompile{&\obox{A}{1.2in}{\rr a pair $(x,y)$ where $x$ and $y$ are integers}\ar[dl]_x\ar[dr]^y\\\smbox{B}{an integer}&&\smbox{B}{an integer}}}\end{align} どの矢印も上記で与えられた規約によって読むことはできない(e.g. ``a pair $(x,y)$ where $x$ and $y$ are integers $x$ an integer''は英語の文ではない). しかしそれでもそれぞれの写像が何を意味しているかは明らかである. 例えば, $A$の要素として$(8,11)$が与えられたとき, 矢印$x$は$8$をもたらし矢印$y$は$11$をもたらすだろう. 見出し$x$はフルネーム``yields, via the value of $x$''のあだ名と考えることができ, また$y$に関しても同様である. ologが文書まみれで取り散らかる虞れがあるため, 著者は一般的にフルネームを使うことはない.
+
+%One can also read paths through an olog by inserting the word ``which" after each intermediate box.
+%\footnote{If the intended elements of an intermediate box are humans, it is polite to use ``who" rather than ``which", and other such conventions may be upheld if one so desires.}
+%For example the following olog has two paths of length 3 (counting arrows in a chain): \small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{a child}\LA{r}{is}&\fbox{a person}\LA{rr}{has as parents}\LAL{dr}{has, as birthday}&&\obox{}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\LA{r}{$w$}&\fbox{a woman}\\&&\fbox{a date}\LA{r}{includes}&\fbox{a year}}}\end{align}  \normalsize The top path is read ``a child is a person, who has as parents a pair $(w,m)$ where $w$ is a woman and $m$ is a man, which yields, via the value of $w$, a woman."  The reader should read and understand the content of the bottom path, which associates to every child a year.  
+
+ologの中に走る経路は, それぞれの間にある箱の後ろ側に単語``which''を挿入するめによっても英文として読むことができる.
+\footnote{間に入る箱の要素として意図されるものが人間であるならば, ``which''ではなくむしろ``who''を使うのが礼儀である. 他のこのような慣習についても, もし望まれるのであるならば是認されよう.}
+例えば次のologは長さ3 (連鎖における矢印を数える)の二本の経路を含んでいる. {\small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{a child}\LA{r}{is}&\fbox{a person}\LA{rr}{has as parents}\LAL{dr}{has, as birthday}&&\obox{}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\LA{r}{$w$}&\fbox{a woman}\\&&\fbox{a date}\LA{r}{includes}&\fbox{a year}}}\end{align} } 上側の経路は``a child is a person, who has as parents a pair $(w,m)$ where $w$ is a woman and $m$ is a man, which yields, via the value of $w$, a woman.''と読むことができる. きっと読者は下側の経路を読んで内容が理解できるはずである. この経路は全ての子をある年に関連付けている.
 
 
 %% Subsubsection %%
 
-\subsubsection{Converting non-functional relationships to aspects}\label{sec:relations}
+%\subsubsection{Converting non-functional relationships to aspects}\label{sec:relations}
+\subsubsection{函数的でない関係を様相へ変換する}\label{sec:relations}
 
-There are many relationships that are not functional, and these cannot be considered aspects.  Often the word ``has" indicates a relationship --- sometimes it is functional as in $\fakebox{a person}\To{\tn{ has }}\fakebox{a stomach}$, and sometimes it is not, as in $\fakebox{a father}\To{\tn{has}}\fakebox{a child}$. Obviously, a father may have more than one child. This one is easily fixed by realizing that the arrow should go the other way: there is a function $\fakebox{a child}\To{\tn{has}}\fakebox{a father}$. 
+%There are many relationships that are not functional, and these cannot be considered aspects.  Often the word ``has" indicates a relationship --- sometimes it is functional as in $\fakebox{a person}\To{\tn{ has }}\fakebox{a stomach}$, and sometimes it is not, as in $\fakebox{a father}\To{\tn{has}}\fakebox{a child}$. Obviously, a father may have more than one child. This one is easily fixed by realizing that the arrow should go the other way: there is a function $\fakebox{a child}\To{\tn{has}}\fakebox{a father}$. 
 
-What about $\fakebox{a person}\To{\tn{owns}}\fakebox{a car}$. Again, a person may own no cars or more than one car, but this time a car can be owned by more than one person too. A quick fix would be to replace it by $\fakebox{a person}\To{\tn{owns}}\fakebox{a set of cars}$.   This is ok, but the relationship between \fakebox{a car} and \fakebox{a set of cars} then becomes an issue to deal with later.  There is another way to indicate such ``non-functional" relationships. In this case it would look like this:
+多くの函数的ばない関係が存在しており, それらは様相とみなすことはできない. しばしば単語``has''は関係を示唆している---ある時は$\fakebox{a person}\To{\tn{ has }}\fakebox{a stomach}$でみられるように函数的であるし, またある時は$\fakebox{a father}\To{\tn{has}}\fakebox{a child}$でみられるように函数的ではない. 明らかに, 父親は二人以上の子を持つかもしれない. この図は, 矢印を別の方向に走らせればよいということに気がつくことによって簡単に修正される. 函数$\fakebox{a child}\To{\tn{has}}\fakebox{a father}$があるからだ.
+
+%What about $\fakebox{a person}\To{\tn{owns}}\fakebox{a car}$. Again, a person may own no cars or more than one car, but this time a car can be owned by more than one person too. A quick fix would be to replace it by $\fakebox{a person}\To{\tn{owns}}\fakebox{a set of cars}$.   This is ok, but the relationship between \fakebox{a car} and \fakebox{a set of cars} then becomes an issue to deal with later.  There is another way to indicate such ``non-functional" relationships. In this case it would look like this:
+%$$
+%\fbox{\xymatrix{&\obox{}{1.15in}{a pair $(p,c)$ where $p$ is a person, $c$ is a car, and $p$ owns $c$.}\ar[ddl]_p\ar[ddr]^c\\\\
+%\obox{}{.5in}{a person}&&\obox{}{.3in}{a car}}}
+%$$
+%This setup will ensure that everything is properly organized. In general, relationships can involve more than two types, and the general situation looks like this $$\fbox{\xymatrixnocompile{&&\fbox{$R$}\ar[ddll]\ar[ddl]\ar[ddr]\\\\\fbox{$A_1$}&\fbox{$A_2$}&\cdots&\fbox{$A_n$}}}$$  For example, $$\fbox{\xymatrixnocompile{&\labox{R}{a sequence $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}\ar[ddl]_p\ar[dd]_a\ar[ddr]^j\\\\\smbox{A_1}{a paper}&\smbox{A_2}{an author}&\smbox{A_3}{a journal}}}$$ 
+
+$\fakebox{a person}\To{\tn{owns}}\fakebox{a car}$の場合はどうだろうか. ある人物は一台も車を持っていないかもしれないし二台以上持っているかもしれない. しかしこの場合には, ある車は二人以上の人物に所有されているかもしれない. 手短に修正するならば$\fakebox{a person}\To{\tn{owns}}\fakebox{a set of cars}$で置き換えればよいかもしれない. これはこれでよいが, しかし今度は\fakebox{a car}と\fakebox{a set of cars}との間の関係性が, 後々処理すべき問題となる. このような``函数的ではない''関係性を指示するには他の方法もある. この場合は以下のようになるだろう.
 $$
 \fbox{\xymatrix{&\obox{}{1.15in}{a pair $(p,c)$ where $p$ is a person, $c$ is a car, and $p$ owns $c$.}\ar[ddl]_p\ar[ddr]^c\\\\
 \obox{}{.5in}{a person}&&\obox{}{.3in}{a car}}}
 $$
-This setup will ensure that everything is properly organized. In general, relationships can involve more than two types, and the general situation looks like this $$\fbox{\xymatrixnocompile{&&\fbox{$R$}\ar[ddll]\ar[ddl]\ar[ddr]\\\\\fbox{$A_1$}&\fbox{$A_2$}&\cdots&\fbox{$A_n$}}}$$  For example, $$\fbox{\xymatrixnocompile{&\labox{R}{a sequence $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}\ar[ddl]_p\ar[dd]_a\ar[ddr]^j\\\\\smbox{A_1}{a paper}&\smbox{A_2}{an author}&\smbox{A_3}{a journal}}}$$ 
+この設定は全てが適切に組織されていることを保証するであろう. 一般に, 関係性には二つ以上の型が関わることがあり, これら一般の状況は以下のように見ることができる
+$$\fbox{\xymatrixnocompile{&&\fbox{$R$}\ar[ddll]\ar[ddl]\ar[ddr]\\\\\fbox{$A_1$}&\fbox{$A_2$}&\cdots&\fbox{$A_n$}}}$$ 例えば, $$\fbox{\xymatrixnocompile{&\labox{R}{a sequence $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}\ar[ddl]_p\ar[dd]_a\ar[ddr]^j\\\\\smbox{A_1}{a paper}&\smbox{A_2}{an author}&\smbox{A_3}{a journal}}}$$
+
 
 \begin{exercise}
-On page \pageref{dia:invalid 1} we indicate a so-called invalid aspect, namely 
-\begin{align}\tag{\ref{dia:invalid 1}}\xymatrixnocompile{\fbox{a person}\LA{r}{has}&\fbox{a child}}
-\end{align}
-Create a (valid) olog that captures the parent-child relationship; your olog should still have boxes \fakebox{a person} and \fakebox{a child} but may have an additional box.
+%On page \pageref{dia:invalid 1} we indicate a so-called invalid aspect, namely 
+%\begin{align}\tag{\ref{dia:invalid 1}}\xymatrixnocompile{\fbox{a person}\LA{r}{has}&\fbox{a child}}
+%\end{align}
+%Create a (valid) olog that captures the parent-child relationship; your olog should still have boxes %\fakebox{a person} and \fakebox{a child} but may have an additional box.
+\pageref{dia:invalid 1}で我々はいわゆる無効な様相, すなわち\begin{align}\tag{\ref{dia:invalid 1}}\xymatrixnocompile{\fbox{a person}\LA{r}{has}&\fbox{a child}}\end{align}を指摘した.
+両親-子供の関係を捉えた(有効な)ologを作成せよ. 作成されたologは依然\fakebox{a person}および\fakebox{a child}を持っているべきだが, 追加の箱も持っているかもしれない.
 \end{exercise}
 
 \begin{rules}\label{rules:aspects}\index{olog!rules}
 
-An aspect is presented as a labeled arrow, pointing from a source box to a target box.  The arrow text should
+%An aspect is presented as a labeled arrow, pointing from a source box to a target box.  The arrow text should
+
+様相は, 出発元から到着先を指し示す見出し付けられた矢印として表示される. 矢印の文章は以下を守ることが望ましい.
+
+%\begin{enumerate}[(i)]
+%\item begin with a verb;
+%\item yield an English sentence, when the source-box text followed by the arrow text followed by the target-box text is read; and
+%\item refer to a functional relationship: each instance of the source type should give rise to a specific instance of the target type.
+%\end{enumerate}
 
 \begin{enumerate}[(i)]
-\item begin with a verb;
-\item yield an English sentence, when the source-box text followed by the arrow text followed by the target-box text is read; and
-\item refer to a functional relationship: each instance of the source type should give rise to a specific instance of the target type.
+\item 動詞から始まるべし.
+\item 出発元の箱の文書, 矢印の文書, 到着先の箱の文書の順で読んだとき, 英語の文書がもたらされるべし. 
+\item 函数的な関係が適用されるべし. すなわち出発元の型の具体例は, 到着先の型のある特定の具体例をもたらすべし.
 \end{enumerate}
 
 \end{rules}
