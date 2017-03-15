@@ -493,7 +493,7 @@ $$
 
 %Each of the four boxes in (\ref{dia:types}) represents a type of thing, a whole class of things, and the label on that box is what one should call {\em each example} of that class.  Thus \fakebox{a man} does not represent a single man, but the set of men, each example of which is called ``a man".  Similarly, the bottom right box represents an abstract type of thing, which probably has more than a million examples, but the label on the box indicates the common name for each such example.  
 
-\eqref{dia:types}の四つの箱はそれぞれ物の型, すなわち物の種類の全てを表しており, 箱の上の見出しはその種類の\emph{例の一つ}と呼ばれるべきものである. それゆえに, \fakebox{a man}は一人の人間を示しているわければなく, その例の一つが``a man''と呼ばれるであろう人間の集合を表わしており. 同様に右下の箱は抽象的の物---百万以上の例がありうるだろう---の型を示しており, 箱の見出しはそれぞれの個々の例をまとめた一般的な名前を示している.
+\eqref{dia:types}の四つの箱はそれぞれ物の型, すなわち物の種類の全てを表しており, 箱の上の見出しはその種類の\emph{例の一つ}と呼ばれるべきものである. それゆえに, \fakebox{a man}は一人の男性(man)を示しているわければなく, その例の一つが``a man''と呼ばれるであろう男性の集合を表わしている. 同様に右下の箱は抽象的の物---百万以上の例がありうるだろう---の型を示しており, 箱の見出しはそれぞれの個々の例をまとめた一般的な名前を示している.
 
 %Typographical problems emerge when writing a text-box in a line of text, e.g. the text-box \fbox{a man} seems out of place here, and the more in-line text-boxes there are, the worse it gets.  To remedy this, I will denote types which occur in a line of text with corner-symbols; e.g. I will write \fakebox{a man} instead of \fbox{a man}.
 
@@ -538,20 +538,39 @@ $$
 
 %%%% Subsection %%%%
 
-\subsection{Aspects}\label{sec:aspects}\index{olog!aspects}
+%\subsection{Aspects}\label{sec:aspects}\index{olog!aspects}
+\subsection{様相}\label{sec:aspects}\index{olog!aspects}
 
-An aspect of a thing $x$ is a way of viewing it, a particular way in which $x$ can be regarded or measured.  For example, a woman can be regarded as a person; hence ``being a person" is an aspect of a woman.  A molecule has a molecular mass (say in daltons), so ``having a molecular mass" is an aspect of a molecule.  In other words, by {\em aspect} we simply mean a function. The domain $A$ of the function $f\taking A\to B$ is the thing we are measuring, and the codomain is the set of possible ``answers" or results of the measurement. 
+%An aspect of a thing $x$ is a way of viewing it, a particular way in which $x$ can be regarded or measured.  For example, a woman can be regarded as a person; hence ``being a person" is an aspect of a woman.  A molecule has a molecular mass (say in daltons), so ``having a molecular mass" is an aspect of a molecule.  In other words, by {\em aspect} we simply mean a function. The domain $A$ of the function $f\taking A\to B$ is the thing we are measuring, and the codomain is the set of possible ``answers" or results of the measurement. 
+%\begin{align}\label{dia:aspect 1}\xymatrixnocompile{\fbox{a woman}\LA{r}{is}&\fbox{a person}}\end{align}\begin{align}\label{dia:aspect 2}\xymatrixnocompile{\fbox{a molecule}\LA{rr}{has as molecular mass (Da)}&\hspace{.7in}&\fbox{a positive real number}}\end{align}
+
+物$x$の様相(aspect)はそれを見方であり, $x$をそうであると見なしたりそれを通じて評価したりする具体的な方法である. 例えば女性(a woman)は人間(a person)であるとみなすことができる. それゆえに``人間である''は女性の様相である. 分子(a molecule)は分子質量(a molecular mass, 単位はダルトン)を持ち, よって``分子質量を持つ''は分子の様相である. 言いかえれば, 我々は\emph{様相}を単純に函数の意味で使う. 函数$f\taking A\to B$の始域$A$は我々が測定する物であり, 終域はありうる``答え''あるいは測定結果の集合である.
 \begin{align}\label{dia:aspect 1}\xymatrixnocompile{\fbox{a woman}\LA{r}{is}&\fbox{a person}}\end{align}\begin{align}\label{dia:aspect 2}\xymatrixnocompile{\fbox{a molecule}\LA{rr}{has as molecular mass (Da)}&\hspace{.7in}&\fbox{a positive real number}}\end{align}
 
-So for the arrow in (\ref{dia:aspect 1}), the domain is the set of women (a set with perhaps 3 billion elements); the codomain is the set of persons (a set with perhaps 6 billion elements).   We can imagine drawing an arrow from each dot in the ``woman" set to a unique dot in the ``person" set, just as in (\ref{dia:setmap}).  No woman points to two different people, nor to zero people --- each woman is exactly one person --- so the rules for a function are satisfied.  Let us now concentrate briefly on the arrow in (\ref{dia:aspect 2}).  The domain is the set of molecules, the codomain is the set $\RR_{>0}$ of positive real numbers.  We can imagine drawing an arrow from each dot in the ``molecule" set to a single dot in the ``positive real number" set.  No molecule points to two different masses, nor can a molecule have no mass: each molecule has exactly one mass.  Note however that two different molecules can point to the same mass.
+%So for the arrow in (\ref{dia:aspect 1}), the domain is the set of women (a set with perhaps 3 billion elements); the codomain is the set of persons (a set with perhaps 6 billion elements).   We can imagine drawing an arrow from each dot in the ``woman" set to a unique dot in the ``person" set, just as in (\ref{dia:setmap}).  No woman points to two different people, nor to zero people --- each woman is exactly one person --- so the rules for a function are satisfied.  Let us now concentrate briefly on the arrow in (\ref{dia:aspect 2}).  The domain is the set of molecules, the codomain is the set $\RR_{>0}$ of positive real numbers.  We can imagine drawing an arrow from each dot in the ``molecule" set to a single dot in the ``positive real number" set.  No molecule points to two different masses, nor can a molecule have no mass: each molecule has exactly one mass.  Note however that two different molecules can point to the same mass.
+
+よって\eqref{dia:aspect 1}での矢印にとって, 始域は女性の集合(おそらく30億の要素がある集合)であり, 終域は人間の集合(おそらく60億の要素がある集合)である. 我々は, \eqref{dia:setmap}でやったのと同じように, ``女性(woman)''の集合の中のそれぞれの点から``人間(person)''の集合の中の一意な点に矢印を描くことを想像できる. いかなる女性からでる矢印も二人の異なった人間を指すことはないし, またどの人間も指さないということもない---それぞれの女性は正確に一人の人間である---だから函数であるための規則は満たされている. 次は, \eqref{dia:aspect 2}での矢印にしばし着目してみよう. 始域は分子の集合であり, 終域は正の実数からなる集合$\RR_{>0}$である. 我々は``分子(molecule)''の集合の中のそれぞれの点から``正の実数(positive real number)''の集合の中の一点に矢印を描くことを想像することができる. どの分子も異なった二つの質量を指し示すことはないし, また分子が質量を持たないということもありえない. それぞれの分子は正確に一つだけ質量を持つ. しかしながら二つの異なった分子が同じ質量を指し示すことがありうることに注意しよう.
 
 %% Subsubsection %%
 
-\subsubsection{Invalid aspects}\label{sec:invalid aspect}\index{olog!invalid aspects}
+%\subsubsection{Invalid aspects}\label{sec:invalid aspect}\index{olog!invalid aspects}
+\subsubsection{無効な様相}\label{sec:invalid aspect}\index{olog!invalid aspects}
 
-I tried above to clarify what it is that makes an aspect ``valid", namely that it must be a ``functional relationship."  In this subsection I will show two arrows which on their face may appear to be aspects, but which on closer inspection are not functional (and hence are not valid as aspects).  
+%I tried above to clarify what it is that makes an aspect ``valid", namely that it must be a ``functional relationship."  In this subsection I will show two arrows which on their face may appear to be aspects, but which on closer inspection are not functional (and hence are not valid as aspects).  
  
-Consider the following two arrows:
+これまでのところ, 著者はある様相が``有効(valid)''であるのは何によってかということを明確にしようとしてきた. それはすなわち``函数としての関係''でなければならないという点である. この小節では, その表向きは一見したところ様相に見えるものの, より細やかな精査の上では函数ではない(それゆえに有効な様相ではない)二本の矢印を示すことにしよう.
+ 
+%Consider the following two arrows:
+%\begin{align}\tag{\arabic{subsection}.\arabic{equation}*}\addtocounter{equation}{1}\label{dia:invalid 1}
+%\xymatrixnocompile{\fbox{a person}\LA{r}{has}&\fbox{a child}}
+%\end{align}
+%\vspace{-.13in}
+%\begin{align}\tag{\arabic{subsection}.\arabic{equation}*}\addtocounter{equation}{1}\label{dia:invalid 2}
+%\xymatrixnocompile{\fbox{a mechanical pencil}\LA{r}{uses}&\fbox{a piece of lead}}
+%\end{align}  
+%A person may have no children or may have more than one child, so the first arrow is invalid: it is not a function.  Similarly, if we drew an arrow from each mechanical pencil to each piece of lead it uses, it would not be a function.
+
+以下の二本の矢印を考えよう.
 \begin{align}\tag{\arabic{subsection}.\arabic{equation}*}\addtocounter{equation}{1}\label{dia:invalid 1}
 \xymatrixnocompile{\fbox{a person}\LA{r}{has}&\fbox{a child}}
 \end{align}
@@ -559,27 +578,36 @@ Consider the following two arrows:
 \begin{align}\tag{\arabic{subsection}.\arabic{equation}*}\addtocounter{equation}{1}\label{dia:invalid 2}
 \xymatrixnocompile{\fbox{a mechanical pencil}\LA{r}{uses}&\fbox{a piece of lead}}
 \end{align}  
-A person may have no children or may have more than one child, so the first arrow is invalid: it is not a function.  Similarly, if we drew an arrow from each mechanical pencil to each piece of lead it uses, it would not be a function.
+ある人間は子供を持たないかもしれないし, あるいは一人よりも多くの子供を持つかもしれない. よって最初の矢印は無効である. それは函数ではない. 同様に, もし我々がそれぞれのシャープペンシル(mechanical pencil)からそれが使用している芯に矢印を書くことができたのであるのならば, それが函数ではないことが分かるだろう.
 
 \begin{warning}\label{warn:worldview}\index{a warning!different worldviews}
 
-The author of an olog has a world-view, some fragment of which is captured in the olog.  When person A examines the olog of person B, person A may or may not ``agree with it."  For example, person B may have the following olog $$\fbox{\xymatrix{&\fbox{a marriage}\LA{dr}{ includes}\LAL{dl}{includes }\\\fbox{a man}&&\fbox{a woman}}}$$ which associates to each marriage a man and a woman.  Person A may take the position that some marriages involve two men or two women, and thus see B's olog as ``wrong."  Such disputes are not ``problems" with either A's olog or B's olog, they are discrepancies between world-views.  Hence, throughout this paper, a reader R may see a displayed olog and notice a discrepancy between R's world-view and my own, but R should not worry that this is a problem.  This is not to say that ologs need not follow rules, but instead that the rules are enforced to ensure that an olog is structurally sound, rather than that it ``correctly reflects reality," whatever that may mean.
+%The author of an olog has a world-view, some fragment of which is captured in the olog.  When person A examines the olog of person B, person A may or may not ``agree with it."  For example, person B may have the following olog $$\fbox{\xymatrix{&\fbox{a marriage}\LA{dr}{ includes}\LAL{dl}{includes }\\\fbox{a man}&&\fbox{a woman}}}$$ which associates to each marriage a man and a woman.  Person A may take the position that some marriages involve two men or two women, and thus see B's olog as ``wrong."  Such disputes are not ``problems" with either A's olog or B's olog, they are discrepancies between world-views.  Hence, throughout this paper, a reader R may see a displayed olog and notice a discrepancy between R's world-view and my own, but R should not worry that this is a problem.  This is not to say that ologs need not follow rules, but instead that the rules are enforced to ensure that an olog is structurally sound, rather than that it ``correctly reflects reality," whatever that may mean.
 
-Consider the aspect $\fakebox{an object}\Too{\tn{has}}\fakebox{a weight}$. At some point in history, this would have been considered a valid function. Now we know that the same object would have a different weight on the moon than it has on earth. Thus as world-views change, we often need to add more information to our olog. Even the validity of $\fakebox{an object on earth}\Too{\tn{has}}\fakebox{a weight}$ is questionable. However to build a model we need to choose a level of granularity and try to stay within it, or the whole model evaporates into the nothingness of truth!
+ologの作者はなんらかの世界観(world-view)を持っており, olongの中にはその一片が捉えられている. ある人物Aが人物Bによるologを検査するとき, 人物Aはそれを``認める''ことがあったりなかったりするだろう. 例えば, 人物Bは以下のolog$$\fbox{\xymatrix{&\fbox{a marriage}\LA{dr}{ includes}\LAL{dl}{includes }\\\fbox{a man}&&\fbox{a woman}}}$$を持っているかもしれない. これはそれぞれの結婚をある男性とある女性に関連付けている. 人物Aは結婚は二人の男性あるいは二人の女性によることもあるという立場を取っており, それゆえにBのologは``悪い''ものと受けとめるかもしれない. このような論争はAのologあるいはBのologにおける``問題点''ではなく, 世界観の間の矛盾である. それゆえに, この文章を通して, 読者Rは表示されたologを見てRの世界観と著者のそれとの間の矛盾に気付くかもしれないが, しかしRはそのことを問題ではないかと気に病むべきではない. これはologが規則に従わなくてもよいと言っているのではない. 規則が課されているのは, それが何を意味しているのであれ``現実を正確に反映する''ためではなく, むしろologが構造的に健全であることを保証するためである.
+
+%Consider the aspect $\fakebox{an object}\Too{\tn{has}}\fakebox{a weight}$. At some point in history, this would have been considered a valid function. Now we know that the same object would have a different weight on the moon than it has on earth. Thus as world-views change, we often need to add more information to our olog. Even the validity of $\fakebox{an object on earth}\Too{\tn{has}}\fakebox{a weight}$ is questionable. However to build a model we need to choose a level of granularity and try to stay within it, or the whole model evaporates into the nothingness of truth!
+
+様相$\fakebox{an object}\Too{\tn{has}}\fakebox{a weight}$を考える. 歴史上のある時点では, これは有効な函数であったであろう. 今や我々は同じ物質は月の上と地球の上では異なる重さを持つであろうことを知っている. それゆえに世界観の変化に従って我々はしばしばologにさらなる情報を加える必要が出てくる. $\fakebox{an object on earth}\Too{\tn{has}}\fakebox{a weight}$の有効性でさえも疑問である. しかし, 模型を構築するにあたって我々は粒度の水準を選びその中に留まろうとする必要がある. そうでなければ, 全ての模型はなんの真実もない虚無へと霧散してしまう.
 
 \end{warning}
 
 \begin{remark}
 
-In keeping with Warning \ref{warn:worldview}, the arrows (\ref{dia:invalid 1}) and (\ref{dia:invalid 2}) may not be wrong but simply reflect that the author has a strange world-view or a strange vocabulary.  Maybe the author believes that every mechanical pencil uses exactly one piece of lead.  If this is so, then $\fakebox{a mechanical pencil}\To{\tn{uses}}\fakebox{a piece of lead}$ is indeed a valid aspect!   Similarly, suppose the author meant to say that each person {\em was once} a child, or that a person has an inner child.  Since every person has one and only one inner child (according to the author), the map $\fakebox{a person}\To{\tn{has as inner child}}\fakebox{a child}$ is a valid aspect.  We cannot fault the olog if the author has a view, but note that we have changed the name of the label to make his or her intention more explicit.
+%In keeping with Warning \ref{warn:worldview}, the arrows (\ref{dia:invalid 1}) and (\ref{dia:invalid 2}) may not be wrong but simply reflect that the author has a strange world-view or a strange vocabulary.  Maybe the author believes that every mechanical pencil uses exactly one piece of lead.  If this is so, then $\fakebox{a mechanical pencil}\To{\tn{uses}}\fakebox{a piece of lead}$ is indeed a valid aspect!   Similarly, suppose the author meant to say that each person {\em was once} a child, or that a person has an inner child.  Since every person has one and only one inner child (according to the author), the map $\fakebox{a person}\To{\tn{has as inner child}}\fakebox{a child}$ is a valid aspect.  We cannot fault the olog if the author has a view, but note that we have changed the name of the label to make his or her intention more explicit.
+
+Warning \ref{warn:worldview}を念頭に置くと, \eqref{dia:invalid 1}および\eqref{dia:invalid 2}の矢印は悪いものではなく, 作者が奇妙な世界観あるいは奇妙な語彙を持っているということの単純な反映なのであろう. おそらく作者は全てのシャープペンシルは正確に一本だけの芯を使うものだと信じているのだろう. もしそうであるならば, $\fakebox{a mechanical pencil}\To{\tn{uses}}\fakebox{a piece of lead}$は実際に有効な様相となる! 同様に, 全ての人間は\emph{一度は}子供である, あるいはある人間は内なる子(inner child)を持っているということを, 作者が言おうと意図していると仮定してみよう. (このologの作者によると)全ての人間は内なる子をただ一人だけ持つから, 写像$\fakebox{a person}\To{\tn{has as inner child}}\fakebox{a child}$は有効な様相である. ologの作者が世界観を持っているならば, 我々はologを非難することはできない. しかし, 作者の意図するところをより明示的にするために, 我々は見出しの名前は変えている.
 
 \end{remark}
 
 %% Subsubsection %%
 
-\subsubsection{Reading aspects and paths as English phrases}
+%\subsubsection{Reading aspects and paths as English phrases}
+\subsubsection{英語の句として様相と経路を読む}
 
-Each arrow (aspect) $X\To{f} Y$ can be read by first reading the label on its source box (domain of definition) $X$, then the label on the arrow $f$, and finally the label on its target box (set of values) $Y$.  For example, the arrow \begin{align}\label{dia:first author}\fbox{\xymatrixnocompile{\smbox{}{a book}\LA{rrr}{has as first author}&&&\smbox{}{a person}}}\end{align} is read ``a book has as first author a person".  
+%Each arrow (aspect) $X\To{f} Y$ can be read by first reading the label on its source box (domain of definition) $X$, then the label on the arrow $f$, and finally the label on its target box (set of values) $Y$.  For example, the arrow \begin{align}\label{dia:first author}\fbox{\xymatrixnocompile{\smbox{}{a book}\LA{rrr}{has as first author}&&&\smbox{}{a person}}}\end{align} is read ``a book has as first author a person".  
+
+それぞれの矢印(様相)$X\To{f} Y$は, 最初に出発元の箱の見出し(定義の始域)$X$を読み, 次に矢印$f$の見出しを読み, 最後にその到着先の箱の見出し(値の集合)$Y$を読むことによって, (英語の)文として読むことができる. 例えば, 矢印\begin{align}\label{dia:first author}\fbox{\xymatrixnocompile{\smbox{}{a book}\LA{rrr}{has as first author}&&&\smbox{}{a person}}}\end{align}は``a book has as first author a person''と読むことができる.
 
 \begin{remark}
 
