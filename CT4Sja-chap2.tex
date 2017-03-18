@@ -697,24 +697,43 @@ $$\fbox{\xymatrixnocompile{&&\fbox{$R$}\ar[ddll]\ar[ddl]\ar[ddr]\\\\\fbox{$A_1$}
 
 ologにおいて\emph{経路(path)}\index{olog!path in}とは矢印の先頭から末尾までの列である. これはすなわち, ある箱から$B_0$から出発する任意の経路は$B_0$を出発し, $B_0$から(適切な方向に向かって)発せられる矢印が直後に続き, その矢印が指すところの他の箱$B_1$に到着し, さらに$B_1$から発せられる任意の矢印が後に続き, これらが繰り返された後, ある箱$B_n$に到着しそこで終了する. 矢印の数は経路の\emph{長さ(length)}である. よって長さ1の経路は単なる矢印であり, 長さ0の経路は単なる箱である. 我々は$B_0$を経路の\emph{源泉(source)}, $B_n$を経路の\emph{標的(target)}と呼ぶことにする.
 
-Given an olog, the author may want to declare that two paths are equivalent.  For example consider the two paths from $A$ to $C$ in the olog 
-\begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has as parents}\LAL{drr}{\parbox{.8in}{has as mother}}&&\obox{B}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\ar@{}[dll]|(.4){\checkmark}\LA{d}{yields as $w$}\\&&\smbox{C}{a woman}}}\end{align}  We know as English speakers that a woman parent is called a mother, so these two paths $A\to C$ should be equvalent.  A more mathematical way to say this is that the triangle in Olog (\ref{olog:commute}) {\em commutes}. That is, path equivalences are simply commutative diagrams as in Section \ref{sec:comm diag}. In the example above we concisely say ``a woman parent is equivalent to a mother."  We declare this by defining the diagonal map in (\ref{olog:commute}) to be {\em the composition} of the horizontal map and the vertical map. 
+%Given an olog, the author may want to declare that two paths are equivalent.  For example consider the two paths from $A$ to $C$ in the olog 
+%\begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has as parents}\LAL{drr}{\parbox{.8in}{has as mother}}&&\obox{B}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\ar@{}[dll]|(.4){\checkmark}\LA{d}{yields as $w$}\\&&\smbox{C}{a woman}}}\end{align}  We know as English speakers that a woman parent is called a mother, so these two paths $A\to C$ should be equvalent.  A more mathematical way to say this is that the triangle in Olog (\ref{olog:commute}) {\em commutes}. That is, path equivalences are simply commutative diagrams as in Section \ref{sec:comm diag}. In the example above we concisely say ``a woman parent is equivalent to a mother."  We declare this by defining the diagonal map in (\ref{olog:commute}) to be {\em the composition} of the horizontal map and the vertical map. 
 
-I generally prefer to indicate a commutative diagram by drawing a check-mark, $\checkmark$, in the region bounded by the two paths, as in Olog (\ref{olog:commute}).  Sometimes, however, one cannot do this unambiguously on the 2-dimensional page.  In such a case I will indicate the commutative diagrams (fact) by writing an equation.  For example to say that the diagram $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ commutes, we could either draw a checkmark inside the square or write the equation $A\;f\;g\simeq A\;h\;i$ above it\index{a symbol!$\simeq$}.
-\footnote{We defined function composition on page \ref{function composition}, but here we're using a different notation.\index{a warning!notation for composition} There we would have said $g\circ f = i\circ h$, which is in the backwards-seeming {\em classical order}.\index{composition!classical order} Category theorists and others often prefer the {\em diagrammatic order}\index{composition!diagrammatic order} for writing compositions, which is $f;g = h;i$. For ologs, we follow the latter because it makes for better English sentences, and for the same reason we add the source object to the equation, writing $A f g \simeq A h i$.}
-  Either way, it means that ``$f$ then $g$" is equivalent to ``$h$ then $i$".  
+ologが与えられた時, 作者は二つの経路が等価であると明確に述べたくなるかもしれない. 例えば, 以下のologでの$A$から$C$への二つの経路を考えてみる.
+\begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has as parents}\LAL{drr}{\parbox{.8in}{has as mother}}&&\obox{B}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\ar@{}[dll]|(.4){\checkmark}\LA{d}{yields as $w$}\\&&\smbox{C}{a woman}}}\end{align} 我々は英語話者として女性の親は母と呼ばれることを知っている. よって$A$から$C$への経路は等価であるべきである. より数学的な言い方では, Olog \eqref{olog:commute}は{可換である(commute)}. すなわち, 経路等価性とは
+単純に\ref{sec:comm diag}章での可換図式である. 上記の例では我々はconcisely``a woman parent is equivalent to a mother''と言える. これを明確に述べるには, 我々は\eqref{olog:commute}での対角線の写像が水平な写像と垂直な写像の\emph{合成(composition)}として定義するとする.
 
-Here is another, more scientific example:
+%I generally prefer to indicate a commutative diagram by drawing a check-mark, $\checkmark$, in the region bounded by the two paths, as in Olog (\ref{olog:commute}).  Sometimes, however, one cannot do this unambiguously on the 2-dimensional page.  In such a case I will indicate the commutative diagrams (fact) by writing an equation.  For example to say that the diagram $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ commutes, we could either draw a checkmark inside the square or write the equation $A\;f\;g\simeq A\;h\;i$ above it\index{a symbol!$\simeq$}.
+%\footnote{We defined function composition on page \ref{function composition}, but here we're using a different notation.\index{a warning!notation for composition} There we would have said $g\circ f = i\circ h$, which is in the backwards-seeming {\em classical order}.\index{composition!classical order} Category theorists and others often prefer the {\em diagrammatic order}\index{composition!diagrammatic order} for writing compositions, which is $f;g = h;i$. For ologs, we follow the latter because it makes for better English sentences, and for the same reason we add the source object to the equation, writing $A f g \simeq A h i$.}
+% Either way, it means that ``$f$ then $g$" is equivalent to ``$h$ then $i$".  
+
+著者は, Olog \eqref{olog:commute}でのように, 二つの経路に囲まれた領域の中にチェックマーク$\checkmark$を描くことによって可換図式をしめす記法を一般的に好んでいる. しかしながら, 二次元的な紙の上では, しばしばこれを曖昧なく行うことが不可能になる. このような場合, 可換図式(事実)を等式の形で示すことにしよう. 例えば, 図式$$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$が可換であると言うために, 我々は四角の中にチェックマークを描くか, あるいは等式$A\;f\;g\simeq A\;h\;i$を図の上に書く\index{a symbol!$\simeq$}.
+\footnote{我々は\ref{function composition}ページで函数合成を定義したが, ここでは異なった記法を使っている.\index{a warning!notation for composition} \eqref{function composition}ページの記法では$g\circ f = i\circ h$となったであろう. これは後ろからみていく(backwards-seeming) \emph{古典的な順番(classcal order)}である.\index{composition!classical order} 圏論の理論家を代表とする人々は, 合成を書くときにしばしば\emph{図式的な順序(diagrammatic order)}\index{composition!diagrammatic order}を好む. これは$f;g=h;i$である. ologに対しては, 我々は後者を使う. なぜならば後者はよりよく英文になるからである. 同じ理由で等式に源泉の箱を追加して, $A f g \simeq A h i$と書くことにする.
+}
+どちらの方法をとっても, 意味するところは``$f$ then $g$''と``$h$ then $i$''は等しいということである..  
+
+%Here is another, more scientific example:
+%\begin{align*}
+%\fbox{\xymatrix{
+%\obox{}{1in}{a DNA sequence}\LA{rr}{is transcribed to}\LAL{drr}{codes for}&\hspace{.1in}&\obox{}{1.1in}{an RNA sequence}\ar@{}[dll]|(.35){\checkmark}\LA{d}{is translated to}\\
+%&&\obox{}{.6in}{a protein}}}
+%\end{align*}
+%Note how this diagram gives us the established terminology for the various ways in which DNA, RNA, and protein are related in this context.
+
+また別の, より科学的な例を挙げる.
 \begin{align*}
 \fbox{\xymatrix{
 \obox{}{1in}{a DNA sequence}\LA{rr}{is transcribed to}\LAL{drr}{codes for}&\hspace{.1in}&\obox{}{1.1in}{an RNA sequence}\ar@{}[dll]|(.35){\checkmark}\LA{d}{is translated to}\\
 &&\obox{}{.6in}{a protein}}}
 \end{align*}
-Note how this diagram gives us the established terminology for the various ways in which DNA, RNA, and protein are related in this context.
+この図によって, DNA, RNA, タンパク質がこの文脈において関係しているところの様々な面で確立している用語が与えられる.
 
 \begin{exercise}\label{exc:family olog}
 
-Create an olog for human nuclear biological families that includes the concept of person, man, woman, parent, father, mother, and child. Make sure to label all the arrows, and make sure each arrow indicates a valid aspect in the sense of Section \ref{sec:invalid aspect}. Indicate with check-marks ($\checkmark$) the diagrams that are intended to commute. If the 2-dimensionality of the page prevents a check-mark from being unambiguous, indicate the intended commutativity with an equation.
+%Create an olog for human nuclear biological families that includes the concept of person, man, woman, parent, father, mother, and child. Make sure to label all the arrows, and make sure each arrow indicates a valid aspect in the sense of Section \ref{sec:invalid aspect}. Indicate with check-marks ($\checkmark$) the diagrams that are intended to commute. If the 2-dimensionality of the page prevents a check-mark from being unambiguous, indicate the intended commutativity with an equation.
+
+男性(man), 女性(woman), 親(parent), 父(father), 母(mother), 子(child)という概念を含んだ, 人間個体の生物的家族のologを作成せよ. 全ての矢印には見出しがつけられていることを確認し, それぞれの矢印は\ref{sec:invalid aspect}章での意味において有効な様相を表していることを確認せよ. 可換図式を意図した図をチェックマーク($\checkmark$)で示せ. もし曖昧さなくチェックマークをつけることが紙の二次元性のせいでできない場合は意図した可換性を等式で示せ.
 \end{exercise}
 
 \begin{example}[Non-commuting diagram]
