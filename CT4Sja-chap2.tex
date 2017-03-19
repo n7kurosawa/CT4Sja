@@ -611,89 +611,151 @@ Warning \ref{warn:worldview}を念頭に置くと, \eqref{dia:invalid 1}およ�
 
 \begin{remark}
 
-Note that the map in (\ref{dia:first author}) is a valid aspect, but that a similarly benign-looking map $\fakebox{a book}\To{\tn{has as author}}\fakebox{a person}$ would not be valid, because it is not functional.  The authors of an olog must be vigilant about this type of mistake because it is easy to miss and it can corrupt the olog.
+%Note that the map in (\ref{dia:first author}) is a valid aspect, but that a similarly benign-looking map $\fakebox{a book}\To{\tn{has as author}}\fakebox{a person}$ would not be valid, because it is not functional.  The authors of an olog must be vigilant about this type of mistake because it is easy to miss and it can corrupt the olog.
+
+\eqref{dia:first author}での写像は有効な様相であるが, よく似ていて一見害はなさそうに見える写像$\fakebox{a book}\To{\tn{has as author}}\fakebox{a person}$は函数的ではなく, それゆえに有効ではないことに注意しよう. この種の間違いは非常に犯しやすくかつologを破壊するものであるから, ologの作者は必ず警戒しなければならない.
 
 \end{remark}
 
-Sometimes the label on an arrow can be shortened or dropped altogether if it is obvious from context.  We will discuss this more in Section \ref{sec:facts} but here is a common example from the way I write ologs. \begin{align}\label{dia:pair of integers}\fbox{\xymatrixnocompile{&\obox{A}{1.2in}{\rr a pair $(x,y)$ where $x$ and $y$ are integers}\ar[dl]_x\ar[dr]^y\\\smbox{B}{an integer}&&\smbox{B}{an integer}}}\end{align}  Neither arrow is readable by the protocol given above (e.g. ``a pair $(x,y)$ where $x$ and $y$ are integers $x$ an integer" is not an English sentence), and yet it is obvious what each map means.  For example, given $(8,11)$ in $A$, arrow $x$ would yield $8$ and arrow $y$ would yield $11$.  The label $x$ can be thought of as a nickname for the full name ``yields, via the value of $x$," and similarly for $y$.  I do not generally use the full name for fear that the olog would become cluttered with text.
+%Sometimes the label on an arrow can be shortened or dropped altogether if it is obvious from context.  We will discuss this more in Section \ref{sec:facts} but here is a common example from the way I write ologs. \begin{align}\label{dia:pair of integers}\fbox{\xymatrixnocompile{&\obox{A}{1.2in}{\rr a pair $(x,y)$ where $x$ and $y$ are integers}\ar[dl]_x\ar[dr]^y\\\smbox{B}{an integer}&&\smbox{B}{an integer}}}\end{align}  Neither arrow is readable by the protocol given above (e.g. ``a pair $(x,y)$ where $x$ and $y$ are integers $x$ an integer" is not an English sentence), and yet it is obvious what each map means.  For example, given $(8,11)$ in $A$, arrow $x$ would yield $8$ and arrow $y$ would yield $11$.  The label $x$ can be thought of as a nickname for the full name ``yields, via the value of $x$," and similarly for $y$.  I do not generally use the full name for fear that the olog would become cluttered with text.
 
-One can also read paths through an olog by inserting the word ``which" after each intermediate box.
-\footnote{If the intended elements of an intermediate box are humans, it is polite to use ``who" rather than ``which", and other such conventions may be upheld if one so desires.}
-For example the following olog has two paths of length 3 (counting arrows in a chain): \small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{a child}\LA{r}{is}&\fbox{a person}\LA{rr}{has as parents}\LAL{dr}{has, as birthday}&&\obox{}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\LA{r}{$w$}&\fbox{a woman}\\&&\fbox{a date}\LA{r}{includes}&\fbox{a year}}}\end{align}  \normalsize The top path is read ``a child is a person, who has as parents a pair $(w,m)$ where $w$ is a woman and $m$ is a man, which yields, via the value of $w$, a woman."  The reader should read and understand the content of the bottom path, which associates to every child a year.  
+文脈が明らかな場合には, 矢印の上の見出しはしばしば縮められたりあるいは完全に落とされてしまいうる. 我々は\ref{sec:facts}章でさらなる議論を行なうが, ここでは著者がologを書く方法から一般的な例をとりあげよう. \begin{align}\label{dia:pair of integers}\fbox{\xymatrixnocompile{&\obox{A}{1.2in}{\rr a pair $(x,y)$ where $x$ and $y$ are integers}\ar[dl]_x\ar[dr]^y\\\smbox{B}{an integer}&&\smbox{B}{an integer}}}\end{align} どの矢印も上記で与えられた規約によって読むことはできない(e.g. ``a pair $(x,y)$ where $x$ and $y$ are integers $x$ an integer''は英語の文ではない). しかしそれでもそれぞれの写像が何を意味しているかは明らかである. 例えば, $A$の要素として$(8,11)$が与えられたとき, 矢印$x$は$8$をもたらし矢印$y$は$11$をもたらすだろう. 見出し$x$はフルネーム``yields, via the value of $x$''のあだ名と考えることができ, また$y$に関しても同様である. ologが文書まみれで取り散らかる虞れがあるため, 著者は一般的にフルネームを使うことはない.
+
+%One can also read paths through an olog by inserting the word ``which" after each intermediate box.
+%\footnote{If the intended elements of an intermediate box are humans, it is polite to use ``who" rather than ``which", and other such conventions may be upheld if one so desires.}
+%For example the following olog has two paths of length 3 (counting arrows in a chain): \small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{a child}\LA{r}{is}&\fbox{a person}\LA{rr}{has as parents}\LAL{dr}{has, as birthday}&&\obox{}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\LA{r}{$w$}&\fbox{a woman}\\&&\fbox{a date}\LA{r}{includes}&\fbox{a year}}}\end{align}  \normalsize The top path is read ``a child is a person, who has as parents a pair $(w,m)$ where $w$ is a woman and $m$ is a man, which yields, via the value of $w$, a woman."  The reader should read and understand the content of the bottom path, which associates to every child a year.  
+
+ologの中に走る経路は, それぞれの間にある箱の後ろ側に単語``which''を挿入するめによっても英文として読むことができる.
+\footnote{間に入る箱の要素として意図されるものが人間であるならば, ``which''ではなくむしろ``who''を使うのが礼儀である. 他のこのような慣習についても, もし望まれるのであるならば是認されよう.}
+例えば次のologは長さ3 (連鎖における矢印を数える)の二本の経路を含んでいる. {\small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{a child}\LA{r}{is}&\fbox{a person}\LA{rr}{has as parents}\LAL{dr}{has, as birthday}&&\obox{}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\LA{r}{$w$}&\fbox{a woman}\\&&\fbox{a date}\LA{r}{includes}&\fbox{a year}}}\end{align} } 上側の経路は``a child is a person, who has as parents a pair $(w,m)$ where $w$ is a woman and $m$ is a man, which yields, via the value of $w$, a woman.''と読むことができる. きっと読者は下側の経路を読んで内容が理解できるはずである. この経路は全ての子をある年に関連付けている.
 
 
 %% Subsubsection %%
 
-\subsubsection{Converting non-functional relationships to aspects}\label{sec:relations}
+%\subsubsection{Converting non-functional relationships to aspects}\label{sec:relations}
+\subsubsection{函数的でない関係を様相へ変換する}\label{sec:relations}
 
-There are many relationships that are not functional, and these cannot be considered aspects.  Often the word ``has" indicates a relationship --- sometimes it is functional as in $\fakebox{a person}\To{\tn{ has }}\fakebox{a stomach}$, and sometimes it is not, as in $\fakebox{a father}\To{\tn{has}}\fakebox{a child}$. Obviously, a father may have more than one child. This one is easily fixed by realizing that the arrow should go the other way: there is a function $\fakebox{a child}\To{\tn{has}}\fakebox{a father}$. 
+%There are many relationships that are not functional, and these cannot be considered aspects.  Often the word ``has" indicates a relationship --- sometimes it is functional as in $\fakebox{a person}\To{\tn{ has }}\fakebox{a stomach}$, and sometimes it is not, as in $\fakebox{a father}\To{\tn{has}}\fakebox{a child}$. Obviously, a father may have more than one child. This one is easily fixed by realizing that the arrow should go the other way: there is a function $\fakebox{a child}\To{\tn{has}}\fakebox{a father}$. 
 
-What about $\fakebox{a person}\To{\tn{owns}}\fakebox{a car}$. Again, a person may own no cars or more than one car, but this time a car can be owned by more than one person too. A quick fix would be to replace it by $\fakebox{a person}\To{\tn{owns}}\fakebox{a set of cars}$.   This is ok, but the relationship between \fakebox{a car} and \fakebox{a set of cars} then becomes an issue to deal with later.  There is another way to indicate such ``non-functional" relationships. In this case it would look like this:
+多くの函数的ばない関係が存在しており, それらは様相とみなすことはできない. しばしば単語``has''は関係を示唆している---ある時は$\fakebox{a person}\To{\tn{ has }}\fakebox{a stomach}$でみられるように函数的であるし, またある時は$\fakebox{a father}\To{\tn{has}}\fakebox{a child}$でみられるように函数的ではない. 明らかに, 父親は二人以上の子を持つかもしれない. この図は, 矢印を別の方向に走らせればよいということに気がつくことによって簡単に修正される. 函数$\fakebox{a child}\To{\tn{has}}\fakebox{a father}$があるからだ.
+
+%What about $\fakebox{a person}\To{\tn{owns}}\fakebox{a car}$. Again, a person may own no cars or more than one car, but this time a car can be owned by more than one person too. A quick fix would be to replace it by $\fakebox{a person}\To{\tn{owns}}\fakebox{a set of cars}$.   This is ok, but the relationship between \fakebox{a car} and \fakebox{a set of cars} then becomes an issue to deal with later.  There is another way to indicate such ``non-functional" relationships. In this case it would look like this:
+%$$
+%\fbox{\xymatrix{&\obox{}{1.15in}{a pair $(p,c)$ where $p$ is a person, $c$ is a car, and $p$ owns $c$.}\ar[ddl]_p\ar[ddr]^c\\\\
+%\obox{}{.5in}{a person}&&\obox{}{.3in}{a car}}}
+%$$
+%This setup will ensure that everything is properly organized. In general, relationships can involve more than two types, and the general situation looks like this $$\fbox{\xymatrixnocompile{&&\fbox{$R$}\ar[ddll]\ar[ddl]\ar[ddr]\\\\\fbox{$A_1$}&\fbox{$A_2$}&\cdots&\fbox{$A_n$}}}$$  For example, $$\fbox{\xymatrixnocompile{&\labox{R}{a sequence $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}\ar[ddl]_p\ar[dd]_a\ar[ddr]^j\\\\\smbox{A_1}{a paper}&\smbox{A_2}{an author}&\smbox{A_3}{a journal}}}$$ 
+
+$\fakebox{a person}\To{\tn{owns}}\fakebox{a car}$の場合はどうだろうか. ある人物は一台も車を持っていないかもしれないし二台以上持っているかもしれない. しかしこの場合には, ある車は二人以上の人物に所有されているかもしれない. 手短に修正するならば$\fakebox{a person}\To{\tn{owns}}\fakebox{a set of cars}$で置き換えればよいかもしれない. これはこれでよいが, しかし今度は\fakebox{a car}と\fakebox{a set of cars}との間の関係性が, 後々処理すべき問題となる. このような``函数的ではない''関係性を指示するには他の方法もある. この場合は以下のようになるだろう.
 $$
 \fbox{\xymatrix{&\obox{}{1.15in}{a pair $(p,c)$ where $p$ is a person, $c$ is a car, and $p$ owns $c$.}\ar[ddl]_p\ar[ddr]^c\\\\
 \obox{}{.5in}{a person}&&\obox{}{.3in}{a car}}}
 $$
-This setup will ensure that everything is properly organized. In general, relationships can involve more than two types, and the general situation looks like this $$\fbox{\xymatrixnocompile{&&\fbox{$R$}\ar[ddll]\ar[ddl]\ar[ddr]\\\\\fbox{$A_1$}&\fbox{$A_2$}&\cdots&\fbox{$A_n$}}}$$  For example, $$\fbox{\xymatrixnocompile{&\labox{R}{a sequence $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}\ar[ddl]_p\ar[dd]_a\ar[ddr]^j\\\\\smbox{A_1}{a paper}&\smbox{A_2}{an author}&\smbox{A_3}{a journal}}}$$ 
+この設定は全てが適切に組織されていることを保証するであろう. 一般に, 関係性には二つ以上の型が関わることがあり, これら一般の状況は以下のように見ることができる
+$$\fbox{\xymatrixnocompile{&&\fbox{$R$}\ar[ddll]\ar[ddl]\ar[ddr]\\\\\fbox{$A_1$}&\fbox{$A_2$}&\cdots&\fbox{$A_n$}}}$$ 例えば, $$\fbox{\xymatrixnocompile{&\labox{R}{a sequence $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}\ar[ddl]_p\ar[dd]_a\ar[ddr]^j\\\\\smbox{A_1}{a paper}&\smbox{A_2}{an author}&\smbox{A_3}{a journal}}}$$
+
 
 \begin{exercise}
-On page \pageref{dia:invalid 1} we indicate a so-called invalid aspect, namely 
-\begin{align}\tag{\ref{dia:invalid 1}}\xymatrixnocompile{\fbox{a person}\LA{r}{has}&\fbox{a child}}
-\end{align}
-Create a (valid) olog that captures the parent-child relationship; your olog should still have boxes \fakebox{a person} and \fakebox{a child} but may have an additional box.
+%On page \pageref{dia:invalid 1} we indicate a so-called invalid aspect, namely 
+%\begin{align}\tag{\ref{dia:invalid 1}}\xymatrixnocompile{\fbox{a person}\LA{r}{has}&\fbox{a child}}
+%\end{align}
+%Create a (valid) olog that captures the parent-child relationship; your olog should still have boxes %\fakebox{a person} and \fakebox{a child} but may have an additional box.
+\pageref{dia:invalid 1}で我々はいわゆる無効な様相, すなわち\begin{align}\tag{\ref{dia:invalid 1}}\xymatrixnocompile{\fbox{a person}\LA{r}{has}&\fbox{a child}}\end{align}を指摘した.
+両親-子供の関係を捉えた(有効な)ologを作成せよ. 作成されたologは依然\fakebox{a person}および\fakebox{a child}を持っているべきだが, 追加の箱も持っているかもしれない.
 \end{exercise}
 
 \begin{rules}\label{rules:aspects}\index{olog!rules}
 
-An aspect is presented as a labeled arrow, pointing from a source box to a target box.  The arrow text should
+%An aspect is presented as a labeled arrow, pointing from a source box to a target box.  The arrow text should
+
+様相は, 出発元から到着先を指し示す見出し付けられた矢印として表示される. 矢印の文章は以下を守ることが望ましい.
+
+%\begin{enumerate}[(i)]
+%\item begin with a verb;
+%\item yield an English sentence, when the source-box text followed by the arrow text followed by the target-box text is read; and
+%\item refer to a functional relationship: each instance of the source type should give rise to a specific instance of the target type.
+%\end{enumerate}
 
 \begin{enumerate}[(i)]
-\item begin with a verb;
-\item yield an English sentence, when the source-box text followed by the arrow text followed by the target-box text is read; and
-\item refer to a functional relationship: each instance of the source type should give rise to a specific instance of the target type.
+\item 動詞から始まるべし.
+\item 出発元の箱の文書, 矢印の文書, 到着先の箱の文書の順で読んだとき, 英語の文書がもたらされるべし. 
+\item 函数的な関係が適用されるべし. すなわち出発元の型の具体例は, 到着先の型のある特定の具体例をもたらすべし.
 \end{enumerate}
 
 \end{rules}
 
 %%%% Subsection %%%%
 
-\subsection{Facts}\label{sec:facts}\index{olog!facts}
+%\subsection{Facts}\label{sec:facts}\index{olog!facts}
+\subsection{事実}\label{sec:facts}\index{olog!facts}
 
-In this section I will discuss facts, which are simply ``path equivalences" in an olog. It is the notion of path equivalences that make category theory so powerful. 
+%In this section I will discuss facts, which are simply ``path equivalences" in an olog. It is the notion of path equivalences that make category theory so powerful. 
 
-A {\em path}\index{olog!path in} in an olog is a head-to-tail sequence of arrows. That is, any path starts at some box $B_0$, then follows an arrow emanating from $B_0$ (moving in the appropriate direction), at which point it lands at another box $B_1$, then follows any arrow emanating from $B_1$, etc, eventually landing at a box $B_n$ and stopping there. The number of arrows is the {\em length} of the path. So a path of length 1 is just an arrow, and a path of length 0 is just a box. We call $B_0$ the {\em source} and $B_n$ the {\em target} of the path.
+この章では``事実(fact)''について議論したい. ologにおいて事実とは単純に``経路等価性(path equivalences)''である. 経路等価性の概念こそが圏論をかくも強力なものとしている.
 
-Given an olog, the author may want to declare that two paths are equivalent.  For example consider the two paths from $A$ to $C$ in the olog 
-\begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has as parents}\LAL{drr}{\parbox{.8in}{has as mother}}&&\obox{B}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\ar@{}[dll]|(.4){\checkmark}\LA{d}{yields as $w$}\\&&\smbox{C}{a woman}}}\end{align}  We know as English speakers that a woman parent is called a mother, so these two paths $A\to C$ should be equivalent.  A more mathematical way to say this is that the triangle in Olog (\ref{olog:commute}) {\em commutes}. That is, path equivalences are simply commutative diagrams as in Section \ref{sec:comm diag}. In the example above we concisely say ``a woman parent is equivalent to a mother."  We declare this by defining the diagonal map in (\ref{olog:commute}) to be {\em the composition} of the horizontal map and the vertical map. 
+%A {\em path}\index{olog!path in} in an olog is a head-to-tail sequence of arrows. That is, any path starts at some box $B_0$, then follows an arrow emanating from $B_0$ (moving in the appropriate direction), at which point it lands at another box $B_1$, then follows any arrow emanating from $B_1$, etc, eventually landing at a box $B_n$ and stopping there. The number of arrows is the {\em length} of the path. So a path of length 1 is just an arrow, and a path of length 0 is just a box. We call $B_0$ the {\em source} and $B_n$ the {\em target} of the path.
 
-I generally prefer to indicate a commutative diagram by drawing a check-mark, $\checkmark$, in the region bounded by the two paths, as in Olog (\ref{olog:commute}).  Sometimes, however, one cannot do this unambiguously on the 2-dimensional page.  In such a case I will indicate the commutative diagrams (fact) by writing an equation.  For example to say that the diagram $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ commutes, we could either draw a checkmark inside the square or write the equation $A\;f\;g\simeq A\;h\;i$ above it\index{a symbol!$\simeq$}.
-\footnote{We defined function composition on page \ref{function composition}, but here we're using a different notation.\index{a warning!notation for composition} There we would have said $g\circ f = i\circ h$, which is in the backwards-seeming {\em classical order}.\index{composition!classical order} Category theorists and others often prefer the {\em diagrammatic order}\index{composition!diagrammatic order} for writing compositions, which is $f;g = h;i$. For ologs, we follow the latter because it makes for better English sentences, and for the same reason we add the source object to the equation, writing $A f g \simeq A h i$.}
-  Either way, it means that ``$f$ then $g$" is equivalent to ``$h$ then $i$".  
+ologにおいて\emph{経路(path)}\index{olog!path in}とは矢印の先頭から末尾までの列である. これはすなわち, ある箱から$B_0$から出発する任意の経路は$B_0$を出発し, $B_0$から(適切な方向に向かって)発せられる矢印が直後に続き, その矢印が指すところの他の箱$B_1$に到着し, さらに$B_1$から発せられる任意の矢印が後に続き, これらが繰り返された後, ある箱$B_n$に到着しそこで終了する. 矢印の数は経路の\emph{長さ(length)}である. よって長さ1の経路は単なる矢印であり, 長さ0の経路は単なる箱である. 我々は$B_0$を経路の\emph{源泉(source)}, $B_n$を経路の\emph{標的(target)}と呼ぶことにする.
 
-Here is another, more scientific example:
+%Given an olog, the author may want to declare that two paths are equivalent.  For example consider the two paths from $A$ to $C$ in the olog 
+%\begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has as parents}\LAL{drr}{\parbox{.8in}{has as mother}}&&\obox{B}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\ar@{}[dll]|(.4){\checkmark}\LA{d}{yields as $w$}\\&&\smbox{C}{a woman}}}\end{align}  We know as English speakers that a woman parent is called a mother, so these two paths $A\to C$ should be equvalent.  A more mathematical way to say this is that the triangle in Olog (\ref{olog:commute}) {\em commutes}. That is, path equivalences are simply commutative diagrams as in Section \ref{sec:comm diag}. In the example above we concisely say ``a woman parent is equivalent to a mother."  We declare this by defining the diagonal map in (\ref{olog:commute}) to be {\em the composition} of the horizontal map and the vertical map. 
+
+ologが与えられた時, 作者は二つの経路が等価であると明確に述べたくなるかもしれない. 例えば, 以下のologでの$A$から$C$への二つの経路を考えてみる.
+\begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has as parents}\LAL{drr}{\parbox{.8in}{has as mother}}&&\obox{B}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\ar@{}[dll]|(.4){\checkmark}\LA{d}{yields as $w$}\\&&\smbox{C}{a woman}}}\end{align} 我々は英語話者として女性の親は母と呼ばれることを知っている. よって$A$から$C$への経路は等価であるべきである. より数学的な言い方では, Olog \eqref{olog:commute}は{可換である(commute)}. すなわち, 経路等価性とは
+単純に\ref{sec:comm diag}章での可換図式である. 上記の例では我々はconcisely``a woman parent is equivalent to a mother''と言える. これを明確に述べるには, 我々は\eqref{olog:commute}での対角線の写像が水平な写像と垂直な写像の\emph{合成(composition)}として定義するとする.
+
+%I generally prefer to indicate a commutative diagram by drawing a check-mark, $\checkmark$, in the region bounded by the two paths, as in Olog (\ref{olog:commute}).  Sometimes, however, one cannot do this unambiguously on the 2-dimensional page.  In such a case I will indicate the commutative diagrams (fact) by writing an equation.  For example to say that the diagram $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ commutes, we could either draw a checkmark inside the square or write the equation $A\;f\;g\simeq A\;h\;i$ above it\index{a symbol!$\simeq$}.
+%\footnote{We defined function composition on page \ref{function composition}, but here we're using a different notation.\index{a warning!notation for composition} There we would have said $g\circ f = i\circ h$, which is in the backwards-seeming {\em classical order}.\index{composition!classical order} Category theorists and others often prefer the {\em diagrammatic order}\index{composition!diagrammatic order} for writing compositions, which is $f;g = h;i$. For ologs, we follow the latter because it makes for better English sentences, and for the same reason we add the source object to the equation, writing $A f g \simeq A h i$.}
+% Either way, it means that ``$f$ then $g$" is equivalent to ``$h$ then $i$".  
+
+著者は, Olog \eqref{olog:commute}でのように, 二つの経路に囲まれた領域の中にチェックマーク$\checkmark$を描くことによって可換図式をしめす記法を一般的に好んでいる. しかしながら, 二次元的な紙の上では, しばしばこれを曖昧なく行うことが不可能になる. このような場合, 可換図式(事実)を等式の形で示すことにしよう. 例えば, 図式$$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$が可換であると言うために, 我々は四角の中にチェックマークを描くか, あるいは等式$A\;f\;g\simeq A\;h\;i$を図の上に書く\index{a symbol!$\simeq$}.
+\footnote{我々は\ref{function composition}ページで函数合成を定義したが, ここでは異なった記法を使っている.\index{a warning!notation for composition} \eqref{function composition}ページの記法では$g\circ f = i\circ h$となったであろう. これは後ろからみていく(backwards-seeming) \emph{古典的な順番(classcal order)}である.\index{composition!classical order} 圏論の理論家を代表とする人々は, 合成を書くときにしばしば\emph{図式的な順序(diagrammatic order)}\index{composition!diagrammatic order}を好む. これは$f;g=h;i$である. ologに対しては, 我々は後者を使う. なぜならば後者はよりよく英文になるからである. 同じ理由で等式に源泉の箱を追加して, $A f g \simeq A h i$と書くことにする.
+}
+どちらの方法をとっても, 意味するところは``$f$ then $g$''と``$h$ then $i$''は等しいということである..  
+
+%Here is another, more scientific example:
+%\begin{align*}
+%\fbox{\xymatrix{
+%\obox{}{1in}{a DNA sequence}\LA{rr}{is transcribed to}\LAL{drr}{codes for}&\hspace{.1in}&\obox{}{1.1in}{an RNA sequence}\ar@{}[dll]|(.35){\checkmark}\LA{d}{is translated to}\\
+%&&\obox{}{.6in}{a protein}}}
+%\end{align*}
+%Note how this diagram gives us the established terminology for the various ways in which DNA, RNA, and protein are related in this context.
+
+また別の, より科学的な例を挙げる.
 \begin{align*}
 \fbox{\xymatrix{
 \obox{}{1in}{a DNA sequence}\LA{rr}{is transcribed to}\LAL{drr}{codes for}&\hspace{.1in}&\obox{}{1.1in}{an RNA sequence}\ar@{}[dll]|(.35){\checkmark}\LA{d}{is translated to}\\
 &&\obox{}{.6in}{a protein}}}
 \end{align*}
-Note how this diagram gives us the established terminology for the various ways in which DNA, RNA, and protein are related in this context.
+この図によって, DNA, RNA, タンパク質がこの文脈において関係しているところの様々な面で確立している用語が与えられる.
 
 \begin{exercise}\label{exc:family olog}
 
-Create an olog for human nuclear biological families that includes the concept of person, man, woman, parent, father, mother, and child. Make sure to label all the arrows, and make sure each arrow indicates a valid aspect in the sense of Section \ref{sec:invalid aspect}. Indicate with check-marks ($\checkmark$) the diagrams that are intended to commute. If the 2-dimensionality of the page prevents a check-mark from being unambiguous, indicate the intended commutativity with an equation.
+%Create an olog for human nuclear biological families that includes the concept of person, man, woman, parent, father, mother, and child. Make sure to label all the arrows, and make sure each arrow indicates a valid aspect in the sense of Section \ref{sec:invalid aspect}. Indicate with check-marks ($\checkmark$) the diagrams that are intended to commute. If the 2-dimensionality of the page prevents a check-mark from being unambiguous, indicate the intended commutativity with an equation.
+
+男性(man), 女性(woman), 親(parent), 父(father), 母(mother), 子(child)という概念を含んだ, 人間個体の生物的家族のologを作成せよ. 全ての矢印には見出しがつけられていることを確認し, それぞれの矢印は\ref{sec:invalid aspect}章での意味において有効な様相を表していることを確認せよ. 可換図式を意図した図をチェックマーク($\checkmark$)で示せ. もし曖昧さなくチェックマークをつけることが紙の二次元性のせいでできない場合は意図した可換性を等式で示せ.
 \end{exercise}
 
 \begin{example}[Non-commuting diagram]
 
-In my conception of the world, the following diagram does not commute:
+%In my conception of the world, the following diagram does not commute:
+%\begin{align}\label{dia:non-commuting}
+%\xymatrixnocompile@=50pt{\obox{}{.5in}{a person}\LA{r}{has as father}\LAL{dr}{lives in}&\obox{}{.4in}{a man}\LA{d}{lives in}\\&\obox{}{.4in}{a city}}
+%\end{align}
+%The non-commutativity of Diagram (\ref{dia:non-commuting}) does not imply that, in my conception, no person lives in the same city as his or her father. Rather it implies that, in my conception, it is not the case that {\em every} person lives in the same city as his or her father.
+
+著者の世界に関する概念においては, 次の図式は可換ではない.
 \begin{align}\label{dia:non-commuting}
 \xymatrixnocompile@=50pt{\obox{}{.5in}{a person}\LA{r}{has as father}\LAL{dr}{lives in}&\obox{}{.4in}{a man}\LA{d}{lives in}\\&\obox{}{.4in}{a city}}
 \end{align}
-The non-commutativity of Diagram (\ref{dia:non-commuting}) does not imply that, in my conception, no person lives in the same city as his or her father. Rather it implies that, in my conception, it is not the case that {\em every} person lives in the same city as his or her father.
+Diagram \eqref{dia:non-commuting}での非可換性は, 著者の概念において, その人の父と同じ都市に住む人物がいないということを含意しているわけではない. そうではなくて, 著者の概念において, \emph{全ての}人物がその人の父と同じ都市に住むとは限らないということを含意している.
 
 \end{example}
 
 \begin{exercise}
-Create an olog about a scientific subject, preferably one you think about often. The olog should have at least five boxes, five arrows, and one commutative diagram. 
+%Create an olog about a scientific subject, preferably one you think about often. The olog should have at least five boxes, five arrows, and one commutative diagram. 
+
+科学的な話題, 望ましくは読者がよく考える対象についてのologを作成せよ. 作成するologには最低でも5つの箱, 5本の矢印, そして１つの可換図式を含めること.
 \end{exercise}
 
 %% Subsubsection %%
