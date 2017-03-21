@@ -882,3 +882,341 @@ $$
 \end{exercise}
 
 
+%%%%%% Section %%%%%%
+
+%\section{Products and coproducts}\label{sec:prods and coprods in set}
+\section{積と余積}\label{sec:prods and coprods in set}
+
+%In this section we introduce two concepts that are likely to be familiar, although perhaps not by their category-theoretic names, product and coproduct. Each is an example of a large class of ideas that exist far beyond the realm of sets.
+
+この章で我々は, 圏論的な名前はそうでもないかもしれないが, おそらくは馴染み深いであろう二つの概念, 積と余積を導入する. それぞれは集合の領域を超えて存在しているアイデアの大きな種類の一つの例となっている.
+
+%%%% Subsection %%%%
+
+%\subsection{Products}\label{sec:products}\index{products!of sets}
+\subsection{積}\label{sec:products}\index{products!of sets}
+
+\begin{definition}
+
+%Let $X$ and $Y$ be sets. The {\em product of $X$ and $Y$}, denoted $X\times Y$,\index{a symbol!$\times$} is defined as the set of ordered pairs $(x,y)$ where $x\in X$ and $y\in Y$. Symbolically, $$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}.$$ There are two natural {\em projection functions} $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$.\index{projection functions}\index{product!projection functions}
+$$\xymatrix@=15pt{&X\times Y\ar[ddr]^{\pi_2}\ar[ddl]_{\pi_1}\\\\X&&Y}$$
+
+$X$と$Y$を集合とする. \emph{$X$と$Y$の積(product of $X$ and $Y$)}を, 順序付きの対の集合$(x,y)$と定義し, $X\times Y$\index{a symbol!$\times$}と書く. ここで$x\in X$および$y\in Y$である. 記号的に書くと$$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}$$である. 二つの自然な\emph{射影函数(projection functions)} $\pi_1\taking X\times Y\to X$と$\pi_2\taking X\times Y\to Y$が存在する. \index{projection functions}\index{product!projection functions}
+$$\xymatrix@=15pt{&X\times Y\ar[ddr]^{\pi_2}\ar[ddl]_{\pi_1}\\\\X&&Y}$$
+
+\end{definition}
+
+\begin{example}\label{ex:grid1}[Grid of dots]\index{product!as grid}
+
+%Let $X=\{1,2,3,4,5,6\}$ and $Y=\{\clubsuit,\diamondsuit,\heartsuit,\spadesuit\}$. Then we can draw $X\times Y$ as a 6-by-4 grid of dots, and the projections as projections
+$X=\{1,2,3,4,5,6\}$および$Y=\{\clubsuit,\diamondsuit,\heartsuit,\spadesuit\}$とする. $X\times Y$は$6\times4$の点の配列として書くことができ, 射影函数は以下の射影となる.
+\begin{align}
+\parbox{2.9in}{\begin{center}\small $X\times Y$\vspace{-.1in}\end{center}\fbox{
+\xymatrix@=10pt{
+\LMO{(1,\clubsuit)}&\LMO{(2,\clubsuit)}&\LMO{(3,\clubsuit)}&\LMO{(4,\clubsuit)}&\LMO{(5,\clubsuit)}&\LMO{(6,\clubsuit)}\\
+\LMO{(1,\diamondsuit)}&\LMO{(2,\diamondsuit)}&\LMO{(3,\diamondsuit)}&\LMO{(4,\diamondsuit)}&\LMO{(5,\diamondsuit)}&\LMO{(6,\diamondsuit)}\\
+\LMO{(1,\heartsuit)}&\LMO{(2,\heartsuit)}&\LMO{(3,\heartsuit)}&\LMO{(4,\heartsuit)}&\LMO{(5,\heartsuit)}&\LMO{(6,\heartsuit)}\\
+\LMO{(1,\spadesuit)}&\LMO{(2,\spadesuit)}&\LMO{(3,\spadesuit)}&\LMO{(4,\spadesuit)}&\LMO{(5,\spadesuit)}&\LMO{(6,\spadesuit)}\\
+}}}
+\parbox{.9in}{
+\xymatrix{~\ar[rr]^{\pi_2}&&~}
+}
+\parbox{.3in}{\begin{center}\small $Y$\vspace{-.1in}\end{center}\fbox{
+\xymatrix@=10pt{
+\LMO{\clubsuit}\\\LMO{\diamondsuit}\\\LMO{\heartsuit}\\\LMO{\spadesuit}
+}}}
+\\\nonumber
+\parbox{1in}{\hspace{-1.95in}\xymatrix{~\ar[dd]_{\pi_1}\\\\~}}
+\\\nonumber
+\parbox{2.9in}{\hspace{-1.2in}\fbox{
+\xymatrix@=24pt{
+\LMO{1}&\LMO{2}&\LMO{3}&\LMO{4}&\LMO{5}&\LMO{6}
+}}\begin{center}\hspace{-2.6in}\small$X$\end{center}}
+\end{align}
+
+\end{example}
+
+\begin{application}
+A traditional (Mendelian) way to predict the genotype of offspring based on the genotype of its parents is by the use of \href{http://en.wikipedia.org/wiki/Punnett_square}{Punnett squares}. If $F$ is the set of possible genotypes for the female parent and $M$ is the set of possible genotypes of the male parent, then $F\times M$ is drawn as a square, called a Punnett square, in which every combination is drawn. 
+\end{application}
+
+\begin{exercise}
+How many elements does the set $\{a,b,c,d\}\times\{1,2,3\}$ have?
+\end{exercise}
+
+\begin{application}
+
+Suppose we are conducting experiments about the mechanical properties of materials, as in Application \ref{app:force-extension}. For each material sample we will produce multiple data points in the set $\fakebox{extension}\times\fakebox{force}\iso\RR\times\RR$.
+
+\end{application}
+
+\begin{remark}
+
+It is possible to take the product of more than two sets as well. For example, if $A,B,$ and $C$ are sets then $A\times B\times C$ is the set of triples, 
+$$A\times B\times C:=\{(a,b,c)\|a\in A, b\in B, c\in C\}.$$
+
+This kind of generality is useful in understanding multiple dimensions, e.g. what physicists mean by 10-dimensional space. It comes under the heading of {\em limits}, which we will see in Section \ref{sec:lims and colims in a cat}.
+
+\end{remark}
+
+\begin{example}\label{ex:R2}
+
+Let $\RR$\index{a symbol!$\RR$} be the set of real numbers. By $\RR^2$ we mean $\RR\times\RR$ (though see Exercise \ref{exc:two R2s}). Similarly, for any $n\in\NN$, we define $\RR^n$ to be the product of $n$ copies of $\RR$. 
+
+According to \cite{Pen}, Aristotle seems to have conceived of space as something like $S:=\RR^3$ and of time as something like $T:=\RR$. Spacetime, had he conceived of it, would probably have been $S\times T\iso\RR^4$. He of course did not have access to this kind of abstraction, which was probably due to Descartes. 
+
+\end{example}
+
+\begin{exercise}
+Let $\ZZ$ denote the set of integers, and let $+\taking\ZZ\times\ZZ\to\ZZ$ denote the addition function and $\cdot\taking\ZZ\times\ZZ\to\ZZ$ denote the multiplication function. Which of the following diagrams commute?
+\sexc $$\xymatrix{
+\ZZ\times\ZZ\times\ZZ\ar[rr]^-{(a,b,c)\mapsto(a\cdot b,a\cdot c)}\ar[d]_{(a,b,c)\mapsto(a+b,c)}&\hsp&\ZZ\times\ZZ\ar[d]^{(x,y)\mapsto x+y}\\
+\ZZ\times\ZZ\ar[rr]_{(x,y)\mapsto xy}&&\ZZ}
+$$
+\next $$
+\xymatrix{
+\ZZ\ar[rr]^{x\mapsto (x,0)}\ar[drr]_{\id_\ZZ}&&\ZZ\times\ZZ\ar[d]^{(a,b)\mapsto a\cdot b}\\&&\ZZ}
+$$
+\next$$
+\xymatrix{
+\ZZ\ar[rr]^{x\mapsto (x,1)}\ar[drr]_{\id_\ZZ}&&\ZZ\times\ZZ\ar[d]^{(a,b)\mapsto a\cdot b}\\&&\ZZ}
+$$
+\endsexc
+\end{exercise}
+
+%% Subsubsection %%
+
+\subsubsection{Universal property for products}\index{products!universal property of}\index{universal property!products}
+
+\begin{lemma}[Universal property for product]\label{lemma:up for prod}
+
+Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ such that the following diagram commutes \footnote{The symbol $\forall$ is read ``for all"; the symbol $\exists$ is read ``there exists", and the symbol $\exists!$ is read ``there exists a unique". So this diagram is intended to express the idea that for any functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ for which the two triangles commute.}
+\begin{align}\label{dia:univ prop for products}
+\xymatrix@=15pt{&X\times Y\ar[ldd]_{\pi_1}\ar[rdd]^{\pi_2}\\\\X\ar@{}[r]|{\checkmark}&&Y\ar@{}[l]|{\checkmark}\\\\&A\ar[luu]^{\forall f}\ar[ruu]_{\forall g}\ar@{-->}[uuuu]^{\exists !}}
+\end{align}
+We might write the unique function as $$\prodmap{f}{g}\taking A\to X\times Y.$$
+
+\end{lemma}
+
+\begin{proof}
+
+Suppose given $f,g$ as above. To provide a function $\ell\taking A\to X\times Y$ is equivalent to providing an element $\ell(a)\in X\times Y$ for each $a\in A$. We need such a function for which $\pi_1\circ \ell=f$ and $\pi_2\circ \ell=g$. An element of $X\times Y$ is an ordered pair $(x,y)$, and we can use $\ell(a)=(x,y)$ if and only if $x=\pi_1(x,y)=f(a)$ and $y=\pi_2(x,y)=g(a)$. So it is necessary and sufficient to define $$\prodmap{f}{g}(a):=(f(a),g(a))$$ for all $a\in A$.
+
+\end{proof}
+
+\begin{example}[Grid of dots, continued]\label{ex:grid2}
+
+We need to see the universal property of products as completely intuitive. Recall that if $X$ and $Y$ are sets, say of cardinalities $|X|=m$ and $|Y|=n$ respectively, then $X\times Y$ is an $m\times n$ grid of dots, and it comes with two canonical projections $X\From{\pi_1}X\times Y\To{\pi_2}Y$. These allow us to extract from every grid element $z\in X\times Y$ its column $\pi_1(z)\in X$ and its row $\pi_2(z)\in Y$.
+
+Suppose that each person in a classroom picks an element of $X$ and an element of $Y$. Thus we have functions $f\taking C\to X$ and $g\taking C\to Y$. But isn't picking a column and a row the same thing as picking an element in the grid? The two functions $f$ and $g$ induce a unique function $C\to X\times Y$. And how does this function $C\to X\times Y$ compare with the original functions $f$ and $g$? The commutative diagram (\ref{dia:univ prop for products}) sums up the obvious connection. 
+
+\end{example}
+
+\begin{example}
+
+Let $\RR$ be the set of real numbers. The origin in $\RR$ is an element of $\RR$. As you showed in Exercise \ref{exc:generator for set}, we can view this (or any) element of $\RR$ as a function $z\taking\singleton\to\RR$, where $\singleton$ is any set with one element. Our function $z$ ``picks out the origin". Thus we can draw functions 
+$$\xymatrix@=15pt{&\singleton\ar[ddr]^z\ar[ddl]_z\\\\\RR&&\RR}
+$$
+The universal property for products guarantees a function $\singleton\to\RR\times\RR$, which will be the origin in $\RR^2.$
+
+\end{example}
+
+\begin{remark}
+
+Given sets $X, Y,$ and $A$, and functions $f\taking A\to X$ and $g\taking A\to Y$, there is a unique function $A\to X\times Y$ that commutes with $f$ and $g$. We call it {\em the induced function $A\to X\times Y$},\index{induced function} meaning the one that arises in light of $f$ and $g$.
+
+\end{remark}
+
+\begin{exercise}
+For every set $A$ there is some nice relationship between the following three sets: $$\Hom_{\Set}(A,X), \hsp \Hom_\Set(A,Y), \hsp \text{and} \hsp\Hom_\Set(A,X\times Y).$$ What is it?
+
+Hint: Do not be alarmed: this problem is a bit ``recursive" in that you'll use products in your formula.
+\end{exercise}
+
+\begin{exercise}~
+\sexc Let $X$ and $Y$ be sets. Construct the ``swap map" $s\taking X\times Y\to Y\times X$ using only the universal property for products. If $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$ are the projection functions, write $s$ in terms of the symbols $``\pi_1",``\pi_2", ``(\ ,\ )",$ and $``\circ"$. 
+\next Can you prove that $s$ is a isomorphism using only the universal property for product?
+\endsexc
+\end{exercise}
+
+\begin{example}\label{ex:product to product}
+Suppose given sets $X,X', Y, Y'$ and functions $m\taking X\to X'$ and $n\taking Y\to Y'$. We can use the universal property of products to construct a function $s\taking X\times Y\to X'\times Y'$.  Here's how.
+
+The universal property (Lemma \ref{lemma:up for prod}) says that to get a function from any set $A$ to $X'\times Y'$, we need two functions, namely some $f\taking A\to X'$ and some $g\taking A\to Y'$. Here $A=X\times Y$. 
+
+What we have readily available are the two projections $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$. But we also have $m\taking X\to X'$ and $n\taking Y\to Y'$. Composing, we set $f:=m\circ \pi_1$ and $g:=n\circ\pi_2$.
+$$\xymatrix{
+&X'\times Y'\ar[dl]_{\pi_1'}\ar[dr]^{\pi_2'}\\
+X'&&Y'\\
+X\ar[u]^m&&Y\ar[u]_n\\
+&X\times Y\ar[ul]^{\pi_1}\ar[ur]_{\pi_2}\ar@{-->}[uuu]
+}
+$$
+The dotted arrow is often called the {\em product} of $m\taking X\to X'$ and $n\taking Y\to Y'$ and is denoted simply by 
+$$m\times n\taking X\times Y\to X'\times Y'.$$
+
+\end{example}
+
+%% Subsubsection %%
+
+\subsubsection{Ologging products}\label{sec:ologging products}
+
+Given two objects $c,d$ in an olog, there is a canonical label $\qt{c\times d}$ for their product $c\times d$, written in terms of the labels $\qt{c}$ and $\qt{d}$. Namely, $$\qt{c\times d}:=\tn{a pair }(x,y)\tn{ where }x\tn{ is }\qt{c}\tn{ and }y\tn{ is }\qt{d}.$$ The projections $c\from c\times d\to d$ can be labeled ``yields, as $x$," and ``yields, as $y$," respectively.
+
+Suppose that $e$ is another object and $p\taking e\to c$ and $q\taking e\to d$ are two arrows. By the universal property of products (Lemma \ref{lemma:up for prod}), $p$ and $q$ induce a unique arrow $e\to c\times d$ making the evident diagrams commute. This arrow can be labeled
+\begin{center}
+yields, insofar as it $\qt{p}\;\qt{c}$ and $\qt{q}\;\qt{d}$, 
+\end{center}
+
+\begin{example}
+
+Every car owner owns at least one car, but there is no obvious function $\fakebox{a car owner}\to\fakebox{a car}$ because he or she may own more than one. One good choice would be the car that the person drives most often, which we'll call his or her primary car. Also, given a person and a car, an economist could ask how much utility the person would get out of the car. From all this we can put together the following olog involving products:
+$$
+\xymatrixnocompile{\obox{O}{.7in}{a car owner}\LAL{dd}{is}\ar[ddrr]_(.35){\parbox{.45in}{\scriptsize owns, as primary,}}\LA{rr}{\parbox{.8in}{\rr\scriptsize yields, insofar as it is a person and owns, as primary, a car,}}&\ar@{}[d]^(.4){\checkmark}&
+\obox{P\times C}{1in}{a pair $(x,y)$ where $x$ is a person and $y$ is a car}\ar@/^1pc/[ddll]^(.7){\tn{yields, as }x,}\LA{dd}{\tn{yields, as }y,}\LA{rr}{\parbox{.7in}{\scriptsize has as associated utility}}&&\obox{V}{.8in}{a dollar value}\\&&\\\obox{P}{.5in}{a person}&&\obox{C}{.4in}{a car}
+}
+$$
+
+\end{example}
+
+%%%% Subsection %%%%
+
+\subsection{Coproducts}\label{sec:coproducts}\index{coproducts!of sets}
+
+\begin{definition}\label{def:coproduct}
+
+Let $X$ and $Y$ be sets. The {\em coproduct of $X$ and $Y$}, denoted $X\sqcup Y$,\index{a symbol!$\sqcup$} is defined as the ``disjoint union" of $X$ and $Y$, i.e. the set for which an element is either an element of $X$ or an element of $Y$. If something is an element of both $X$ and $Y$ then we include both copies, and distinguish between them, in $X\sqcup Y$. See Example \ref{ex:coproduct}
+
+There are two natural inclusion functions $i_1\taking X\to X\sqcup Y$ and $i_2\taking Y\to X\sqcup Y$.\index{inclusion functions}\index{coproduct!inclusion functions}
+$$\xymatrix@=15pt{X\ar[ddr]_{i_1}&&Y\ar[ddl]^{i_2}\\\\&X\sqcup Y}$$
+
+\end{definition}
+
+\begin{example}\label{ex:coproduct}
+
+The coproduct of $X:=\{a,b,c,d\}$ and $Y:=\{1,2,3\}$ is $$X\sqcup Y\iso\{a,b,c,d,1,2,3\}.$$ The coproduct of $X$ and itself is $$X\sqcup X\iso\{i_1a,i_1b,i_1c,i_1d,i_2a,i_2b,i_2c,i_2d\}$$ 
+The names of the elements in $X\sqcup Y$ are not so important. What's important are the inclusion maps $i_1,i_2$, which ensure that we know where each element of $X\sqcup Y$ came from.
+
+\end{example}
+
+\begin{example}[Airplane seats]\label{ex:airplanes}
+
+\begin{align}\label{dia:airplane}
+\xymatrix@=15pt{
+\obox{X}{.8in}{an economy-class seat in an airplane}\LAL{ddr}{is}&&\obox{Y}{.7in}{a first-class seat in an airplane}\LA{ddl}{is}\\\\
+&\obox{X\sqcup Y}{.7in}{a seat in an airplane}
+}
+\end{align}
+
+\end{example}
+
+\begin{exercise}
+Would you say that \fakebox{a phone} is the coproduct of \fakebox{a cellphone} and \fakebox{a landline phone}? 
+\end{exercise}
+
+\begin{example}[Disjoint union of dots]\label{ex:coprod of dots}
+
+\begin{align}
+\parbox{2.4in}{\begin{center}\small $X\sqcup Y$\vspace{-.1in}\end{center}\fbox{
+\xymatrix@=15pt{
+\LMO{\clubsuit}&\LMO{1}&\LMO{2}&\LMO{3}&\LMO{4}&\LMO{5}&\LMO{6}\\\LMO{\diamondsuit}\\\LMO{\heartsuit}\\\LMO{\spadesuit}
+}}}
+\parbox{.9in}{
+\xymatrix{~&&\ar[ll]_{i_2}~}
+}
+\parbox{.3in}{\begin{center}\small $Y$\vspace{-.1in}\end{center}\fbox{
+\xymatrix@=15pt{
+\LMO{\clubsuit}\\\LMO{\diamondsuit}\\\LMO{\heartsuit}\\\LMO{\spadesuit}
+}}}
+\\\nonumber
+\parbox{1in}{\hspace{-1.4in}\xymatrix{~\\\\\ar[uu]_{i_1}}}
+\\\nonumber
+\parbox{2.1in}{\hspace{-1.3in}\fbox{
+\xymatrix@=15pt{
+\LMO{1}&\LMO{2}&\LMO{3}&\LMO{4}&\LMO{5}&\LMO{6}
+}}\begin{center}\hspace{-2.6in}\small$X$\end{center}}
+\end{align}
+
+\end{example}
+
+%% Subsubsection %%
+
+\subsubsection{Universal property for coproducts}\index{coproducts!universal property of}
+
+\begin{lemma}[Universal property for coproduct]\label{lemma:up for coprod}
+
+Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking X\to A$ and $g\taking Y\to A$, there exists a unique function $X\sqcup Y\to A$ such that the following diagram commutes
+$$
+\xymatrix@=15pt{&A\\\\X\ar[uur]^{\forall f}\ar[ddr]_{i_1}&&Y\ar[uul]_{\forall g}\ar[ddl]^{i_2}\\\\&X\sqcup Y\ar@{-->}[uuuu]^{\exists!}}
+$$
+We might write the unique function as 
+\footnote{We are about to use a two-line symbol, which is a bit unusual. In what follows a certain function $X\sqcup Y\to A$ is being denoted by the symbol $\coprodmap{f}{g}$.}
+$$\coprodmap{f}{g}\taking X\sqcup Y\to A.$$
+
+\end{lemma}
+
+\begin{proof}
+
+Suppose given $f,g$ as above. To provide a function $\ell\taking X\sqcup Y\to A$ is equivalent to providing an element $f(m)\in A$ is for each $m\in X\sqcup Y$. We need such a function such that $\ell\circ i_1=f$ and $\ell\circ i_2=g$. But each element $m\in X\sqcup Y$ is either of the form $i_1x$ or $i_2y$, and cannot be of both forms. So we assign 
+$$\coprodmap{f}{g}(m)=\begin{cases}f(x)&\tn{if } m=i_1x,\\ g(y) &\tn{if }m=i_2y.\end{cases}$$
+This assignment is necessary and sufficient to make all relevant diagrams commute.
+
+\end{proof}
+
+\begin{example}[Airplane seats, continued]
+
+The universal property of coproducts says the following. Any time we have a function $X\to A$ and a function $Y\to A$, we get a unique function $X\sqcup Y\to A$. For example, every economy class seat in an airplane and every first class seat in an airplane is actually {\em in a particular airplane}. Every economy class seat has a price, as does every first class seat.
+\begin{align}
+\xymatrix{
+&\obox{A}{.9in}{a dollar figure}&\\
+\obox{X}{.8in}{an economy-class seat in an airplane}\LA{ru}{has as price}\LA{r}{is}\LAL{dr}{is in}&\obox{X\sqcup Y}{.7in}{a seat in an airplane}\ar@{-->}[d]_{\exists!}\ar@{-->}[u]^{\exists!}\ar@{}[ur]|(.35){\checkmark}\ar@{}[dl]|(.35){\checkmark}\ar@{}[dr]|(.35){\checkmark}\ar@{}[ul]|(.35){\checkmark}&\obox{Y}{.7in}{a first-class seat in an airplane}\LAL{l}{is}\LAL{lu}{has as price}\LA{dl}{is in}\\
+&\obox{B}{.7in}{an airplane}&
+}
+\end{align}
+The universal property of coproducts formalizes the following intuitively obvious fact:
+\begin{quote}
+If we know how economy class seats are priced and we know how first class seats are priced, and if we know that every seat is either economy class or first class, then we automatically know how all seats are priced.
+\end{quote}
+To say it another way (and using the other induced map):
+\begin{quote}
+If we keep track of which airplane every economy class seat is in and we keep track of which airplane every first class seat is in, and if we know that every seat is either economy class or first class, then we require no additional tracking for any airplane seat whatsoever.
+\end{quote}
+
+\end{example}
+
+\begin{application}[Piecewise defined curves]
+
+In science, curves are often defined or considered piecewise. For example in testing the mechanical properties of a material, we might be interested in various regions of \href{http://en.wikipedia.org/wiki/Deformation_(engineering)}{deformation}, such as elastic, plastic, or post-fracture. These are three intervals on which the material displays different kinds of properties. 
+
+For real numbers $a<b\in\RR$, let $[a,b]:=\{x\in\RR\|a\leq x\leq b\}$ denote the closed interval. Given a function $[a,b]\to\RR$ and a function $[c,d]\to\RR$, the universal property of coproducts implies that they extend uniquely to a function $[a,b]\sqcup[c,d]\to\RR$, which will appear as a piecewise defined curve.
+
+Often we are given a curve on $[a,b]$ and another on $[b,c]$, where the two curves agree at the point $b$. This situation is described by pushouts, which are mild generalizations of coproducts; see Section \ref{sec:pushouts}.
+
+\end{application}
+
+\begin{exercise}\label{exc:coprod}
+
+Write the universal property for coproduct in terms of a relationship between the following three sets: $$\Hom_{\Set}(X,A), \hsp \Hom_\Set(Y,A), \hsp \text{and} \hsp\Hom_\Set(X\sqcup Y,A).$$ 
+\end{exercise}
+
+\begin{example}\label{ex:coproduct1}
+
+In the following olog the types $A$ and $B$ are disjoint, so the coproduct $C=A\sqcup B$ is just the union. $$\fbox{\xymatrix{\smbox{A}{a person}\LA{r}{is}&\smbox{C=A\sqcup B}{a person or a cat}&\smbox{B}{a cat}\LAL{l}{is}}}$$
+
+\end{example}
+
+\begin{example}\label{ex:coproduct2}
+
+In the following olog, $A$ and $B$ are not disjoint, so care must be taken to differentiate common elements. $$\fbox{\xymatrixnocompile{\obox{A}{.7in}{\rr an animal that can fly}\LA{rr}{labeled ``A" is}&&\obox{C=A\sqcup B}{1.3in}{an animal that can fly (labeled ``A") or an animal that can swim (labeled ``B")}&&\obox{B}{.9in}{\rr an animal that can swim}\LAL{ll}{labeled ``B" is}}}$$  Since ducks can both swim and fly, each duck is found twice in $C$, once labeled as a flyer and once labeled as a swimmer.  The types $A$ and $B$ are kept disjoint in $C$, which justifies the name ``disjoint union."
+
+\end{example}
+
+\begin{exercise}
+
+Understand Example \ref{ex:coproduct2} and see if a similar idea would make sense for particles and waves. Make an olog, and choose your wording in accordance with Rules \ref{rules:types}. How do photons, which exhibit properties of both waves and particles, fit into the coproduct in your olog?
+
+\end{exercise}
+
+\begin{exercise}
+Following the section above, ``Ologging products" page \pageref{sec:ologging products}, come up with a naming system for coproducts, the inclusions, and the universal maps. Try it out by making an olog (involving coproducts) discussing the idea that both a .wav file and a .mp3 file can be played on a modern computer. Be careful that your arrows are valid in the sense of Section \ref{sec:invalid aspect}.
+\end{exercise}
