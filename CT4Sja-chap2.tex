@@ -901,7 +901,7 @@ $$
 %Let $X$ and $Y$ be sets. The {\em product of $X$ and $Y$}, denoted $X\times Y$,\index{a symbol!$\times$} is defined as the set of ordered pairs $(x,y)$ where $x\in X$ and $y\in Y$. Symbolically, $$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}.$$ There are two natural {\em projection functions} $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$.\index{projection functions}\index{product!projection functions}
 $$\xymatrix@=15pt{&X\times Y\ar[ddr]^{\pi_2}\ar[ddl]_{\pi_1}\\\\X&&Y}$$
 
-$X$と$Y$を集合とする. \emph{$X$と$Y$の積(product of $X$ and $Y$)}を, 順序付きの対の集合$(x,y)$と定義し, $X\times Y$\index{a symbol!$\times$}と書く. ここで$x\in X$および$y\in Y$である. 記号的に書くと$$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}$$である. 二つの自然な\emph{射影函数(projection functions)} $\pi_1\taking X\times Y\to X$と$\pi_2\taking X\times Y\to Y$が存在する. \index{projection functions}\index{product!projection functions}
+$X$と$Y$を集合とする. \emph{$X$と$Y$の積あるいは直積(product of $X$ and $Y$)}を, 順序付きの対の集合$(x,y)$と定義し, $X\times Y$\index{a symbol!$\times$}と書く. ここで$x\in X$および$y\in Y$である. 記号的に書くと$$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}$$である. 二つの自然な\emph{射影函数(projection functions)} $\pi_1\taking X\times Y\to X$と$\pi_2\taking X\times Y\to Y$が存在する. \index{projection functions}\index{product!projection functions}
 $$\xymatrix@=15pt{&X\times Y\ar[ddr]^{\pi_2}\ar[ddl]_{\pi_1}\\\\X&&Y}$$
 
 \end{definition}
@@ -972,14 +972,20 @@ $$A\times B\times C:=\{(a,b,c)\|a\in A, b\in B, c\in C\}$$
 
 \begin{example}\label{ex:R2}
 
-Let $\RR$\index{a symbol!$\RR$} be the set of real numbers. By $\RR^2$ we mean $\RR\times\RR$ (though see Exercise \ref{exc:two R2s}). Similarly, for any $n\in\NN$, we define $\RR^n$ to be the product of $n$ copies of $\RR$. 
+%Let $\RR$\index{a symbol!$\RR$} be the set of real numbers. By $\RR^2$ we mean $\RR\times\RR$ (though see Exercise \ref{exc:two R2s}). Similarly, for any $n\in\NN$, we define $\RR^n$ to be the product of $n$ copies of $\RR$. 
 
-According to \cite{Pen}, Aristotle seems to have conceived of space as something like $S:=\RR^3$ and of time as something like $T:=\RR$. Spacetime, had he conceived of it, would probably have been $S\times T\iso\RR^4$. He of course did not have access to this kind of abstraction, which was probably due to Descartes. 
+$\RR$\index{a symbol!$\RR$}を実数の集合とする. $\RR^2$によって, $\RR\times\RR$を意味するとする(Exercise \ref{exc:two R2s}も見よ). 同様に, 任意の$n\in\NN$に対して$\RR^n$を$n$個容易した$\RR$の積であると定義する.
+
+%According to \cite{Pen}, Aristotle seems to have conceived of space as something like $S:=\RR^3$ and of time as something like $T:=\RR$. Spacetime, had he conceived of it, would probably have been $S\times T\iso\RR^4$. He of course did not have access to this kind of abstraction, which was probably due to Descartes. 
+
+\cite{Pen}によると, アリストテレスは空間を$S:=\RR^3$のようなもの, また時間を$T:=\RR$のようなものだと理解していたようである. アリストテレスが理解していたところの時空は, おそらく$S\times T\iso\RR^4$であったであろう. もちろんアリストテレスはこの種の抽象化を利用する手段を持たなかった. この抽象化はおそらくデカルトに帰されるものである.
 
 \end{example}
 
 \begin{exercise}
-Let $\ZZ$ denote the set of integers, and let $+\taking\ZZ\times\ZZ\to\ZZ$ denote the addition function and $\cdot\taking\ZZ\times\ZZ\to\ZZ$ denote the multiplication function. Which of the following diagrams commute?
+%Let $\ZZ$ denote the set of integers, and let $+\taking\ZZ\times\ZZ\to\ZZ$ denote the addition function and $\cdot\taking\ZZ\times\ZZ\to\ZZ$ denote the multiplication function. Which of the following diagrams commute?
+
+$\ZZ$が整数の集合を表すとし, $+\taking\ZZ\times\ZZ\to\ZZ$は足し算の函数を, $\cdot\taking\ZZ\times\ZZ\to\ZZ$をかけ算の函数を表すとする. 以下の図式で可換なものはどれか?
 \sexc $$\xymatrix{
 \ZZ\times\ZZ\times\ZZ\ar[rr]^-{(a,b,c)\mapsto(a\cdot b,a\cdot c)}\ar[d]_{(a,b,c)\mapsto(a+b,c)}&\hsp&\ZZ\times\ZZ\ar[d]^{(x,y)\mapsto x+y}\\
 \ZZ\times\ZZ\ar[rr]_{(x,y)\mapsto xy}&&\ZZ}
@@ -997,29 +1003,47 @@ $$
 
 %% Subsubsection %%
 
-\subsubsection{Universal property for products}\index{products!universal property of}\index{universal property!products}
+%\subsubsection{Universal property for products}\index{products!universal property of}\index{universal property!products}
 
-\begin{lemma}[Universal property for product]\label{lemma:up for prod}
+\subsubsection{積における普遍的性質}\index{products!universal property of}\index{universal property!products}
 
-Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ such that the following diagram commutes \footnote{The symbol $\forall$ is read ``for all"; the symbol $\exists$ is read ``there exists", and the symbol $\exists!$ is read ``there exists a unique". So this diagram is intended to express the idea that for any functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ for which the two triangles commute.}
+%\begin{lemma}[Universal property for product]\label{lemma:up for prod}
+
+\begin{lemma}[積における普遍的性質%
+\footnote{訳注: 圏論の文脈では``\emph{universality property}''は多くの``普遍性''と訳される. 一方で自然科学の他の分野では普遍性は``universality''の訳として用いられることも多いため, ここでは普遍的性質と訳すことにした.}%
+]\label{lemma:up for prod}
+
+%Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ such that the following diagram commutes \footnote{The symbol $\forall$ is read ``for all"; the symbol $\exists$ is read ``there exists", and the symbol $\exists!$ is read ``there exists a unique". So this diagram is intended to express the idea that for any functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ for which the two triangles commute.}
+%\begin{align}\label{dia:univ prop for products}
+%\xymatrix@=15pt{&X\times Y\ar[ldd]_{\pi_1}\ar[rdd]^{\pi_2}\\\\X\ar@{}[r]|{\checkmark}&&Y\ar@{}[l]|{\checkmark}\\\\&A\ar[luu]^{\forall f}\ar[ruu]_{\forall g}\ar@{-->}[uuuu]^{\exists !}}
+%\end{align}
+%We might write the unique function as $$\prodmap{f}{g}\taking A\to X\times Y.$$
+
+$X$と$Y$を集合とする. 任意の集合$A$と函数$f\taking A\to X$および$g\taking A\to Y$に対して, 以下の図式が可換となる函数$A\to X\times Y$が一意に存在する. \footnote{記号$\forall$は``for all'' (``全ての$\dots$に対して''), 記号$\exists$は``there exists'' (``存在する''), 記号$\exists!$は''there exists a unique'' (``一意に存在する'', あるいは``唯一つだけ存在する'')と読む. よってこの図式は任意の函数$f\taking A\to X$と$g\taking A\to Y$に対して, 二つの三角形が可換となる函数$A\to X\times Y$が一意に存在するというアイデアを表現している.}
 \begin{align}\label{dia:univ prop for products}
 \xymatrix@=15pt{&X\times Y\ar[ldd]_{\pi_1}\ar[rdd]^{\pi_2}\\\\X\ar@{}[r]|{\checkmark}&&Y\ar@{}[l]|{\checkmark}\\\\&A\ar[luu]^{\forall f}\ar[ruu]_{\forall g}\ar@{-->}[uuuu]^{\exists !}}
 \end{align}
-We might write the unique function as $$\prodmap{f}{g}\taking A\to X\times Y.$$
+我々はこの一意に存在する函数を$$\prodmap{f}{g}\taking A\to X\times Y.$$と書くことがある.
 
 \end{lemma}
 
 \begin{proof}
 
-Suppose given $f,g$ as above. To provide a function $\ell\taking A\to X\times Y$ is equivalent to providing an element $\ell(a)\in X\times Y$ for each $a\in A$. We need such a function for which $\pi_1\circ \ell=f$ and $\pi_2\circ \ell=g$. An element of $X\times Y$ is an ordered pair $(x,y)$, and we can use $\ell(a)=(x,y)$ if and only if $x=\pi_1(x,y)=f(a)$ and $y=\pi_2(x,y)=g(a)$. So it is necessary and sufficient to define $$\prodmap{f}{g}(a):=(f(a),g(a))$$ for all $a\in A$.
+%Suppose given $f,g$ as above. To provide a function $\ell\taking A\to X\times Y$ is equivalent to providing an element $\ell(a)\in X\times Y$ for each $a\in A$. We need such a function for which $\pi_1\circ \ell=f$ and $\pi_2\circ \ell=g$. An element of $X\times Y$ is an ordered pair $(x,y)$, and we can use $\ell(a)=(x,y)$ if and only if $x=\pi_1(x,y)=f(a)$ and $y=\pi_2(x,y)=g(a)$. So it is necessary and sufficient to define $$\prodmap{f}{g}(a):=(f(a),g(a))$$ for all $a\in A$.
+
+$f$, $g$が上のように与えられたと仮定する. 函数$\ell\taking A\to X\times Y$を与えるということは, それぞれの$a\in A$に対して値$\ell(a)\in X\times Y$を与えることに等しい. 我々は$\pi_1\circ \ell=f$および$\pi_2\circ \ell=g$となる函数を必要としている. $X\times Y$の要素は順序付けられた対$(x,y)$であり, よって我々は, $x=\pi_1(x,y)=f(a)$および$y=\pi_2(x,y)=g(a)$でありかつその時に限り$\ell(a)=(x,y)$を使うことができる. よって全ての$a\in A$に対して$$\prodmap{f}{g}(a):=(f(a),g(a))$$を定義すれば必要かつ十分である.
 
 \end{proof}
 
 \begin{example}[Grid of dots, continued]\label{ex:grid2}
 
-We need to see the universal property of products as completely intuitive. Recall that if $X$ and $Y$ are sets, say of cardinalities $|X|=m$ and $|Y|=n$ respectively, then $X\times Y$ is an $m\times n$ grid of dots, and it comes with two canonical projections $X\From{\pi_1}X\times Y\To{\pi_2}Y$. These allow us to extract from every grid element $z\in X\times Y$ its column $\pi_1(z)\in X$ and its row $\pi_2(z)\in Y$.
+%We need to see the universal property of products as completely intuitive. Recall that if $X$ and $Y$ are sets, say of cardinalities $|X|=m$ and $|Y|=n$ respectively, then $X\times Y$ is an $m\times n$ grid of dots, and it comes with two canonical projections $X\From{\pi_1}X\times Y\To{\pi_2}Y$. These allow us to extract from every grid element $z\in X\times Y$ its column $\pi_1(z)\in X$ and its row $\pi_2(z)\in Y$.
 
-Suppose that each person in a classroom picks an element of $X$ and an element of $Y$. Thus we have functions $f\taking C\to X$ and $g\taking C\to Y$. But isn't picking a column and a row the same thing as picking an element in the grid? The two functions $f$ and $g$ induce a unique function $C\to X\times Y$. And how does this function $C\to X\times Y$ compare with the original functions $f$ and $g$? The commutative diagram (\ref{dia:univ prop for products}) sums up the obvious connection. 
+我々は, 積の普遍的性質を完全に直感的に理解できるようになる必要がある. $X$と$Y$が集合であることを思い出し, 濃度をそれぞれ$|X|=m$および$|Y|=n$とすれば, $X\times Y$は$m\times n$の点の格子となり, そして標準射影$X\From{\pi_1}X\times Y\To{\pi_2}Y$が付随する. これらによって, 全ての要素$z\in X\times Y$からその列$\pi_1(z)\in X$および行$\pi_2(z)\in Y$を取り出すことができる.
+
+%Suppose that each person in a classroom picks an element of $X$ and an element of $Y$. Thus we have functions $f\taking C\to X$ and $g\taking C\to Y$. But isn't picking a column and a row the same thing as picking an element in the grid? The two functions $f$ and $g$ induce a unique function $C\to X\times Y$. And how does this function $C\to X\times Y$ compare with the original functions $f$ and $g$? The commutative diagram (\ref{dia:univ prop for products}) sums up the obvious connection. 
+
+教室にいる人間それぞれが$X$の要素と$Y$の要素を選び出すと仮定する. ゆえに我々は函数$f\taking C\to X$と$g\taking C\to Y$を得た. しかし列および行を選び出すのは格子の要素を選ぶのと同じことではないのではなかろうか? 二つの函数$f$および$g$は一意な函数$C\to X\times Y$を誘導する. この函数$C\to X\times Y$は元の函数$f$および$g$と比較するとどうなるだろうか? 可換図式\eqref{dia:univ prop for products}は, その明白なる関係性を要約している.
 
 \end{example}
 
