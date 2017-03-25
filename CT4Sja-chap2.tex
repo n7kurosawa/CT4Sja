@@ -588,7 +588,7 @@ ologの作者はなんらかの世界観(world-view)を持っており, olongの
 
 %Consider the aspect $\fakebox{an object}\Too{\tn{has}}\fakebox{a weight}$. At some point in history, this would have been considered a valid function. Now we know that the same object would have a different weight on the moon than it has on earth. Thus as world-views change, we often need to add more information to our olog. Even the validity of $\fakebox{an object on earth}\Too{\tn{has}}\fakebox{a weight}$ is questionable. However to build a model we need to choose a level of granularity and try to stay within it, or the whole model evaporates into the nothingness of truth!
 
-様相$\fakebox{an object}\Too{\tn{has}}\fakebox{a weight}$を考える. 歴史上のある時点では, これは有効な函数であったであろう. 今や我々は同じ物質は月の上と地球の上では異なる重さを持つであろうことを知っている. それゆえに世界観の変化に従って我々はしばしばologにさらなる情報を加える必要が出てくる. $\fakebox{an object on earth}\Too{\tn{has}}\fakebox{a weight}$の有効性でさえも疑問である. しかし, 模型を構築するにあたって我々は粒度の水準を選びその中に留まろうとする必要がある. そうでなければ, 全ての模型はなんの真実もない虚無へと霧散してしまう.
+様相$\fakebox{an object}\Too{\tn{has}}\fakebox{a weight}$を考える. 歴史上のある時点では, これは有効な函数であったであろう. 今や我々は同じ物体でも月の上と地球の上では異なる重さを持つであろうことを知っている. それゆえに世界観の変化に従って我々はしばしばologにさらなる情報を加える必要が出てくる. $\fakebox{an object on earth}\Too{\tn{has}}\fakebox{a weight}$の有効性でさえも疑問である. しかし, 模型を構築するにあたって我々は粒度の水準を選びその中に留まろうとする必要がある. そうでなければ, 全ての模型はなんの真実もない虚無へと霧散してしまう.
 
 \end{warning}
 
@@ -1049,37 +1049,67 @@ $f$, $g$が上のように与えられたと仮定する. 函数$\ell\taking A\t
 
 \begin{example}
 
-Let $\RR$ be the set of real numbers. The origin in $\RR$ is an element of $\RR$. As you showed in Exercise \ref{exc:generator for set}, we can view this (or any) element of $\RR$ as a function $z\taking\singleton\to\RR$, where $\singleton$ is any set with one element. Our function $z$ ``picks out the origin". Thus we can draw functions 
+%Let $\RR$ be the set of real numbers. The origin in $\RR$ is an element of $\RR$. As you showed in Exercise \ref{exc:generator for set}, we can view this (or any) element of $\RR$ as a function $z\taking\singleton\to\RR$, where $\singleton$ is any set with one element. Our function $z$ ``picks out the origin". Thus we can draw functions 
+%$$\xymatrix@=15pt{&\singleton\ar[ddr]^z\ar[ddl]_z\\\\\RR&&\RR}
+%$$
+%The universal property for products guarantees a function $\singleton\to\RR\times\RR$, which will be the origin in $\RR^2.$
+
+$\RR$を実数の集合とする. $\RR$の起源(origin)は$\RR$の要素である. Exercise \ref{exc:generator for set}で示したように, $\RR$の中のこの(あるいは任意の)要素は$z\taking\singleton\to\RR$と見ることができる. ここで$\singleton$は任意の要素が一つの集合である. 函数$z$は``起源を選び出す''. よって
 $$\xymatrix@=15pt{&\singleton\ar[ddr]^z\ar[ddl]_z\\\\\RR&&\RR}
 $$
-The universal property for products guarantees a function $\singleton\to\RR\times\RR$, which will be the origin in $\RR^2.$
+などの函数を書ける. 積の普遍的性質は函数$\singleton\to\RR\times\RR$を保証する. これは$\RR^2$の起源となるだろう.
 
 \end{example}
 
 \begin{remark}
 
-Given sets $X, Y,$ and $A$, and functions $f\taking A\to X$ and $g\taking A\to Y$, there is a unique function $A\to X\times Y$ that commutes with $f$ and $g$. We call it {\em the induced function $A\to X\times Y$},\index{induced function} meaning the one that arises in light of $f$ and $g$.
+%Given sets $X, Y,$ and $A$, and functions $f\taking A\to X$ and $g\taking A\to Y$, there is a unique function $A\to X\times Y$ that commutes with $f$ and $g$. We call it {\em the induced function $A\to X\times Y$},\index{induced function} meaning the one that arises in light of $f$ and $g$.
+
+集合$X$, $Y$, $A$, 函数$f\taking A\to X$, $g\taking A\to Y$が与えられたとき, $f$と$g$に可換な函数$A\to X\times Y$が一意に存在する. 我々はこの函数を\emph{誘導函数(the induced function) $A\to X\times Y$},\index{induced function}と呼ぶことにする. これが指すものは$f$と$g$を考慮したときに浮かび上がるそれである.
 
 \end{remark}
 
 \begin{exercise}
-For every set $A$ there is some nice relationship between the following three sets: $$\Hom_{\Set}(A,X), \hsp \Hom_\Set(A,Y), \hsp \text{and} \hsp\Hom_\Set(A,X\times Y).$$ What is it?
+%For every set $A$ there is some nice relationship between the following three sets: $$\Hom_{\Set}(A,X), \hsp \Hom_\Set(A,Y), \hsp \text{and} \hsp\Hom_\Set(A,X\times Y).$$ What is it?
 
-Hint: Do not be alarmed: this problem is a bit ``recursive" in that you'll use products in your formula.
+全ての集合$A$に対して次の三つの集合の間には素敵な関係がある. それは何か?
+$$\Hom_{\Set}(A,X), \hsp \Hom_\Set(A,Y), \hsp \text{and} \hsp\Hom_\Set(A,X\times Y).$$
+
+%Hint: Do not be alarmed: this problem is a bit ``recursive" in that you'll use products in your formula.
+ヒント: 慌てないこと. この問題は, 式の中で積を使うということを少しだけ繰り返している.
+
 \end{exercise}
 
 \begin{exercise}~
-\sexc Let $X$ and $Y$ be sets. Construct the ``swap map" $s\taking X\times Y\to Y\times X$ using only the universal property for products. If $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$ are the projection functions, write $s$ in terms of the symbols $``\pi_1",``\pi_2", ``(\ ,\ )",$ and $``\circ"$. 
-\next Can you prove that $s$ is a isomorphism using only the universal property for product?
+%\sexc Let $X$ and $Y$ be sets. Construct the ``swap map" $s\taking X\times Y\to Y\times X$ using only the universal property for products. If $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$ are the projection functions, write $s$ in terms of the symbols $``\pi_1",``\pi_2", ``(\ ,\ )",$ and $``\circ"$. 
+%\next Can you prove that $s$ is a isomorphism using only the universal property for product?
+%\endsexc
+\sexc $X$と$Y$を集合とする. ``swap map'' $s\taking X\times Y\to Y\times X$を, 積の普遍的性質のみを用いて構成せよ. $\pi_1\taking X\times Y\to X$および$\pi_2\taking X\times Y\to Y$が射影函数であるとして, $s$を記号``$\pi_1$'', ``$\pi_2$'', ``$(\ ,\ )$'', および``$\circ$''を用いて書け. 
+\next $s$が同型写像であることを, 積の普遍的性質のみを用いて証明できるだろうか?
 \endsexc
 \end{exercise}
 
 \begin{example}\label{ex:product to product}
-Suppose given sets $X,X', Y, Y'$ and functions $m\taking X\to X'$ and $n\taking Y\to Y'$. We can use the universal property of products to construct a function $s\taking X\times Y\to X'\times Y'$.  Here's how.
+%Suppose given sets $X,X', Y, Y'$ and functions $m\taking X\to X'$ and $n\taking Y\to Y'$. We can use the universal property of products to construct a function $s\taking X\times Y\to X'\times Y'$.  Here's how.
 
-The universal property (Lemma \ref{lemma:up for prod}) says that to get a function from any set $A$ to $X'\times Y'$, we need two functions, namely some $f\taking A\to X'$ and some $g\taking A\to Y'$. Here $A=X\times Y$. 
+集合$X$, $X'$, $Y$, $Y'$, 函数$m\taking X\to X'$, $n\taking Y\to Y'$が与えられたと仮定する. 我々は積の普遍的性質を用いて函数$s\taking X\times Y\to X'\times Y'$を構成することができる. 以下にその方法を示す.
 
-What we have readily available are the two projections $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$. But we also have $m\taking X\to X'$ and $n\taking Y\to Y'$. Composing, we set $f:=m\circ \pi_1$ and $g:=n\circ\pi_2$.
+%The universal property (Lemma \ref{lemma:up for prod}) says that to get a function from any set $A$ to $X'\times Y'$, we need two functions, namely some $f\taking A\to X'$ and some $g\taking A\to Y'$. Here $A=X\times Y$. 
+
+普遍的性質(Lemma \ref{lemma:up for prod})により, 任意の集合$A$から$X'\times Y'$への函数を得るためには. 我々は二種の函数, すなわちなんらかの$f\taking A\to X'$となんらかの$g\taking A\to Y'$を必要とする. ここで$A=X\times Y$である.
+
+%What we have readily available are the two projections $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$. But we also have $m\taking X\to X'$ and $n\taking Y\to Y'$. Composing, we set $f:=m\circ \pi_1$ and $g:=n\circ\pi_2$.
+%$$\xymatrix{
+%&X'\times Y'\ar[dl]_{\pi_1'}\ar[dr]^{\pi_2'}\\
+%X'&&Y'\\
+%X\ar[u]^m&&Y\ar[u]_n\\
+%&X\times Y\ar[ul]^{\pi_1}\ar[ur]_{\pi_2}\ar@{-->}[uuu]
+%}
+%$$
+%The dotted arrow is often called the {\em product} of $m\taking X\to X'$ and $n\taking Y\to Y'$ and is denoted simply by 
+%$$m\times n\taking X\times Y\to X'\times Y'.$$
+
+我々が使用可能なのは二つの射影函数$\pi_1\taking X\times Y\to X$と$\pi_2\taking X\times Y\to Y$である. しかし我々は$m\taking X\to X'$と$n\taking Y\to Y'$も利用できる. 合成して, $f:=m\circ \pi_1$および$g:=n\circ\pi_2$と設定する.
 $$\xymatrix{
 &X'\times Y'\ar[dl]_{\pi_1'}\ar[dr]^{\pi_2'}\\
 X'&&Y'\\
@@ -1087,25 +1117,41 @@ X\ar[u]^m&&Y\ar[u]_n\\
 &X\times Y\ar[ul]^{\pi_1}\ar[ur]_{\pi_2}\ar@{-->}[uuu]
 }
 $$
-The dotted arrow is often called the {\em product} of $m\taking X\to X'$ and $n\taking Y\to Y'$ and is denoted simply by 
+点線の矢印はしばしば$m\taking X\to X'$と$n\taking Y\to Y'$の\emph{積(product)}と呼ばれ, 簡潔に
 $$m\times n\taking X\times Y\to X'\times Y'.$$
+と書かれる.
 
 \end{example}
 
 %% Subsubsection %%
 
-\subsubsection{Ologging products}\label{sec:ologging products}
+%\subsubsection{Ologging products}\label{sec:ologging products}
+\subsubsection{Ologと積}\label{sec:ologging products}
 
-Given two objects $c,d$ in an olog, there is a canonical label $\qt{c\times d}$ for their product $c\times d$, written in terms of the labels $\qt{c}$ and $\qt{d}$. Namely, $$\qt{c\times d}:=\tn{a pair }(x,y)\tn{ where }x\tn{ is }\qt{c}\tn{ and }y\tn{ is }\qt{d}.$$ The projections $c\from c\times d\to d$ can be labeled ``yields, as $x$," and ``yields, as $y$," respectively.
+%Given two objects $c,d$ in an olog, there is a canonical label $\qt{c\times d}$ for their product $c\times d$, written in terms of the labels $\qt{c}$ and $\qt{d}$. Namely, $$\qt{c\times d}:=\tn{a pair }(x,y)\tn{ where }x\tn{ is }\qt{c}\tn{ and }y\tn{ is }\qt{d}.$$ The projections $c\from c\times d\to d$ can be labeled ``yields, as $x$," and ``yields, as $y$," respectively.
 
-Suppose that $e$ is another object and $p\taking e\to c$ and $q\taking e\to d$ are two arrows. By the universal property of products (Lemma \ref{lemma:up for prod}), $p$ and $q$ induce a unique arrow $e\to c\times d$ making the evident diagrams commute. This arrow can be labeled
+olog内の対象$c$, $d$が与えられたとき, その積$c\times d$に対して, 見出し$\qt{c}$および$\qt{d}$によって書かれる標準見出し$\qt{c\times d}$が存在する. すなわち$$\qt{c\times d}:=\tn{a pair }(x,y)\tn{ where }x\tn{ is }\qt{c}\tn{ and }y\tn{ is }\qt{d}.$$ 射影$c\from c\times d\to d$はそれぞれ``yields, as $x$''および``yields, as $y$''と見出し付けられる.
+
+%Suppose that $e$ is another object and $p\taking e\to c$ and $q\taking e\to d$ are two arrows. By the universal property of products (Lemma \ref{lemma:up for prod}), $p$ and $q$ induce a unique arrow $e\to c\times d$ making the evident diagrams commute. This arrow can be labeled
+%\begin{center}
+%yields, insofar as it $\qt{p}\;\qt{c}$ and $\qt{q}\;\qt{d}$, 
+%\end{center}
+
+$e$が別の対象であり$p\taking e\to c$と$q\taking e\to d$が二本の矢印であると仮定する. 積の普遍的性質(Lemma \ref{lemma:up for prod})により, $p$と$q$は自明に得られる図式を可換にする矢印$e\to c\times d$を一意に誘導する. この矢印は以下のように見出し付けられる.
 \begin{center}
 yields, insofar as it $\qt{p}\;\qt{c}$ and $\qt{q}\;\qt{d}$, 
 \end{center}
 
 \begin{example}
 
-Every car owner owns at least one car, but there is no obvious function $\fakebox{a car owner}\to\fakebox{a car}$ because he or she may own more than one. One good choice would be the car that the person drives most often, which we'll call his or her primary car. Also, given a person and a car, an economist could ask how much utility the person would get out of the car. From all this we can put together the following olog involving products:
+%Every car owner owns at least one car, but there is no obvious function $\fakebox{a car owner}\to\fakebox{a car}$ because he or she may own more than one. One good choice would be the car that the person drives most often, which we'll call his or her primary car. Also, given a person and a car, an economist could ask how much utility the person would get out of the car. From all this we can put together the following olog involving products:
+%$$
+%\xymatrixnocompile{\obox{O}{.7in}{a car owner}\LAL{dd}{is}\ar[ddrr]_(.35){\parbox{.45in}{\scriptsize owns, as primary,}}\LA{rr}{\parbox{.8in}{\rr\scriptsize yields, insofar as it is a person and owns, as primary, a car,}}&\ar@{}[d]^(.4){\checkmark}&
+%\obox{P\times C}{1in}{a pair $(x,y)$ where $x$ is a person and $y$ is a car}\ar@/^1pc/[ddll]^(.7){\tn{yields, as }x,}\LA{dd}{\tn{yields, as }y,}\LA{rr}{\parbox{.7in}{\scriptsize has as associated utility}}&&\obox{V}{.8in}{a dollar value}\\&&\\\obox{P}{.5in}{a person}&&\obox{C}{.4in}{a car}
+%}
+%$$
+
+全ての自動車保有者は最低一台の自動車を保有しているが, 自明な函数$\fakebox{a car owner}\to\fakebox{a car}$は存在しない. なぜならばその人は二台以上保有しているかもしれないからだ. 一つのよい自動車の選択は, その人が最もよく運転している自動車, 我々がその人の主要な自動車と呼ぶところの自動車であろう. また, 人物と自動車が与えられたとき, その人がその車からどれだけの利便性が得られたかと, 経済学者は問うかもしれない. これら全てから, われわれは積にかかわる以下のologをまとめあげることができる.
 $$
 \xymatrixnocompile{\obox{O}{.7in}{a car owner}\LAL{dd}{is}\ar[ddrr]_(.35){\parbox{.45in}{\scriptsize owns, as primary,}}\LA{rr}{\parbox{.8in}{\rr\scriptsize yields, insofar as it is a person and owns, as primary, a car,}}&\ar@{}[d]^(.4){\checkmark}&
 \obox{P\times C}{1in}{a pair $(x,y)$ where $x$ is a person and $y$ is a car}\ar@/^1pc/[ddll]^(.7){\tn{yields, as }x,}\LA{dd}{\tn{yields, as }y,}\LA{rr}{\parbox{.7in}{\scriptsize has as associated utility}}&&\obox{V}{.8in}{a dollar value}\\&&\\\obox{P}{.5in}{a person}&&\obox{C}{.4in}{a car}
