@@ -1162,21 +1162,30 @@ $$
 
 %%%% Subsection %%%%
 
-\subsection{Coproducts}\label{sec:coproducts}\index{coproducts!of sets}
+%\subsection{Coproducts}\label{sec:coproducts}\index{coproducts!of sets}
+\subsection{余積}\label{sec:coproducts}\index{coproducts!of sets}
 
 \begin{definition}\label{def:coproduct}
 
-Let $X$ and $Y$ be sets. The {\em coproduct of $X$ and $Y$}, denoted $X\sqcup Y$,\index{a symbol!$\sqcup$} is defined as the ``disjoint union" of $X$ and $Y$, i.e. the set for which an element is either an element of $X$ or an element of $Y$. If something is an element of both $X$ and $Y$ then we include both copies, and distinguish between them, in $X\sqcup Y$. See Example \ref{ex:coproduct}
+%Let $X$ and $Y$ be sets. The {\em coproduct of $X$ and $Y$}, denoted $X\sqcup Y$,\index{a symbol!$\sqcup$} is defined as the ``disjoint union" of $X$ and $Y$, i.e. the set for which an element is either an element of $X$ or an element of $Y$. If something is an element of both $X$ and $Y$ then we include both copies, and distinguish between them, in $X\sqcup Y$. See Example \ref{ex:coproduct}
 
-There are two natural inclusion functions $i_1\taking X\to X\sqcup Y$ and $i_2\taking Y\to X\sqcup Y$.\index{inclusion functions}\index{coproduct!inclusion functions}
+$X$と$Y$を集合とする. \emph{$X$と$Y$の余積(coproduct of $X$ and $Y$)}を, $X$と$Y$の``直和(disjoint union)'', i.e. その要素が$X$あるいは$Y$のどちらかの要素である集合と定義し, $X\sqcup Y$,\index{a symbol!$\sqcup$}と書く. もしある要素が$X$と$Y$の両方の要素であるならば, 我々はその両方ともを, お互いを区別できるようにして, $X\sqcup Y$に含めることにする. Example \ref{ex:coproduct}を見よ.
+
+%There are two natural inclusion functions $i_1\taking X\to X\sqcup Y$ and $i_2\taking Y\to X\sqcup Y$.\index{inclusion functions}\index{coproduct!inclusion functions}
+%$$\xymatrix@=15pt{X\ar[ddr]_{i_1}&&Y\ar[ddl]^{i_2}\\\\&X\sqcup Y}$$
+
+二つの包含函数(inclusion function) $i_1\taking X\to X\sqcup Y$および$i_2\taking Y\to X\sqcup Y$.\index{inclusion functions}\index{coproduct!inclusion functions}が存在する.
 $$\xymatrix@=15pt{X\ar[ddr]_{i_1}&&Y\ar[ddl]^{i_2}\\\\&X\sqcup Y}$$
 
 \end{definition}
 
 \begin{example}\label{ex:coproduct}
 
-The coproduct of $X:=\{a,b,c,d\}$ and $Y:=\{1,2,3\}$ is $$X\sqcup Y\iso\{a,b,c,d,1,2,3\}.$$ The coproduct of $X$ and itself is $$X\sqcup X\iso\{i_1a,i_1b,i_1c,i_1d,i_2a,i_2b,i_2c,i_2d\}$$ 
-The names of the elements in $X\sqcup Y$ are not so important. What's important are the inclusion maps $i_1,i_2$, which ensure that we know where each element of $X\sqcup Y$ came from.
+%The coproduct of $X:=\{a,b,c,d\}$ and $Y:=\{1,2,3\}$ is $$X\sqcup Y\iso\{a,b,c,d,1,2,3\}.$$ The coproduct of $X$ and itself is $$X\sqcup X\iso\{i_1a,i_1b,i_1c,i_1d,i_2a,i_2b,i_2c,i_2d\}$$ 
+%The names of the elements in $X\sqcup Y$ are not so important. What's important are the inclusion maps $i_1,i_2$, which ensure that we know where each element of $X\sqcup Y$ came from.
+
+$X:=\{a,b,c,d\}$と$Y:=\{1,2,3\}$の余積は$$X\sqcup Y\iso\{a,b,c,d,1,2,3\}.$$である. $X$とそれ自身の余積は$$X\sqcup X\iso\{i_1a,i_1b,i_1c,i_1d,i_2a,i_2b,i_2c,i_2d\}$$である.
+$X\sqcup Y$の要素の名前はそれほど重要ではない. 重要なことは, $X\sqcup Y$のそれぞれの要素がどこから来たかを知ることができることを保証する, 包含写像$i_1$, $i_2$の存在である.
 
 \end{example}
 
@@ -1192,7 +1201,8 @@ The names of the elements in $X\sqcup Y$ are not so important. What's important 
 \end{example}
 
 \begin{exercise}
-Would you say that \fakebox{a phone} is the coproduct of \fakebox{a cellphone} and \fakebox{a landline phone}? 
+%Would you say that \fakebox{a phone} is the coproduct of \fakebox{a cellphone} and \fakebox{a landline phone}? 
+\fakebox{a phone} (電話)は\fakebox{a cellphone} (携帯電話)と\fakebox{a landline phone} (固定電話)の余積と言えるだろうか?
 \end{exercise}
 
 \begin{example}[Disjoint union of dots]\label{ex:coprod of dots}
@@ -1222,7 +1232,8 @@ Would you say that \fakebox{a phone} is the coproduct of \fakebox{a cellphone} a
 
 %% Subsubsection %%
 
-\subsubsection{Universal property for coproducts}\index{coproducts!universal property of}
+%\subsubsection{Universal property for coproducts}\index{coproducts!universal property of}
+\subsubsection{余積の普遍的性質}\index{coproducts!universal property of}
 
 \begin{lemma}[Universal property for coproduct]\label{lemma:up for coprod}
 
