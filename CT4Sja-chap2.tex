@@ -1237,21 +1237,32 @@ $X\sqcup Y$の要素の名前はそれほど重要ではない. 重要なこと�
 
 \begin{lemma}[Universal property for coproduct]\label{lemma:up for coprod}
 
-Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking X\to A$ and $g\taking Y\to A$, there exists a unique function $X\sqcup Y\to A$ such that the following diagram commutes
+%Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking X\to A$ and $g\taking Y\to A$, there exists a unique function $X\sqcup Y\to A$ such that the following diagram commutes
+%$$
+%\xymatrix@=15pt{&A\\\\X\ar[uur]^{\forall f}\ar[ddr]_{i_1}&&Y\ar[uul]_{\forall g}\ar[ddl]^{i_2}\\\\&X\sqcup Y\ar@{-->}[uuuu]^{\exists!}}
+%$$
+%We might write the unique function as 
+%\footnote{We are about to use a two-line symbol, which is a bit unusual. In what follows a certain function $X\sqcup Y\to A$ is being denoted by the symbol $\coprodmap{f}{g}$.}
+%$$\coprodmap{f}{g}\taking X\sqcup Y\to A.$$
+
+$X$と$Y$を集合とする. 任意の集合$A$と函数$f\taking X\to A$, $g\taking Y\to A$に対して, 以下の図式を可換にするところの函数$X\sqcup Y\to A$が一意に存在する.
 $$
 \xymatrix@=15pt{&A\\\\X\ar[uur]^{\forall f}\ar[ddr]_{i_1}&&Y\ar[uul]_{\forall g}\ar[ddl]^{i_2}\\\\&X\sqcup Y\ar@{-->}[uuuu]^{\exists!}}
 $$
-We might write the unique function as 
-\footnote{We are about to use a two-line symbol, which is a bit unusual. In what follows a certain function $X\sqcup Y\to A$ is being denoted by the symbol $\coprodmap{f}{g}$.}
-$$\coprodmap{f}{g}\taking X\sqcup Y\to A.$$
-
+我々はこの一意に存在する函数を
+$$\coprodmap{f}{g}\taking X\sqcup Y\to A$$
+と書くことがある\footnote{我々は二行にわたる記法を使用しようとしている. これは少しばかり通常ではない. これ以降ではある函数$X\sqcup Y\to A$は記法$\coprodmap{f}{g}$によって示されるとする.}.
 \end{lemma}
 
 \begin{proof}
 
-Suppose given $f,g$ as above. To provide a function $\ell\taking X\sqcup Y\to A$ is equivalent to providing an element $f(m)\in A$ is for each $m\in X\sqcup Y$. We need such a function such that $\ell\circ i_1=f$ and $\ell\circ i_2=g$. But each element $m\in X\sqcup Y$ is either of the form $i_1x$ or $i_2y$, and cannot be of both forms. So we assign 
+%Suppose given $f,g$ as above. To provide a function $\ell\taking X\sqcup Y\to A$ is equivalent to providing an element $f(m)\in A$ is for each $m\in X\sqcup Y$. We need such a function such that $\ell\circ i_1=f$ and $\ell\circ i_2=g$. But each element $m\in X\sqcup Y$ is either of the form $i_1x$ or $i_2y$, and cannot be of both forms. So we assign 
+%$$\coprodmap{f}{g}(m)=\begin{cases}f(x)&\tn{if } m=i_1x,\\ g(y) &\tn{if }m=i_2y.\end{cases}$$
+%This assignment is necessary and sufficient to make all relevant diagrams commute.
+
+$f$, $g$が上記のように与えられたとする. 函数$\ell\taking X\sqcup Y\to A$を与えるということは, それぞれの$m\in X\sqcup Y$に対して要素$f(m)\in A$を与えることに等しい. 我々は$\ell\circ i_1=f$および$\ell\circ i_2=g$となる函数を必要としている. しかしそろぞれの要素$m\in X\sqcup Y$は$i_1x$かあるいは$i_2y$のどちらかの形を取り, 両方の形を取ることはできない. よって我々は
 $$\coprodmap{f}{g}(m)=\begin{cases}f(x)&\tn{if } m=i_1x,\\ g(y) &\tn{if }m=i_2y.\end{cases}$$
-This assignment is necessary and sufficient to make all relevant diagrams commute.
+と割り当てる. この割り当ては全ての関連する図式を可換にするのに必要かつ十分である.
 
 \end{proof}
 
