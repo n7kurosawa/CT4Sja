@@ -1169,7 +1169,7 @@ $$
 
 %Let $X$ and $Y$ be sets. The {\em coproduct of $X$ and $Y$}, denoted $X\sqcup Y$,\index{a symbol!$\sqcup$} is defined as the ``disjoint union" of $X$ and $Y$, i.e. the set for which an element is either an element of $X$ or an element of $Y$. If something is an element of both $X$ and $Y$ then we include both copies, and distinguish between them, in $X\sqcup Y$. See Example \ref{ex:coproduct}
 
-$X$と$Y$を集合とする. \emph{$X$と$Y$の余積(coproduct of $X$ and $Y$)}を, $X$と$Y$の``直和(disjoint union)'', i.e. その要素が$X$あるいは$Y$のどちらかの要素である集合と定義し, $X\sqcup Y$,\index{a symbol!$\sqcup$}と書く. もしある要素が$X$と$Y$の両方の要素であるならば, 我々はその両方ともを, お互いを区別できるようにして, $X\sqcup Y$に含めることにする. Example \ref{ex:coproduct}を見よ.
+$X$と$Y$を集合とする. \emph{$X$と$Y$の余積(coproduct of $X$ and $Y$)}を, $X$と$Y$の``直和(disjoint union)''あるいは非交和, i.e. その要素が$X$あるいは$Y$のどちらかの要素である集合と定義し, $X\sqcup Y$,\index{a symbol!$\sqcup$}と書く. もしある要素が$X$と$Y$の両方の要素であるならば, 我々はその両方ともを, お互いを区別できるようにして, $X\sqcup Y$に含めることにする. Example \ref{ex:coproduct}を見よ.
 
 %There are two natural inclusion functions $i_1\taking X\to X\sqcup Y$ and $i_2\taking Y\to X\sqcup Y$.\index{inclusion functions}\index{coproduct!inclusion functions}
 %$$\xymatrix@=15pt{X\ar[ddr]_{i_1}&&Y\ar[ddl]^{i_2}\\\\&X\sqcup Y}$$
@@ -1189,7 +1189,7 @@ $X\sqcup Y$の要素の名前はそれほど重要ではない. 重要なこと�
 
 \end{example}
 
-\begin{example}[Airplane seats]\label{ex:airplanes}
+\begin{example}[Airplane seats\footnote{訳注: ビジネスクラス等の中間的な上級客席は無視するとする.}]\label{ex:airplanes}
 
 \begin{align}\label{dia:airplane}
 \xymatrix@=15pt{
@@ -1268,7 +1268,24 @@ $$\coprodmap{f}{g}(m)=\begin{cases}f(x)&\tn{if } m=i_1x,\\ g(y) &\tn{if }m=i_2y.
 
 \begin{example}[Airplane seats, continued]
 
-The universal property of coproducts says the following. Any time we have a function $X\to A$ and a function $Y\to A$, we get a unique function $X\sqcup Y\to A$. For example, every economy class seat in an airplane and every first class seat in an airplane is actually {\em in a particular airplane}. Every economy class seat has a price, as does every first class seat.
+%The universal property of coproducts says the following. Any time we have a function $X\to A$ and a function $Y\to A$, we get a unique function $X\sqcup Y\to A$. For example, every economy class seat in an airplane and every first class seat in an airplane is actually {\em in a particular airplane}. Every economy class seat has a price, as does every first class seat.
+%\begin{align}
+%\xymatrix{
+%&\obox{A}{.9in}{a dollar figure}&\\
+%\obox{X}{.8in}{an economy-class seat in an airplane}\LA{ru}{has as price}\LA{r}{is}\LAL{dr}{is in}&\obox{X\sqcup Y}{.7in}{a seat in an airplane}\ar@{-->}[d]_{\exists!}\ar@{-->}[u]^{\exists!}\ar@{}[ur]|(.35){\checkmark}\ar@{}[dl]|(.35){\checkmark}\ar@{}[dr]|(.35){\checkmark}\ar@{}[ul]|(.35){\checkmark}&\obox{Y}{.7in}{a first-class seat in an airplane}\LAL{l}{is}\LAL{lu}{has as price}\LA{dl}{is in}\\
+%&\obox{B}{.7in}{an airplane}&
+%}
+%\end{align}
+%The universal property of coproducts formalizes the following intuitively obvious fact:
+%\begin{quote}
+%If we know how economy class seats are priced and we know how first class seats are priced, and if we know that every seat is either economy class or first class, then we automatically know how all seats are priced.
+%\end{quote}
+%To say it another way (and using the other induced map):
+%\begin{quote}
+%If we keep track of which airplane every economy class seat is in and we keep track of which airplane every first class seat is in, and if we know that every seat is either economy class or first class, then we require no additional tracking for any airplane seat whatsoever.
+%\end{quote}
+
+余積の普遍的性質により, 以下が言える. 函数$X\to A$および$Y\to A$があるときは常に, 函数$X\sqcup Y\to A$が一意に得られる. 例えば, ある航空機の全てのエコノミークラスの座席と, ある航空機の全てのファーストクラスの座席が, 実際には\emph{同じ航空機の中にあるとする}. 全てのエコノミークラスの座席は料金が設定されているし, ファーストクラスもそうである.
 \begin{align}
 \xymatrix{
 &\obox{A}{.9in}{a dollar figure}&\\
@@ -1276,50 +1293,66 @@ The universal property of coproducts says the following. Any time we have a func
 &\obox{B}{.7in}{an airplane}&
 }
 \end{align}
-The universal property of coproducts formalizes the following intuitively obvious fact:
+余積の普遍的性質は, 以下の直感的に自明な事実を形式化する.
 \begin{quote}
-If we know how economy class seats are priced and we know how first class seats are priced, and if we know that every seat is either economy class or first class, then we automatically know how all seats are priced.
+もし我々が, エコノミークラスの料金がどのように設定されるかを知っており, またファーストクラスの料金がどのように設定されるかを知っており, そして全ての座席がエコノミークラスかファーストクラスかのどちらかに分類されることを知っているならば, 我々は全ての座席について料金がどのように設定されるかを自動的に知ることになる.
 \end{quote}
-To say it another way (and using the other induced map):
+違った言い方で(他の誘導写像を使って)表現してみよう.
 \begin{quote}
-If we keep track of which airplane every economy class seat is in and we keep track of which airplane every first class seat is in, and if we know that every seat is either economy class or first class, then we require no additional tracking for any airplane seat whatsoever.
+もし我々が全てのエコノミークラスの座席についてその座席が存在しているところの航空機を把握しており, 全てのファーストクラスの座席についてその座席が存在しているところの航空機を把握しており, さらに全ての座席がエコノミークラスかファーストクラスのどちらかに分類されることを知っているならば, それ以上に把握する必要がある航空機の座席は一席もない.
 \end{quote}
 
 \end{example}
 
 \begin{application}[Piecewise defined curves]
 
-In science, curves are often defined or considered piecewise. For example in testing the mechanical properties of a material, we might be interested in various regions of \href{http://en.wikipedia.org/wiki/Deformation_(engineering)}{deformation}, such as elastic, plastic, or post-fracture. These are three intervals on which the material displays different kinds of properties. 
+%In science, curves are often defined or considered piecewise. For example in testing the mechanical properties of a material, we might be interested in various regions of \href{http://en.wikipedia.org/wiki/Deformation_(engineering)}{deformation}, such as elastic, plastic, or post-fracture. These are three intervals on which the material displays different kinds of properties. 
 
-For real numbers $a<b\in\RR$, let $[a,b]:=\{x\in\RR\|a\leq x\leq b\}$ denote the closed interval. Given a function $[a,b]\to\RR$ and a function $[c,d]\to\RR$, the universal property of coproducts implies that they extend uniquely to a function $[a,b]\sqcup[c,d]\to\RR$, which will appear as a piecewise defined curve.
+科学において, 曲線はしばしばその部分部分の塊として考察されたり定義されたりする. 例えば, 物質の力学的性質を試験する際, 我々は物質が示す\href{http://en.wikipedia.org/wiki/Deformation_(engineering)}{変形(deformation)}の相, 例えば弾性的(elastic)であるか, 塑性的(plastic)であるか, あるいは破断後か(post-fracture)といったことに興味があるであろう.  これらは物質の性質が異なったふるまいを見せる3つの領域である.
 
-Often we are given a curve on $[a,b]$ and another on $[b,c]$, where the two curves agree at the point $b$. This situation is described by pushouts, which are mild generalizations of coproducts; see Section \ref{sec:pushouts}.
+%For real numbers $a<b\in\RR$, let $[a,b]:=\{x\in\RR\|a\leq x\leq b\}$ denote the closed interval. Given a function $[a,b]\to\RR$ and a function $[c,d]\to\RR$, the universal property of coproducts implies that they extend uniquely to a function $[a,b]\sqcup[c,d]\to\RR$, which will appear as a piecewise defined curve.
+
+実数$a<b\in\RR$に対して$[a,b]:=\{x\in\RR\|a\leq x\leq b\}$は閉区間を示す. 函数$[a,b]\to\RR$と$[c,d]\to\RR$が与えられたとき, 余積の普遍的性質によって, これらの函数が函数$[a,b]\sqcup[c,d]\to\RR$に一意に拡張できることが示唆される. これらは曲線を定義する部分と見ることができるだろう.
+
+%Often we are given a curve on $[a,b]$ and another on $[b,c]$, where the two curves agree at the point $b$. This situation is described by pushouts, which are mild generalizations of coproducts; see Section \ref{sec:pushouts}.
+
+しばしば$[a,b]$上の曲線と別の$[b,c]$上の曲線が得られ, そしてその二つの曲線が点$b$で一致することがある. この状況は押し出し(pushout)によって表現される. これは余積のゆるやかな一般化である. \ref{sec:pushouts}章を見よ.
 
 \end{application}
 
 \begin{exercise}\label{exc:coprod}
 
-Write the universal property for coproduct in terms of a relationship between the following three sets: $$\Hom_{\Set}(X,A), \hsp \Hom_\Set(Y,A), \hsp \text{and} \hsp\Hom_\Set(X\sqcup Y,A).$$ 
+%Write the universal property for coproduct in terms of a relationship between the following three sets: $$\Hom_{\Set}(X,A), \hsp \Hom_\Set(Y,A), \hsp \text{and} \hsp\Hom_\Set(X\sqcup Y,A).$$ 
+
+以下の3つの集合の間の関係の観点で余積の普遍的性質を書き下せ. $$\Hom_{\Set}(X,A), \hsp \Hom_\Set(Y,A), \hsp \text{and} \hsp\Hom_\Set(X\sqcup Y,A).$$ 
 \end{exercise}
 
 \begin{example}\label{ex:coproduct1}
 
-In the following olog the types $A$ and $B$ are disjoint, so the coproduct $C=A\sqcup B$ is just the union. $$\fbox{\xymatrix{\smbox{A}{a person}\LA{r}{is}&\smbox{C=A\sqcup B}{a person or a cat}&\smbox{B}{a cat}\LAL{l}{is}}}$$
+%In the following olog the types $A$ and $B$ are disjoint, so the coproduct $C=A\sqcup B$ is just the union. $$\fbox{\xymatrix{\smbox{A}{a person}\LA{r}{is}&\smbox{C=A\sqcup B}{a person or a cat}&\smbox{B}{a cat}\LAL{l}{is}}}$$
 
+以下のologで型$A$と$B$は互いに素であり(共通部分集合を持たず), よって余積$C=A\sqcup B$は単なる合併集合である. $$\fbox{\xymatrix{\smbox{A}{a person}\LA{r}{is}&\smbox{C=A\sqcup B}{a person or a cat}&\smbox{B}{a cat}\LAL{l}{is}}}$$
 \end{example}
 
 \begin{example}\label{ex:coproduct2}
 
-In the following olog, $A$ and $B$ are not disjoint, so care must be taken to differentiate common elements. $$\fbox{\xymatrixnocompile{\obox{A}{.7in}{\rr an animal that can fly}\LA{rr}{labeled ``A" is}&&\obox{C=A\sqcup B}{1.3in}{an animal that can fly (labeled ``A") or an animal that can swim (labeled ``B")}&&\obox{B}{.9in}{\rr an animal that can swim}\LAL{ll}{labeled ``B" is}}}$$  Since ducks can both swim and fly, each duck is found twice in $C$, once labeled as a flyer and once labeled as a swimmer.  The types $A$ and $B$ are kept disjoint in $C$, which justifies the name ``disjoint union."
+%In the following olog, $A$ and $B$ are not disjoint, so care must be taken to differentiate common elements. $$\fbox{\xymatrixnocompile{\obox{A}{.7in}{\rr an animal that can fly}\LA{rr}{labeled ``A" is}&&\obox{C=A\sqcup B}{1.3in}{an animal that can fly (labeled ``A") or an animal that can swim (labeled ``B")}&&\obox{B}{.9in}{\rr an animal that can swim}\LAL{ll}{labeled ``B" is}}}$$  Since ducks can both swim and fly, each duck is found twice in $C$, once labeled as a flyer and once labeled as a swimmer.  The types $A$ and $B$ are kept disjoint in $C$, which justifies the name ``disjoint union."
+
+以下のologにおいて, $A$と$B$は互いに素ではなく, よって共通要素を区別して取らなければならないことに注意する. $$\fbox{\xymatrixnocompile{\obox{A}{.7in}{\rr an animal that can fly}\LA{rr}{labeled ``A" is}&&\obox{C=A\sqcup B}{1.3in}{an animal that can fly (labeled ``A") or an animal that can swim (labeled ``B")}&&\obox{B}{.9in}{\rr an animal that can swim}\LAL{ll}{labeled ``B" is}}}$$ なぜならアヒルは泳げかつ飛べるから, それぞれのアヒルは$C$において, かつて飛べるものと見出し付けられた分と, かつて泳ぐものと見出し付けられていた分とで, 計二回見出されるからである. 型$A$と型$B$は$C$でも互いに素なままであり, これは``直和(disjoint union)''という用語で正当化される.
 
 \end{example}
 
 \begin{exercise}
 
-Understand Example \ref{ex:coproduct2} and see if a similar idea would make sense for particles and waves. Make an olog, and choose your wording in accordance with Rules \ref{rules:types}. How do photons, which exhibit properties of both waves and particles, fit into the coproduct in your olog?
+%Understand Example \ref{ex:coproduct2} and see if a similar idea would make sense for particles and waves. Make an olog, and choose your wording in accordance with Rules \ref{rules:types}. How do photons, which exhibit properties of both waves and particles, fit into the coproduct in your olog?
+
+Example \ref{ex:coproduct2}を理解し, 同じようなアイデアが粒子と波動に対して意味を持つかどうかを見よ. ologを作り, Rules \ref{rules:types}に調和する単語を選べ. 光子は波動と粒子の双方の性質を示すが\footnote{訳注: 波動と粒子の双方の性質を示す物体は光子に限らない.}, 作成したologの余積の中に当てはめられるだろうか?
 
 \end{exercise}
 
 \begin{exercise}
-Following the section above, ``Ologging products" page \pageref{sec:ologging products}, come up with a naming system for coproducts, the inclusions, and the universal maps. Try it out by making an olog (involving coproducts) discussing the idea that both a .wav file and a .mp3 file can be played on a modern computer. Be careful that your arrows are valid in the sense of Section \ref{sec:invalid aspect}.
+%Following the section above, ``Ologging products" page \pageref{sec:ologging products}, come up with a naming system for coproducts, the inclusions, and the universal maps. Try it out by making an olog (involving coproducts) discussing the idea that both a .wav file and a .mp3 file can be played on a modern computer. Be careful that your arrows are valid in the sense of Section \ref{sec:invalid aspect}.
+
+\pageref{sec:ologging products}ページの``Ologと積''に従って, 余積, 包含, および普遍写像に対する名前付けシステムを構築せよ. (余積を含む)ologとして, 現代的な計算機上で.wavファイルと.mp3ファイルの双方が再生可能であるというアイデアを議論するologを作り, そこで作成したシステムの実践を試みよ. \ref{sec:invalid aspect}章における意味で矢印が有効であるかどうかに十分注意せよ.
 \end{exercise}
+
