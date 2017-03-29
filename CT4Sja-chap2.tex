@@ -1356,3 +1356,359 @@ Example \ref{ex:coproduct2}を理解し, 同じようなアイデアが粒子と
 \pageref{sec:ologging products}ページの``Ologと積''に従って, 余積, 包含, および普遍写像に対する名前付けシステムを構築せよ. (余積を含む)ologとして, 現代的な計算機上で.wavファイルと.mp3ファイルの双方が再生可能であるというアイデアを議論するologを作り, そこで作成したシステムの実践を試みよ. \ref{sec:invalid aspect}章における意味で矢印が有効であるかどうかに十分注意せよ.
 \end{exercise}
 
+%%%%%% Section %%%%%%
+
+%\section{Finite limits in $\Set$}\label{sec:finite limits}
+\section{$\Set$の有限極限}\label{sec:finite limits}
+
+%In this section we discuss what are called {\em limits} of variously-shaped diagrams of sets. We will make all this much more precise when we discuss limits in arbitrary categories in Section \ref{sec:lims and colims in a cat}.
+
+この章で我々は, 集合の様々な形の図式の\emph{極限(limit)}と呼ばれるものについて議論する. ここでの議論は全て, \ref{sec:lims and colims in a cat}章で任意の圏における極限を議論した時に, はるかに精緻なものになるであろう.
+
+%%%% Subsection %%%%
+
+%\subsection{Pullbacks}
+\subsection{引き戻し}
+
+%\begin{definition}[Pullback]\label{def:pullback}\index{pullback!of sets}
+\begin{definition}[引き戻し]\label{def:pullback}\index{pullback!of sets}
+
+%Suppose given the diagram of sets and functions below.
+%\begin{align}\label{dia:fp sets}
+%\xymatrix{&Y\ar[d]^g\\
+%X\ar[r]_f&Z}
+%\end{align}
+%Its {\em fiber product}\index{fiber product} is the set 
+%$$X\times_ZY:=\{(x,w,y)\|f(x)=w=g(y)\}.$$ There are obvious projections $\pi_1\taking X\times_ZY\to X$ and $\pi_2\taking X\times_ZY\to Y$ (e.g. $\pi_2(x,w,y)=y$). Note that if $W=X\times_ZY$ then the diagram 
+%\begin{align}\label{dia:pullback sets}
+%\xymatrix{W\ullimit\ar[r]^-{\pi_2}\ar[d]_{\pi_1}&Y\ar[d]^g\\
+%X\ar[r]_f&Z}
+%\end{align}
+%commutes. Given the setup of Diagram \ref{dia:fp sets} we define the {\em pullback of $X$ and $Y$ over $Z$} to be any set $W$ for which we have an isomorphism $W\To{\iso}X\times_ZY$. The corner symbol $\lrcorner$ in Diagram \ref{dia:pullback sets} indicates that $W$ is the pullback.\index{a symbol!$\lrcorner$}
+
+以下のような集合の函数の図式が与えられたとする.
+\begin{align}\label{dia:fp sets}
+\xymatrix{&Y\ar[d]^g\\
+X\ar[r]_f&Z}
+\end{align}
+この\emph{ファイバー積(fiber product)}\index{fiber product}は集合
+$$X\times_ZY:=\{(x,w,y)\|f(x)=w=g(y)\}$$である. 自明な写像$\pi_1\taking X\times_ZY\to X$と$\pi_2\taking X\times_ZY\to Y$ (e.g. $\pi_2(x,w,y)=y$)が存在する. もし$W=X\times_ZY$ならば図式
+\begin{align}\label{dia:pullback sets}
+\xymatrix{W\ullimit\ar[r]^-{\pi_2}\ar[d]_{\pi_1}&Y\ar[d]^g\\
+X\ar[r]_f&Z}
+\end{align}
+は可換であることに注意せよ. Diagram \ref{dia:fp sets}の設定が与えられたとき, \emph{$Z$上の$X$と$Y$の引き戻し(pullback of $X$ and $Y$ over $Z$)}を, 同型写像$W\To{\iso}X\times_ZY$を得ることができるところの任意の写像$W$として定義する. Diagram \ref{dia:pullback sets}での角の記号$\lrcorner$は$W$が引き戻しであることを示す.\index{a symbol!$\lrcorner$}
+
+\end{definition}
+
+\begin{exercise}
+%Let $X,Y,Z$ be as drawn and $f\taking X\to Z$ and $g\taking Y\to Z$ the indicated functions. 
+%\begin{center}
+%\includegraphics[height=2in]{setPullback}
+%\end{center}
+%What is the pullback of the diagram $X\Too{f}Z\Fromm{g}Y$?
+$X$, $Y$, $Z$を描かれているような集合とし, $f\taking X\to Z$と$g\taking Y\to Z$を示さている函数とする. 
+\begin{center}
+\includegraphics[height=2in]{setPullback}
+\end{center}
+図式$X\Too{f}Z\Fromm{g}Y$の引き戻しは何だろうか?
+\end{exercise}
+
+\begin{exercise}~
+%\sexc Draw a set $X$ with five elements and a set $Y$ with three elements. Color each element of $X$ and each element of $Y$ either red, blue, or yellow,
+%\footnote{You can use shadings rather than coloring, if coloring would be annoying.}
+%and do so in a ``random-looking" way. Considering your coloring of $X$ as a function $X\to C$, where $C=\{\tn{red, blue, yellow}\}$, and similarly obtaining a function $Y\to C$, draw the fiber product $X\times_CY$. Make sure it is colored appropriately.
+%\next The universal property for products guarantees a function $X\times_CY\to X\times Y$, which I can tell you will be an injection. This means that the drawing you made of the fiber product can be imbedded into the $5\times 3$ grid; please draw the grid and indicate this subset.
+%\endsexc
+\sexc 5要素の集合$X$と3要素の集合$Y$を描け. $X$のそれぞれの要素と$Y$のそれぞれの要素を赤, 青, 黄のいづれかの色を塗り, 
+\footnote{色を塗るのが面倒であるならば影を付けるだけでもよい.}
+``無秩序に見える''ようなやり方をとれ. $C=\{\tn{red, blue, yellow}\}$として$X$の色の塗り方を$X\to C$とみなし, 同様に函数$Y\to C$を得, ファイバー積$X\times_CY$を描け. 適切に色が塗られていることを確認せよ.
+\next 積の普遍的性質は函数$X\times_CY\to X\times Y$の存在を保証し, これは単射であると示すことができる. これが 意味するのは, $5\times 3$の格子の中に, 先程描いたファイバー積の図式を埋め込むことができるということである. よければ格子を描いてこの部分集合を示してみよう.
+\endsexc
+\end{exercise}
+
+\begin{remark}
+
+Some may prefer to denote this fiber product by $f\times_Zg$ rather than $X\times_ZY$. The former is  mathematically better notation, but human-readability is often enhanced by the latter, which is also more common in the literature. We use whichever is more convenient.
+
+\end{remark}
+
+\begin{exercise}~
+\sexc Suppose that $Y=\emptyset$; what can you say about $X\times_ZY$? 
+\next Suppose now that $Y$ is any set but that $Z$ has exactly one element; what can you say about $X\times_ZY$?
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Let $S=\RR^3, T=\RR$, and think of them as (Aristotelian) space and time, with the origin in $S\times T$ given by the center of mass of MIT at the time of its founding. Let $Y=S\times T$ and let $g_1\taking Y\to S$ be one projection and $g_2\taking Y\to T$ the other projection. Let $X=\singleton$ be a set with one element and let $f_1\taking X\to S$ and $f_2\taking X\to T$ be given by the origin in both cases. 
+\sexc What are the fiber products $W_1$ and $W_2$:
+$$
+\xymatrix{W_1\ar[r]\ar[d]\ullimit&Y\ar[d]^{g_1}\\X\ar[r]_{f_1}&S}\hspace{1in}
+\xymatrix{W_2\ar[r]\ar[d]\ullimit&Y\ar[d]^{g_2}\\X\ar[r]_{f_2}&T}
+$$
+\next Interpret these sets in terms of the center of mass of MIT at the time of its founding.
+\endsexc
+\end{exercise}
+
+%% Subsubsection %%
+
+\subsubsection{Using pullbacks to define new ideas from old}
+
+In this section we will see that the fiber product of a diagram can serve to define a new concept. For example, in (\ref{dia:bad battery}) we define what it means for a cellphone to have a bad battery, in terms of the length of time for which it remains charged. By being explicit, we reduce the chance of misunderstandings between different groups of people. This can be useful in situations like audits and those in which one is trying to reuse or understand data gathered by others.
+
+\begin{example}
+
+Consider the following two ologs. The one on the right is the pullback of the one on the left. 
+\begin{align}\label{dia:wealthy and loyal}
+\fbox{\xymatrixnocompile{&\obox{C}{.7in}{\rr a loyal customer}\LA{d}{is}\\\obox{B}{.7in}{\rr a wealthy customer}\LA{r}{is}&\smbox{D}{a customer}}}\hsp&\fbox{\xymatrix{\obox{A=B\times_DC}{.9in}{\rr a customer that is wealthy and loyal}\LAL{d}{is}\LA{r}{is}&\obox{C}{.7in}{\rr a loyal customer}\LA{d}{is}\\\obox{B}{.7in}{\rr a wealthy customer}\LA{r}{is}&\smbox{D}{a customer}}}
+\end{align}
+Check from Definition \ref{def:pullback} that the label, ``a customer that is wealthy and loyal", is fair and straightforward as a label for the fiber product $A=B\times_DC$, given the labels on $B,C$, and $D$.
+
+\end{example}
+
+\begin{remark}\label{rem:defining using pullbacks}
+
+Note that in Diagram (\ref{dia:wealthy and loyal}) the top-left box could have been (non-canonically named) \fakebox{a good customer}. If it was taken to be the fiber product, then the author would be effectively {\em defining} a good customer to be one that is wealthy and loyal. 
+
+\end{remark}
+
+\begin{exercise}
+For each of the following, an author has proposed that the diagram on the right is a pullback. Do you think their labels are appropriate or misleading; that is, is the label on the upper-left box reasonable given the rest of the olog, or is it suspect in some way?
+\sexc\begin{align*}\footnotesize\fbox{\xymatrix{&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{D}{a color}}}\hsp&
+\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1.1in}{\rr a person whose favorite color is blue}\LAL{d}{is}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{D}{a color}}}
+\end{align*}
+\next\begin{align*}
+\footnotesize\fbox{\xymatrixnocompile{&&\smbox{C}{a woman}\LA{d}{is}\\\smbox{B}{a dog}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{D}{a person}}}\hsp&
+\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1in}{\rr a dog whose owner is a woman}\LAL{d}{is}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{C}{a woman}\LA{d}{is}\\\smbox{B}{a dog}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{D}{a person}}}
+\end{align*}
+\next\begin{align*}
+\footnotesize\fbox{\xymatrixnocompile{&\obox{C}{.5in}{\rr a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{\rr a space in our house}\LA{r}{has}&\smbox{D}{a width}}}\hsp&
+\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{.5in}{\rr a good fit}\LAL{d}{$s$}\LA{r}{$f$}&\obox{C}{.5in}{\rr a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{\rr a space in our house}\LA{r}{has}&\smbox{D}{a width}}}
+\end{align*}
+\endsexc
+\end{exercise}
+
+\begin{exercise}~
+\sexc Consider your olog from Exercise \ref{exc:family olog}. Are any of the commutative squares there actually pullback squares? 
+\next Now use ologs with products and pullbacks to define what a brother is and what a sister is (again in a human biological nuclear family), in terms of types such as \fakebox{an offspring of mating pair $(a,b)$}, \fakebox{a person}, \fakebox{a male person}, \fakebox{a female person}, and so on.
+\endsexc
+\end{exercise}
+
+\begin{definition}[Preimage]\label{def:preimage}
+
+Let $f\taking X\to Y$ be a function and $y\in Y$ an element. The {\em preimage of y under $f$}\index{preimage}, denoted $f^\m1(y)$,\index{a symbol!$f^\m1$} is  the subset $f^\m1(y):=\{x\in X\|f(x)=y\}$. If $Y'\ss Y$ is any subset, the {\em preimage of $Y'$ under $f$}, denoted $f^\m1(Y')$, is the subset $f^\m1(Y')=\{x\in X\|f(x)\in Y'\}$.
+
+\end{definition}
+
+\begin{exercise}
+Let $f\taking X\to Y$ be a function and $y\in Y$ an element. Draw a pullback diagram in which the fiber product is isomorphic to the preimage $f^\m1(y)$.
+\end{exercise}
+
+\begin{lemma}[Universal property for pullback]\label{lemma:up for fp}
+
+Suppose given the diagram of sets and functions as below.
+\begin{align*}
+\xymatrix{&Y\ar[d]^u\\
+X\ar[r]_t&Z}
+\end{align*}
+For any set $A$ and commutative solid arrow diagram as below (i.e. functions $f\taking A\to X$ and $g\taking A\to Y$ such that $t\circ f=u\circ g$), 
+\begin{align}\label{dia:universal property of fp}
+\xymatrix{
+&X\times_ZY\ar@/_1pc/[lddd]_{\pi_1}\ar@/^1pc/[rddd]^{\pi_2}\\\\
+&A\ar@{-->}[uu]^{\exists!}\ar[dl]_{\forall f}\ar[dr]^{\forall g}&\\
+X\ar[rd]_t&&Y\ar[ld]^u\\
+&Z&}
+\end{align}
+there exists a unique arrow $\pb{f}{g}{Z}\taking A\to X\times_ZY$ making everything commute, i.e. 
+$$f=\pi_1\circ \pb{f}{g}{Z}\hsp\text{and}\hsp g=\pi_2\circ\pb{f}{g}{Z}.$$
+
+\end{lemma}
+
+\begin{exercise}
+Create an olog whose underlying shape is a commutative square. Now add the fiber product so that the shape is the same as that of Diagram (\ref{dia:universal property of fp}). Assign English labels to the projections $\pi_1,\pi_2$ and to the dotted map $A\To{\pb{f}{g}{Z}}X\times_ZY$, such that these labels are as canonical as possible.
+\end{exercise}
+
+%% Subsubsection %%
+
+\subsubsection{Pasting diagrams for pullback}
+
+Consider the diagram drawn below, which includes a left-hand square, a right-hand square, and a big rectangle.
+$$
+\xymatrix{
+A'\ar[r]^{f'}\ar[d]_i\ullimit&B'\ar[r]^{g'}\ar[d]_j\ullimit&C'\ar[d]^k\\
+A\ar[r]_f&B\ar[r]_g&C}
+$$
+The right-hand square has a corner symbol indicating that $B'\iso B\times_CC'$ is a pullback. But the corner symbol on the left is ambiguous; it might be indicating that the left-hand square is a pullback, or it might be indicating that the big rectangle is a pullback. It turns out that if $B'\iso B\times_CC'$ then it is not ambiguous because the left-hand square is a pullback if and only if the big rectangle is.
+
+\begin{proposition}\label{prop:pasting}
+
+Consider the diagram drawn below
+$$
+\xymatrix{
+&B'\ar[r]^{g'}\ar[d]_j\ullimit&C'\ar[d]^k\\
+A\ar[r]_f&B\ar[r]_g&C}
+$$
+where $B'\iso B\times_CC'$ is a pullback. Then there is an isomorphism $A\times_BB'\iso A\times_CC'$. Said another way, $$A\times_B(B\times_CC')\iso A\times_CC'.$$
+
+\end{proposition}
+
+\begin{proof}
+
+We first provide a map $\phi\taking A\times_B(B\times_CC')\to A\times_CC'$. An element of $A\times_B(B\times_CC')$ is of the form $(a,b,(b,c,c'))$ such that $f(a)=b, g(b)=c$ and $k(c')=c$. But this implies that $g\circ f(a)=c=k(c')$ so we put $\phi(a,b,(b,c,c')):=(a,c,c')\in A\times_CC'$. Now we provide a proposed inverse, $\psi\taking A\times_CC'\to A\times_B(B\times_CC')$. Given $(a,c,c')$ with $g\circ f(a)=c=k(c')$, let $b=f(a)$ and note that $(b,c,c')$ is an element of $B\times_CC'$. So we can define $\psi(a,c,c')=(a,b,(b,c,c'))$. It is easy to see that $\phi$ and $\psi$ are inverse.
+ 
+\end{proof}
+
+Proposition \ref{prop:pasting} can be useful in authoring ologs. For example, the type \fakebox{a cellphone that has a bad battery} is vague, but we can lay out precisely what it means using pullbacks:
+\small
+\begin{align}\label{dia:bad battery}
+\fbox{\xymatrixnocompile{\obox{A\iso B\times_DC}{1in}{a cellphone that has a bad battery}\ar[r]\ar[d]&\smbox{C\iso D\times_FE}{a bad battery}\ar[r]\ar[d]&\obox{E\iso F\times_HG}{.5in}{less than 1 hour}\ar[r]\ar[d]&\obox{G}{.5in}{between 0 and 1}\ar[d]\\\smbox{B}{a cellphone}\LA{r}{has}&\smbox{D}{a battery}\LA{r}{\parbox{.4in}{\rr remains charged for}}&\obox{F}{.6in}{a duration of time}\LA{r}{\hspace{.07in}\parbox{.4in}{\rr in hours yields}}&\obox{H}{.6in}{a range of numbers}}}
+\end{align}\normalsize
+
+The category-theoretic fact described above says that since $A\iso B\times_DC$ and $C\iso D\times_FE$, it follows that $A\iso B\times_FE$.  That is, we can deduce the definition ``a cellphone that has a bad battery is defined as a cellphone that has a battery which remains charged for less than one hour."  
+
+\begin{exercise}~
+\sexc Create an olog that defines two people to be ``of approximately the same height" if and only if their height difference is less than half an inch, using a pullback. Your olog can include the box \fakebox{a real number $x$ such that $-.5<x<.5$}. 
+\next In the same olog, make a box for those people whose height is approximately the same as a person named ``The Virgin Mary". You may need to use images, as in Section \ref{sec:images}.
+\endsexc
+\end{exercise}
+
+\begin{exercise}\label{exc:pointwise map of fp}
+Consider the diagram on the left below, where both squares commute. 
+$$
+\xymatrix@=15pt{
+&&&Y'\ar[dd]\\
+&&Y\ar[ru]\ar[dd]\\
+&X'\ar'[r][rr]&&Z'\\
+X\ar[rr]\ar[ru]&&Z\ar[ru]
+}
+\hspace{1in}
+\xymatrix@=15pt{
+&W'\ar[rr]\ar'[d][dd]\ullimit&&Y'\ar[dd]\\
+W\ar[rr]\ar[dd]\ullimit&&Y\ar[ru]\ar[dd]\\
+&X'\ar'[r][rr]&&Z'\\
+X\ar[rr]\ar[ru]&&Z\ar[ru]
+}
+$$
+Let $W=X\times_ZY$ and $W'=X'\times_{Z'}Y'$, and form the diagram to the right. Use the universal property of fiber products to construct a map $W\to W'$ such that all squares commute.
+\end{exercise}
+
+%%%% Subsection %%%%
+
+\subsection{Spans, experiments, and matrices}
+
+\begin{definition}\label{def:span}\index{span}
+
+Given sets $A$ and $B$, a {\em span on $A$ and $B$} is a set $R$ together with functions $f\taking R\to A$ and $g\taking R\to B$. 
+$$\xymatrix@=15pt{&R\ar[ddl]_f\ar[ddr]^g\\\\A&&B}$$
+
+\end{definition}
+
+\begin{application}\label{app:exp temp press}
+
+Think of $A$ and $B$ as observables and $R$ as a set of experiments performed on these two variables. For example, let's say $T$ is the set of possible temperatures of a \href{http://en.wikipedia.org/wiki/Ideal_gas_law}{\text gas} in a fixed container and let's say $P$ is the set of possible pressures of the gas. We perform 1000 experiments in which we change and record the temperature and we simultaneously also record the pressure; this is a span $T\From{f}E\To{g}P$. The results might look like this:
+$$
+\begin{tabular}{| l || l | l |}
+\bhline
+\multicolumn{3}{| c |}{Experiment}\\\bhline
+{\bf ID}&{\bf Temperature}&{\bf Pressure}\\\bbhline
+1&100& 72\\\hline
+2&100&73\\\hline
+3&100&72\\\hline
+4&200&140\\\hline
+5&200&138\\\hline
+6&200&141\\\hline
+\vdots&\vdots&\vdots\\\bhline
+\end{tabular}
+$$
+
+\end{application}
+
+\begin{definition}\label{def:composite span}
+
+Let $A,B,$ and $C$ be sets, and let $A\From{f}R\To{g}B$ and $B\From{f'}R'\To{g'}C$ be spans. Their {\em composite span}\index{span!composite} is given by the fiber product $R\times_BR'$ as in the diagram below:
+$$
+\xymatrix@=10pt{&&R\times_BR'\ar[ldd]\ar[rdd]\\\\&R\ar[ddl]_f\ar[ddr]^g&&R'\ar[ddl]_{f'}\ar[ddr]^{g'}\\\\A&&B&&C
+}$$
+
+\end{definition}
+
+\begin{application}\label{app:exp temp press 2}
+
+Let's look back at our lab's experiment from Application \ref{app:exp temp press}, which resulted in a span $T\From{f}E\To{g}P$. Suppose we notice that something looks a little wrong. The pressure should be linear in the temperature but it doesn't appear to be. We hypothesize that the volume of the container is increasing under pressure. We look up this container online and see that experiments have been done to measure the volume as the interior pressure changes. The data has generously been made available online, which gives us a span $P\From{f'}E'\To{g'}V$. 
+
+The composite of our lab's span with the online data span yields a span $T\from E''\to V$, where $E'':=E\times_PE'$. What information does this span give us? In explaining it, one might say ``whenever an experiment in our lab yielded the same pressure as one they recorded, let's call that a data point. Every data point has an associated temperature (from our lab) and an associated volume (from their experiment). This is the best we can do." 
+
+The information we get this way might be seen by some as unscientific, but it certainly is the kind of information people use in business and in every day life calculation---we get our data from multiple sources and put it together. Moreover, it is scientific in the sense that it is reproducible. The way we obtained our $T$-$V$ data is completely transparent.
+
+\end{application}
+
+We can relate spans to matrices of natural numbers, and see a natural ``categorification" of matrix addition and matrix multiplication. If our spans come from experiments as in Applications \ref{app:exp temp press} and \ref{app:exp temp press 2} the matrices involved will look like huge but sparse matrices. Let's go through that.
+
+Let $A$ and $B$ be sets and let $A\from R\to B$ be a span. By the universal property of products, we have a unique map $R\To{p}A\times B$. 
+
+We make a matrix of natural numbers out of this data as follows. The set of rows is $A$, the set of columns is $B$. For elements $a\in A$ and $b\in B$, the $(a,b)$-entry is the cardinality of its preimage, $|p^\m1(a,b)|$, i.e. the number of elements in $R$ that are sent by $p$ to $(a,b)$. 
+
+Suppose we are given two $(A,B)$-spans, i.e. $A\from R\to B$ and $A\from R'\to B$; we might think of these has having the same {\em dimensions}, i.e. they are both $|A|\times|B|$-matrices. We can take the disjoint union $R\sqcup R'$ and by the universal property of coproducts we have a unique span $A\from R\sqcup R'\to B$ making the requisite diagram commute.
+\footnote{
+$$\xymatrix{
+&R\ar[dl]\ar[dr]\ar[d]\\
+A&R\sqcup R'\ar[l]\ar[r]&B\\
+&R'\ar[ur]\ar[ul]\ar[u]}
+$$
+}
+The matrix corresponding to this new span will be the sum of the matrices corresponding to the two previous spans out of which it was made.
+
+Given a span $A\from R\to B$ and a span $B\from S\to C$, the composite span can be formed as in Definition \ref{def:composite span}. It will correspond to the usual multiplication of matrices.
+
+\begin{construction}\label{const:bipartite}\index{graph!bipartite}
+
+Given a span $A\From{f} R\To{g} B$, one can draw a {\em bipartite graph} with each element of $A$ drawn as a dot on the left, each element of $B$ drawn as a dot on the right, and each element $r\in R$ drawn as an arrow connecting vertex $f(r)$ on the left to vertex $g(r)$ on the right.
+
+\end{construction}
+
+\begin{exercise}~
+\sexc Draw the bipartite graph (as in Construction \ref{const:bipartite}) corresponding to the span $T\From{f}E\To{g}P$ in Application \ref{app:exp temp press}.
+\next Now make up your own span $P\From{f'}E'\To{g'}V$ and draw it. Finally, draw the composite span below. 
+\next Can you say how the composite span graph relates to the graphs of its factors?
+\endsexc
+\end{exercise}
+
+%%%% Subsection %%%%
+
+\subsection{Equalizers and terminal objects}
+
+\begin{definition}\label{def:equalizer}\index{equalizer}
+
+Suppose given two parallel arrows 
+\begin{align}\label{dia:equalizer}
+\xymatrix{X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y.}\hspace{1in}\xymatrix{Eq(f,g)\ar[r]^-p&X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y}
+\end{align}
+The {\em equalizer of $f$ and $g$} is the commutative diagram as to the right in (\ref{dia:equalizer}), where we define $$Eq(f,g):=\{x\in X\|f(x)=g(x)\}$$ and where $p$ is the canonical inclusion.
+
+\end{definition}
+
+\begin{example}
+
+Suppose one has designed an experiment to test a theoretical prediction. The question becomes, ``when does the theory match the experiment?" The answer is given by the equalizer of the following diagram:
+$$\xymatrix{
+\obox{}{.5in}{an input}\ar@<1ex>[rr]^{\tn{should, according to theory, yield}}\ar@<-1ex>[rr]_{\tn{according to experiment yields}}&\hspace{1in}&\obox{}{.6in}{an output}
+}$$
+The equalizer is the set of all inputs for which the theory and the experiment yield the same output.
+
+\end{example}
+
+\begin{exercise}
+Come up with an olog that uses equalizers in a reasonably interesting way. Alternatively, use an equalizer to specify those published authors who have published exactly one paper. Hint: find a function from authors to papers; then find another.
+\end{exercise}
+
+\begin{exercise}
+Find a universal property enjoyed by the equalizer of two arrows, and present it in the style of Lemmas \ref{lemma:up for prod}, \ref{lemma:up for coprod}, and \ref{lemma:up for fp}.
+\end{exercise}
+
+\begin{exercise}\index{terminal object!in $\Set$}~
+\sexc A terminal set is a set $S$ such that for every set $X$, there exists a unique function $X\to S$. Find a terminal set. 
+\next Do you think that the notion {\em terminal set} belongs in this section (Section \ref{sec:finite limits})? How so? If products, pullbacks, and equalizers are all limits, what do limits have in common?
+\endsexc
+\end{exercise}
+
+
