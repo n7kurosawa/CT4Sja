@@ -1429,32 +1429,48 @@ $X$, $Y$, $Z$を描かれているような集合とし, $f\taking X\to Z$と$g\
 
 \begin{remark}
 
-Some may prefer to denote this fiber product by $f\times_Zg$ rather than $X\times_ZY$. The former is  mathematically better notation, but human-readability is often enhanced by the latter, which is also more common in the literature. We use whichever is more convenient.
+%Some may prefer to denote this fiber product by $f\times_Zg$ rather than $X\times_ZY$. The former is  mathematically better notation, but human-readability is often enhanced by the latter, which is also more common in the literature. We use whichever is more convenient.
+
+ファイバー積を, $X\times_ZY$よりもむしろ$f\times_Zg$と書くことを好む人もいる. 後者は数学的にはよりよい記法であるが, 人間の可読性はしばしば前者の方が高められており, また前者は文献でより一般的な記法でもある. 我々はどちらかに限らずより便利な方を用いる.
 
 \end{remark}
 
 \begin{exercise}~
-\sexc Suppose that $Y=\emptyset$; what can you say about $X\times_ZY$? 
-\next Suppose now that $Y$ is any set but that $Z$ has exactly one element; what can you say about $X\times_ZY$?
+%\sexc Suppose that $Y=\emptyset$; what can you say about $X\times_ZY$? 
+%\next Suppose now that $Y$ is any set but that $Z$ has exactly one element; what can you say about $X\times_ZY$?
+%\endsexc
+\sexc $Y=\emptyset$とする. $X\times_ZY$について何が言えるだろうか?
+\next 今度は$Y$を任意の集合とするが, $Z$は要素を丁度一つだけ持つとする. $X\times_ZY$について何が言えるだろうか?
 \endsexc
 \end{exercise}
 
 \begin{exercise}
-Let $S=\RR^3, T=\RR$, and think of them as (Aristotelian) space and time, with the origin in $S\times T$ given by the center of mass of MIT at the time of its founding. Let $Y=S\times T$ and let $g_1\taking Y\to S$ be one projection and $g_2\taking Y\to T$ the other projection. Let $X=\singleton$ be a set with one element and let $f_1\taking X\to S$ and $f_2\taking X\to T$ be given by the origin in both cases. 
-\sexc What are the fiber products $W_1$ and $W_2$:
+%Let $S=\RR^3, T=\RR$, and think of them as (Aristotelian) space and time, with the origin in $S\times T$ given by the center of mass of MIT at the time of its founding. Let $Y=S\times T$ and let $g_1\taking Y\to S$ be one projection and $g_2\taking Y\to T$ the other projection. Let $X=\singleton$ be a set with one element and let $f_1\taking X\to S$ and $f_2\taking X\to T$ be given by the origin in both cases. 
+%\sexc What are the fiber products $W_1$ and $W_2$:
+%$$
+%\xymatrix{W_1\ar[r]\ar[d]\ullimit&Y\ar[d]^{g_1}\\X\ar[r]_{f_1}&S}\hspace{1in}
+%\xymatrix{W_2\ar[r]\ar[d]\ullimit&Y\ar[d]^{g_2}\\X\ar[r]_{f_2}&T}
+%$$
+%\next Interpret these sets in terms of the center of mass of MIT at the time of its founding.
+%\endsexc
+$S=\RR^3$, $T=\RR$とし, これらを(アリストテレス的な)空間と時間とみなし, $S\times T$の原点を創立時のマサチューセッツ工科大学(MIT)の重心によって与えるとする. $Y=S\times T$とし, $g_1\taking Y\to S$を一つ目の射影, $g_2\taking Y\to T$をもう一つの射影とする. $X=\singleton$を要素が一つだけの集合とし, $f_1\taking X\to S$および$f_2\taking X\to T$が両者とも原点によって与えられるとする. 
+\sexc $W_1$と$W_2$のファイバー積は何だろうか?
 $$
 \xymatrix{W_1\ar[r]\ar[d]\ullimit&Y\ar[d]^{g_1}\\X\ar[r]_{f_1}&S}\hspace{1in}
 \xymatrix{W_2\ar[r]\ar[d]\ullimit&Y\ar[d]^{g_2}\\X\ar[r]_{f_2}&T}
 $$
-\next Interpret these sets in terms of the center of mass of MIT at the time of its founding.
+\next これらの集合を創立時のMITの重心という観点で解釈せよ.
 \endsexc
 \end{exercise}
 
 %% Subsubsection %%
 
-\subsubsection{Using pullbacks to define new ideas from old}
+%\subsubsection{Using pullbacks to define new ideas from old}
+\subsubsection{既存のアイデアから新しいアイデアを定義するための引き戻しの使用}
 
-In this section we will see that the fiber product of a diagram can serve to define a new concept. For example, in (\ref{dia:bad battery}) we define what it means for a cellphone to have a bad battery, in terms of the length of time for which it remains charged. By being explicit, we reduce the chance of misunderstandings between different groups of people. This can be useful in situations like audits and those in which one is trying to reuse or understand data gathered by others.
+%In this section we will see that the fiber product of a diagram can serve to define a new concept. For example, in (\ref{dia:bad battery}) we define what it means for a cellphone to have a bad battery, in terms of the length of time for which it remains charged. By being explicit, we reduce the chance of misunderstandings between different groups of people. This can be useful in situations like audits and those in which one is trying to reuse or understand data gathered by others.
+
+この章では, 我々は図式のファイバー積が新しい概念の定義を提供するのに役立つことを見る. 例えば, \eqref{dia:bad battery}では充電器の調子が悪い携帯電話を意味するものを, 十分に充電されている時間の長さという観点から定義する. 概念を明示的にすることで, 我々は異なった集団に属する人々の間で誤解がしょうじる機会を減らす. これは監査や, あるいは他者によって集められたデータを理解や再利用しようと試みるといった状況において有用になりうる.
 
 \begin{example}
 
