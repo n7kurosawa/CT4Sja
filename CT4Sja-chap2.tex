@@ -733,7 +733,7 @@ ologが与えられた時, 作者は二つの経路が等価であると明確�
 
 %Create an olog for human nuclear biological families that includes the concept of person, man, woman, parent, father, mother, and child. Make sure to label all the arrows, and make sure each arrow indicates a valid aspect in the sense of Section \ref{sec:invalid aspect}. Indicate with check-marks ($\checkmark$) the diagrams that are intended to commute. If the 2-dimensionality of the page prevents a check-mark from being unambiguous, indicate the intended commutativity with an equation.
 
-男性(man), 女性(woman), 親(parent), 父(father), 母(mother), 子(child)という概念を含んだ, 人間個体の生物的家族のologを作成せよ. 全ての矢印には見出しがつけられていることを確認し, それぞれの矢印は\ref{sec:invalid aspect}章での意味において有効な様相を表していることを確認せよ. 可換図式を意図した図をチェックマーク($\checkmark$)で示せ. もし曖昧さなくチェックマークをつけることが紙の二次元性のせいでできない場合は意図した可換性を等式で示せ.
+男性(man), 女性(woman), 親(parent), 父(father), 母(mother), 子(child)という概念を含んだ, 人間の生物的核家族のologを作成せよ. 全ての矢印には見出しがつけられていることを確認し, それぞれの矢印は\ref{sec:invalid aspect}章での意味において有効な様相を表していることを確認せよ. 可換図式を意図した図をチェックマーク($\checkmark$)で示せ. もし曖昧さなくチェックマークをつけることが紙の二次元性のせいでできない場合は意図した可換性を等式で示せ.
 \end{exercise}
 
 \begin{example}[Non-commuting diagram]
@@ -1474,22 +1474,31 @@ $$
 
 \begin{example}
 
-Consider the following two ologs. The one on the right is the pullback of the one on the left. 
+%Consider the following two ologs. The one on the right is the pullback of the one on the left. 
+%\begin{align}\label{dia:wealthy and loyal}
+%\fbox{\xymatrixnocompile{&\obox{C}{.7in}{\rr a loyal customer}\LA{d}{is}\\\obox{B}{.7in}{\rr a wealthy customer}\LA{r}{is}&\smbox{D}{a customer}}}\hsp&\fbox{\xymatrix{\obox{A=B\times_DC}{.9in}{\rr a customer that is wealthy and loyal}\LAL{d}{is}\LA{r}{is}&\obox{C}{.7in}{\rr a loyal customer}\LA{d}{is}\\\obox{B}{.7in}{\rr a wealthy customer}\LA{r}{is}&\smbox{D}{a customer}}}
+%\end{align}
+%Check from Definition \ref{def:pullback} that the label, ``a customer that is wealthy and loyal", is fair and straightforward as a label for the fiber product $A=B\times_DC$, given the labels on $B,C$, and $D$.
+
+以下の二つのologを考える. 右側のものは左側のものの引き戻しである.
 \begin{align}\label{dia:wealthy and loyal}
 \fbox{\xymatrixnocompile{&\obox{C}{.7in}{\rr a loyal customer}\LA{d}{is}\\\obox{B}{.7in}{\rr a wealthy customer}\LA{r}{is}&\smbox{D}{a customer}}}\hsp&\fbox{\xymatrix{\obox{A=B\times_DC}{.9in}{\rr a customer that is wealthy and loyal}\LAL{d}{is}\LA{r}{is}&\obox{C}{.7in}{\rr a loyal customer}\LA{d}{is}\\\obox{B}{.7in}{\rr a wealthy customer}\LA{r}{is}&\smbox{D}{a customer}}}
 \end{align}
-Check from Definition \ref{def:pullback} that the label, ``a customer that is wealthy and loyal", is fair and straightforward as a label for the fiber product $A=B\times_DC$, given the labels on $B,C$, and $D$.
+Definition \ref{def:pullback}から, $B$, $C$, $D$の上に与えられた見出しに対して, ファイバー積$A=B\times_DC$についての見出しとして, 見出し``a customer that is wealthy and loyal''が妥当かつ直接的であることを確認せよ.
 
 \end{example}
 
 \begin{remark}\label{rem:defining using pullbacks}
 
-Note that in Diagram (\ref{dia:wealthy and loyal}) the top-left box could have been (non-canonically named) \fakebox{a good customer}. If it was taken to be the fiber product, then the author would be effectively {\em defining} a good customer to be one that is wealthy and loyal. 
+%Note that in Diagram (\ref{dia:wealthy and loyal}) the top-left box could have been (non-canonically named) \fakebox{a good customer}. If it was taken to be the fiber product, then the author would be effectively {\em defining} a good customer to be one that is wealthy and loyal. 
+
+Diagram \eqref{dia:wealthy and loyal}において, 左上の箱は(非標準的な名前として)\fakebox{a good customer}であったであろうことに注意せよ. これがファイバー積であるとされているのならば, ologの作者はよき顧客(a good customer)は裕福(wealthy)で義理堅い(loyal)顧客であると効果的に\emph{定義}していることになるであろう.
 
 \end{remark}
 
 \begin{exercise}
-For each of the following, an author has proposed that the diagram on the right is a pullback. Do you think their labels are appropriate or misleading; that is, is the label on the upper-left box reasonable given the rest of the olog, or is it suspect in some way?
+%For each of the following, an author has proposed that the diagram on the right is a pullback. Do you think their labels are appropriate or misleading; that is, is the label on the upper-left box reasonable given the rest of the olog, or is it suspect in some way?
+以下のそれぞれのologにおいて, その作者は右側の図式は引き戻しであると提案している. これらの見出しをどう思うだろうか? 適切かあるいは誤解を招かねないだろうか? つまり, 左上の箱の見出しは与えられたologの残り部分に対して妥当だろうか, それともなんらかの点で疑問だろうか?
 \sexc\begin{align*}\footnotesize\fbox{\xymatrix{&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{D}{a color}}}\hsp&
 \footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1.1in}{\rr a person whose favorite color is blue}\LAL{d}{is}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{D}{a color}}}
 \end{align*}
@@ -1505,19 +1514,25 @@ For each of the following, an author has proposed that the diagram on the right 
 \end{exercise}
 
 \begin{exercise}~
-\sexc Consider your olog from Exercise \ref{exc:family olog}. Are any of the commutative squares there actually pullback squares? 
-\next Now use ologs with products and pullbacks to define what a brother is and what a sister is (again in a human biological nuclear family), in terms of types such as \fakebox{an offspring of mating pair $(a,b)$}, \fakebox{a person}, \fakebox{a male person}, \fakebox{a female person}, and so on.
+%\sexc Consider your olog from Exercise \ref{exc:family olog}. Are any of the commutative squares there actually pullback squares? 
+%\next Now use ologs with products and pullbacks to define what a brother is and what a sister is (again in a human biological nuclear family), in terms of types such as \fakebox{an offspring of mating pair $(a,b)$}, \fakebox{a person}, \fakebox{a male person}, \fakebox{a female person}, and so on.
+%\endsexc
+\sexc Exercise \ref{exc:family olog}で作ったologを考える. そこにある任意の可換四角形は実際に引き戻しの四角形だろうか?
+\next (同様に人間の生物学的核家族において)男兄弟(brother)とは何かと女兄弟(sister)とは何かを定義するために積と引き戻しを含むologを使え. 例えば\fakebox{an offspring of mating pair $(a,b)$}, \fakebox{a person}, \fakebox{a male person}, \fakebox{a female person}, などといった型によって表現せよ.
 \endsexc
 \end{exercise}
 
 \begin{definition}[Preimage]\label{def:preimage}
 
-Let $f\taking X\to Y$ be a function and $y\in Y$ an element. The {\em preimage of y under $f$}\index{preimage}, denoted $f^\m1(y)$,\index{a symbol!$f^\m1$} is  the subset $f^\m1(y):=\{x\in X\|f(x)=y\}$. If $Y'\ss Y$ is any subset, the {\em preimage of $Y'$ under $f$}, denoted $f^\m1(Y')$, is the subset $f^\m1(Y')=\{x\in X\|f(x)\in Y'\}$.
+%Let $f\taking X\to Y$ be a function and $y\in Y$ an element. The {\em preimage of y under $f$}\index{preimage}, denoted $f^\m1(y)$,\index{a symbol!$f^\m1$} is  the subset $f^\m1(y):=\{x\in X\|f(x)=y\}$. If $Y'\ss Y$ is any subset, the {\em preimage of $Y'$ under $f$}, denoted $f^\m1(Y')$, is the subset $f^\m1(Y')=\{x\in X\|f(x)\in Y'\}$.
+
+$f\taking X\to Y$を函数とし, $y\in Y$を集合の要素とする. \emph{$f$による$y$の原像(preimage of $y$ under $f$)}\index{preimage}は部分集合$f^\m1(y):=\{x\in X\|f(x)=y\}$であり, $f^\m1(y)$,\index{a symbol!$f^\m1$}と書く. $Y'\ss Y$を任意の部分集合とすると, \emph{$f$による$Y'$の原像(preimage of $Y'$ under $f$)}は部分集合$f^\m1(Y')=\{x\in X\|f(x)\in Y'\}$であり, $f^\m1(Y')$と書かれる.
 
 \end{definition}
 
 \begin{exercise}
-Let $f\taking X\to Y$ be a function and $y\in Y$ an element. Draw a pullback diagram in which the fiber product is isomorphic to the preimage $f^\m1(y)$.
+%Let $f\taking X\to Y$ be a function and $y\in Y$ an element. Draw a pullback diagram in which the fiber product is isomorphic to the preimage $f^\m1(y)$.
+$f\taking X\to Y$を函数とし$y\in Y$を集合の要素とする. 含まれるファイバー積が原像$f^\m1(y)$と同型であるような引き戻しの図式を描け.
 \end{exercise}
 
 \begin{lemma}[Universal property for pullback]\label{lemma:up for fp}
