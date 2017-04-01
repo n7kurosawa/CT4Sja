@@ -1130,7 +1130,7 @@ $$m\times n\taking X\times Y\to X'\times Y'.$$
 
 %Given two objects $c,d$ in an olog, there is a canonical label $\qt{c\times d}$ for their product $c\times d$, written in terms of the labels $\qt{c}$ and $\qt{d}$. Namely, $$\qt{c\times d}:=\tn{a pair }(x,y)\tn{ where }x\tn{ is }\qt{c}\tn{ and }y\tn{ is }\qt{d}.$$ The projections $c\from c\times d\to d$ can be labeled ``yields, as $x$," and ``yields, as $y$," respectively.
 
-olog内の対象$c$, $d$が与えられたとき, その積$c\times d$に対して, 見出し$\qt{c}$および$\qt{d}$によって書かれる標準見出し$\qt{c\times d}$が存在する. すなわち$$\qt{c\times d}:=\tn{a pair }(x,y)\tn{ where }x\tn{ is }\qt{c}\tn{ and }y\tn{ is }\qt{d}.$$ 射影$c\from c\times d\to d$はそれぞれ``yields, as $x$''および``yields, as $y$''と見出し付けられる.
+olog内の対象$c$, $d$が与えられたとき, その積$c\times d$に対して, 見出し$\qt{c}$および$\qt{d}$によって書かれる標準見出し(canonical label)$\qt{c\times d}$が存在する. すなわち$$\qt{c\times d}:=\tn{a pair }(x,y)\tn{ where }x\tn{ is }\qt{c}\tn{ and }y\tn{ is }\qt{d}.$$ 射影$c\from c\times d\to d$はそれぞれ``yields, as $x$''および``yields, as $y$''と見出し付けられる.
 
 %Suppose that $e$ is another object and $p\taking e\to c$ and $q\taking e\to d$ are two arrows. By the universal property of products (Lemma \ref{lemma:up for prod}), $p$ and $q$ induce a unique arrow $e\to c\times d$ making the evident diagrams commute. This arrow can be labeled
 %\begin{center}
@@ -1397,7 +1397,7 @@ $$X\times_ZY:=\{(x,w,y)\|f(x)=w=g(y)\}$$である. 自明な写像$\pi_1\taking 
 \xymatrix{W\ullimit\ar[r]^-{\pi_2}\ar[d]_{\pi_1}&Y\ar[d]^g\\
 X\ar[r]_f&Z}
 \end{align}
-は可換であることに注意せよ. Diagram \ref{dia:fp sets}の設定が与えられたとき, \emph{$Z$上の$X$と$Y$の引き戻し(pullback of $X$ and $Y$ over $Z$)}を, 同型写像$W\To{\iso}X\times_ZY$を得ることができるところの任意の写像$W$として定義する. Diagram \ref{dia:pullback sets}での角の記号$\lrcorner$は$W$が引き戻しであることを示す.\index{a symbol!$\lrcorner$}
+は可換であることに注意せよ. Diagram \ref{dia:fp sets}の設定が与えられたとき, \emph{$Z$上の$X$と$Y$の引き戻し(pullback of $X$ and $Y$ over $Z$)}を, 同型写像$W\To{\iso}X\times_ZY$を得ることができるところの任意の写像$W$として定義する. Diagram \ref{dia:pullback sets}での鉤記号$\lrcorner$は$W$が引き戻しであることを示す.\index{a symbol!$\lrcorner$}
 
 \end{definition}
 
@@ -1537,12 +1537,28 @@ $f\taking X\to Y$を函数とし$y\in Y$を集合の要素とする. 含まれ�
 
 \begin{lemma}[Universal property for pullback]\label{lemma:up for fp}
 
-Suppose given the diagram of sets and functions as below.
+%Suppose given the diagram of sets and functions as below.
+%\begin{align*}
+%\xymatrix{&Y\ar[d]^u\\
+%X\ar[r]_t&Z}
+%\end{align*}
+%For any set $A$ and commutative solid arrow diagram as below (i.e. functions $f\taking A\to X$ and $g\taking A\to Y$ such that $t\circ f=u\circ g$), 
+%\begin{align}\label{dia:universal property of fp}
+%\xymatrix{
+%&X\times_ZY\ar@/_1pc/[lddd]_{\pi_1}\ar@/^1pc/[rddd]^{\pi_2}\\\\
+%&A\ar@{-->}[uu]^{\exists!}\ar[dl]_{\forall f}\ar[dr]^{\forall g}&\\
+%X\ar[rd]_t&&Y\ar[ld]^u\\
+%&Z&}
+%\end{align}
+%there exists a unique arrow $\pb{f}{g}{Z}\taking A\to X\times_ZY$ making everything commute, i.e. 
+%$$f=\pi_1\circ \pb{f}{g}{Z}\hsp\text{and}\hsp g=\pi_2\circ\pb{f}{g}{Z}.$$
+
+以下の集合と函数の図式が与えられたとする.
 \begin{align*}
 \xymatrix{&Y\ar[d]^u\\
 X\ar[r]_t&Z}
 \end{align*}
-For any set $A$ and commutative solid arrow diagram as below (i.e. functions $f\taking A\to X$ and $g\taking A\to Y$ such that $t\circ f=u\circ g$), 
+任意の集合$A$と, 以下のような可換な実線の矢印の図式(i.e. $t\circ f=u\circ g$となるところの函数$f\taking A\to X$と$g\taking A\to Y$)に対して,
 \begin{align}\label{dia:universal property of fp}
 \xymatrix{
 &X\times_ZY\ar@/_1pc/[lddd]_{\pi_1}\ar@/^1pc/[rddd]^{\pi_2}\\\\
@@ -1550,26 +1566,36 @@ For any set $A$ and commutative solid arrow diagram as below (i.e. functions $f\
 X\ar[rd]_t&&Y\ar[ld]^u\\
 &Z&}
 \end{align}
-there exists a unique arrow $\pb{f}{g}{Z}\taking A\to X\times_ZY$ making everything commute, i.e. 
-$$f=\pi_1\circ \pb{f}{g}{Z}\hsp\text{and}\hsp g=\pi_2\circ\pb{f}{g}{Z}.$$
+全てを可換にする一意な矢印
+$\pb{f}{g}{Z}\taking A\to X\times_ZY$が存在する\footnote{訳注: 原文の$\pb{f}{f}{Z}$を修正.}. すなわち
+$$f=\pi_1\circ \pb{f}{g}{Z}\hsp\text{および}\hsp g=\pi_2\circ\pb{f}{g}{Z}.$$
 
 \end{lemma}
 
 \begin{exercise}
-Create an olog whose underlying shape is a commutative square. Now add the fiber product so that the shape is the same as that of Diagram (\ref{dia:universal property of fp}). Assign English labels to the projections $\pi_1,\pi_2$ and to the dotted map $A\To{\pb{f}{g}{Z}}X\times_ZY$, such that these labels are as canonical as possible.
+%Create an olog whose underlying shape is a commutative square. Now add the fiber product so that the shape is the same as that of Diagram (\ref{dia:universal property of fp}). Assign English labels to the projections $\pi_1,\pi_2$ and to the dotted map $A\To{\pb{f}{g}{Z}}X\times_ZY$, such that these labels are as canonical as possible.
+骨組が可換四角形であるologを作成せよ. 次に\eqref{dia:universal property of fp}と同じ形になるようにファイバー積を追加せよ. 射影$\pi_1$, $\pi_2$および点線の写像$A\To{\pb{f}{g}{Z}}X\times_ZY$に英語の見出しを割り当て, 可能な限りそれらの見出しがcananicalであるようにせよ.
 \end{exercise}
 
 %% Subsubsection %%
 
 \subsubsection{Pasting diagrams for pullback}
 
-Consider the diagram drawn below, which includes a left-hand square, a right-hand square, and a big rectangle.
+%Consider the diagram drawn below, which includes a left-hand square, a right-hand square, and a big rectangle.
+%$$
+%\xymatrix{
+%A'\ar[r]^{f'}\ar[d]_i\ullimit&B'\ar[r]^{g'}\ar[d]_j\ullimit&C'\ar[d]^k\\
+%A\ar[r]_f&B\ar[r]_g&C}
+%$$
+%The right-hand square has a corner symbol indicating that $B'\iso B\times_CC'$ is a pullback. But the corner symbol on the left is ambiguous; it might be indicating that the left-hand square is a pullback, or it might be indicating that the big rectangle is a pullback. It turns out that if $B'\iso B\times_CC'$ then it is not ambiguous because the left-hand square is a pullback if and only if the big rectangle is.
+
+以下の図式を考える. ここには左側の四角形, 右側の四角形, そし全体の四角形が含まれる.
 $$
 \xymatrix{
 A'\ar[r]^{f'}\ar[d]_i\ullimit&B'\ar[r]^{g'}\ar[d]_j\ullimit&C'\ar[d]^k\\
 A\ar[r]_f&B\ar[r]_g&C}
 $$
-The right-hand square has a corner symbol indicating that $B'\iso B\times_CC'$ is a pullback. But the corner symbol on the left is ambiguous; it might be indicating that the left-hand square is a pullback, or it might be indicating that the big rectangle is a pullback. It turns out that if $B'\iso B\times_CC'$ then it is not ambiguous because the left-hand square is a pullback if and only if the big rectangle is.
+右側の四角形には$B'\iso B\times_CC'$が引き戻しであることを示す鉤記号がある. しかし左側の鉤記号は曖昧である. これは左側の四角形が引き戻しであることを示しているのかもしれないし, 全体の四角形が引き戻しであることを示しているのかもしれない. しかし, もし$B'\iso B\times_CC'$ならば曖昧でないことが分かる. なぜならば左側の四角形が可換であることと全体の四角形が可換であるのは同値だからである.
 
 \begin{proposition}\label{prop:pasting}
 
