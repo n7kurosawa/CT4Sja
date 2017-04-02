@@ -1599,29 +1599,47 @@ $$
 
 \begin{proposition}\label{prop:pasting}
 
-Consider the diagram drawn below
+%Consider the diagram drawn below
+%$$
+%\xymatrix{
+%&B'\ar[r]^{g'}\ar[d]_j\ullimit&C'\ar[d]^k\\
+%A\ar[r]_f&B\ar[r]_g&C}
+%$$
+%where $B'\iso B\times_CC'$ is a pullback. Then there is an isomorphism $A\times_BB'\iso A\times_CC'$. Said another way, $$A\times_B(B\times_CC')\iso A\times_CC'.$$
+
+以下に描かれた図式を考える.
 $$
 \xymatrix{
 &B'\ar[r]^{g'}\ar[d]_j\ullimit&C'\ar[d]^k\\
 A\ar[r]_f&B\ar[r]_g&C}
 $$
-where $B'\iso B\times_CC'$ is a pullback. Then there is an isomorphism $A\times_BB'\iso A\times_CC'$. Said another way, $$A\times_B(B\times_CC')\iso A\times_CC'.$$
+ここで$B'\iso B\times_CC'$は引き戻しである. このとき同型写像$A\times_BB'\iso A\times_CC'$が存在する. 別の言い方をすれば$$A\times_B(B\times_CC')\iso A\times_CC'.$$である.
 
 \end{proposition}
 
 \begin{proof}
 
-We first provide a map $\phi\taking A\times_B(B\times_CC')\to A\times_CC'$. An element of $A\times_B(B\times_CC')$ is of the form $(a,b,(b,c,c'))$ such that $f(a)=b, g(b)=c$ and $k(c')=c$. But this implies that $g\circ f(a)=c=k(c')$ so we put $\phi(a,b,(b,c,c')):=(a,c,c')\in A\times_CC'$. Now we provide a proposed inverse, $\psi\taking A\times_CC'\to A\times_B(B\times_CC')$. Given $(a,c,c')$ with $g\circ f(a)=c=k(c')$, let $b=f(a)$ and note that $(b,c,c')$ is an element of $B\times_CC'$. So we can define $\psi(a,c,c')=(a,b,(b,c,c'))$. It is easy to see that $\phi$ and $\psi$ are inverse.
+%We first provide a map $\phi\taking A\times_B(B\times_CC')\to A\times_CC'$. An element of $A\times_B(B\times_CC')$ is of the form $(a,b,(b,c,c'))$ such that $f(a)=b, g(b)=c$ and $k(c')=c$. But this implies that $g\circ f(a)=c=k(c')$ so we put $\phi(a,b,(b,c,c')):=(a,c,c')\in A\times_CC'$. Now we provide a proposed inverse, $\psi\taking A\times_CC'\to A\times_B(B\times_CC')$. Given $(a,c,c')$ with $g\circ f(a)=c=k(c')$, let $b=f(a)$ and note that $(b,c,c')$ is an element of $B\times_CC'$. So we can define $\psi(a,c,c')=(a,b,(b,c,c'))$. It is easy to see that $\phi$ and $\psi$ are inverse.
  
+最初に写像$\phi\taking A\times_B(B\times_CC')\to A\times_CC'$を与える. $A\times_B(B\times_CC')$の要素は, $f(a)=b$, $g(b)=c$, $k(c')=c$として$(a,b,(b,c,c'))$の形を持つ. しかしこれは$g\circ f(a)=c=k(c')$を暗に意味し, よって$\phi(a,b,(b,c,c')):=(a,c,c')\in A\times_CC'$と置ける. さて, 次は逆写像$\psi\taking A\times_CC'\to A\times_B(B\times_CC')$を与えよう. $g\circ f(a)=c=k(c')$なる$(a,c,c')$が与えられたとき, $b=f(a)$として, また$(b,c,c')$が$B\times_CC'$の要素であることに注意しよう. よって我々は$\psi(a,c,c')=(a,b,(b,c,c'))$と定義できる. $\phi$と$\psi$が逆写像の関係であることは簡単に分かる.
 \end{proof}
 
-Proposition \ref{prop:pasting} can be useful in authoring ologs. For example, the type \fakebox{a cellphone that has a bad battery} is vague, but we can lay out precisely what it means using pullbacks:
+%Proposition \ref{prop:pasting} can be useful in authoring ologs. For example, the type \fakebox{a cellphone that has a bad battery} is vague, but we can lay out precisely what it means using pullbacks:
+%\small
+%\begin{align}\label{dia:bad battery}
+%\fbox{\xymatrixnocompile{\obox{A\iso B\times_DC}{1in}{a cellphone that has a bad battery}\ar[r]\ar[d]&\smbox{C\iso D\times_FE}{a bad battery}\ar[r]\ar[d]&\obox{E\iso F\times_HG}{.5in}{less than 1 hour}\ar[r]\ar[d]&\obox{G}{.5in}{between 0 and 1}\ar[d]\\\smbox{B}{a cellphone}\LA{r}{has}&\smbox{D}{a battery}\LA{r}{\parbox{.4in}{\rr remains charged for}}&\obox{F}{.6in}{a duration of time}\LA{r}{\hspace{.07in}\parbox{.4in}{\rr in hours yields}}&\obox{H}{.6in}{a range of numbers}}}
+%\end{align}\normalsize
+
+Proposition \ref{prop:pasting}はologを正当化するのに役に立つ. 例えば\fakebox{a cellphone that has a bad battery}は明確ではない. しかし我々は引き戻しを使ってそれが意味するところを正確に展開できる.
 \small
 \begin{align}\label{dia:bad battery}
 \fbox{\xymatrixnocompile{\obox{A\iso B\times_DC}{1in}{a cellphone that has a bad battery}\ar[r]\ar[d]&\smbox{C\iso D\times_FE}{a bad battery}\ar[r]\ar[d]&\obox{E\iso F\times_HG}{.5in}{less than 1 hour}\ar[r]\ar[d]&\obox{G}{.5in}{between 0 and 1}\ar[d]\\\smbox{B}{a cellphone}\LA{r}{has}&\smbox{D}{a battery}\LA{r}{\parbox{.4in}{\rr remains charged for}}&\obox{F}{.6in}{a duration of time}\LA{r}{\hspace{.07in}\parbox{.4in}{\rr in hours yields}}&\obox{H}{.6in}{a range of numbers}}}
 \end{align}\normalsize
 
-The category-theoretic fact described above says that since $A\iso B\times_DC$ and $C\iso D\times_FE$, it follows that $A\iso B\times_FE$.  That is, we can deduce the definition ``a cellphone that has a bad battery is defined as a cellphone that has a battery which remains charged for less than one hour."  
+%The category-theoretic fact described above says that since $A\iso B\times_DC$ and $C\iso D\times_FE$, it follows that $A\iso B\times_FE$.  That is, we can deduce the definition ``a cellphone that has a bad battery is defined as a cellphone that has a battery which remains charged for less than one hour."  
+
+上記の圏論的な事実の記述は, $A\iso B\times_DC$および$C\iso D\times_FE$であることから$A\iso B\times_FE$が従うということを述べている. これは, 定義``調子が悪い充電池を持つ携帯電話は, 一時間未満しか充電が持たない充電池を持つ携帯電話として定義される''\footnote{英文では``a cellphone that has a bad battery is defined as a cellphone that has a battery which remains charged for less than one hour.''}ことが推論できたということである.
+
 
 \begin{exercise}~
 \sexc Create an olog that defines two people to be ``of approximately the same height" if and only if their height difference is less than half an inch, using a pullback. Your olog can include the box \fakebox{a real number $x$ such that $-.5<x<.5$}. 
