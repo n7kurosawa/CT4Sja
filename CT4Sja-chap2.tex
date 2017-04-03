@@ -183,7 +183,7 @@ $$X\Too{f}Y\Too{g}Z.$$ \emph{$f$と$g$の合成(composition of $f$ and $g$)}\lab
 
 $X$と$Y$を集合とする. 我々は函数$X\to Y$の集合を$\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$}と書く.
 \footnote{後程, より大きな筋書きの一部として見たときに, $\Hom_\Set(-,-)$という奇妙な記法がさらなる意味を持つことになる.}
-二つの函数$f,g\taking X\to Y$が等しい\index{function!equality of}とは, 全ての要素$x\in X$に対して$f(x)=g(x)$が得られるときであり, かつその時に限ることに注意しよう.
+二つの函数$f,g\taking X\to Y$が等しい\index{function!equality of}とは, 全ての要素$x\in X$に対して$f(x)=g(x)$が得られる時かつその時に限ることに注意しよう.
 
 \begin{exercise}
 %Let $A=\{1,2,3,4,5\}$ and $B=\{x,y\}.$ 
@@ -1031,7 +1031,7 @@ $X$と$Y$を集合とする. 任意の集合$A$と函数$f\taking A\to X$およ�
 
 %Suppose given $f,g$ as above. To provide a function $\ell\taking A\to X\times Y$ is equivalent to providing an element $\ell(a)\in X\times Y$ for each $a\in A$. We need such a function for which $\pi_1\circ \ell=f$ and $\pi_2\circ \ell=g$. An element of $X\times Y$ is an ordered pair $(x,y)$, and we can use $\ell(a)=(x,y)$ if and only if $x=\pi_1(x,y)=f(a)$ and $y=\pi_2(x,y)=g(a)$. So it is necessary and sufficient to define $$\prodmap{f}{g}(a):=(f(a),g(a))$$ for all $a\in A$.
 
-$f$, $g$が上のように与えられたと仮定する. 函数$\ell\taking A\to X\times Y$を与えるということは, それぞれの$a\in A$に対して値$\ell(a)\in X\times Y$を与えることに等しい. 我々は$\pi_1\circ \ell=f$および$\pi_2\circ \ell=g$となる函数を必要としている. $X\times Y$の要素は順序付けられた対$(x,y)$であり, よって我々は, $x=\pi_1(x,y)=f(a)$および$y=\pi_2(x,y)=g(a)$でありかつその時に限り$\ell(a)=(x,y)$を使うことができる. よって全ての$a\in A$に対して$$\prodmap{f}{g}(a):=(f(a),g(a))$$を定義すれば必要かつ十分である.
+$f$, $g$が上のように与えられたと仮定する. 函数$\ell\taking A\to X\times Y$を与えるということは, それぞれの$a\in A$に対して値$\ell(a)\in X\times Y$を与えることに等しい. 我々は$\pi_1\circ \ell=f$および$\pi_2\circ \ell=g$となる函数を必要としている. $X\times Y$の要素は順序付けられた対$(x,y)$であり, よって我々は, $x=\pi_1(x,y)=f(a)$および$y=\pi_2(x,y)=g(a)$の時かつその時に限り$\ell(a)=(x,y)$を使うことができる. よって全ての$a\in A$に対して$$\prodmap{f}{g}(a):=(f(a),g(a))$$を定義すれば必要かつ十分である.
 
 \end{proof}
 
@@ -1595,7 +1595,7 @@ $$
 A'\ar[r]^{f'}\ar[d]_i\ullimit&B'\ar[r]^{g'}\ar[d]_j\ullimit&C'\ar[d]^k\\
 A\ar[r]_f&B\ar[r]_g&C}
 $$
-右側の四角形には$B'\iso B\times_CC'$が引き戻しであることを示す鉤記号がある. しかし左側の鉤記号は曖昧である. これは左側の四角形が引き戻しであることを示しているのかもしれないし, 全体の四角形が引き戻しであることを示しているのかもしれない. しかし, もし$B'\iso B\times_CC'$ならば曖昧でないことが分かる. なぜならば左側の四角形が可換であることと全体の四角形が可換であるのは同値だからである.
+右側の四角形には$B'\iso B\times_CC'$が引き戻しであることを示す鉤記号がある. しかし左側の鉤記号は曖昧である. これは左側の四角形が引き戻しであることを示しているのかもしれないし, 全体の四角形が引き戻しであることを示しているのかもしれない. しかし, もし$B'\iso B\times_CC'$ならば曖昧でないことが分かる. なぜならば左側の四角形が可換である時かつその時に限り全体の四角形が可換であるからである.
 
 \begin{proposition}\label{prop:pasting}
 
@@ -1642,13 +1642,17 @@ Proposition \ref{prop:pasting}はologを正当化するのに役に立つ. 例�
 
 
 \begin{exercise}~
-\sexc Create an olog that defines two people to be ``of approximately the same height" if and only if their height difference is less than half an inch, using a pullback. Your olog can include the box \fakebox{a real number $x$ such that $-.5<x<.5$}. 
-\next In the same olog, make a box for those people whose height is approximately the same as a person named ``The Virgin Mary". You may need to use images, as in Section \ref{sec:images}.
+%\sexc Create an olog that defines two people to be ``of approximately the same height" if and only if their height difference is less than half an inch, using a pullback. Your olog can include the box \fakebox{a real number $x$ such that $-.5<x<.5$}. 
+%\next In the same olog, make a box for those people whose height is approximately the same as a person named ``The Virgin Mary". You may need to use images, as in Section \ref{sec:images}.
+%\endsexc
+\sexc 二人の人間が``ほぼ同じ身長である(of approximately the same height)''時かつその時に限り身長差が3cm以下である, ということをを定義するologを引き戻しを使って定義せよ. 作成したologには箱\fakebox{a real number $x$ such that $-1.5<x<1.5$}が含まれていること.
+\next 同じolog内に, ``The Virgin Mary''という名前の人物とほほおなじ身長を持つ人間の箱を作れ. Section \ref{sec:images}のように像を使う必要があるかもしれない.
 \endsexc
 \end{exercise}
 
 \begin{exercise}\label{exc:pointwise map of fp}
-Consider the diagram on the left below, where both squares commute. 
+%Consider the diagram on the left below, where both squares commute. 
+左下の図式を考える. ここで両方の四角形か可換とする.
 $$
 \xymatrix@=15pt{
 &&&Y'\ar[dd]\\
@@ -1664,23 +1668,30 @@ W\ar[rr]\ar[dd]\ullimit&&Y\ar[ru]\ar[dd]\\
 X\ar[rr]\ar[ru]&&Z\ar[ru]
 }
 $$
-Let $W=X\times_ZY$ and $W'=X'\times_{Z'}Y'$, and form the diagram to the right. Use the universal property of fiber products to construct a map $W\to W'$ such that all squares commute.
+%Let $W=X\times_ZY$ and $W'=X'\times_{Z'}Y'$, and form the diagram to the right. Use the universal property of fiber products to construct a map $W\to W'$ such that all squares commute.
+$W=X\times_ZY$, $W'=X'\times_{Z'}Y'$として, これらが右側の図式をなしているとする. ファイバー積の普遍的性質を用いて, 全ての四角形を可換にする写像$W\to W'$を構成せよ.
 \end{exercise}
 
 %%%% Subsection %%%%
 
-\subsection{Spans, experiments, and matrices}
+%\subsection{Spans, experiments, and matrices}
+\subsection{スパン, 実験, マトリクス表}
 
 \begin{definition}\label{def:span}\index{span}
 
-Given sets $A$ and $B$, a {\em span on $A$ and $B$} is a set $R$ together with functions $f\taking R\to A$ and $g\taking R\to B$. 
+%Given sets $A$ and $B$, a {\em span on $A$ and $B$} is a set $R$ together with functions $f\taking R\to A$ and $g\taking R\to B$. 
+%$$\xymatrix@=15pt{&R\ar[ddl]_f\ar[ddr]^g\\\\A&&B}$$
+
+集合$A$, $B$が与えられた時, \emph{$A$と$B$のスパン(span on $A$ and $B$)}は, 函数$f\taking R\to A$ and $g\taking R\to B$を伴う集合$R$である.
 $$\xymatrix@=15pt{&R\ar[ddl]_f\ar[ddr]^g\\\\A&&B}$$
 
 \end{definition}
 
 \begin{application}\label{app:exp temp press}
 
-Think of $A$ and $B$ as observables and $R$ as a set of experiments performed on these two variables. For example, let's say $T$ is the set of possible temperatures of a \href{http://en.wikipedia.org/wiki/Ideal_gas_law}{\text gas} in a fixed container and let's say $P$ is the set of possible pressures of the gas. We perform 1000 experiments in which we change and record the temperature and we simultaneously also record the pressure; this is a span $T\From{f}E\To{g}P$. The results might look like this:
+%Think of $A$ and $B$ as observables and $R$ as a set of experiments performed on these two variables. For example, let's say $T$ is the set of possible temperatures of a \href{http://en.wikipedia.org/wiki/Ideal_gas_law}{\text gas} in a fixed container and let's say $P$ is the set of possible pressures of the gas. We perform 1000 experiments in which we change and record the temperature and we simultaneously also record the pressure; this is a span $T\From{f}E\To{g}P$. The results might look like this:
+
+$A$と$B$を可観測量とし, $R$をこれら二つの変数を対象として実行される実験とする. 例えば$T$を, 固定サイズの容器のなかで, \href{http://en.wikipedia.org/wiki/Ideal_gas_law}{気体}がとれる温度とし, $P$をその気体がとれる圧力とする. 1000回温度を変えて実験を実行し, 同時に圧力を記録する. これはスパン$T\From{f}E\To{g}P$である. 結果は以下のようになるだろう.
 $$
 \begin{tabular}{| l || l | l |}
 \bhline
@@ -1695,12 +1706,14 @@ $$
 \vdots&\vdots&\vdots\\\bhline
 \end{tabular}
 $$
+%TODO: 有効数字の指摘
 
 \end{application}
 
 \begin{definition}\label{def:composite span}
 
-Let $A,B,$ and $C$ be sets, and let $A\From{f}R\To{g}B$ and $B\From{f'}R'\To{g'}C$ be spans. Their {\em composite span}\index{span!composite} is given by the fiber product $R\times_BR'$ as in the diagram below:
+%Let $A,B,$ and $C$ be sets, and let $A\From{f}R\To{g}B$ and $B\From{f'}R'\To{g'}C$ be spans. Their {\em composite span}\index{span!composite} is given by the fiber product $R\times_BR'$ as in the diagram below:
+$A$, $B$, $C$を集合とし, $A\From{f}R\To{g}B$, $B\From{f'}R'\To{g'}C$をスパンとする. これらの\emph{合成スパン(composite span)}\index{span!composite}はファイバー積$R\times_BR'$によって与えられ, 下の図式のようになる.
 $$
 \xymatrix@=10pt{&&R\times_BR'\ar[ldd]\ar[rdd]\\\\&R\ar[ddl]_f\ar[ddr]^g&&R'\ar[ddl]_{f'}\ar[ddr]^{g'}\\\\A&&B&&C
 }$$
