@@ -1675,7 +1675,7 @@ $W=X\times_ZY$, $W'=X'\times_{Z'}Y'$として, これらが右側の図式をな
 %%%% Subsection %%%%
 
 %\subsection{Spans, experiments, and matrices}
-\subsection{スパン, 実験, マトリクス表}
+\subsection{スパン, 実験, 行列}
 
 \begin{definition}\label{def:span}\index{span}
 
@@ -1722,21 +1722,44 @@ $$
 
 \begin{application}\label{app:exp temp press 2}
 
-Let's look back at our lab's experiment from Application \ref{app:exp temp press}, which resulted in a span $T\From{f}E\To{g}P$. Suppose we notice that something looks a little wrong. The pressure should be linear in the temperature but it doesn't appear to be. We hypothesize that the volume of the container is increasing under pressure. We look up this container online and see that experiments have been done to measure the volume as the interior pressure changes. The data has generously been made available online, which gives us a span $P\From{f'}E'\To{g'}V$. 
+%Let's look back at our lab's experiment from Application \ref{app:exp temp press}, which resulted in a span $T\From{f}E\To{g}P$. Suppose we notice that something looks a little wrong. The pressure should be linear in the temperature but it doesn't appear to be. We hypothesize that the volume of the container is increasing under pressure. We look up this container online and see that experiments have been done to measure the volume as the interior pressure changes. The data has generously been made available online, which gives us a span $P\From{f'}E'\To{g'}V$. 
 
-The composite of our lab's span with the online data span yields a span $T\from E''\to V$, where $E'':=E\times_PE'$. What information does this span give us? In explaining it, one might say ``whenever an experiment in our lab yielded the same pressure as one they recorded, let's call that a data point. Every data point has an associated temperature (from our lab) and an associated volume (from their experiment). This is the best we can do." 
+Application \ref{app:exp temp press}で行なわれた, 我々の研究室の実験を振り返ってみよう. 実験結果は$T\From{f}E\To{g}P$である. 我々は何かが少々おかしく見えることに気が付いたと仮定する. 圧力は温度に比例すべきはずだが, そのようには見えない. 我々は容器の体積が圧力下で増加するという仮説を立てる. 我々はこの容器をインターネットで調べ, そして内部圧力の変化に伴って体積を測定する実験が行われていたということを知る. 気前よいことにデータはインターネット上で取得可能であり, これによってスパン$P\From{f'}E'\To{g'}V$が与えられる.
 
-The information we get this way might be seen by some as unscientific, but it certainly is the kind of information people use in business and in every day life calculation---we get our data from multiple sources and put it together. Moreover, it is scientific in the sense that it is reproducible. The way we obtained our $T$-$V$ data is completely transparent.
+%The composite of our lab's span with the online data span yields a span $T\from E''\to V$, where $E'':=E\times_PE'$. What information does this span give us? In explaining it, one might say ``whenever an experiment in our lab yielded the same pressure as one they recorded, let's call that a data point. Every data point has an associated temperature (from our lab) and an associated volume (from their experiment). This is the best we can do." 
+
+我々の研究室ではのスパンとインターネット上のデータのスパンの合成によってスパン$T\from E''\to V$が得られる. ここで$E'':=E\times_PE'$である. このスパンから何の情報が得られるだろうか? これを説明するのにあたって, 次のようなことが言えるだろう. ``彼らが記録した圧力と同じ圧力が我々の研究室での実験から得られているならば, それをデータ点と呼ぶことにしよう. 全てのデータ点は(我々の実験によって)温度と, (彼らの実験からによって)体積と結びついている. これが我々ができる精一杯のことである.''
+
+%The information we get this way might be seen by some as unscientific, but it certainly is the kind of information people use in business and in every day life calculation---we get our data from multiple sources and put it together. Moreover, it is scientific in the sense that it is reproducible. The way we obtained our $T$-$V$ data is completely transparent.
+
+この方法で我々が得た情報は非科学的に見えるかもしれない. しかしこれは確かに仕事や日常生活での計算で使う情報の類である---我々は複数の情報源からデータを取得しそれを結合する. 加えて, 再現可能という点ではこれは科学的でもある. 我々が$T$-$V$データを得た方法は完全に透過的である.
+
 
 \end{application}
 
-We can relate spans to matrices of natural numbers, and see a natural ``categorification" of matrix addition and matrix multiplication. If our spans come from experiments as in Applications \ref{app:exp temp press} and \ref{app:exp temp press 2} the matrices involved will look like huge but sparse matrices. Let's go through that.
+%We can relate spans to matrices of natural numbers, and see a natural ``categorification" of matrix addition and matrix multiplication. If our spans come from experiments as in Applications \ref{app:exp temp press} and \ref{app:exp temp press 2} the matrices involved will look like huge but sparse matrices. Let's go through that.
 
-Let $A$ and $B$ be sets and let $A\from R\to B$ be a span. By the universal property of products, we have a unique map $R\To{p}A\times B$. 
+我々はスパンを自然数の行列に関連付けることができ, そして行列の足し算とかけ算を自然に``categorification''できることが分かる. Applications \ref{app:exp temp press}や\ref{app:exp temp press 2}でのような実験からスパンが得られたのならば, 関連する行列は巨大でかつ疎な行列のようになるだろう. それでは検討してみよう.
 
-We make a matrix of natural numbers out of this data as follows. The set of rows is $A$, the set of columns is $B$. For elements $a\in A$ and $b\in B$, the $(a,b)$-entry is the cardinality of its preimage, $|p^\m1(a,b)|$, i.e. the number of elements in $R$ that are sent by $p$ to $(a,b)$. 
+%Let $A$ and $B$ be sets and let $A\from R\to B$ be a span. By the universal property of products, we have a unique map $R\To{p}A\times B$. 
 
-Suppose we are given two $(A,B)$-spans, i.e. $A\from R\to B$ and $A\from R'\to B$; we might think of these has having the same {\em dimensions}, i.e. they are both $|A|\times|B|$-matrices. We can take the disjoint union $R\sqcup R'$ and by the universal property of coproducts we have a unique span $A\from R\sqcup R'\to B$ making the requisite diagram commute.
+$A$と$B$を集合とし$A\from R\to B$をスパンとする. 積の普遍的性質により, 一意な写像$R\To{p}A\times B$を得ることができる.
+
+%We make a matrix of natural numbers out of this data as follows. The set of rows is $A$, the set of columns is $B$. For elements $a\in A$ and $b\in B$, the $(a,b)$-entry is the cardinality of its preimage, $|p^\m1(a,b)|$, i.e. the number of elements in $R$ that are sent by $p$ to $(a,b)$. 
+
+我々は以下のようにしてこのデータから自然数の行列を作ることができる. 行の集合は$A$であり, 列の集合は$B$である. 要素$a\in A$および$b\in B$に対して, 行列要素$(a,b)$はその原像$|p^\m1(a,b)|$の濃度, i.e. $p$によって$(a,b)$に送られた$R$の要素の数である.
+
+%Suppose we are given two $(A,B)$-spans, i.e. $A\from R\to B$ and $A\from R'\to B$; we might think of these has having the same {\em dimensions}, i.e. they are both $|A|\times|B|$-matrices. We can take the disjoint union $R\sqcup R'$ and by the universal property of coproducts we have a unique span $A\from R\sqcup R'\to B$ making the requisite diagram commute.
+%\footnote{
+%$$\xymatrix{
+%&R\ar[dl]\ar[dr]\ar[d]\\
+%A&R\sqcup R'\ar[l]\ar[r]&B\\
+%&R'\ar[ur]\ar[ul]\ar[u]}
+%$$
+%}
+%The matrix corresponding to this new span will be the sum of the matrices corresponding to the two previous spans out of which it was made.
+
+$(A,B)$のスパンが二つ与えられたと仮定する, i.e. $A\from R\to B$ and $A\from R'\to B$. 二つが同じ\emph{次元(dimension)}を持つときを考えたいかもしれない, i.e. 両者は共に$|A|\times|B|$-行列であるとする. 我々は直和$R\sqcup R'$をとることができ, 余積の普遍性によって我々は一意なスパン$A\from R\sqcup R'\to B$を得ることができ, これは必要とされる図式を可換にする.
 \footnote{
 $$\xymatrix{
 &R\ar[dl]\ar[dr]\ar[d]\\
@@ -1744,13 +1767,17 @@ A&R\sqcup R'\ar[l]\ar[r]&B\\
 &R'\ar[ur]\ar[ul]\ar[u]}
 $$
 }
-The matrix corresponding to this new span will be the sum of the matrices corresponding to the two previous spans out of which it was made.
+新しいスパンに対応する行列は, そのスパンが生成される元となった二つのスパンに対応する行列の和に相当することになる.
 
-Given a span $A\from R\to B$ and a span $B\from S\to C$, the composite span can be formed as in Definition \ref{def:composite span}. It will correspond to the usual multiplication of matrices.
+%Given a span $A\from R\to B$ and a span $B\from S\to C$, the composite span can be formed as in Definition \ref{def:composite span}. It will correspond to the usual multiplication of matrices.
+
+スパン$A\from R\to B$およびスパン$B\from S\to C$が与えられたとき, 合成スパンはDefinition \ref{def:composite span}の形で得られる. これは通常の行列の積に対応することになる.
 
 \begin{construction}\label{const:bipartite}\index{graph!bipartite}
 
-Given a span $A\From{f} R\To{g} B$, one can draw a {\em bipartite graph} with each element of $A$ drawn as a dot on the left, each element of $B$ drawn as a dot on the right, and each element $r\in R$ drawn as an arrow connecting vertex $f(r)$ on the left to vertex $g(r)$ on the right.
+%Given a span $A\From{f} R\To{g} B$, one can draw a {\em bipartite graph} with each element of $A$ drawn as a dot on the left, each element of $B$ drawn as a dot on the right, and each element $r\in R$ drawn as an arrow connecting vertex $f(r)$ on the left to vertex $g(r)$ on the right.
+
+スパン$A\From{f} R\To{g} B$が与えられたとき, $A$のそれぞれの要素を左側の点として, $B$のそれぞれの要素を右側の点として, そして要素$r\in R$のそれぞれを左側の頂点$f(r)$と右側の頂点$g(r)$を結ぶ矢印として描くことにより, \emph{二部グラフ(bipartite graph)}を描くことができる.
 
 \end{construction}
 
