@@ -1728,7 +1728,7 @@ Application \ref{app:exp temp press}で行なわれた, 我々の研究室の実
 
 %The composite of our lab's span with the online data span yields a span $T\from E''\to V$, where $E'':=E\times_PE'$. What information does this span give us? In explaining it, one might say ``whenever an experiment in our lab yielded the same pressure as one they recorded, let's call that a data point. Every data point has an associated temperature (from our lab) and an associated volume (from their experiment). This is the best we can do." 
 
-我々の研究室ではのスパンとインターネット上のデータのスパンの合成によってスパン$T\from E''\to V$が得られる. ここで$E'':=E\times_PE'$である. このスパンから何の情報が得られるだろうか? これを説明するのにあたって, 次のようなことが言えるだろう. ``彼らが記録した圧力と同じ圧力が我々の研究室での実験から得られているならば, それをデータ点と呼ぶことにしよう. 全てのデータ点は(我々の実験によって)温度と, (彼らの実験からによって)体積と結びついている. これが我々ができる精一杯のことである.''
+我々の研究室ではのスパンとインターネット上のデータのスパンの合成によってスパン$T\from E''\to V$がもたらされる. ここで$E'':=E\times_PE'$である. このスパンから何の情報が得られるだろうか? これを説明するのにあたって, 次のようなことが言えるだろう. ``彼らが記録した圧力と同じ圧力が我々の研究室での実験から得られているならば, それをデータ点と呼ぶことにしよう. 全てのデータ点は(我々の実験によって)温度と, (彼らの実験からによって)体積と結びついている. これが我々ができる精一杯のことである.''
 
 %The information we get this way might be seen by some as unscientific, but it certainly is the kind of information people use in business and in every day life calculation---we get our data from multiple sources and put it together. Moreover, it is scientific in the sense that it is reproducible. The way we obtained our $T$-$V$ data is completely transparent.
 
@@ -1782,47 +1782,69 @@ $$
 \end{construction}
 
 \begin{exercise}~
-\sexc Draw the bipartite graph (as in Construction \ref{const:bipartite}) corresponding to the span $T\From{f}E\To{g}P$ in Application \ref{app:exp temp press}.
-\next Now make up your own span $P\From{f'}E'\To{g'}V$ and draw it. Finally, draw the composite span below. 
-\next Can you say how the composite span graph relates to the graphs of its factors?
+%\sexc Draw the bipartite graph (as in Construction \ref{const:bipartite}) corresponding to the span $T\From{f}E\To{g}P$ in Application \ref{app:exp temp press}.
+%\next Now make up your own span $P\From{f'}E'\To{g'}V$ and draw it. Finally, draw the composite span below. 
+%\next Can you say how the composite span graph relates to the graphs of its factors?
+%\endsexc
+\sexc (Construction \ref{const:bipartite}のように) Application \ref{app:exp temp press}のスパン$T\From{f}E\To{g}P$に対応する二部グラフを描け.
+\next 今度は自作のスパン$P\From{f'}E'\To{g'}V$を作ってみよう. 最後にその下に合成スパンを描け.
+\next 合成スパンのグラフとその部分要素のグラフの関係について何か言えるだろうか?
 \endsexc
 \end{exercise}
 
 %%%% Subsection %%%%
 
-\subsection{Equalizers and terminal objects}
+%\subsection{Equalizers and terminal objects}
+\subsection{等価子と終対象}
 
 \begin{definition}\label{def:equalizer}\index{equalizer}
 
-Suppose given two parallel arrows 
+%Suppose given two parallel arrows 
+%\begin{align}\label{dia:equalizer}
+%\xymatrix{X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y.}\hspace{1in}\xymatrix{Eq(f,g)\ar[r]^-p&X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y}
+%\end{align}
+%The {\em equalizer of $f$ and $g$} is the commutative diagram as to the right in (\ref{dia:equalizer}), where we define $$Eq(f,g):=\{x\in X\|f(x)=g(x)\}$$ and where $p$ is the canonical inclusion.
+
+二本の平行な矢印が与えられたと仮定する. 
 \begin{align}\label{dia:equalizer}
 \xymatrix{X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y.}\hspace{1in}\xymatrix{Eq(f,g)\ar[r]^-p&X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y}
 \end{align}
-The {\em equalizer of $f$ and $g$} is the commutative diagram as to the right in (\ref{dia:equalizer}), where we define $$Eq(f,g):=\{x\in X\|f(x)=g(x)\}$$ and where $p$ is the canonical inclusion.
+\emph{$f$と$g$の等価子(equalizer of $f$ and $g$)}は\eqref{dia:equalizer}の右側のような可換図式である. ここで$$Eq(f,g):=\{x\in X\|f(x)=g(x)\}$$と定義し, また$p$はcanonical inclusionである.
 
 \end{definition}
 
 \begin{example}
 
-Suppose one has designed an experiment to test a theoretical prediction. The question becomes, ``when does the theory match the experiment?" The answer is given by the equalizer of the following diagram:
+%Suppose one has designed an experiment to test a theoretical prediction. The question becomes, ``when does the theory match the experiment?" The answer is given by the equalizer of the following diagram:
+%$$\xymatrix{
+%\obox{}{.5in}{an input}\ar@<1ex>[rr]^{\tn{should, according to theory, yield}}\ar@<-1ex>[rr]_{\tn{according to experiment yields}}&\hspace{1in}&\obox{}{.6in}{an output}
+%}$$
+%The equalizer is the set of all inputs for which the theory and the experiment yield the same output.
+
+理論的予想を検証するための実験を立案したと仮定しよう. 問題は``どんな時に理論は実験と整合するか?''になる. その答えは以下の図式の等価子によって与えられる.
 $$\xymatrix{
 \obox{}{.5in}{an input}\ar@<1ex>[rr]^{\tn{should, according to theory, yield}}\ar@<-1ex>[rr]_{\tn{according to experiment yields}}&\hspace{1in}&\obox{}{.6in}{an output}
 }$$
-The equalizer is the set of all inputs for which the theory and the experiment yield the same output.
+等価子は, 理論と実験が同じ出力をもたらすところの入力全てからなる集合である.
 
 \end{example}
 
 \begin{exercise}
-Come up with an olog that uses equalizers in a reasonably interesting way. Alternatively, use an equalizer to specify those published authors who have published exactly one paper. Hint: find a function from authors to papers; then find another.
+%Come up with an olog that uses equalizers in a reasonably interesting way. Alternatively, use an equalizer to specify those published authors who have published exactly one paper. Hint: find a function from authors to papers; then find another.
+等価子を筋道だっていて興味深い方法で用いているologを思い付け. あるいはその代わりに, 論文をちょうど一本だけ出版した著者を特徴づけるために等価子を使用せよ. ヒント: 著者から論文への函数を見出せ. 次にもう一つ別の函数を見出せ.
 \end{exercise}
 
 \begin{exercise}
-Find a universal property enjoyed by the equalizer of two arrows, and present it in the style of Lemmas \ref{lemma:up for prod}, \ref{lemma:up for coprod}, and \ref{lemma:up for fp}.
+%Find a universal property enjoyed by the equalizer of two arrows, and present it in the style of Lemmas \ref{lemma:up for prod}, \ref{lemma:up for coprod}, and \ref{lemma:up for fp}.
+二つの矢印の等価子が持っている普遍的性質を見出し, Lemmas \ref{lemma:up for prod}, \ref{lemma:up for coprod}, および\ref{lemma:up for fp}の様式で表示せよ.
 \end{exercise}
 
 \begin{exercise}\index{terminal object!in $\Set$}~
-\sexc A terminal set is a set $S$ such that for every set $X$, there exists a unique function $X\to S$. Find a terminal set. 
-\next Do you think that the notion {\em terminal set} belongs in this section (Section \ref{sec:finite limits})? How so? If products, pullbacks, and equalizers are all limits, what do limits have in common?
+%\sexc A terminal set is a set $S$ such that for every set $X$, there exists a unique function $X\to S$. Find a terminal set. 
+%\next Do you think that the notion {\em terminal set} belongs in this section (Section \ref{sec:finite limits})? How so? If products, pullbacks, and equalizers are all limits, what do limits have in common?
+%\endsexc
+\sexc 終集合は, 全ての集合$X$に対して函数$X\to S$が一意に存在するところの集合$S$である. 終集合を見出せ.
+\next この章(Section \ref{sec:finite limits})における\emph{終集合}の記述についてなにか思っただろうか? どのように思っただろうか? もし積, 引き戻し, 等価子が全て極限(limit)と呼ぶならば, 極限が共通して持つものはなんだろうか?
 \endsexc
 \end{exercise}
 
