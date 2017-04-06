@@ -1849,3 +1849,284 @@ $$\xymatrix{
 \end{exercise}
 
 
+%%%%%% Section %%%%%%
+
+%\section{Finite colimits in $\Set$}\label{sec:finite colimits}
+\section{$\Set$の有限余極限}\label{sec:finite colimits}
+
+%This section will parallel Section \ref{sec:finite limits}---I will introduce several types of finite colimits and hope that this gives the reader some intuition about them, without formally defining them yet. Before doing so, I must define equivalence relations and quotients.
+
+この章はSection \ref{sec:finite limits}と並立する章となる---著者はいくつかの種類の有限余極限を紹介し, それによって読者がそれらに対するなんらかの直感を, 形式的な定義を抜きにして得ることを期待する. ただしその前にまず, 我々は同値関係と商を定義しなければならない.
+
+%%%% Subsection %%%%
+
+%\subsection{Background: equivalence relations}\index{equivalence relation}\index{relation!equivalence}
+\subsection{背景: 同値関係}\index{equivalence relation}\index{relation!equivalence}
+
+\begin{definition}[Equivalence relations and equivalence classes]
+
+%Let $X$ be a set. An {\em equivalence relation on $X$} is a subset $R\ss X\times X$ satisfying the following properties for all $x,y,z\in X$:
+%\begin{description}
+%\item[Reflexivity:] $(x,x)\in R$;
+%\item[Symmetry:] $(x,y)\in R$ if and only if $(y,x)\in R$; and
+%\item[Transitivity:] if $(x,y)\in R$ and $(y,z)\in R$ then $(x,z)\in R$.
+%\end{description}
+%If $R$ is an equivalence relation, we often write $x\sim_R y$, or simply $x\sim y$, to mean $(x,y)\in R$. For convenience we may refer to the equivalence relation by the symbol $\sim$, saying that $\sim$ is an equivalence relation on $X$.\index{a symbol!$\sim$}
+
+$X$を集合とする. \emph{$X$上の同値関係(equivalence relation on $X$)}とは全ての$x,y,z\in X$に対して以下の性質を満たす部分集合$R\ss X\times X$である.
+\begin{description}
+\item[反射性(Reflexivity):] $(x,x)\in R$.
+\item[対称性(Symmetry):] $(x,y)\in R$のときかつそのときに限り$(y,x)\in R$.
+\item[推移性(Transitivity):] もし$(x,y)\in R$でかつ$(y,z)\in R$ならば$(x,z)\in R$.
+\end{description}
+もし$R$が同値関係ならば, $(x,y)\in R$を示すために我々はしばしば$x\sim_R y$, あるいはもっと簡単に$x\sim y$と書く. 便利のため, 同値関係を記号$\sim$によって参照し, $\sim$は$X$上の同値関係と言うこともあるだろう.\index{a symbol!$\sim$}
+
+%An {\em equivalence class of $\sim$}\index{equivalence relation!equivalence classes} is a subset $A\ss X$ such that
+%\begin{itemize}
+%\item $A$ is nonempty, $A\neq\emptyset$;
+%\item if $x\in A$ and $x'\in A$, then $x\sim x'$; and 
+%\item if $x\in A$ and $x\sim y$, then $y\in A$.
+%\end{itemize}
+%Suppose that $\sim$ is an equivalence relation on $X$. The {\em quotient of $X$ by $\sim$}\index{equivalence relation!quotient by}, denoted $X/\sim$\index{a symbol!$X/\sim$} is the set of equivalence classes of $\sim$.
+
+\emph{$\sim$の同値類(equivalence class of $\sim$)}\index{equivalence relation!equivalence classes}とは以下を満たす部分集合$A\ss X$である.
+\begin{itemize}
+\item $A$は空集合ではない, $A\neq\emptyset$.
+\item もし$x\in A$であり$x'\in A$ならば$x\sim x'$. 
+\item もし$x\in A$であり$x\sim y$ならば$y\in A$.
+\end{itemize}
+$\sim$が$X$上の同値関係だと仮定する. \emph{$X$の$\sim$による商(quotient of $X$ by $\sim$)}\index{equivalence relation!quotient by}とは, $\sim$による同値類の集合であり, $X/\sim$\index{a symbol!$X/\sim$}と書く.
+
+\end{definition}
+
+\begin{example}
+
+%Let $\ZZ$ denote the set of integers. Define a relation $R\ss\ZZ\times\ZZ$ by $$R=\{(x,y)\|\exists n\in\ZZ \tn{ such that } x+7n=y\}.$$ Then $R$ is an equivalence relation because $x+7*0=x$ (reflexivity); $x+7*n=y$ if and only if $y+7*(-n)= x$ (symmetry); and $x+7n=y$ and $y+7m=z$ together imply that $x+7(m+n)=z$ (transitivity).
+
+$\ZZ$が整数の集合を示すとする. $$R=\{(x,y)\|\exists n\in\ZZ \tn{ such that } x+7n=y\}$$によって関係$R\ss\ZZ\times\ZZ$を定義する. この時$R$は同値関係となる. なぜなら$x+7*0=x$ (反射性), $x+7*n=y$のときかつそのときに限り$y+7*(-n)= x$であり(対称性), $x+7n=y$と$y+7m=z$は$x+7(m+n)=z$を伴う(推移性).
+
+\end{example}
+
+\begin{exercise}
+%Let $X$ be the set of people on earth; define a binary relation $R\ss X\times X$ on $X$ as follows. For a pair $(x,y)$ of people, say $(x,y)\in R$ if $x$ spends a lot of time thinking about $y$. 
+%\sexc Is this relation reflexive? 
+%\next Is it symmetric? 
+%\next Is it transitive?
+%\endsexc
+$X$を地球上の人間の集合とする. $X$上の二項関係$R\ss X\times X$を次のように定義する. 人間の対$(x,y)$に対して, もし$x$が$y$について考えることに多くの時間を費やしているならば$(x,y)\in R$とする.
+\sexc この関係は反射的か? 
+\next 対称的か?
+\next 推移的か?
+\endsexc
+\end{exercise}
+
+\begin{example}[Partitions]\label{ex:partition}
+
+%An equivalence relation on a set $X$ can be thought of as a way of partitioning $X$. A {\em partition of $X$}\index{equivalence relation!as partition} consists of a set $I$, called {\em the set of parts}, and for every element $i\in I$ a subset $X_i\ss X$ such that two properties hold:
+%\begin{itemize}
+%\item every element $x\in X$ is in some part (i.e. for all $x\in X$ there exists $i\in I$ such that $x\in X_i$); and
+%\item no element can be found in two different parts (i.e. if $x\in X_i$ and $x\in X_j$ then $i=j$).
+%\end{itemize}
+
+%Given a partition of $X$, we define an equivalence relation $\sim$ on $X$ by saying $x\sim x'$ if $x$ and $x'$ are in the same part (i.e. if there exists $i\in I$ such that $x,x'\in X_i$). The parts become the equivalence classes of this relation. Conversely, given an equivalence relation, one makes a partition on $X$ by taking $I$ to be the set of equivalence classes and for each $i\in I$ letting $X_i$ be the elements in that equivalence class.
+
+集合$X$の上の同値関係は$X$の分配の方法と考えることができる. \emph{partition of $X$}\index{equivalence relation!as partition}は, \emph{the set of parts}と呼ばれる集合$I$と, 全ての要素$i\in I$に対する部分集合$X_i\ss X$からなり, これらは以下の二つの性質を持つ.
+\begin{itemize}
+\item それぞれの要素$x\in X$はどれかの部分に属している (i.e. 全ての要素$x\in X$に対して$x\in X_i$なるところの$i\in I$が存在している).
+\item 二つの異なった部分に属する要素はない (i.e. もし$x\in X_i$かつ$x\in X_j$ならば$i=j$).
+\end{itemize}
+
+partition of $X$が与えられたとき, 我々は$X$上の同値関係$\sim$を, もし$x$と$x'$が同じ部分に属しているならば(i.e. もし$x,x'\in X_i$なるところの$i\in I$が存在しているならば) $x\sim x'$ として定義できる. これらの部分はこの関係の同値類になる. 逆に, 同値関係が与えられたとき, $I$を同値類の集合, それぞれの$i\in I$に対して$X_i$を同値類の要素となるようにすることによって, $X$上の部分を作ることができる.
+
+\end{example}
+
+\begin{exercise}
+Let $X$ and $B$ be sets and let $f\taking X\to B$ be a function. Define a subset $R\ss X\times X$ by $$R=\{(x,y)\|f(x)=f(y)\}.$$ 
+\sexc Is $R$ an equivalence relation? 
+\next Are all equivalence relations on $X$ obtainable in this way (as the fibers of some function having domain $X$)?
+\next Does this viewpoint on equivalence classes relate to that of Example \ref{ex:partition}?
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Take a set $I$ of sets; i.e. suppose that for each element $i\in I$ you are given a set $X_i$. For every two elements $i,j\in I$ say that $i\sim j$ if $X_i$ and $X_j$ are isomorphic. Is this relation an equivalence relation on $I$?  
+\end{exercise}
+
+\begin{lemma}[Generating equivalence relations]\label{lemma:generating ERs}
+
+Let $X$ be a set and $R\ss X\times X$ a subset. There exists a relation $S\ss X\times X$ such that
+\begin{itemize}
+\item $S$ is an equivalence relation,
+\item $R\ss S$, and
+\item for any equivalence relation $S'$ such that $R\ss S'$, we have $S\ss S'$.
+\end{itemize}
+The relation $S'$ will be called {\em the equivalence relation generated by $R$}.\index{equivalence relation!generated}
+
+\end{lemma}
+
+\begin{proof}
+
+Let $L_R$ be the set of all equivalence relations on $X$ that contain $R$; in other words, each element $\ell\in L_R$ is an equivalence relation, $\ell\in X\times X$. The set $L_R$ is non-empty because $X\times X\ss X\times X$ is an equivalence relation. Let $S$ denote the set of pairs $(x_1,x_2)\in X\times X$ that appear in every element of $L_R$. Note that $R\ss S$ by definition. We need only show that $S$ is an equivalence relation.
+
+It is clearly reflexive, because $R$ is. If $(x,y)\in S$ then $(x,y)\in\ell$ for all $\ell\in L_R$. But since each $\ell$ is an equivalence relation, $(y,x)\in\ell$ too, so $(y,x)\in S$. This shows that $S$ is symmetric. The proof that it is transitive is similar: if $(x,y)\in S$ and $(y,z)\in S$ then they are both in each $\ell$ which puts $(x,z)$ in each $\ell$, which puts it in $S$.
+
+\end{proof}
+
+\begin{remark}
+
+Let $X$ be a set and $R\ss X\times X$ a relation. The proof of Lemma \ref{lemma:generating ERs} has the benefit of working even if $|X|\geq\infty$, but it has the cost that it is not very intuitive, nor useful in practice when $X$ is finite. The intuitive way to think about the idea of equivalence relation generated by $R$ is as follows.
+\begin{enumerate}
+\item First add to $R$ what is demanded by reflexivity, $R_1:=R\cup\{(x,x)\|x\in X\}$.
+\item Then add to $R$ what is demanded by symmetry, $R_2:=R_1\cup\{(x,y)\|(y,x)\in R_1\}.$
+\item Finally, add to $R$ what is demanded by transitivity, $$S=R_2\cup\{(x,z)\|(x,y)\in R_2, \tn{ and } (y,z)\in R_2\}.$$
+\end{enumerate}
+
+\end{remark}
+
+\begin{exercise}
+Consider the set $\RR$ of real numbers. Draw the coordinate plane $\RR\times\RR$, give it coordinates $x$ and $y$. A binary relation on $\RR$ is a subset $S\ss\RR\times\RR$, which can be drawn as a set of points in the plane. 
+\sexc Draw the relation $\{(x,y)\|y=x^2\}$. 
+\next Draw the relation $\{(x,y)\|y\geq x^2\}.$
+\next Let $S_0$ be the equivalence relation on $\RR$ generated (in the sense of Lemma \ref{lemma:generating ERs}) by the empty set. Draw $S$ as a subset of the plane.
+\next Consider the equivalence relation $S_1$ generated by $\{(1,2),(1,3)\}$. Draw $S_1$ in the plane. Highlight the equivalence class containing $(1,2)$.
+\next The reflexivity property and the symmetry property have pleasing visualizations in $\RR\times\RR$; what are they? 
+\next Is there a nice heuristic for visualizing the transitivity property?
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Consider the binary relation $R=\{(n,n+1)\|n\in\ZZ\}\ss\ZZ\times\ZZ$. 
+\sexc What is the equivalence relation generated by $R$? 
+\next How many equivalence classes are there?
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Suppose $N$ is a network (or graph). Let $X$ be the nodes of the network, and let $R\ss X\times X$ denote the relation such that $(x,y)\in R$ iff there exists an arrow connecting $x$ to $y$.
+\footnote{The word {\em iff} means ``if and only if". In this case we are saying that the pair $(x,y)$ is in $R$ if and only if there exists an arrow connecting $x$ and $y$.\index{iff}}
+\sexc What is the equivalence relation $\sim$ generated by $R$? 
+\next What is the quotient $X/\sim$?
+\endsexc
+\end{exercise}
+
+%%%% Subsection %%%%
+
+\subsection{Pushouts}\label{sec:pushouts}
+
+\begin{definition}[Pushout]\label{def:pushout}
+
+Suppose given the diagram of sets and functions below:
+\begin{align}\label{dia:pushout}
+\xymatrix{W\ar[r]^f\ar[d]_g&X\\Y}
+\end{align}
+Its {\em fiber sum},\index{fiber sum} denoted $X\sqcup_WY$, is defined as the quotient of $X\sqcup W\sqcup Y$ by the equivalence relation $\sim$ generated by $w\sim f(w)$ and $w\sim g(w)$ for all $w\in W$.
+$$X\sqcup_WY:=(X\sqcup W\sqcup Y)/\sim \hsp\tn{where } \forall w\in W,\;\;  w\sim f(w)\;\;\tn{ and }\;\; w\sim g(w).$$ 
+There are obvious inclusions $i_1\taking X\to X\sqcup_WY$ and $i_2\taking Y\to X\sqcup_WY$.
+\footnote{Note that our term inclusions is not too good, because it seems to suggest that $i_1$ and $i_2$ are injective (see Definition \ref{def:inj,surj,bij}) and this is not always the case.}
+Note that if $Z=X\sqcup_WY$ then the diagram
+\begin{align}\label{dia:pushout sets}
+\xymatrix{W\ar[r]^g\ar[d]_f&Y\ar[d]^{i_2}\\X\ar[r]_-{i_1}&Z\lrlimit}
+\end{align} 
+commutes. Given the setup of Diagram \ref{dia:pushout} we define the {\em pushout of $X$ and $Y$ over $W$} to be any set $Z$ for which we have an isomorphism $Z\To{\iso}X\sqcup_WY$. The corner symbol $\ulcorner$ in Diagram \ref{dia:pushout sets} indicates that $Z$ is the pushout.\index{a symbol!$\ulcorner$}
+
+\end{definition}
+
+\begin{example}
+
+Let $X=\{x\in\RR\|0\leq x\leq1\}$ be the set of numbers between 0 and 1, inclusive, let $Y=\{y\in\RR\|1\leq y\leq 2\}$ by the set of numbers between 1 and 2, inclusive, and let $W=\{1\}$. Then the pushout $X\From{f} W\To{g} Y$, where $f$ and $g$ are the ``obvious" functions ($1\mapsto 1$) is $X\sqcup_WY\iso\{z\in\RR\|0\leq z\leq 2\}$, as expected. When we eventually get to general colimits, one can check that the whole real line can be made by patching together intervals in this way.
+
+\end{example}
+
+\begin{example}[Pushout]\label{ex:pushout}
+
+In each example below, the diagram to the right is intended to be a pushout of the diagram to the left.  The new object, $D$, is the union of $B$ and $C$, but instances of $A$ are equated to their $B$ and $C$ aspects.  This will be discussed after the two diagrams.
+
+\begin{align}
+\label{dia:po1}\fbox{\xymatrixnocompile{\obox{A}{.7in}{a cell in the shoulder}\LA{r}{is}\LAL{d}{is}&\obox{C}{.6in}{a cell in the arm}\\\obox{B}{.7in}{a cell in the torso}}}\hsp&\fbox{\xymatrix{\obox{A}{.7in}{a cell in the shoulder}\LA{r}{is}\LAL{d}{is}&\obox{C}{.6in}{a cell in the arm}\LA{d}{}\\\obox{B}{.7in}{a cell in the torso}\LA{r}{}&\obox{D=B\sqcup_AC}{.8in}{a cell in the torso or arm}}}
+\end{align}
+In the left-hand olog (\ref{dia:po1}, the two arrows are inclusions: the author considers every cell in the shoulder to be both in the arm and in the torso. The pushout is then just the union, where cells in the shoulder are not double-counted.
+
+\begin{align}\label{dia:po2}\fbox{\xymatrixnocompile@=18pt{\obox{A}{.8in}{\rr a college mathematics course}\LA{r}{yields}\LAL{d}{is}&\obox{C}{.8in}{an utterance of the phrase ``too hard"}\\\obox{B}{.6in}{\rr a college course}}}\hsp&\fbox{\xymatrixnocompile@=18pt{\obox{A}{.8in}{\rr a college mathematics course}\LA{r}{yields}\LAL{d}{is}&\obox{C}{.8in}{an utterance of the phrase ``too hard"}\LA{d}{}\\\obox{B}{.6in}{\rr a college course}\LA{r}{}&\obox{\parbox{.6in}{\vspace{.1in}\tiny$D=B\!\sqcup_A\!C$}}{1in}{\rr a college course, where every mathematics course is replaced by an utterance of the phrase ``too hard"}}}
+\end{align}
+
+In Olog (\ref{dia:po1}), the shoulder is seen as part of the arm and part of the torso.  When taking the union of these two parts, we do not want to ``double-count" the shoulder (as would be done in the coproduct $B\sqcup C$, see Example \ref{ex:coproduct2}).  Thus we create a new type $A$ for cells in the shoulder, which are considered the same whether viewed as cells in the arm or cells in the torso.  In general, if one wishes to take two things and glue them together, with $A$ as the glue and with $B$ and $C$ as the two things to be glued, the union is the pushout $B\sqcup_AC$. (A nice image of this can be seen in the setting of topological spaces, see Example \ref{ex:pushout in Top}.)
+
+In Olog (\ref{dia:po2}), if every mathematics course is simply ``too hard," then when reading off a list of courses, each math course will not be read aloud but simply read as ``too hard."  To form $D$ we begin by taking the union of $B$ and $C$, and then we consider everything in $A$ to be the same whether one looks at it as a course or as the phrase ``too hard."  The math courses are all blurred together as one thing.  Thus we see that the power to equate different things can be exercised with pushouts.
+
+\end{example}
+
+\begin{exercise}
+Let $W,X,Y$ be as drawn and $f\taking W\to X$ and $g\taking W\to Y$ the indicated functions. 
+\begin{center}
+\includegraphics[height=2in]{setPushout}
+\end{center}
+The pushout of the diagram $X\Fromm{f}W\Too{g}Y$ is a set $P$. Write down the cardinality of $P\iso\ul{n}$ as a natural number $n\in\NN$.  
+\end{exercise}
+
+\begin{exercise}
+Suppose that $W=\emptyset$; what can you say about $X\sqcup_WZ$? 
+\end{exercise}
+
+\begin{exercise}
+Let $W:=\NN=\{0,1,2,\ldots\}$ denote the set of natural numbers, let $X=\ZZ$ denote the set of integers, and let $Y=\singleton$ denote a one-element set. Define $f\taking W\to X$ by $f(w)= -(w+1)$, and define $g\taking W\to Y$ to be the unique map. Describe the set $X\sqcup_WY$.
+\end{exercise}
+
+\begin{exercise}
+Let $i\taking R\ss X\times X$ be an equivalence relation (see Example \ref{ex:subset as function} for notation). Composing with the projections $\pi_1,\pi_2\taking X\times X\to X$, we have two maps $\pi_1\circ i,\taking R\to X$ and $\pi_2\circ i\taking R\to X$. 
+\sexc What is the pushout $$X\From{\pi_1\circ i}R\To{\pi_2\circ i}X?$$ 
+\next If $i\taking R\ss X\times X$ is not assumed to be an equivalence relation, we can still define the pushout above. Is there a relationship between the pushout $X\From{\pi_1\circ i}R\To{\pi_2\circ i}X$ and the equivalence relation generated by $R\ss X\times X$?
+\endsexc
+\end{exercise}
+
+
+\begin{lemma}[Universal property for pushout]\label{lemma:up for po}
+
+Suppose given the diagram of sets and functions as below.
+\begin{align*}
+\xymatrix{W\ar[r]^u\ar[d]_t&Y\\
+X}
+\end{align*}
+For any set $A$ and commutative solid arrow diagram as below (i.e. functions $f\taking X\to A$ and $g\taking Y\to A$ such that $f\circ t=g\circ u$), 
+\begin{align}\label{dia:universal property of po}
+\xymatrix{
+&W\ar[dr]^u\ar[dl]_t\\
+X\ar@/_1pc/[dddr]_{i_1}\ar[rd]_f&&Y\ar@/^1pc/[dddl]^{i_2}\ar[dl]^g\\
+&A\\\\
+&X\sqcup_WY\ar@{-->}[uu]^{\exists!}
+}
+\end{align}
+there exists a unique arrow $\po{f}{g}{W}\taking X\sqcup_WY\to A$ making everything commute, $$f=\po{f}{g}{W}\circ i_1\hsp\text{and}\hsp g=\po{f}{g}{W}\circ i_2.$$
+
+\end{lemma}
+
+%%%% Subsection %%%%
+
+\subsection{Other finite colimits}
+
+\begin{definition}\label{def:coequalizer}[Coequalizer]\index{coequalizer}
+
+Suppose given two parallel arrows 
+\begin{align}\label{dia:coequalizer}
+\xymatrix{X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y.}\hspace{1in}\xymatrix{X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y\ar[r]^-q&Coeq(f,g)}
+\end{align}
+The {\em coequalizer of $f$ and $g$} is the commutative diagram as to the right in (\ref{dia:coequalizer}), where we define $$Coeq(f,g):=Y\;/\;f(x)\sim g(x)$$ i.e. the coequalizer of $f$ and $g$ is the quotient of $Y$ by the equivalence relation generated by $\{(f(x),g(x))\|x\in X\}\ss Y\times Y$
+
+\end{definition}
+
+\begin{exercise}
+Let $X=\RR$ be the set of real numbers. What is the coequalizer of the two maps $X\to X$ given by $x\mapsto x$ and $x\mapsto (x+1)$ respectively?
+\end{exercise}
+
+\begin{exercise}
+Find a universal property enjoyed by the coequalizer of two arrows.
+\end{exercise}
+
+\begin{exercise}[Initial object]\label{exc:initial set}
+An initial set is a set $S$ such that for every set $A$, there exists a unique function $S\to A$. 
+\sexc Find an initial set. 
+\next Do you think that the notion {\em initial set} belongs in this section (Section \ref{sec:finite colimits})? How so? If coproducts, pushouts, and coequalizers are all colimits, what do colimits have in common?
+\endsexc
+\end{exercise}
+
+
+
