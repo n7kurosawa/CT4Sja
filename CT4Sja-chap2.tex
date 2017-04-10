@@ -2090,25 +2090,34 @@ $$X\sqcup_WY:=(X\sqcup W\sqcup Y)/\sim \hsp\tn{where } \forall w\in W,\;\;  w\si
 
 \begin{example}
 
-Let $X=\{x\in\RR\|0\leq x\leq1\}$ be the set of numbers between 0 and 1, inclusive, let $Y=\{y\in\RR\|1\leq y\leq 2\}$ by the set of numbers between 1 and 2, inclusive, and let $W=\{1\}$. Then the pushout $X\From{f} W\To{g} Y$, where $f$ and $g$ are the ``obvious" functions ($1\mapsto 1$) is $X\sqcup_WY\iso\{z\in\RR\|0\leq z\leq 2\}$, as expected. When we eventually get to general colimits, one can check that the whole real line can be made by patching together intervals in this way.
+%Let $X=\{x\in\RR\|0\leq x\leq1\}$ be the set of numbers between 0 and 1, inclusive, let $Y=\{y\in\RR\|1\leq y\leq 2\}$ by the set of numbers between 1 and 2, inclusive, and let $W=\{1\}$. Then the pushout $X\From{f} W\To{g} Y$, where $f$ and $g$ are the ``obvious" functions ($1\mapsto 1$) is $X\sqcup_WY\iso\{z\in\RR\|0\leq z\leq 2\}$, as expected. When we eventually get to general colimits, one can check that the whole real line can be made by patching together intervals in this way.
+
+$X=\{x\in\RR\|0\leq x\leq1\}$を0と1の間の数の閉集合とし, $Y=\{y\in\RR\|1\leq y\leq 2\}$を1と2の間の数の閉集合とし, $W=\{1\}$とする. このとき押し出し$X\From{f} W\To{g} Y$は, 予想される通り$X\sqcup_WY\iso\{z\in\RR\|0\leq z\leq 2\}$である. ここで$f$と$g$は``自明な''函数($1\mapsto 1$)である. 最終的に一般的な余極限をとる際には, この方法による区間の切り貼りによって全実軸が作れることを確かめることができる.
 
 \end{example}
 
 \begin{example}[Pushout]\label{ex:pushout}
 
-In each example below, the diagram to the right is intended to be a pushout of the diagram to the left.  The new object, $D$, is the union of $B$ and $C$, but instances of $A$ are equated to their $B$ and $C$ aspects.  This will be discussed after the two diagrams.
+%In each example below, the diagram to the right is intended to be a pushout of the diagram to the left.  The new object, $D$, is the union of $B$ and $C$, but instances of $A$ are equated to their $B$ and $C$ aspects.  This will be discussed after the two diagrams.
+
+以下のそれぞれの例では, 右側の図式は左側の図式の押し出しであることを意図している. 新しい対象$D$は$B$と$C$の合併であるが, $A$の実例はその$B$と$C$の様相と同等に扱われる. これに関しては以下の二つの図式の後に議論することにする.
 
 \begin{align}
 \label{dia:po1}\fbox{\xymatrixnocompile{\obox{A}{.7in}{a cell in the shoulder}\LA{r}{is}\LAL{d}{is}&\obox{C}{.6in}{a cell in the arm}\\\obox{B}{.7in}{a cell in the torso}}}\hsp&\fbox{\xymatrix{\obox{A}{.7in}{a cell in the shoulder}\LA{r}{is}\LAL{d}{is}&\obox{C}{.6in}{a cell in the arm}\LA{d}{}\\\obox{B}{.7in}{a cell in the torso}\LA{r}{}&\obox{D=B\sqcup_AC}{.8in}{a cell in the torso or arm}}}
 \end{align}
-In the left-hand olog (\ref{dia:po1}, the two arrows are inclusions: the author considers every cell in the shoulder to be both in the arm and in the torso. The pushout is then just the union, where cells in the shoulder are not double-counted.
+%In the left-hand olog (\ref{dia:po1}, the two arrows are inclusions: the author considers every cell in the shoulder to be both in the arm and in the torso. The pushout is then just the union, where cells in the shoulder are not double-counted.
+左手側のolog \eqref{dia:po1}では, 二つの矢印は単射である. すなわちologの作者は肩の全ての細胞は腕と胴体の両方にあると考えてる. このとき押し出しは単純に合併であり, 肩の細胞は二重に数えられてはいない.
 
 \begin{align}\label{dia:po2}\fbox{\xymatrixnocompile@=18pt{\obox{A}{.8in}{\rr a college mathematics course}\LA{r}{yields}\LAL{d}{is}&\obox{C}{.8in}{an utterance of the phrase ``too hard"}\\\obox{B}{.6in}{\rr a college course}}}\hsp&\fbox{\xymatrixnocompile@=18pt{\obox{A}{.8in}{\rr a college mathematics course}\LA{r}{yields}\LAL{d}{is}&\obox{C}{.8in}{an utterance of the phrase ``too hard"}\LA{d}{}\\\obox{B}{.6in}{\rr a college course}\LA{r}{}&\obox{\parbox{.6in}{\vspace{.1in}\tiny$D=B\!\sqcup_A\!C$}}{1in}{\rr a college course, where every mathematics course is replaced by an utterance of the phrase ``too hard"}}}
 \end{align}
 
-In Olog (\ref{dia:po1}), the shoulder is seen as part of the arm and part of the torso.  When taking the union of these two parts, we do not want to ``double-count" the shoulder (as would be done in the coproduct $B\sqcup C$, see Example \ref{ex:coproduct2}).  Thus we create a new type $A$ for cells in the shoulder, which are considered the same whether viewed as cells in the arm or cells in the torso.  In general, if one wishes to take two things and glue them together, with $A$ as the glue and with $B$ and $C$ as the two things to be glued, the union is the pushout $B\sqcup_AC$. (A nice image of this can be seen in the setting of topological spaces, see Example \ref{ex:pushout in Top}.)
+%In Olog (\ref{dia:po1}), the shoulder is seen as part of the arm and part of the torso.  When taking the union of these two parts, we do not want to ``double-count" the shoulder (as would be done in the coproduct $B\sqcup C$, see Example \ref{ex:coproduct2}).  Thus we create a new type $A$ for cells in the shoulder, which are considered the same whether viewed as cells in the arm or cells in the torso.  In general, if one wishes to take two things and glue them together, with $A$ as the glue and with $B$ and $C$ as the two things to be glued, the union is the pushout $B\sqcup_AC$. (A nice image of this can be seen in the setting of topological spaces, see Example \ref{ex:pushout in Top}.)
 
-In Olog (\ref{dia:po2}), if every mathematics course is simply ``too hard," then when reading off a list of courses, each math course will not be read aloud but simply read as ``too hard."  To form $D$ we begin by taking the union of $B$ and $C$, and then we consider everything in $A$ to be the same whether one looks at it as a course or as the phrase ``too hard."  The math courses are all blurred together as one thing.  Thus we see that the power to equate different things can be exercised with pushouts.
+olog \eqref{dia:po1}では, 肩は腕の一部部分でありまた胴体の一部分であるようである. この時はこれら二つの合併をとる際に(余積$B\sqcup C$を取った時のように)肩を二重に数えたくない(Example \ref{ex:coproduct2}も見よ). よって我々は肩の細胞に対して新しい型$A$を作り, それを腕の細胞か胴体の細胞かのどちらかとみなすことにする. 一般的に, もし二つのものを取ってきてそれをのり付けし一緒にしたいならば, $A$はのりとして$B$と$C$はそれによってのり付けられる二つのものとして, その合併は押し出し$B\sqcup_AC$である. (これについのよいイメージが位相空間の設定で見ることができる. Example \ref{ex:pushout in Top}を見よ.)
+
+%In Olog (\ref{dia:po2}), if every mathematics course is simply ``too hard," then when reading off a list of courses, each math course will not be read aloud but simply read as ``too hard."  To form $D$ we begin by taking the union of $B$ and $C$, and then we consider everything in $A$ to be the same whether one looks at it as a course or as the phrase ``too hard."  The math courses are all blurred together as one thing.  Thus we see that the power to equate different things can be exercised with pushouts.
+
+olog \eqref{dia:po2}で, もし全ての数学コースが単純に``難しすぎる''ならば, その時はコースの一覧を読み上げる際, それぞれの数学のコースは声に出して読みあげる必要はなく単に``難しすぎる''と読めばよいだろう. $D$を形成するのにはまず$B$と$C$の合併をとり, 次に$A$の全てがコースか単語``too hard''で表現できるかのどちらかであるものは全て同じものとみなす. 数学コースはすべて一緒になって一つのものにぼやかされる. よって異なるもの同等視する力は押し出しによって行使可能であることが分かる.
 
 \end{example}
 
