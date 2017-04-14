@@ -2245,14 +2245,19 @@ $g\circ f=\id_X$であるところの函数$f\taking X\to Y$と函数$g\taking Y
 
 %%%% Subsection %%%%
 
-\subsection{Currying}\label{sec:currying}\index{currying}\index{materials!force extension curves}
+\subsection{Curry化}\label{sec:currying}\index{currying}\index{materials!force extension curves}
 
-Currying is the idea that when a function takes many inputs, we can input them one at a time or all at once. For example, consider the function that takes a material $M$ and an extension $E$ and returns the force transmitted through the material when it is pulled to that extension. This is a function $e\taking \fakebox{a material}\times\fakebox{an extension}\to\fakebox{a force}$. This function takes two inputs at once, but it is convenient to ``curry" the second input. Recall that $\Hom_\Set(\fakebox{an extension},\fakebox{a force})$ is the set of theoretical force-extension curves. Currying transforms $e$ into a function $$e'\taking\fakebox{a material}\to\Hom_\Set(\fakebox{an extension},\fakebox{a force}).$$ This is a more convenient way to package the same information. 
+%Currying is the idea that when a function takes many inputs, we can input them one at a time or all at once. For example, consider the function that takes a material $M$ and an extension $E$ and returns the force transmitted through the material when it is pulled to that extension. This is a function $e\taking \fakebox{a material}\times\fakebox{an extension}\to\fakebox{a force}$. This function takes two inputs at once, but it is convenient to ``curry" the second input. Recall that $\Hom_\Set(\fakebox{an extension},\fakebox{a force})$ is the set of theoretical force-extension curves. Currying transforms $e$ into a function $$e'\taking\fakebox{a material}\to\Hom_\Set(\fakebox{an extension},\fakebox{a force}).$$ This is a more convenient way to package the same information. 
 
-In fact, it may be convenient to repackage this information another way. For any extension, we may want the function that takes a material and returns how much force it can transmit at that extension. This is a function $$e''\taking\fakebox{an extension}\to\Hom_\Set(\fakebox{a material},\fakebox{a force}).$$ 
+Curry化(currying)は, 函数が複数の入力を取るときに, 一回につき一つ入力するか一度に全部入力するかのどちらかが可能である, というアイデアである. 例えば, 物質$M$と伸び$E$を取り, その伸びを得るまで物質をひっぱったときに物質が生む力を返す函数を考える. これは函数$e\taking \fakebox{a material}\times\fakebox{an extension}\to\fakebox{a force}$である. この函数は二つの入力を一度にとるが, 二番目の入力を``curry化''するのもまた便利である. $\Hom_\Set(\fakebox{an extension},\fakebox{a force})$は理論的な応力-ひずみ曲線の集合であることを思い出そう. Curry化は$e$を函数$$e'\taking\fakebox{a material}\to\Hom_\Set(\fakebox{an extension},\fakebox{a force})$$に変換する. これは同じ情報をパッケージ化するのにあたってより便利な方法である.
+
+%In fact, it may be convenient to repackage this information another way. For any extension, we may want the function that takes a material and returns how much force it can transmit at that extension. This is a function $$e''\taking\fakebox{an extension}\to\Hom_\Set(\fakebox{a material},\fakebox{a force}).$$ 
+
+実際のところ, この情報はまた別の方法で再パッケージ化するのが便利かもしれない. 任意の伸びに対して, なんらかの物質を受け取ってその伸びに対応して生み出された力を返す函数が欲しいかもしれない. これは函数$$e''\taking\fakebox{an extension}\to\Hom_\Set(\fakebox{a material},\fakebox{a force})$$である.
 
 \begin{notation}\index{exponentials ! in $\Set$}
-Let $A$ and $B$ be sets. We sometimes denote the set of functions from $A$ to $B$ by 
+%Let $A$ and $B$ be sets. We sometimes denote the set of functions from $A$ to $B$ by 
+$A$と$B$を集合とする. 我々はしばしば$A$から$B$への函数の集合を以下のように表記する.
 \begin{align}\label{dia:exponential sets}
 B^A:=\Hom_\Set(A,B).
 \end{align}
