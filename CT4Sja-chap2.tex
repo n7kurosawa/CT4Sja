@@ -2264,33 +2264,51 @@ B^A:=\Hom_\Set(A,B).
 \end{notation}
 
 \begin{exercise}
-For a finite set $A$, let $|A|\in\NN$ denote the cardinality of (number of elements in) $A$. If $A$ and $B$ are both finite (including the possibility that one or both are empty), is it always true that $|B^A|=|B|^{|A|}$?
+%For a finite set $A$, let $|A|\in\NN$ denote the cardinality of (number of elements in) $A$. If $A$ and $B$ are both finite (including the possibility that one or both are empty), is it always true that $|B^A|=|B|^{|A|}$?
+有限集合$A$に対し, $|A|\in\NN$は$A$の濃度(要素数)を表すとする. $A$と$B$がともに有限であるとき(どちらか一方あるいは両方が空集合である場合を含む), $|B^A|=|B|^{|A|}$は常に真だろうか?
 \end{exercise}
 
 \begin{proposition}[Currying]\label{prop:curry}
 
-Let $A$ denote a set. For any sets $X,Y$ there is a bijection 
+%Let $A$ denote a set. For any sets $X,Y$ there is a bijection 
+%\begin{align}\label{dia:curry bijection}
+%\phi\taking\Hom_\Set(X\times A,Y)\To{\iso}\Hom_\Set(X,Y^A).
+%\end{align}
+
+$A$は集合を表すとする. 任意の集合$X$, $Y$に対し, 全単射
 \begin{align}\label{dia:curry bijection}
 \phi\taking\Hom_\Set(X\times A,Y)\To{\iso}\Hom_\Set(X,Y^A).
 \end{align}
+が存在する.
 
 \end{proposition}
 
 \begin{proof}
 
-Suppose given $f\taking X\times A\to Y$. Define $\phi(f)\taking X\to Y^A$ as follows: for any $x\in X$ let $\phi(f)(x)\taking A\to Y$ be defined as follows: for any $a\in A$, let $\phi(f)(x)(a):=f(x,a)$. 
+%Suppose given $f\taking X\times A\to Y$. Define $\phi(f)\taking X\to Y^A$ as follows: for any $x\in X$ let $\phi(f)(x)\taking A\to Y$ be defined as follows: for any $a\in A$, let $\phi(f)(x)(a):=f(x,a)$. 
 
-We now construct the inverse, $\psi\taking\Hom_\Set(X,Y^A)\to\Hom_\Set(X\times A,Y)$. Suppose given $g\taking X\to Y^A$. Define $\psi(g)\taking X\times A\to Y$ as follows: for any pair $(x,a)\in X\times A$ let $\psi(g)(x,a):=g(x)(a)$. 
+$f\taking X\times A\to Y$が与えられたとする. $\phi(f)\taking X\to Y^A$を以下のように定義する. 任意の$x\in X$に対して$\phi(f)(x)\taking A\to Y$を以下のように定義する. 任意の$a\in A$に対して$\phi(f)(x)(a):=f(x,a)$.
 
-Then for any $f\in\Hom_\Set(X\times A,Y)$ we have $\psi\circ\phi(f)(x,a)=\phi(f)(x)(a)=f(x,a)$, and for any $g\in\Hom_\Set(X,Y^A)$ we have $\phi\circ\psi(g)(x)(a)=\psi(g)(x,a)=g(x)(a)$, Thus we see that $\phi$ is an isomorphism as desired.
+%We now construct the inverse, $\psi\taking\Hom_\Set(X,Y^A)\to\Hom_\Set(X\times A,Y)$. Suppose given $g\taking X\to Y^A$. Define $\psi(g)\taking X\times A\to Y$ as follows: for any pair $(x,a)\in X\times A$ let $\psi(g)(x,a):=g(x)(a)$. 
+
+今度は逆写像, $\psi\taking\Hom_\Set(X,Y^A)\to\Hom_\Set(X\times A,Y)$を構成しよう. $g\taking X\to Y^A$が与えられたとする. $\psi(g)\taking X\times A\to Y$を以下のように定義する. 任意の対$(x,a)\in X\times A$に対して$\psi(g)(x,a):=g(x)(a)$.
+
+%Then for any $f\in\Hom_\Set(X\times A,Y)$ we have $\psi\circ\phi(f)(x,a)=\phi(f)(x)(a)=f(x,a)$, and for any $g\in\Hom_\Set(X,Y^A)$ we have $\phi\circ\psi(g)(x)(a)=\psi(g)(x,a)=g(x)(a)$, Thus we see that $\phi$ is an isomorphism as desired.
+
+この時, 任意の$f\in\Hom_\Set(X\times A,Y)$に対して$\psi\circ\phi(f)(x,a)=\phi(f)(x)(a)=f(x,a)$が得られ, 任意の$g\in\Hom_\Set(X,Y^A)$に対して$\phi\circ\psi(g)(x)(a)=\psi(g)(x,a)=g(x)(a)$が得られる. これによって$\phi$は期待した通り同型写像であることが分かる.
 
 \end{proof}
 
 \begin{exercise}
-Let $X=\{1,2\}, A=\{a,b\}$, and $Y=\{x,y\}$. 
-\sexc\label{part:three distinct} Write down three distinct elements of $L:=\Hom_\Set(X\times A,Y)$. 
-\next Write down all the elements of $M:=\Hom_\Set(A,Y)$. 
-\next For each of the three elements $\ell\in L$ you chose in part (\ref{part:three distinct}), write down the corresponding function $\phi(\ell)\taking X\to M$ guaranteed by Proposition \ref{prop:curry}.
+%Let $X=\{1,2\}, A=\{a,b\}$, and $Y=\{x,y\}$. 
+%\sexc\label{part:three distinct} Write down three distinct elements of $L:=\Hom_\Set(X\times A,Y)$. 
+%\next Write down all the elements of $M:=\Hom_\Set(A,Y)$. 
+%\next For each of the three elements $\ell\in L$ you chose in part (\ref{part:three distinct}), write down the corresponding function $\phi(\ell)\taking X\to M$ guaranteed by Proposition \ref{prop:curry}.
+%\endsexc
+$X=\{1,2\}, A=\{a,b\}$, $Y=\{x,y\}$とする.
+\sexc\label{part:three distinct} $L:=\Hom_\Set(X\times A,Y)$の異なる要素を三つ書き下せ.
+\next $M:=\Hom_\Set(A,Y)$の要素を全て書き下せ.
+\next \eqref{part:three distinct}で選んだ三要素$\ell\in L$のそれぞれについて, Proposition \ref{prop:curry}によって存在が保証されているところの対応する函数$\phi(\ell)\taking X\to M$を書き下せ.
 \endsexc
 \end{exercise}
 
