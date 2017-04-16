@@ -2313,22 +2313,33 @@ $X=\{1,2\}, A=\{a,b\}$, $Y=\{x,y\}$とする.
 \end{exercise}
 
 \begin{exercise}\label{exc:evaluation}\index{exponentials!evaluation of}
-Let $A$ and $B$ be sets. We know that $\Hom_\Set(A,B)=B^A$, so we have a function $\id_{B^A}\taking\Hom_\Set(A,B)\to B^A$. Look at Proposition \ref{prop:curry}, making the substitutions $X=\Hom_\Set(A,B)$, $Y=B$, and  $A=A$. Consider the function $$\phi^\m1\taking\Hom_\Set(\Hom_\Set(A,B),B^A)\to\Hom_\Set(\Hom_\Set(A,B)\times A,B)$$ obtained as the inverse of (\ref{dia:curry bijection}). We have a canonical element $\id_{B^A}$ in the domain of $\phi^\m1$. We can apply the function $\phi^\m1$ and obtain an element $ev=\phi^\m1(\id_{B^A})\in\Hom_\Set(\Hom_\Set(A,B)\times A,B)$, which is itself a function, $$ev\taking\Hom_\Set(A,B)\times A\to B.$$ 
-\sexc Describe the function $ev$ in terms of how it operates on elements in its domain. 
-\next Why might one be tempted to denote this function by $ev$?
+%Let $A$ and $B$ be sets. We know that $\Hom_\Set(A,B)=B^A$, so we have a function $\id_{B^A}\taking\Hom_\Set(A,B)\to B^A$. Look at Proposition \ref{prop:curry}, making the substitutions $X=\Hom_\Set(A,B)$, $Y=B$, and  $A=A$. Consider the function $$\phi^\m1\taking\Hom_\Set(\Hom_\Set(A,B),B^A)\to\Hom_\Set(\Hom_\Set(A,B)\times A,B)$$ obtained as the inverse of (\ref{dia:curry bijection}). We have a canonical element $\id_{B^A}$ in the domain of $\phi^\m1$. We can apply the function $\phi^\m1$ and obtain an element $ev=\phi^\m1(\id_{B^A})\in\Hom_\Set(\Hom_\Set(A,B)\times A,B)$, which is itself a function, $$ev\taking\Hom_\Set(A,B)\times A\to B.$$ 
+%\sexc Describe the function $ev$ in terms of how it operates on elements in its domain. 
+%\next Why might one be tempted to denote this function by $ev$?
+%\endsexc
+%
+$A$と$B$を集合とする. 我々は$\Hom_\Set(A,B)=B^A$であることを知っている. よって函数$\id_{B^A}\taking\Hom_\Set(A,B)\to B^A$が得られる. Proposition \ref{prop:curry}において, $X=\Hom_\Set(A,B)$, $Y=B$, $A=A$の代入を行なってみよう. \eqref{dia:curry bijection}の逆として得られる函数$$\phi^\m1\taking\Hom_\Set(\Hom_\Set(A,B),B^A)\to\Hom_\Set(\Hom_\Set(A,B)\times A,B)$$を考える. $\phi^\m1$の始域にはcanonicalな要素$\id_{B^A}$がある. 函数$\phi^\m1$を適用すれば要素$ev=\phi^\m1(\id_{B^A})\in\Hom_\Set(\Hom_\Set(A,B)\times A,B)$を得ることができる. この要素はそれ自体が函数である. $$ev\taking\Hom_\Set(A,B)\times A\to B.$$ 
+\sexc 函数$ev$を, その始域の要素に対してどのように演算が行なわれるかという観点で記述せよ.
+\next $ev$によってこの函数を記述するのが魅力的だと考えられるのはなぜだろうか?
 \endsexc
 \end{exercise}
 
-If $n\in\NN$ is a natural number, recall from (\ref{dia:underline n}) that there is a nice set $\ul{n}=\{1,2,\ldots,n\}$. If $A$ is a set, we often make the abbreviation 
+%If $n\in\NN$ is a natural number, recall from (\ref{dia:underline n}) that there is a nice set $\ul{n}=\{1,2,\ldots,n\}$. If $A$ is a set, we often make the abbreviation 
+$n\in\NN$を自然数とする. \eqref{dia:underline n}から, よい性質を持つ集合$\ul{n}=\{1,2,\ldots,n\}$が存在することを思いだそう. もし$A$が集合ならば, 我々はしばしば以下の略記を使用する.
 \begin{align}\label{dia:exponential abbrev}
 A^n:=A^{\ul{n}}.
 \end{align}
 
 \begin{exercise}\label{exc:two R2s}
+%
+%In Example \ref{ex:R2} we said that $\RR^2$ is an abbreviation for $\RR\times\RR$, but in (\ref{dia:exponential abbrev}) we say that $\RR^2$ is an abbreviation for $\RR^{\ul{2}}$. Use Exercise \ref{exc:generator for set}, Proposition \ref{prop:curry}, Exercise \ref{exc:coprod}, and the fact that 1+1=2, to prove that these are isomorphic, $\RR^{\ul{2}}\iso\RR\times\RR$.
+%
+Example \ref{ex:R2}では$\RR^2$は$\RR\times\RR$の略記と言ったが, しかし\eqref{dia:exponential abbrev}では$\RR^2$は$\RR^{\ul{2}}$の略記と言った. Exercise \ref{exc:generator for set}, Proposition \ref{prop:curry}, Exercise \ref{exc:coprod}, そして$1+1=2$という事実を用い, 同型写像$\RR^{\ul{2}}\iso\RR\times\RR$が存在することを証明せよ.
 
-In Example \ref{ex:R2} we said that $\RR^2$ is an abbreviation for $\RR\times\RR$, but in (\ref{dia:exponential abbrev}) we say that $\RR^2$ is an abbreviation for $\RR^{\ul{2}}$. Use Exercise \ref{exc:generator for set}, Proposition \ref{prop:curry}, Exercise \ref{exc:coprod}, and the fact that 1+1=2, to prove that these are isomorphic, $\RR^{\ul{2}}\iso\RR\times\RR$.
-
-(The answer to Exercise \ref{exc:generator for set} was $A=\singleton$: i.e. $\Hom_\Set(\singleton,X)\iso X$ for all $X$.)
+%(The answer to Exercise \ref{exc:generator for set} was $A=\singleton$: i.e. $\Hom_\Set(\singleton,X)\iso X$ for all $X$.)
+%
+(Exercise \ref{exc:generator for set}の答えは$A=\singleton$だった. i.e. 全ての$X$に対し$\Hom_\Set(\singleton,X)\iso X$.)
+%
 \end{exercise}
 
 %%%% Subsection %%%%
