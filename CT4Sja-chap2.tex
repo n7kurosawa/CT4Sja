@@ -2391,22 +2391,32 @@ Proposition \ref{prop:arithmetic of sets}は一つの例外を除いて全て真
 \end{exercise}
 
 \begin{exercise}
-It is also true of natural numbers that if $a,b\in\NN$ and $ab=0$ then either $a=0$ or $b=0$. Is the analogous statement true of all sets?
+%It is also true of natural numbers that if $a,b\in\NN$ and $ab=0$ then either $a=0$ or $b=0$. Is the analogous statement true of all sets?
+もし$a,b\in\NN$かつ$ab=0$ならば$a=0$あるいは$b=0$であるということもまた自然数では真である. 全ての集合で類似した言明は真だろうか?
 \end{exercise}
 
-Proposition \ref{prop:arithmetic of sets} is in some sense about isomorphisms. It says that understanding isomorphisms of sets reduces to understanding natural numbers. But note that there is much more going on in $\Set$ than isomorphisms; in particular there are functions that are not invertible. 
+%Proposition \ref{prop:arithmetic of sets} is in some sense about isomorphisms. It says that understanding isomorphisms of sets reduces to understanding natural numbers. But note that there is much more going on in $\Set$ than isomorphisms; in particular there are functions that are not invertible. 
 
-In grade school you probably never saw anything that looked like this:
+Proposition \ref{prop:arithmetic of sets}はある意味では同型写像に関するpropositionである. このpropositionは集合の同型写像を理解することは自然数を理解することに還元できると言っている. しかし$\Set$においては同型写像よりも先に進むべき場所があることに注意しよう. 特に, 可逆ではない函数の存在がある.
+
+%In grade school you probably never saw anything that looked like this:
+%$$5^3\times 3\too 5$$
+%And yet in Exercise \ref{exc:evaluation} we found a function $ev\taking B^A\times A\to B$ that exists for any sets $A,B$. This function $ev$ is not an isomorphism so it somehow does not show up as an equation of natural numbers. But it still has important meaning.
+%\footnote{Roughly, the existence of $ev\taking\ul{5}^{\ul{3}}\times\ul{3}\too \ul{5}$ says that given a dot in a $5\times 5\times 5$ grid of dots, and given one of the three axes, you can tell me the coordinate of that dot along that axis.} In terms of mere number, it looks like we are being told of an important function $\ul{575}\to\ul{5}$, which is bizarre. The issue here is precisely the one you confronted in Exercise \ref{exc:functions are not iso invariant}.
+
+大学院では, おそらく以下のようなものは決して見ることはないだろう.
 $$5^3\times 3\too 5$$
-And yet in Exercise \ref{exc:evaluation} we found a function $ev\taking B^A\times A\to B$ that exists for any sets $A,B$. This function $ev$ is not an isomorphism so it somehow does not show up as an equation of natural numbers. But it still has important meaning.
-\footnote{Roughly, the existence of $ev\taking\ul{5}^{\ul{3}}\times\ul{3}\too \ul{5}$ says that given a dot in a $5\times 5\times 5$ grid of dots, and given one of the three axes, you can tell me the coordinate of that dot along that axis.} In terms of mere number, it looks like we are being told of an important function $\ul{575}\to\ul{5}$, which is bizarre. The issue here is precisely the one you confronted in Exercise \ref{exc:functions are not iso invariant}.
+それにもかからわず, 我々はExercise \ref{exc:evaluation}では任意の集合$A$, $B$に対して函数$ev\taking B^A\times A\to B$の存在を見出した. この函数$ev$は同型写像ばなく, よって自然数の等式としてなんとか表現するということはできない. しかし, それでもこれには重要な意味がある.
+\footnote{大雑把には, $ev\taking\ul{5}^{\ul{3}}\times\ul{3}\too \ul{5}$の存在は,  says that given a dot in $5\times 5\times 5$の点の格子から点が与えられ, また三つの軸のうちの一つが与えられたとき, 軸に沿った点の座標を示すことができる, ということを言っている.} 単なる数の観点からは, 重要な函数$\ul{575}\to\ul{5}$について語ろうとしているのと同じに見えるが, この函数は奇妙である. ここでの問題はまさにExercise \ref{exc:functions are not iso invariant}で向き合うものである.
 
 \begin{exercise}
-Explain why there is a canonical function $\ul{5}^{\ul{3}}\times\ul{3}\too \ul{5}$ but not a canonical function $\ul{575}\to\ul{5}$.
+%Explain why there is a canonical function $\ul{5}^{\ul{3}}\times\ul{3}\too \ul{5}$ but not a canonical function $\ul{575}\to\ul{5}$.
+canonicalな函数$\ul{5}^{\ul{3}}\times\ul{3}\too \ul{5}$は存在するのにcanonicalな函数$\ul{575}\to\ul{5}$は存在しないのはなぜかを説明せよ.
 \end{exercise}
 
 \begin{slogan}
-It is true that a set is isomorphic to any other set with the same number of elements, but don't be fooled into thinking that the study of sets reduces to the study of numbers. Functions that are not isomorphisms cannot be captured within the framework of numbers. 
+%It is true that a set is isomorphic to any other set with the same number of elements, but don't be fooled into thinking that the study of sets reduces to the study of numbers. Functions that are not isomorphisms cannot be captured within the framework of numbers. 
+ある集合が, その集合と同じ数の要素を持つ他の任意の集合と同型である, というのは真である. しかし, 集合の研究は自然数の研究に還元できるという考えに陥ってはならない. 同型写像でない函数は自然数の枠組みの内部では捉えることはできない.
 \end{slogan}
 
 %%%% Subsection %%%%
