@@ -2421,36 +2421,55 @@ canonicalな函数$\ul{5}^{\ul{3}}\times\ul{3}\too \ul{5}$は存在するのにc
 
 %%%% Subsection %%%%
 
-\subsection{Subobjects and characteristic functions}
+%\subsection{Subobjects and characteristic functions}
+\subsection{部分対象と特性函数}
 
 \begin{definition}\label{def:power set}
 
-For any set $B$, define the {\em power set of $B$}\index{power set}, denoted $\PP(B)$,\index{a symbol!$\PP$} to be the set of subsets of $B$.
+%For any set $B$, define the {\em power set of $B$}\index{power set}, denoted $\PP(B)$,\index{a symbol!$\PP$} to be the set of subsets of $B$.
+
+任意の集合$B$に対して\emph{べき集合$B$ (power set of $B$)}\index{power set}を, $B$の部分集合の集合として定義し, $\PP(B)$\index{a symbol!$\PP$}で示す.
 
 \end{definition}
 
 \begin{exercise}\label{exc:size of power sets}~
-\sexc How many elements does $\PP(\emptyset)$ have? 
-\next How many elements does $\PP(\singleton)$ have? 
-\next How many elements does $\PP(\{1,2,3,4,5,6\})$ have? 
-\next Any idea why they may have named it ``power set"?
+%\sexc How many elements does $\PP(\emptyset)$ have? 
+%\next How many elements does $\PP(\singleton)$ have? 
+%\next How many elements does $\PP(\{1,2,3,4,5,6\})$ have? 
+%\next Any idea why they may have named it ``power set"?
+%\endsexc
+\sexc $\PP(\emptyset)$にはどれだけの数の要素があるか?
+\next $\PP(\singleton)$にはどれだけの数の要素があるか?
+\next $\PP(\{1,2,3,4,5,6\})$にはどれだけの数の要素があるか?
+\next ``べき集合''という名前が付けられた理由について, なにかアイデアはあるだろうか?
 \endsexc
 \end{exercise}
 
 %% Subsubsection %%
 
-\subsubsection{Simplicial complexes}\label{sec:simplicial complex}
+%\subsubsection{Simplicial complexes}\label{sec:simplicial complex}
+\subsubsection{単体複体}\label{sec:simplicial complex}
 
 \begin{definition}\label{def:simplicial complex}\index{simplicial complex}
 
-Let $V$ be a set and let $\PP(V)$ be its powerset. A subset $X\ss\PP(V)$ is called {\em downward-closed} if, for every $u\in X$ and every $u'\ss u$, we have $u'\in X$. We say that $X$ {\em contains all atoms} if for every $v\in V$ the singleton set $\{v\}$ is an element of $X$. 
+%Let $V$ be a set and let $\PP(V)$ be its powerset. A subset $X\ss\PP(V)$ is called {\em downward-closed} if, for every $u\in X$ and every $u'\ss u$, we have $u'\in X$. We say that $X$ {\em contains all atoms} if for every $v\in V$ the singleton set $\{v\}$ is an element of $X$. 
 
-A {\em simplicial complex} is a pair $(V,X)$ where $V$ is a set and $X\ss\PP(V)$ is a downward-closed subset that contains all atoms. The elements of $X$ are called {\em simplices} (singular: {\em simplex}).\index{simplex} Any subset $u\ss V$ has a cardinality $|u|$, so we have a function $X\to\NN$ sending each simplex to its cardinality. The set of simplices with cardinality $n+1$ is denoted $X_n$ and each element $x\in X_n$ is called an {\em $n$-simplex}.
-\footnote{It is annoying at first that the set of subsets with cardinality 1 is denoted $X_0$, etc. But this is standard convention because as we will see, $X_n$ will be $n$-dimensional.}
-Since $X$ contains all atoms (subsets of cardinality 1), we have $X_0\iso V$, and we may also call the 0-simplices {\em vertices}. We sometimes call the 1-simplices {\em edges}.
-\footnote{The reason we wrote $X_0\iso V$ rather than $X_0=V$ is that $X_0$ is the set of 1-element subsets of $V$. So if $V=\{a,b,c\}$ then $X_0=\{\{a\},\{b\},\{c\}\}$. This is really just pedantry.}
+$V$を集合とし, $\PP(V)$をそのべき集合とする. 部分集合$X\ss\PP(V)$は, 全ての$u\in X$および全ての$u'\ss u$に対して$u'\in X$であるとき, \emph{downward-closed}と呼ばれる. 全ての$v\in V$に対して単一要素集合$\{v\}$が$X$の要素であるとき, $X$は\emph{contains all atoms}であると言う.
 
-Since $X_0\iso V$, we may denote a simplicial complex $(V,X)$ simply by $X$.
+%A {\em simplicial complex} is a pair $(V,X)$ where $V$ is a set and $X\ss\PP(V)$ is a downward-closed subset that contains all atoms. The elements of $X$ are called {\em simplices} (singular: {\em simplex}).\index{simplex} Any subset $u\ss V$ has a cardinality $|u|$, so we have a function $X\to\NN$ sending each simplex to its cardinality. The set of simplices with cardinality $n+1$ is denoted $X_n$ and each element $x\in X_n$ is called an {\em $n$-simplex}.
+%\footnote{It is annoying at first that the set of subsets with cardinality 1 is denoted $X_0$, etc. But this is standard convention because as we will see, $X_n$ will be $n$-dimensional.}
+%Since $X$ contains all atoms (subsets of cardinality 1), we have $X_0\iso V$, and we may also call the 0-simplices {\em vertices}. We sometimes call the 1-simplices {\em edges}.
+%\footnote{The reason we wrote $X_0\iso V$ rather than $X_0=V$ is that $X_0$ is the set of 1-element subsets of $V$. So if $V=\{a,b,c\}$ then $X_0=\{\{a\},\{b\},\{c\}\}$. This is really just pedantry.}
+
+\emph{単体複体(simplicial complex)}は対$(V,X)$である. ここで$V$は集合であり, $X\ss\PP(V)$はcontains all atoms なdownward-closedな部分集合である. $X$の要素は\emph{単体(simplex)}\footnote{複数形は\emph{simplices}.}
+と呼ばれる.\index{simplex} 任意の部分集合$u\ss V$は濃度$|u|$を持ち, よってそれぞれの単体からその濃度への函数$X\to\NN$が得られる. 濃度$n+1$の単体の集合は$X_n$と表記され, それぞれの要素$x\in X_n$は\emph{$n$単体($n$-simplex)}と呼ばれる.
+\footnote{最初は例えば濃度1の部分集合の集合を$X_0$と表記するのがわずらわしいかもしれない. しかしこれは標準的な慣習である. なぜなら後に見るように, $X_n$は$n$次元的であるからだ.}
+$X$はcontains all atoms (濃度1の部分集合)であるから, $X_0\iso V$が得られる. 我々は0単体を\emph{頂点(vertex)}と呼ぶこともある. 我々は時々1単体を\emph{辺(edge)}と呼ぶ.
+\footnote{$X_0=V$ではなく$X_0\iso V$と書いた理由は, $X_0$は$V$の1要素部分集合の集合であることである. よってもし$V=\{a,b,c\}$ならば$X_0=\{\{a\},\{b\},\{c\}\}$である. これは実際のところ杓子定規的である.}
+
+%Since $X_0\iso V$, we may denote a simplicial complex $(V,X)$ simply by $X$.
+
+$X_0\iso V$であるから, 我々は単体複体$(V,X)$を簡単に$X$と表記することもある.
 
 \end{definition}
 
