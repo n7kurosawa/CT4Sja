@@ -2475,35 +2475,49 @@ $X_0\iso V$であるから, 我々は単体複体$(V,X)$を簡単に$X$と表記
 
 \begin{example}
 
-Let $n\in\NN$ be a natural number and let $V=\ul{n+1}$. Define {\em the $n$-simplex}, denoted $\Delta^n$, to be the simplicial complex $\PP(V)\ss\PP(V)$, i.e. the whole power set, which indeed is downward-closed and contains all atoms. 
+%Let $n\in\NN$ be a natural number and let $V=\ul{n+1}$. Define {\em the $n$-simplex}, denoted $\Delta^n$, to be the simplicial complex $\PP(V)\ss\PP(V)$, i.e. the whole power set, which indeed is downward-closed and contains all atoms. 
+
+$n\in\NN$を自然数とし$V=\ul{n+1}$とする. \emph{$n$単体}を単体複体$\PP(V)\ss\PP(V)$すなわちべき集合全体と定義し, $\Delta^n$と表記する. べき集合全体は実際downward-closedでありcontains all atomsである.
 
 \end{example}
 
+%We can draw a simplicial complex $X$ by first putting all the vertices on the page as dots. Then for every $x\in X_1$, we see that $x=\{v,v'\}$ consists of 2 vertices, so we draw an edge connecting $v$ and $v'$. For every $y\in X_2$ we see that $y=\{w,w',w''\}$ consists of 3 vertices, so we draw a (filled-in) triangle connecting them. All three edges will be drawn too because $X$ is assumed to be downward closed.
 
-We can draw a simplicial complex $X$ by first putting all the vertices on the page as dots. Then for every $x\in X_1$, we see that $x=\{v,v'\}$ consists of 2 vertices, so we draw an edge connecting $v$ and $v'$. For every $y\in X_2$ we see that $y=\{w,w',w''\}$ consists of 3 vertices, so we draw a (filled-in) triangle connecting them. All three edges will be drawn too because $X$ is assumed to be downward closed.
+我々は, 単体複体$X$を次のようにして描くことができる. 最初に全ての頂点をページの上に点として描く. そして全ての$x\in X_1$に対して, $x=\{v,v'\}$が2つの頂点から成立しているとみなし, $v$と$v'$を結ぶ辺を描く. 全ての$y\in X_2$に対して$y=\{w,w',w''\}$が3つの頂点から成立しているとみなし, それらを結ぶ(中身が塗られた)三角形を描く. 三辺の全ては既に描かれているだろう. なぜならば$X$はdownward closedであると仮定しているからだ.
 
-Thus, the 0-simplex $\Delta^0$, the 1-simplex $\Delta^1$, the 2-simplex $\Delta^2$, and the 3-simplex $\Delta^3$ are drawn here:
+%Thus, the 0-simplex $\Delta^0$, the 1-simplex $\Delta^1$, the 2-simplex $\Delta^2$, and the 3-simplex $\Delta^3$ are drawn here:
+かくして, 0単体$\Delta^0$, 1単体$\Delta^1$, 2単体$\Delta^2$, 3単体$\Delta^3$は次のように描かれる.
 \begin{center}
 \includegraphics[height=1.1in]{simplices}
 \end{center} 
 
-The $n$-simplices for various $n$'s are in no way all of the simplicial complexes. In general a simplicial complex is a union or ``gluing together" of simplices in a prescribed manner. For example, consider the simplicial complex $X$ with vertices $X_0=\{1,2,3,4\},$ edges $X_1=\{\{1,2\},\{2,3\},\{2,4\}\},$ and no higher simplices $X_2=X_3=\cdots=\emptyset$. We might draw $X$ as follows:
-$$\xymatrix{\LMO{1}\ar@{-}[r]&\LMO{2}\ar@{-}[r]\ar@{-}[d]&\LMO{3}\\&\LMO{4}}$$
+%The $n$-simplices for various $n$'s are in no way all of the simplicial complexes. In general a simplicial complex is a union or ``gluing together" of simplices in a prescribed manner. For example, consider the simplicial complex $X$ with vertices $X_0=\{1,2,3,4\},$ edges $X_1=\{\{1,2\},\{2,3\},\{2,4\}\},$ and no higher simplices $X_2=X_3=\cdots=\emptyset$. We might draw $X$ as follows:
+%$$\xymatrix{\LMO{1}\ar@{-}[r]&\LMO{2}\ar@{-}[r]\ar@{-}[d]&\LMO{3}\\&\LMO{4}}$$
+
+様々な$n$に対する$n$単体は, 決して全ての単体複体ではない. 一般的に単体複体は定められた方法に従って併合あるいは``互いを糊付け''された単体である. 例えば, 単体複体$X$を考え, 頂点が$X_0=\{1,2,3,4\}$, $X_1=\{\{1,2\},\{2,3\},\{2,4\}\}$, そしてそれ以上の単体は存在しない$X_2=X_3=\cdots=\emptyset$とする. $X$は次のように描けるだろう.
+$$\xymatrix{\LMO{1}\ar@{-}[r]&\LMO{2}\ar@{-}[r]\ar@{-}[d]&\LMO{3}\\&\LMO{4}}$$.
 
 \begin{exercise}
-Let $X$ be the following simplicial complex, so that $X_0=\{A,B,\ldots,M\}$. 
+%Let $X$ be the following simplicial complex, so that $X_0=\{A,B,\ldots,M\}$. 
+$X$を以下の単体複体とする. よって$X_0=\{A,B,\ldots,M\}$である.
 \begin{center}
 \includegraphics[height=3in]{OlogNetwork5}
 \end{center} 
-In this case $X_1$ consists of elements like $\{A,B\}$ and $\{D,K\}$ but not $\{D,J\}$. 
+%In this case $X_1$ consists of elements like $\{A,B\}$ and $\{D,K\}$ but not $\{D,J\}$. 
+この場合, $\{A,B\}$や$\{D,K\}$といった要素は$X_1$を構成しているが, $\{D,J\}$はそうではない.
 
-Write out $X_2$ and $X_3$ (hint: the drawing of $X$ indicates that $X_3$ should have one element).
+%Write out $X_2$ and $X_3$ (hint: the drawing of $X$ indicates that $X_3$ should have one element).
+$X_2$と$X_3$を書き下せ(ヒント: $X$の図は$X_3$は一要素だけ含んでいることを示唆している).
 \end{exercise}
 
 \begin{exercise}
-The 2-simplex $\Delta^2$ is drawn as a filled-in triangle with vertices $V=\{1,2,3\}$. There is a simplicial complex $X=\partial\Delta^2$ that would be drawn as an empty triangle with the same set of vertices. 
-\sexc Draw $\Delta^2$ and $X$ side by side and make clear the difference.
-\next Write down the data for $X$ as a simplicial complex. In other words what are the sets $X_0, X_1, X_2, X_3,\ldots$?
+%The 2-simplex $\Delta^2$ is drawn as a filled-in triangle with vertices $V=\{1,2,3\}$. There is a simplicial complex $X=\partial\Delta^2$ that would be drawn as an empty triangle with the same set of vertices. 
+%\sexc Draw $\Delta^2$ and $X$ side by side and make clear the difference.
+%\next Write down the data for $X$ as a simplicial complex. In other words what are the sets $X_0, X_1, X_2, X_3,\ldots$?
+%\endsexc
+2単体$\Delta^2$は$V=\{1,2,3\}$を頂点とした色が塗られた三角形として描かれる. 同じ頂点の集合を持ち, 色が塗られていない三角形として描かれるであろう単体複体$X=\partial\Delta^2$が存在する.
+\sexc $\Delta^2$と$X$を横に並べて描き, 違いがはっきり分かるようにせよ.
+\next 単体複体として$X$をのデータを書き下せ. 別の言い方をすれば, 集合$X_0, X_1, X_2, X_3,\ldots$は何か?
 \endsexc
 \end{exercise}
 
