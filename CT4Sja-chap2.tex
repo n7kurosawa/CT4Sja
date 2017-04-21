@@ -2523,45 +2523,62 @@ $X_2$と$X_3$を書き下せ(ヒント: $X$の図は$X_3$は一要素だけ含�
 
 %% Subsubsection %%
 
-\subsubsection{Subobject classifier}
+%\subsubsection{Subobject classifier}
+\subsubsection{部分対象分類子}
 
 \begin{definition}\label{def:subobject classifier}\index{subobject classifier!in $\Set$}
 
-Define the {\em subobject classifier} for $\Set$, denoted $\Omega$\index{a symbol!$\Omega$}, to be the set $\Omega:=\{True,False\}$, together with the function $\singleton\to\Omega$ sending the unique element to $True$.
+%Define the {\em subobject classifier} for $\Set$, denoted $\Omega$\index{a symbol!$\Omega$}, to be the set $\Omega:=\{True,False\}$, together with the function $\singleton\to\Omega$ sending the unique element to $True$.
+
+$\Set$に対する\emph{部分対象分類子(subobject classifier)}を$\Omega$\index{a symbol!$\Omega$}と表記し, 集合$\Omega:=\{\mathit{True},\mathit{False}\}$で一要素集合の要素を$\mathit{True}$へ送る函数$\singleton\to\Omega$を伴うものと定義する. 
 
 \end{definition}
 
 
 \begin{proposition}\label{prop:characteristic function}
 
-Let $B$ be a set. There is an isomorphism $$\phi\taking\Hom_\Set(B,\Omega)\To{\iso}\PP(B).$$
+%Let $B$ be a set. There is an isomorphism $$\phi\taking\Hom_\Set(B,\Omega)\To{\iso}\PP(B).$$
+
+$B$を集合とする. 同型写像$$\phi\taking\Hom_\Set(B,\Omega)\To{\iso}\PP(B)$$
+が存在する.
 
 \end{proposition}
 
 \begin{proof}
 
-Given a function $f\taking B\to\Omega$, let $\phi(f)=\{b\in B\|f(b)=True\}\ss B$. We now construct a function $\psi\taking\PP(B)\to\Hom_\Set(B,\Omega)$ to serve as the inverse of $\phi$. Given a subset $B'\ss B$, define $\psi(B')\taking B\to\Omega$ as follows: 
+%Given a function $f\taking B\to\Omega$, let $\phi(f)=\{b\in B\|f(b)=True\}\ss B$. We now construct a function $\psi\taking\PP(B)\to\Hom_\Set(B,\Omega)$ to serve as the inverse of $\phi$. Given a subset $B'\ss B$, define $\psi(B')\taking B\to\Omega$ as follows: 
+
+函数$f\taking B\to\Omega$が与えられたとき, $\phi(f)=\{b\in B\|f(b)=\mathit{True}\}\ss B$とする. $\phi$の逆写像を提供するために$\psi\taking\PP(B)\to\Hom_\Set(B,\Omega)$を構成しよう. 部分集合$B'\ss B$が与えられたとき, $\psi(B')\taking B\to\Omega$を以下のように定義する.
 $$\psi(i)(b)=\begin{cases}
-True&\tn{ if } b\in B',\\
-False&\tn{ if } b\not\in B'.
+\mathit{True}&\tn{ if } b\in B',\\
+\mathit{False}&\tn{ if } b\not\in B'.
 \end{cases}
 $$
-One checks easily that $\phi$ and $\psi$ are mutually inverse.
-
+%One checks easily that $\phi$ and $\psi$ are mutually inverse.
+$\phi$と$\psi$が互いに逆写像であることは簡単に確認できる.
 \end{proof}
 
-\begin{definition}[Characteristic function]\index{characteristic function}\index{subset!characteristic function of}
+%\begin{definition}[Characteristic function]\index{characteristic function}\index{subset!characteristic function of}
+\begin{definition}[特性函数]\index{characteristic function}\index{subset!characteristic function of}
 
-Given a subset $B'\ss B$, we call the corresponding function $B\to\Omega$ the {\em characteristic function of $B'$ in $B$.}
+%Given a subset $B'\ss B$, we call the corresponding function $B\to\Omega$ the {\em characteristic function of $B'$ in $B$.}
+
+部分集合$B'\ss B$が与えられたとき, 対応する函数$B\to\Omega$を\emph{$B$における$B'$の特性函数(characteristic function of $B'$ in $B$)}と呼ぶ.
 
 \end{definition}
 
-Let $B$ be any set and let $\PP(B)$ be its power set. By Proposition \ref{prop:characteristic function} there is a bijection between $\PP(B)$ and $\Omega^B$. Since $\Omega$ has cardinality 2, the cardinality of $\PP(B)$ is $2^{|B|}$, which explains the correct answer to Exercise \ref{exc:size of power sets}.
+%Let $B$ be any set and let $\PP(B)$ be its power set. By Proposition \ref{prop:characteristic function} there is a bijection between $\PP(B)$ and $\Omega^B$. Since $\Omega$ has cardinality 2, the cardinality of $\PP(B)$ is $2^{|B|}$, which explains the correct answer to Exercise \ref{exc:size of power sets}.
+
+$B$を任意の集合とし$\PP(B)$をそのべき集合とする. Proposition \ref{prop:characteristic function}によると$\PP(B)$と$\Omega^B$の間には全単射が存在する. $\Omega$の濃度は2だから, $\PP(B)$の濃度は$2^{|B|}$で, これはExercise \ref{exc:size of power sets}の正しい答えを説明している.
 
 \begin{exercise}
-Let $f\taking A\to\Omega$ denote the characteristic function of some $A'\ss A$, and define $A''\ss A$ to be its complement, $A'':=A-A'$ (i.e. $a\in A''$ if and only if $a\not\in A'$). 
-\sexc What is the characteristic function of $A''\ss A$? 
-\next Can you phrase it in terms of some function $\Omega\to\Omega$?
+%Let $f\taking A\to\Omega$ denote the characteristic function of some $A'\ss A$, and define $A''\ss A$ to be its complement, $A'':=A-A'$ (i.e. $a\in A''$ if and only if $a\not\in A'$). 
+%\sexc What is the characteristic function of $A''\ss A$? 
+%\next Can you phrase it in terms of some function $\Omega\to\Omega$?
+%\endsexc
+$f\taking A\to\Omega$がある$A'\ss A$の特性函数を示しているとし, また$A''\ss A$を補集合$A'':=A-A'$ (i.e. $a\in A''$のときかつそのときに限り$a\not\in A'$)とする.
+\sexc $A''\ss A$の特性函数は何か?
+\next なんらかの函数$\Omega\to\Omega$の観点からの言葉で表すことができるだろうか?
 \endsexc
 \end{exercise}
 
