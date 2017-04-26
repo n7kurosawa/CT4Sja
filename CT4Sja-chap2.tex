@@ -2605,41 +2605,65 @@ $f\taking X\to Y$を函数とする. 全ての$y\in Y$に対して$f(x)=y$であ
 
 \begin{remark}
 
-It turns out that a function that is bijective is always an isomorphism and that all isomorphisms are bijective. We will not show that here, but it is not too hard; see for example \cite[Theorem 5.4]{Big}.
+%It turns out that a function that is bijective is always an isomorphism and that all isomorphisms are bijective. We will not show that here, but it is not too hard; see for example \cite[Theorem 5.4]{Big}.
+
+全単射である函数は常に同型写像であり, 全ての同型写像は全単射であることが分かる. ここで示しはしないが, 証明はそれほど難しくはない. 例えば\cite[Theorem 5.4]{Big}を見よ.
 
 \end{remark}
 
-\begin{definition}[Monomorphisms, epimorphisms]\label{def:mono, epi in set}\index{epimorphism!in $\Set$}\index{monomorphism!in $\Set$}
+%\begin{definition}[Monomorphisms, epimorphisms]\label{def:mono, epi in set}\index{epimorphism!in $\Set$}\index{monomorphism!in $\Set$}
+\begin{definition}[モノ射, エピ射]\label{def:mono, epi in set}\index{epimorphism!in $\Set$}\index{monomorphism!in $\Set$}
 
-Let $f\taking X\to Y$ be a function. 
+%Let $f\taking X\to Y$ be a function. 
 
-We say that $f$ is a {\em monomorphism} if for all sets $A$ and pairs of functions $g,g'\taking A\to X$,
+%We say that $f$ is a {\em monomorphism} if for all sets $A$ and pairs of functions $g,g'\taking A\to X$,
+%$$
+%\xymatrix{A\ar@/^1pc/[r]^g\ar@/_1pc/[r]_{g'}&X\ar[r]^f&Y}
+%$$
+%if $f\circ g=f\circ g'$ then $g=g'$.
+
+$f\taking X\to Y$を函数とする.
+全ての集合$A$と函数の対$g,g'\taking A\to X$に対して,
 $$
 \xymatrix{A\ar@/^1pc/[r]^g\ar@/_1pc/[r]_{g'}&X\ar[r]^f&Y}
 $$
-if $f\circ g=f\circ g'$ then $g=g'$.
+$f\circ g=f\circ g'$ならば$g=g'$であるとき, $f$は\emph{モノ射(単射, モニック射, monomorphism)}と呼ばれる.
 
-We say that $f$ is an {\em epimorphism} if for all sets $B$ and pairs of functions $h,h'\taking Y\to B$, 
+%We say that $f$ is an {\em epimorphism} if for all sets $B$ and pairs of functions $h,h'\taking Y\to B$, 
+%$$
+%\xymatrix{X\ar[r]^f&Y\ar@/^1pc/[r]^h\ar@/_1pc/[r]_{h'}&B}
+%$$
+%if $h\circ f=h'\circ f$ then $h=h'$.
+
+全ての集合$B$と函数の対$h,h'\taking Y\to B$に対して,
 $$
 \xymatrix{X\ar[r]^f&Y\ar@/^1pc/[r]^h\ar@/_1pc/[r]_{h'}&B}
 $$
-if $h\circ f=h'\circ f$ then $h=h'$.
+$h\circ f=h'\circ f$ならば$h=h'$であるとき, $f$は\emph{エピ射(全射, epimorphism)}と呼ばれる.
 
 \end{definition}
 
 \begin{proposition}\label{prop:inj and surj}
 
-Let $f\taking X\to Y$ be a function. Then $f$ is injective if and only if it is a monomorphism; $f$ is surjective if and only if it is an epimorphism.
+%Let $f\taking X\to Y$ be a function. Then $f$ is injective if and only if it is a monomorphism; $f$ is surjective if and only if it is an epimorphism.
+
+$f\taking X\to Y$を函数とする. このとき, $f$が単射であるのは$f$がモノ射であるときかつそのときに限る. $f$が全射であるのは$f$がエピ射であるときかつそのときに限る.
 
 \end{proposition}
 
 \begin{proof}
 
-If $f$ is a monomorphism it is clearly injective by putting $A=\singleton$. Suppose that $f$ is injective and let $g,g'\taking A\to X$ be functions such that $f\circ g=f\circ g'$, but suppose for contradiction that $g\neq g'$. Then there is some element $a\in A$ such $g(a)\neq g'(a)\in X$. But by injectivity $f(g(a))\neq f(g'(a))$, contradicting $f\circ g=f\circ g'$.
+%If $f$ is a monomorphism it is clearly injective by putting $A=\singleton$. Suppose that $f$ is injective and let $g,g'\taking A\to X$ be functions such that $f\circ g=f\circ g'$, but suppose for contradiction that $g\neq g'$. Then there is some element $a\in A$ such $g(a)\neq g'(a)\in X$. But by injectivity $f(g(a))\neq f(g'(a))$, contradicting $f\circ g=f\circ g'$.
 
-Suppose that $f\taking X\to Y$ is an epimorphism and choose some $y_0\in Y$ (noting that if $Y$ is empty then the claim is vacuously true). Let $h\taking Y\to\Omega$ denote the characteristic function of the subset $\{y_0\}\ss Y$ and let $h'\taking Y\to\Omega$ denote the characteristic function of $\emptyset\ss Y$; note that $h(y)=h'(y)$ for all $y\neq y_0$. Then since $f$ is an epimorphism and $h\neq h'$, we must have $h\circ f\neq h'\circ f$, so there exists $x\in X$ with $h(f(x))\neq h'(f(x))$, which implies that $f(x)=y_0$. This proves that $f$ is surjective.
+$f$がモノ射ならば, $A=\singleton$と置くことにより明かに単射である. $f$が単射であると仮定し, $g,g'\taking A\to X$を$f\circ g=f\circ g'$であるところの函数だが, しかし$g\neq g'$であると仮定する. このとき, $g(a)\neq g'(a)\in X$であるようなある要素$a\in A$が存在する. しかし単射性$f(g(a))\neq f(g'(a))$により, $f\circ g=f\circ g'$に矛盾する.
 
-Finally, suppose that $f$ is surjective, and let $h,h'\taking Y\to B$ be functions with $h\circ f=h'\circ f$. For any $y\in Y$, there exists some $x\in X$ with $f(x)=y$, so $h(y)=h(f(x))=h'(f(x))=h'(y)$. This proves that $f$ is an epimorphism.
+%Suppose that $f\taking X\to Y$ is an epimorphism and choose some $y_0\in Y$ (noting that if $Y$ is empty then the claim is vacuously true). Let $h\taking Y\to\Omega$ denote the characteristic function of the subset $\{y_0\}\ss Y$ and let $h'\taking Y\to\Omega$ denote the characteristic function of $\emptyset\ss Y$; note that $h(y)=h'(y)$ for all $y\neq y_0$. Then since $f$ is an epimorphism and $h\neq h'$, we must have $h\circ f\neq h'\circ f$, so there exists $x\in X$ with $h(f(x))\neq h'(f(x))$, which implies that $f(x)=y_0$. This proves that $f$ is surjective.
+
+$f\taking X\to Y$がエピ射と仮定し, ある$y_0\in Y$を選ぶ(もし$Y$が空集合ならば, 主張は無意味なくらい真である). $h\taking Y\to\Omega$は部分集合$\{y_0\}\ss Y$の特性函数を表すとし, $h'\taking Y\to\Omega$は$\emptyset\ss Y$の特性函数を表すとする. 全ての$y\neq y_0$に対して$h(y)=h'(y)$であることに注意せよ. このとき$f$はエピ射で$h\neq h'$であるから, $h\circ f\neq h'\circ f$でなければならない. よって$h(f(x))\neq h'(f(x))$なる$x\in X$が存在する. これは$f(x)=y_0$を意味する. これによって$f$が全射であることが証明された.
+
+%Finally, suppose that $f$ is surjective, and let $h,h'\taking Y\to B$ be functions with $h\circ f=h'\circ f$. For any $y\in Y$, there exists some $x\in X$ with $f(x)=y$, so $h(y)=h(f(x))=h'(f(x))=h'(y)$. This proves that $f$ is an epimorphism.
+
+最後に, $f$が全射であると仮定し, $h,h'\taking Y\to B$を$h\circ f=h'\circ f$なる函数とする. 任意の$y\in Y$に対して, $f(x)=y$なる$x\in X$が存在するから, $h(y)=h(f(x))=h'(f(x))=h'(y)$である. こかによって$f$がエピ射であることが証明された.
 
 \end{proof}
 
