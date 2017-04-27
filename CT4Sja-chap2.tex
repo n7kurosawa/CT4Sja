@@ -2669,43 +2669,69 @@ $f\taking X\to Y$がエピ射と仮定し, ある$y_0\in Y$を選ぶ(もし$Y$�
 
 \begin{proposition}\label{prop:pb preserve mono}
 
-Let $f\taking X\to Y$ be a monomorphism. Then for any function $g\taking A\to Y$, the top map $f'\taking X\times_YA\to A$ in the diagram
+%Let $f\taking X\to Y$ be a monomorphism. Then for any function $g\taking A\to Y$, the top map $f'\taking X\times_YA\to A$ in the diagram
+%$$
+%\xymatrix{X\times_YA\ar[r]^-{f'}\ar[d]_{g'}\ullimit&A\ar[d]^g\\X\ar[r]_f&Y}
+%$$
+%is a monomorphism.
+
+$f\taking X\to Y$をモノ射とする. このとき任意の函数$g\taking A\to Y$に対して, 図式
 $$
 \xymatrix{X\times_YA\ar[r]^-{f'}\ar[d]_{g'}\ullimit&A\ar[d]^g\\X\ar[r]_f&Y}
 $$
-is a monomorphism.
+の上側の写像$f'\taking X\times_YA\to A$はモノ射である.
 
 \end{proposition}
 
 \begin{proof}
 
-To show that $f'$ is a monomorphism, we take an arbitrary set $B$ and two maps $m,n\taking B\to X\times_YA$ such that $f'\circ m=f'\circ n$, denote that function by $p:=f'\circ m\taking B\to A$. Now let $q=g'\circ m$ and $r=g'\circ n$. The diagram looks like this:
+%To show that $f'$ is a monomorphism, we take an arbitrary set $B$ and two maps $m,n\taking B\to X\times_YA$ such that $f'\circ m=f'\circ n$, denote that function by $p:=f'\circ m\taking B\to A$. Now let $q=g'\circ m$ and $r=g'\circ n$. The diagram looks like this:
+%$$
+%\xymatrix{B\ar@<.5ex>[rr]^(.4)m\ar@<-.5ex>[rr]_(.4)n\ar@/^2pc/[rrr]^p\ar@<.5ex>[drr]^(.6)q\ar@<-.5ex>[drr]_(.6)r&&X\times_YA\ar[r]^{f'}\ar[d]_{g'}\ullimit&A\ar[d]^g\\&&X\ar[r]_f&Y}
+%$$
+%We have that 
+%\begin{align*}f\circ q=f\circ g'\circ m=g\circ f'\circ m=g\circ f'\circ n=f\circ g'\circ n=f\circ r\end{align*} 
+%But we assumed that $f$ is a monomorphism so this implies that $q=r$. By the universal property of %pullbacks, Lemma \ref{lemma:up for fp}, we have $m=n$.
+
+$f'$がモノ射であることを示すため, 我々は任意の集合$B$と$f'\circ m=f'\circ n$であるところの二つの写像$m,n\taking B\to X\times_YA$をとり, その函数を$p:=f'\circ m\taking B\to A$と表示する. $q=g'\circ m$および$r=g'\circ n$とする. 図式は以下のようになる.
 $$
 \xymatrix{B\ar@<.5ex>[rr]^(.4)m\ar@<-.5ex>[rr]_(.4)n\ar@/^2pc/[rrr]^p\ar@<.5ex>[drr]^(.6)q\ar@<-.5ex>[drr]_(.6)r&&X\times_YA\ar[r]^{f'}\ar[d]_{g'}\ullimit&A\ar[d]^g\\&&X\ar[r]_f&Y}
 $$
-We have that 
-\begin{align*}f\circ q=f\circ g'\circ m=g\circ f'\circ m=g\circ f'\circ n=f\circ g'\circ n=f\circ r\end{align*} 
-But we assumed that $f$ is a monomorphism so this implies that $q=r$. By the universal property of pullbacks, Lemma \ref{lemma:up for fp}, we have $m=n$.
+我々は
+\begin{align*}f\circ q=f\circ g'\circ m=g\circ f'\circ m=g\circ f'\circ n=f\circ g'\circ n=f\circ r\end{align*}
+を得る. しかし$f$がモノ射だと仮定したから, これは$q=r$を意味する. 引き戻しの普遍的性質 Lemma \ref{lemma:up for fp}により, $m=n$が得られる.
 
 \end{proof}
 
 \begin{exercise}
-Show, in analogy to Proposition \ref{prop:pb preserve mono}, that pushouts preserve epimorphisms.
+%Show, in analogy to Proposition \ref{prop:pb preserve mono}, that pushouts preserve epimorphisms.
+Proposition \ref{prop:pb preserve mono}と似たように, 押し出しはエピ射性を保存することを示せ.
 \end{exercise}
 
 \begin{example}\label{exc:olog pullbacks}
 
-Suppose an olog has a fiber product square
-$$\xymatrix{X\times_ZY\ar[r]^-{g'}\ar[d]_{f'}&Y\ar[d]^f\\X\ar[r]_g&Z}$$ such that $f$ is intended to be an injection and $g$ is any map.
-\footnote{Of course, this diagram is symmetrical, so the same ideas hold if $g$ is an injection and $f$ is any map.} 
-In this case, there are nice labeling systems for $f', g'$, and $X\times_ZY$. Namely:
+%Suppose an olog has a fiber product square
+%$$\xymatrix{X\times_ZY\ar[r]^-{g'}\ar[d]_{f'}&Y\ar[d]^f\\X\ar[r]_g&Z}$$ such that $f$ is intended to be an injection and $g$ is any map.
+%\footnote{Of course, this diagram is symmetrical, so the same ideas hold if $g$ is an injection and $f$ is any map.} 
+%In this case, there are nice labeling systems for $f', g'$, and $X\times_ZY$. Namely:
+%\begin{itemize}
+%\item ``is" is an appropriate label for $f'$, 
+%\item the label for $g$ is an appropriate label for $g'$,
+%\item (the label for $X$, then ``which", then the label for $g$, then the label for $Y$) is an appropriate label for $X\times_ZY$.
+%\end{itemize}
+
+あるologがファイバー積の四角形
+$$\xymatrix{X\times_ZY\ar[r]^-{g'}\ar[d]_{f'}&Y\ar[d]^f\\X\ar[r]_g&Z}$$を持ち, そこでは$f$が単射を意図し, $g$が任意の写像であるとする.
+\footnote{もちろん, この図式は対称的だから, もし$g$が単射で$f$が任意の写像であっても同じアイデアが適用できる.}
+この場合, $f'$, $g'$および$X\times_ZY$には素敵な見出し付けの体系がある. すなわち
 \begin{itemize}
-\item ``is" is an appropriate label for $f'$, 
-\item the label for $g$ is an appropriate label for $g'$,
-\item (the label for $X$, then ``which", then the label for $g$, then the label for $Y$) is an appropriate label for $X\times_ZY$.
+\item ``is''が$f'$に対して適切な見出しであり, 
+\item $g$の見出しが$g'$に対して適切な見出しであり,
+\item ($X$に対する見出し, そして``which'', そして$g$に対する見出し, そして$Y$に対する見出し)が$X\times_ZY$に対して適切な見出しである.
 \end{itemize}
 
-To give an explicit example, 
+%To give an explicit example, 
+明示的な例を与える.
 $$\xymatrix{
 \obox{X\times_ZY}{.9in}{a rib which is made by a cow}\LA{rr}{is made by}\LAL{d}{is}&&\obox{Y}{.4in}{a cow}\LA{d}{is}\\
 \obox{X}{.3in}{a rib}\LAL{rr}{is made by}&&\obox{Z}{.6in}{an animal}
@@ -2716,16 +2742,19 @@ $$
 
 \begin{corollary}\label{cor:monos are pullbacks of true}
 
-Let $i\taking A\to X$ be a monomorphism. Then there is a fiber product square of the form 
+%Let $i\taking A\to X$ be a monomorphism. Then there is a fiber product square of the form 
+$i\taking A\to X$をモノ射とする. このとき以下の形を持つファイバー積の四角形が存在する.
 \begin{align}\label{dia:monos are pbs of true}
-\xymatrix{A\ar[r]^{f'}\ar[d]_i\ullimit&\singleton\ar[d]^{True}\\X\ar[r]_f&\Omega.}
+\xymatrix{A\ar[r]^{f'}\ar[d]_i\ullimit&\singleton\ar[d]^{\mathit{True}}\\X\ar[r]_f&\Omega.}
 \end{align}
 
 \end{corollary}
 
 \begin{proof}
 
-Let $X'\ss X$ denote the image of $i$ and let $f\taking X\to\Omega$ denote the characteristic function of $X'\ss X$. Then it is easy to check that Diagram \ref{dia:monos are pbs of true} is a pullback.
+%Let $X'\ss X$ denote the image of $i$ and let $f\taking X\to\Omega$ denote the characteristic function of $X'\ss X$. Then it is easy to check that Diagram \ref{dia:monos are pbs of true} is a pullback.
+
+$X'\ss X$が$i$の像を示し, $f\taking X\to\Omega$が$X'\ss X$の特性函数を示すとする. このとき, Diagram \ref{dia:monos are pbs of true}が引き戻しであることは簡単に確認することができる.
 
 \end{proof}
 
