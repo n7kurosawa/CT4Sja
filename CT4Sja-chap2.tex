@@ -2759,26 +2759,37 @@ $X'\ss X$が$i$の像を示し, $f\taking X\to\Omega$が$X'\ss X$の特性函数
 \end{proof}
 
 \begin{exercise}
-Consider the subobject classifier $\Omega$, the singleton $\singleton$ and the map $\singleton\To{True}\Omega$ from Definition \ref{def:subobject classifier}. Look at diagram \ref{dia:monos are pbs of true} and in the spirit of Exercise \ref{exc:olog pullbacks}, come up with a label for $\Omega$, a label for $\singleton$, and a label for $True$. Given a label for $X$ and a label for $f$, come up with a label for $A$, a label for $i$ and a label for $f'$, such that the English smoothly fits the mathematics.
+%Consider the subobject classifier $\Omega$, the singleton $\singleton$ and the map $\singleton\To{True}\Omega$ from Definition \ref{def:subobject classifier}. Look at diagram \ref{dia:monos are pbs of true} and in the spirit of Exercise \ref{exc:olog pullbacks}, come up with a label for $\Omega$, a label for $\singleton$, and a label for $True$. Given a label for $X$ and a label for $f$, come up with a label for $A$, a label for $i$ and a label for $f'$, such that the English smoothly fits the mathematics.
+%
+部分対象分類子$\Omega$, 単一要素集合$\singleton$, Definition \ref{def:subobject classifier}での写像$\singleton\To{\mathit{True}}\Omega$を考える. diagram \ref{dia:monos are pbs of true}とExercise \ref{exc:olog pullbacks}における精神を鑑みることにより, $\Omega$の見出し, $\singleton$の見出し, そして$\mathit{True}$の見出しを見出せ. $X$の見出しと$f$の見出しが与えらかたとき, $A$の見出し, $i$の見出し, $i'$の見出しとして, 英語がなめらかに数学に当てはまるところのものを見出せ.
 \end{exercise}
 
 %%%% Subsection %%%%
 
-\subsection{Multisets, relative sets, and set-indexed sets}
+\subsection{多重集合, relative sets, and set-indexed sets}
 
-In this section we prepare ourselves for considering categories other than $\Set$, by looking at some categories related to $\Set$. 
+%In this section we prepare ourselves for considering categories other than $\Set$, by looking at some categories related to $\Set$. 
+
+この章では, $\Set$に関連する圏を見ることにより, $\Set$以外の圏を考える準備を行なう.
 
 %% Subsubsection %%
 
-\subsubsection{Multisets}\index{multiset}
+\subsubsection{多重集合}\index{multiset}
 
-Consider the set $X$ of words in a given document. If $WC(X)$ is the wordcount of the document, we will not generally have $WC(X)=|X|$. The reason is that a set cannot contain the same element more than once, so words like ``the" might be undercounted in $|X|$. A {\em multiset} is a set in which elements can be assigned a multiplicity, i.e. a number of times they are to be counted. 
+%Consider the set $X$ of words in a given document. If $WC(X)$ is the wordcount of the document, we will not generally have $WC(X)=|X|$. The reason is that a set cannot contain the same element more than once, so words like ``the" might be undercounted in $|X|$. A {\em multiset} is a set in which elements can be assigned a multiplicity, i.e. a number of times they are to be counted. 
 
-But if $X$ and $Y$ are multisets, what is the appropriate type of mapping from $X$ to $Y$? Since every set is a multiset (in which each element has multiplicity 1), let's restrict ourselves to notions of mapping that agree with the usual one on sets. That is, if multisets $X$ and $Y$ happen to be sets then our mappings $X\to Y$ should just be functions.
+与えられた文章の中の単語の集合$X$を考える. $WC(X)$が文章の単語数ならば, 一般的に$WC(X)=|X|$は得られない. この理由は, 集合は同じ要素を一個しか含めることができず, よって``the''のような単語は$|X|$の中では少なめに数えられているだろうからである. \emph{多重集合(multiset)}は要素に重複度, i.e. 数え上げられる回数が割り当てられている集合である.
+
+%But if $X$ and $Y$ are multisets, what is the appropriate type of mapping from $X$ to $Y$? Since every set is a multiset (in which each element has multiplicity 1), let's restrict ourselves to notions of mapping that agree with the usual one on sets. That is, if multisets $X$ and $Y$ happen to be sets then our mappings $X\to Y$ should just be functions.
+
+しかし, もし$X$と$Y$が多重集合ならば, $X$から$Y$への写像の適切な型はなんだろうか? 全ての集合は多重集合(それぞれの要素は重複度1を持っている)だから, 集合における通常のそれと一致するところの写像の概念に制限することにしよう. すなわち, 多重集合$X$と$Y$が偶然集合だったならば写像$X\to Y$はまさに函数であるべきである.
 
 \begin{exercise}\label{exc:multiset 1}~
-\sexc Come up with some notion of mapping for multisets that generalizes functions when the notion is restricted to sets. 
-\next Suppose that $X=(1,1,2,3)$ and $Y=(a,b,b,b)$, i.e. $X=\{1,2,3\}$ with $1$ having multiplicity 2, and $Y=\{a,b\}$ with $b$ having multiplicity 3. What are all the maps $X\to Y$ in your notion?
+%\sexc Come up with some notion of mapping for multisets that generalizes functions when the notion is restricted to sets. 
+%\next Suppose that $X=(1,1,2,3)$ and $Y=(a,b,b,b)$, i.e. $X=\{1,2,3\}$ with $1$ having multiplicity 2, and $Y=\{a,b\}$ with $b$ having multiplicity 3. What are all the maps $X\to Y$ in your notion?
+%\endsexc
+\sexc 多重集合に大する写像の概念を見出せ. その概念は, 集合に制限されたときの函数を一般化している.
+\next $X=(1,1,2,3)$と$Y=(a,b,b,b)$, i.e. $X=\{1,2,3\}$で$1$の重複度が2であり$Y=\{a,b\}$で$b$の重複度が3だと仮定する. 見出しだ概念においては, 全ての写像$X\to Y$はどうなるか?
 \endsexc
 \end{exercise}
 
