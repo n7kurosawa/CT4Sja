@@ -2793,13 +2793,19 @@ $X'\ss X$が$i$の像を示し, $f\taking X\to\Omega$が$X'\ss X$の特性函数
 \endsexc
 \end{exercise}
 
-In Chapter \ref{chap:categories} we will be getting to the definition of category, and you can test whether your notion of mapping in fact defines a category. Here is my definition of mapping for multisets.
+%In Chapter \ref{chap:categories} we will be getting to the definition of category, and you can test whether your notion of mapping in fact defines a category. Here is my definition of mapping for multisets.
+
+我々は\ref{chap:categories}章で圏の定義を得, そして写像の概念が実際に圏を定義するかを確かめることができるようになる. 以下は著者の多重集合に大する写像の定義である.
 
 \begin{definition}\label{def:multiset}
 
-A {\em multiset} is a sequence $X:=(E,B,\pi)$ where $E$ and $B$ are sets and $\pi\taking E\to B$ is a surjective function. We refer to $E$ as the set of {\em element instances of $X$}, we refer to $B$ as the set of {\em element names of $X$}, and we refer to $\pi$ as the {\em naming function for $X$}. Given an element name $x\in B$, let $\pi^\m1(x)\ss E$ be the preimage; the number of elements in $\pi^\m1(x)$ is called the {\em multiplicity of $x$}.
+%A {\em multiset} is a sequence $X:=(E,B,\pi)$ where $E$ and $B$ are sets and $\pi\taking E\to B$ is a surjective function. We refer to $E$ as the set of {\em element instances of $X$}, we refer to $B$ as the set of {\em element names of $X$}, and we refer to $\pi$ as the {\em naming function for $X$}. Given an element name $x\in B$, let $\pi^\m1(x)\ss E$ be the preimage; the number of elements in $\pi^\m1(x)$ is called the {\em multiplicity of $x$}.
 
-Suppose that $X=(E,B,\pi)$ and $X'=(E',B',\pi')$ are multisets. A {\em mapping from $X$ to $Y$}, denoted $f\taking X\to Y$, consists of a pair $(f_1,f_0)$ such that $f_1\taking E\to E'$ and $f_0\taking B\to B'$ are functions and such that the following diagram commutes:
+\emph{多重集合(multiset)}は列$X:=(E,B,\pi)$である. ここで$E$と$B$は集合であり, $\pi\taking E\to B$は全射である. 我々は$E$を\emph{$X$の要素の事例(element instances of $X$)}として参照し, $B$を\emph{$X$の要素の名前(element names of $X$)}として参照し, $\pi$を\emph{$X$に対する名前付け函数(naming function for $X$)}として参照する. 要素の名前$x\in B$が与えられたとき, $\pi^\m1(x)\ss E$を原像とする. $\pi^\m1(x)$での要素の数は\emph{$x$の多重度(multiplicity of $x$)}と呼ばれる.
+
+%Suppose that $X=(E,B,\pi)$ and $X'=(E',B',\pi')$ are multisets. A {\em mapping from $X$ to $Y$}, denoted $f\taking X\to Y$, consists of a pair $(f_1,f_0)$ such that $f_1\taking E\to E'$ and $f_0\taking B\to B'$ are functions and such that the following diagram commutes:
+
+$X=(E,B,\pi)$と$X'=(E',B',\pi')$が多重集合だと仮定する. $f\taking X\to Y$と表記される\emph{$X$から$Y$への写像(mapping from $X$ to $Y$)}は, 以下の図式が可換であるところの函数$f_1\taking E\to E'$および$f_0\taking B\to B'$の対$(f_1,f_0)$から成り立っている.
 \begin{align}\label{dia:multiset map}
 \xymatrix{E\ar[r]^{f_1}\ar[d]_{\pi}&E'\ar[d]^{\pi'}\\B\ar[r]_{f_0}&B'.}
 \end{align}
