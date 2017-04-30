@@ -2766,7 +2766,7 @@ $X'\ss X$が$i$の像を示し, $f\taking X\to\Omega$が$X'\ss X$の特性函数
 
 %%%% Subsection %%%%
 
-\subsection{多重集合, relative sets, and set-indexed sets}
+\subsection{多重集合, relative sets, 集合で添字付けられた集合}
 
 %In this section we prepare ourselves for considering categories other than $\Set$, by looking at some categories related to $\Set$. 
 
@@ -2813,18 +2813,28 @@ $X=(E,B,\pi)$と$X'=(E',B',\pi')$が多重集合だと仮定する. $f\taking X\
 \end{definition}
 
 \begin{exercise}
-Suppose that a pseudo-multiset is defined to be almost the same as a multiset, except that $\pi$ is not required to be surjective. 
-\sexc Write down a pseudo-multiset that is not a multi-set. 
-\next Describe the difference between the two notions in terms of multiplicities. 
-\next Complexity of names aside, which do you think is a more useful notion: multiset or pseudo-multisets? 
+%Suppose that a pseudo-multiset is defined to be almost the same as a multiset, except that $\pi$ is not required to be surjective. 
+%\sexc Write down a pseudo-multiset that is not a multi-set. 
+%\next Describe the difference between the two notions in terms of multiplicities. 
+%\next Complexity of names aside, which do you think is a more useful notion: multiset or pseudo-multisets? 
+%\endsexc
+擬多重集合(pseudo-multiset)が, $\pi$が全射であると要求されない以外は多重集合と同じものとして定義されると仮定する.
+\sexc 多重集合ではない擬多重集合を書き下せ.
+\next 重複度という観点から, 二つの概念の間の違いを記述せよ.
+\next 名前の複雑さをわきに置くと, 多重集合と擬多重集合のどちらの方がより便利な概念だと考えられるだろうか?
 \endsexc
 \end{exercise}
 
 \begin{exercise}
-Consider the multisets described in Exercise \ref{exc:multiset 1}. 
-\sexc Write each of them in the form $(E,B,\pi)$, as in Definition \ref{def:multiset}. 
-\next In terms of the same definition, what are the mappings $X\to Y$? 
-\next If we remove the restriction that diagram \ref{dia:multiset map} must commute, how many mappings $X\to Y$ are there?
+%Consider the multisets described in Exercise \ref{exc:multiset 1}. 
+%\sexc Write each of them in the form $(E,B,\pi)$, as in Definition \ref{def:multiset}. 
+%\next In terms of the same definition, what are the mappings $X\to Y$? 
+%\next If we remove the restriction that diagram \ref{dia:multiset map} must commute, how many mappings $X\to Y$ are there?
+%\endsexc
+Exercise \ref{exc:multiset 1}で記述された多重集合を考える.
+\sexc Definition \ref{def:multiset}でのように, それぞれを$(E,B,\pi)$の形で書き下せ.
+\next 同じ定義の観点では, 写像$X\to Y$は何になるか?
+\next diagram \ref{dia:multiset map}が可換であるという制限を取り除いたならば, 写像$X\to Y$の数はどれだけになるか?
 \endsexc
 \end{exercise}
 
@@ -2854,11 +2864,15 @@ Consider the multisets described in Exercise \ref{exc:multiset 1}.
 
 \subsubsection{Relative sets}\label{sec:relative sets}\index{relative set}
 
-Let's continue with our ideas from multisets, but now suppose that we have a fixed set $B$ of names that we want to keep once and for all. Whenever someone discusses a set, each element must have a name in $B$. And whenever someone discusses a mapping, it must preserve the names. For example, if $B$ is the set of English words, then every document consists of an ordered set mapping to $B$ (e.g. $1\mapsto \tn{Suppose}, 2\mapsto\tn{that}, 3\mapsto\tn{we},$ etc.) A mapping from document $A$ to document $B$ would send each word found somewhere in $A$ to the same word found somewhere in $B$. This notion is defined carefully below.
+%Let's continue with our ideas from multisets, but now suppose that we have a fixed set $B$ of names that we want to keep once and for all. Whenever someone discusses a set, each element must have a name in $B$. And whenever someone discusses a mapping, it must preserve the names. For example, if $B$ is the set of English words, then every document consists of an ordered set mapping to $B$ (e.g. $1\mapsto \tn{Suppose}, 2\mapsto\tn{that}, 3\mapsto\tn{we},$ etc.) A mapping from document $A$ to document $B$ would send each word found somewhere in $A$ to the same word found somewhere in $B$. This notion is defined carefully below.
+
+多重集合から得られるアイデアについての議論を続けよう. 固定された名前の集合$B$を仮定し、これ以降は固定され続けているとしよう. ある人が集合について議論するときは常に, それぞれの要素は$B$に含まれる名前を持たなければならない. そしてある人が写像について議論するときは常に, その名前は保持されなければならない. 例えば, $B$が英単語の集合であるとすれば, すべての(英語の)文章は順序付けられた$B$への写像から構成されている (e.g. $1\mapsto \tn{Suppose}, 2\mapsto\tn{that}, 3\mapsto\tn{we},$ etc). 文章$A$から文章$B$への写像は, $A$の中のどこかにある単語それぞれを, $B$の中のどこかにある同じ単語へと送る. この概念は以下のように注意深く定義される.
 
 \begin{definition}[Relative set]\label{def:relative sets}\index{relative set}
 
-Let $B$ be a set. A {\em relative set over $B$}, or simply a {\em set over $B$}, is a pair $(E,\pi)$ such that $E$ is a set and $\pi\taking E\to B$ is a function. A {\em mapping of relative sets over $B$}, denoted $f\taking (E,\pi)\to(E',\pi')$, is a function $f\taking E\to E'$ such that the triangle below commutes, i.e. $\pi=\pi'\circ f$,
+%Let $B$ be a set. A {\em relative set over $B$}, or simply a {\em set over $B$}, is a pair $(E,\pi)$ such that $E$ is a set and $\pi\taking E\to B$ is a function. A {\em mapping of relative sets over $B$}, denoted $f\taking (E,\pi)\to(E',\pi')$, is a function $f\taking E\to E'$ such that the triangle below commutes, i.e. $\pi=\pi'\circ f$,
+
+$B$を集合とする. \emph{relative set over $B$}, あるいは簡単に\emph{set over $B$}は対$(E,\pi)$である. ここで$E$は集合であり$\pi\taking E\to B$は函数である. $f\taking (E,\pi)\to(E',\pi')$で示される\emph{mapping of relative sets over $B$}は, 以下の三角形が可換になるところの函数$f\taking E\to E'$である, i.e. $\pi=\pi'\circ f$.
 $$
 \xymatrix@=10pt{E\ar[rr]^f\ar[rdd]_{\pi}&&E'\ar[ldd]^{\pi'}\\\\&B
 }
@@ -2867,39 +2881,52 @@ $$
 \end{definition}
 
 \begin{exercise}
-Given sets $X,Y,Z$ and functions $f\taking X\to Y$ and $g\taking Y\to Z$, we can compose them to get a function $X\to Z$. If $B$ is a set, if $(X,p), (Y,q),$ and $(Z,r)$ are relative sets over $B$, and if $f\taking (X,p)\to (Y,q)$ and $g\taking (Y,q)\to (Z,r)$ are mappings, is there a reasonable notion of composition such that we get a mapping of relative sets $(X,p)\to (Z,r)$? Hint: draw diagrams.
+%Given sets $X,Y,Z$ and functions $f\taking X\to Y$ and $g\taking Y\to Z$, we can compose them to get a function $X\to Z$. If $B$ is a set, if $(X,p), (Y,q),$ and $(Z,r)$ are relative sets over $B$, and if $f\taking (X,p)\to (Y,q)$ and $g\taking (Y,q)\to (Z,r)$ are mappings, is there a reasonable notion of composition such that we get a mapping of relative sets $(X,p)\to (Z,r)$? Hint: draw diagrams.
+集合$X,Y,Z$, 函数$f\taking X\to Y$と$g\taking Y\to Z$が与えられたとき, 我々は合成によって$X\to Z$を得ることができる. $B$を集合で, $(X,p)$, $(Y,q)$, $(Z,r)$がrelative sets over $B$で, $f\taking (X,p)\to (Y,q)$と$g\taking (Y,q)\to (Z,r)$が写像である時, relative setの写像$(X,p)\to (Z,r)$を得るための妥当な合成概念は存在するだろうか? Hint: 図式を描け.
 \end{exercise}
 
 \begin{exercise}~
-\sexc Let $\singleton$ denote a set with one element. What is the difference between sets over $\singleton$ and simply sets?
-\next Describe the sets relative to $\emptyset$. How many are there?
+%\sexc Let $\singleton$ denote a set with one element. What is the difference between sets over $\singleton$ and simply sets?
+%\next Describe the sets relative to $\emptyset$. How many are there?
+%\endsexc
+\sexc $\singleton$が一要素の集合を示すとする. set over $\singleton$と単純な集合との違いはなにか?
+\next relative sets over $\emptyset$を記述せよ. いくつ存在するか?
 \endsexc
 \end{exercise}
 
 %% Subsubsection %%
 
-\subsubsection{Indexed sets}\label{sec:indexed sets}\index{indexed set}
+%\subsubsection{Indexed sets}\label{sec:indexed sets}\index{indexed set}
+\subsubsection{添字付けられた集合}\label{sec:indexed sets}\index{indexed set}
 
-Let $A$ be a set. Suppose we want to assign to each element $a\in A$ a set $S_a$. This is called an $A$-indexed set. In category theory we are always interested in the legal mappings between two different structures of the same sort, so we need a notion of $A$-indexed mappings; we do the ``obvious thing".
+%Let $A$ be a set. Suppose we want to assign to each element $a\in A$ a set $S_a$. This is called an $A$-indexed set. In category theory we are always interested in the legal mappings between two different structures of the same sort, so we need a notion of $A$-indexed mappings; we do the ``obvious thing".
+
+$A$を集合とする. それぞれの要素$a\in A$に集合$S_a$を割り当てたいとする. これは$A$で添字付けられた集合($A$-indexed set)と呼ばれる. 圏論では, 常に同種だが異なる二つの構造の間の合法な写像に我々の興味がある. よって我々には$A$によって添字付けられた写像という概念が必要になる. 我々は``自明なこと''を行なう.
 
 \begin{example}\label{ex:classroom seats}
 
-Let $C$ be a set of classrooms. For each $c\in C$ let $P_c$ denote the set of people in classroom $c$, and let $S_c$ denote the set of seats (chairs) in classroom $c$. Then $P$ and $S$ are $C$-indexed sets. The appropriate kind of mapping between them respects the indexes. That is, a mapping of multi-sets $P\to S$ should, for each classroom $c\in C$, be a function $P_c\to S_c$.\footnote{If we wanted to allow people from any classroom to choose a chair from just any classroom, category theory would tell us to reconsider $P$ and $S$ as sets, forgetting their indices. See Section \ref{sec:left push}.}
+%Let $C$ be a set of classrooms. For each $c\in C$ let $P_c$ denote the set of people in classroom $c$, and let $S_c$ denote the set of seats (chairs) in classroom $c$. Then $P$ and $S$ are $C$-indexed sets. The appropriate kind of mapping between them respects the indexes. That is, a mapping of multi-sets $P\to S$ should, for each classroom $c\in C$, be a function $P_c\to S_c$.\footnote{If we wanted to allow people from any classroom to choose a chair from just any classroom, category theory would tell us to reconsider $P$ and $S$ as sets, forgetting their indices. See Section \ref{sec:left push}.}
+
+$C$を教室の集合とする. $c\in C$のそれぞれに対して, $P_c$が教室$c$の中にいる人間を表すとし, $S_c$が教室$c$の中にある席(椅子)を表すとする. このとき$P$と$S$は$C$で添字付けられた集合である. これらの間の写像として適切な種のものは添字を考慮している. これはすなわち, 多重集合の写像$P\to S$は, それぞれの教室$c\in C$に対して, 函数$P_c\to S_c$であるべきだということである.\footnote{もし任意の教室にいる人間が任意の教室から椅子を選ぶことを許したいならば, 圏論によると, $P$と$S$をその添字を失なった集合として見直した方がよいだろう. Section \ref{sec:left push}を見よ.}
 
 \end{example}
 
 \begin{definition}\label{def:indexed sets}\index{indexed set}
 
-Let $A$ be a set. An {\em $A$-indexed set} is a collection of sets $S_a$, one for each element $a\in A$; for now we denote this by $(S_a)_{a\in A}$. If $(S'_a)_{a\in A}$ is another $A$-indexed set, a {\em mapping of $A$-indexed sets from $(S_a)_{a\in A}$ to $(S'_a)_{a\in A}$}, denoted $$(f_a)_{a\in A}\taking(S_a)_{a\in A}\to (S'_a)_{a\in A}$$ is a collection of functions $f_a\taking S_a\to S'_a$, one for each element $a\in A$.
+%Let $A$ be a set. An {\em $A$-indexed set} is a collection of sets $S_a$, one for each element $a\in A$; for now we denote this by $(S_a)_{a\in A}$. If $(S'_a)_{a\in A}$ is another $A$-indexed set, a {\em mapping of $A$-indexed sets from $(S_a)_{a\in A}$ to $(S'_a)_{a\in A}$}, denoted $$(f_a)_{a\in A}\taking(S_a)_{a\in A}\to (S'_a)_{a\in A}$$ is a collection of functions $f_a\taking S_a\to S'_a$, one for each element $a\in A$.
+
+$A$を集合とする. \emph{$A$で添字付けられた集合($A$-indexed set)}はそれぞれの要素$a\in A$に対して対応する集合$S_a$の系(collection)である. これから我々は$(S_a)_{a\in A}$によって示すことにする. $(S'_a)_{a\in A}$がまた別の$A$で添字付けられた集合であるならば, \emph{$(S_a)_{a\in A}$から$(S'_a)_{a\in A}$への$A$で添字付けられた集合の写像(mapping of $A$-indexed sets from $(S_a)_{a\in A}$ to $(S'_a)_{a\in A}$)}はそれぞれの要素$a\in A$に対応付する函数$f_a\taking S_a\to S'_a$の系であり, $$(f_a)_{a\in A}\taking(S_a)_{a\in A}\to (S'_a)_{a\in A}$$で表す.
 
 \end{definition}
 
 \begin{exercise}
-Let $\singleton$ denote a one element set. What are $\singleton$-indexed sets and mappings between them?
+%Let $\singleton$ denote a one element set. What are $\singleton$-indexed sets and mappings between them?
+$\singleton$が一要素の集合を表すとする. $\singleton$で添字付けられた集合およびそれらの間の写像とは何か?
 \end{exercise}
 
 \begin{exercise}
-There is a strong relationship between $A$-indexed sets and relative sets over $A$. What is it? 
+%There is a strong relationship between $A$-indexed sets and relative sets over $A$. What is it? 
+$A$で添字付けられた集合とrelative sets over $A$の間には強い関係性が存在する. それは何か?
 \end{exercise}
 
 
