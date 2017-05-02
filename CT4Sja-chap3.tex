@@ -59,24 +59,37 @@
 
 \begin{remark}
 
-To be pedantic, the conditions from Definition \ref{def:monoid} should be stated 
+%To be pedantic, the conditions from Definition \ref{def:monoid} should be stated 
+%\begin{itemize}
+%\item $\star(m,e)=m$,
+%\item $\star(e,m)=m$, and 
+%\item $\star(\star(m,n),p)=\star(m,(\star(n,p))$.
+%\end{itemize} The way they are written in Definition \ref{def:monoid} is called {\em infix notation},\index{infix notation} and we often use infix notation without mentioning it. That is, given a function $\cdot\taking A\times B\to C$, we may write $a\cdot b$ rather than $\cdot(a,b)$.
+
+教育的であろうとすれば, Definition \ref{def:monoid}の条件は
 \begin{itemize}
 \item $\star(m,e)=m$,
-\item $\star(e,m)=m$, and 
+\item $\star(e,m)=m$,
 \item $\star(\star(m,n),p)=\star(m,(\star(n,p))$.
-\end{itemize} The way they are written in Definition \ref{def:monoid} is called {\em infix notation},\index{infix notation} and we often use infix notation without mentioning it. That is, given a function $\cdot\taking A\times B\to C$, we may write $a\cdot b$ rather than $\cdot(a,b)$.
+\end{itemize}
+と述べられるべきである. Definition \ref{def:monoid}での書き方の流儀は\emph{中置記法(infix notation)},\index{infix notation}と呼ばれ, 我々はしばしば特に言及することなく中置記法を用いる. これはすなわち, 函数$\cdot\taking A\times B\to C$が与えられたとき, $\cdot(a,b)$よりもむしろ$a\cdot b$と書くであろう, ということである.
 
 \end{remark}
 
-\begin{example}[Additive monoid of natural numbers]\label{ex:monoid 0}\index{monoid!additive natural numbers}
+%\begin{example}[Additive monoid of natural numbers]\label{ex:monoid 0}\index{monoid!additive natural numbers}
+\begin{example}[自然数の加法モノイド]\label{ex:monoid 0}\index{monoid!additive natural numbers}
 
-Let $M=\NN$ be the set of natural numbers. Let $e=0$ and let $\star\taking M\times M\to M$ denote addition, so that $\star(4,18)=22$. Then the equations $m\star 0=m$ and $0\star m=m$ hold, and $(m\star n)\star p=m\star (n\star p)$. By assigning $e$ and $\star$ in this way, we have ``given $\NN$ the structure of a monoid".
+%Let $M=\NN$ be the set of natural numbers. Let $e=0$ and let $\star\taking M\times M\to M$ denote addition, so that $\star(4,18)=22$. Then the equations $m\star 0=m$ and $0\star m=m$ hold, and $(m\star n)\star p=m\star (n\star p)$. By assigning $e$ and $\star$ in this way, we have ``given $\NN$ the structure of a monoid".
+
+$M=\NN$を自然数の集合とする. $e=0$であり$\star\taking M\times M\to M$が加法を表すとする. よって$\star(4,18)=22$である. このとき等式$m\star 0=m$および$0\star m=m$がなりたち, $(m\star n)\star p=m\star (n\star p)$である. この方法で$e$と$\star$を割り当てることによって, 我々は``$\NN$にモノイドの構造を与えた''.
 
 \end{example}
 
 \begin{remark}
 
-Sometimes we are working with a monoid $(M,e,\star)$, and the identity $e$ and multiplication $\star$ are somehow clear from context. In this case we might refer to the set $M$ as though it were the whole monoid. For example, if we were discussing the monoid from Example \ref{ex:monoid 0}, we might refer to it as $\NN$. The danger comes because sets may have multiple monoid structures, as we see below in Exercise \ref{exc:monoid 1}. 
+%Sometimes we are working with a monoid $(M,e,\star)$, and the identity $e$ and multiplication $\star$ are somehow clear from context. In this case we might refer to the set $M$ as though it were the whole monoid. For example, if we were discussing the monoid from Example \ref{ex:monoid 0}, we might refer to it as $\NN$. The danger comes because sets may have multiple monoid structures, as we see below in Exercise \ref{exc:monoid 1}. 
+
+時々, モノイド$(M,e,\star)$を扱う際に, 単位元$e$と積$\star$がなんらかの文脈上明らかなことがある. この場合, 我々は集合$M$をそれがあたかもモノイドの全てであるかのように参照するかもしれない. 例えば, もしExample \ref{ex:monoid 0}からモノイドを議論しようとすれば, 我々は$\NN$としてそれを参照するだろう. これは危険をともなう。なぜならば以下のExercise \ref{exc:monoid 1}で見るように, 集合は複数のモノナド構造を持つかもしれないからだ. 
 
 \end{remark}
 
