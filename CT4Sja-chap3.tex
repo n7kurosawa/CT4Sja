@@ -102,7 +102,7 @@ $M$が集合であるとき, 我々は函数$f\taking M\times M\to M$を\emph{op
 
 %One might also attempt to consider an operation $f\taking M\times M\to M$ that, upon closer inspection, aren't even operations. For example, if $M=\ZZ$ then exponentiation is not even an operation. Indeed, $f(2,-1)=2^{-1}=\frac{1}{2}$, and this is not an integer. To have a function $f\taking M\times M\to M$, we need that every element of the domain, in this case every pair of integers, has an output under $f$. So there is no such function $f$. 
 
-詳しく見てみるとoperationですらないoperation $f\taking M\times M\to M$を考えてみるとどうなるだろか. 例えば, $M=\ZZ$とすると, 累乗はoperationですらない. 実際, $f(2,-1)=2^{-1}=\frac{1}{2}$であり, これは整数ではない. 函数$f\taking M\times M\to M$を得るにあたって, 始域の全ての要素, この場合は全ての整数の対が, $f$の下で出力を(終域内に)持つ必要がある. よって(この場合)そのような函数$f$は存在しない. 
+operation $f\taking M\times M\to M$として, 詳しく見てみるとoperationですらないようなものを, 考えてみたくなるかもしれない. 例えば, $M=\ZZ$とすると, 累乗はoperationですらない. 実際, $f(2,-1)=2^{-1}=\frac{1}{2}$であり, これは整数ではない. 函数$f\taking M\times M\to M$を得るにあたって, 始域の全ての要素, この場合は全ての整数の対が, $f$の下で出力を(終域内に)持つ必要がある. よって(この場合)そのような函数$f$は存在しない. 
 
 \end{example}
 
@@ -113,29 +113,38 @@ $M=\NN$を自然数の集合とする. $e=1$をとり, $\NN$にモノイド構�
 
 \begin{exercise}
 %Come up with an operation on the set $M=\{1,2,3,4\}$, i.e. a legitimate function $f\taking M\times M\to M$, such that $f$ cannot be the multiplication formula for a monoid on $M$. That is, either it is not associative, or no element of $M$ can serve as a unit.
-集合$M=\{1,2,3,4\}$の上のoperation, i.e. 正当な函数$f\taking M\times M\to M$で$M$上のモノイドに対する積の式を満たしえないところの$f$を, 考案せよ. これは, 結合的ではないか, あるいは$M$のどの要素も単位元となりえないかの, どちらかであればよい.
+集合$M=\{1,2,3,4\}$の上のoperation, i.e. 正当な函数$f\taking M\times M\to M$で$M$上のモノイドに対する積の式を満しえないところの$f$を, 考案せよ. これは, 結合的ではないか, あるいは$M$のどの要素も単位元となりえないかの, どちらかであればよい.
 \end{exercise}
 
 \begin{exercise}\label{ex:commutative monoid}
-In both Example \ref{ex:monoid 0} and Exercise \ref{exc:monoid 1}, the monoids $(M,e,\star)$ satisfied an additional rule called {\em commutativity},\index{monoid!commutative} namely $m\star n=n\star m$ for every $m,n\in M$. There is a monoid $(M,e,\star)$ lurking in linear algebra textbooks that is not commutative; if you have background in linear algebra try to answer this: what $M, e$, and $\star$ might I be referring to?
+%In both Example \ref{ex:monoid 0} and Exercise \ref{exc:monoid 1}, the monoids $(M,e,\star)$ satisfied an additional rule called {\em commutativity},\index{monoid!commutative} namely $m\star n=n\star m$ for every $m,n\in M$. There is a monoid $(M,e,\star)$ lurking in linear algebra textbooks that is not commutative; if you have background in linear algebra try to answer this: what $M, e$, and $\star$ might I be referring to?
+Example \ref{ex:monoid 0}と\ref{exc:monoid 1}の両者ともに, モノイド$(M,e,\star)$は\emph{可換性(commutativity)}\index{monoid!commutative}, すなわち全ての$m,n\in M$に対して$m\star n=n\star m$であるという, 追加の法則を満している. 線形代数の教科書には可換でないモノイド$(M,e,\star)$が潜んでいる. もしも線形代数の背景知識があるならば, 以下の問いに答えてみよう. 著者が参照しているであろう$M$, $e$, そして$\star$は何であろうか?
 \end{exercise}
 
 \begin{exercise}
-Recall the notion of commutativity for monoids from Exercise \ref{ex:commutative monoid}. 
-\sexc What is the smallest set $M$ that you can give the structure of a non-commutative monoid? 
-\next What is the smallest set $M$ that you can give the structure of a monoid?
+%Recall the notion of commutativity for monoids from Exercise \ref{ex:commutative monoid}. 
+%\sexc What is the smallest set $M$ that you can give the structure of a non-commutative monoid? 
+%\next What is the smallest set $M$ that you can give the structure of a monoid?
+%\endsexc
+\ref{ex:commutative monoid}でのモノイドの可換性の概念を思い出そう.
+\sexc 非可換モノイドの構造を与えることができる最小の集合$M$は何だろうか?
+\next モノイドの構造を与えることができる最小の集合$M$は何だろうか?
 \endsexc
 \end{exercise}
 
-\begin{example}[Trivial monoid]\label{ex:trivial monoid}
+%\begin{example}[Trivial monoid]\label{ex:trivial monoid}
+\begin{example}[自明なモノイド]\label{ex:trivial monoid}
 
-There is a monoid with only one element, $M=(\{e\},e,\star)$ where $\star\taking\{e\}\times\{e\}\to\{e\}$ is the unique function. We call this monoid {\em the trivial monoid},\index{monoid!trivial} and sometimes denote it $\ul{1}$.
+%There is a monoid with only one element, $M=(\{e\},e,\star)$ where $\star\taking\{e\}\times\{e\}\to\{e\}$ is the unique function. We call this monoid {\em the trivial monoid},\index{monoid!trivial} and sometimes denote it $\ul{1}$.
+
+一要素しかないモノイド$M=(\{e\},e,\star)$が存在する. ここで$\star\taking\{e\}\times\{e\}\to\{e\}$は一意な函数である. 我々はこのモノイドを\emph{自明なモノイド(the trivial monoid)}\index{monoid!trivial}と呼び, しばしば$\ul{1}$と表記する.
 
 \end{example}
 
 \begin{example}
 
-Suppose that $(M,e,\star)$ is a monoid. Given elements $m_1,m_2,m_3,m_4$ there are five different ways to parenthesize the product $m_1\star m_2\star m_3\star m_4$, and the associativity law for monoids will show them all to be the same. We have
+%Suppose that $(M,e,\star)$ is a monoid. Given elements $m_1,m_2,m_3,m_4$ there are five different ways to parenthesize the product $m_1\star m_2\star m_3\star m_4$, and the associativity law for monoids will show them all to be the same. We have
+$(M,e,\star)$がモノイドであると仮定する. 要素$m_1,m_2,m_3,m_4$が与えられたとき, 積$m_1\star m_2\star m_3\star m_4$に括弧をつけるのに5種類の異なった方法が存在する. モノイドに対する結合則によってそれら全てが同じであることが示される. 以下が得られる.
 \begin{align*}
 ((m_1\star m_2)\star m_3)\star m_4&=(m_1\star m_2)\star (m_3\star m_4)\\
 &=(m_1\star(m_2\star m_3))\star m_4\\
@@ -143,7 +152,9 @@ Suppose that $(M,e,\star)$ is a monoid. Given elements $m_1,m_2,m_3,m_4$ there a
 &=m_1\star((m_2\star m_3)\star m_4)
 \end{align*}
 
-In fact, the product of any list of monoid elements is the same, regardless of parenthesization. Therefore, we can unambiguously write $m_1m_2m_3m_4m_5$ rather than any given parenthesization of it. This is known as the \href{http://en.wikipedia.org/wiki/Coherence_theorem}{\text coherence theorem} and can be found in \cite{Mac}.
+%In fact, the product of any list of monoid elements is the same, regardless of parenthesization. Therefore, we can unambiguously write $m_1m_2m_3m_4m_5$ rather than any given parenthesization of it. This is known as the \href{http://en.wikipedia.org/wiki/Coherence_theorem}{\text coherence theorem} and can be found in \cite{Mac}.
+
+実際, 任意のモノイドの要素の列の積は, 括弧づけにかかわらず同じである. それゆえに, 括弧を付けなくとも, あいまいさなく$m_1m_2m_3m_4m_5$と書くことができる. これは\href{http://en.wikipedia.org/wiki/Coherence_theorem}{\text coherence theorem}として知られており, \cite{Mac}で見出される.
 
 \end{example}
 
