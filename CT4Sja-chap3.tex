@@ -93,20 +93,27 @@ $M=\NN$を自然数の集合とする. $e=0$であり$\star\taking M\times M\to 
 
 \end{remark}
 
-\begin{example}[Non-monoid]
+%\begin{example}[Non-monoid]
+\begin{example}[非モノイド]
 
-If $M$ is a set, we might call a function $f\taking M\times M\to M$ an {\em operation on $M$}. For example, if $M=\NN$ is the set of natural numbers, we can consider the operation $f\taking\NN\to\NN$ called exponentiation. For example $f(2,5)=2*2*2*2*2=32$ and $f(7,2)=49.$ This is indeed an operation, but it is not part of any monoid. For one thing there is no possible unit. Trying the obvious choice of $e=1$, we see that $a^1=a$ (good), but that $1^a=1$ (bad: we need it to be $a$). For another thing, this operation is not associative because in general $a^{b^c}\neq (a^b)^c$. For example, $2^{1^2}=2$ but $(2^1)^2=4$. 
+%If $M$ is a set, we might call a function $f\taking M\times M\to M$ an {\em operation on $M$}. For example, if $M=\NN$ is the set of natural numbers, we can consider the operation $f\taking\NN\to\NN$ called exponentiation. For example $f(2,5)=2*2*2*2*2=32$ and $f(7,2)=49.$ This is indeed an operation, but it is not part of any monoid. For one thing there is no possible unit. Trying the obvious choice of $e=1$, we see that $a^1=a$ (good), but that $1^a=1$ (bad: we need it to be $a$). For another thing, this operation is not associative because in general $a^{b^c}\neq (a^b)^c$. For example, $2^{1^2}=2$ but $(2^1)^2=4$. 
 
-One might also attempt to consider an operation $f\taking M\times M\to M$ that, upon closer inspection, aren't even operations. For example, if $M=\ZZ$ then exponentiation is not even an operation. Indeed, $f(2,-1)=2^{-1}=\frac{1}{2}$, and this is not an integer. To have a function $f\taking M\times M\to M$, we need that every element of the domain, in this case every pair of integers, has an output under $f$. So there is no such function $f$. 
+$M$が集合であるとき, 我々は函数$f\taking M\times M\to M$を\emph{operation on $M$}\index{operation!on $\Set$}と呼ぶことがある. 例えば, $M=\NN$が自然数の集合であるとき, 我々は累乗と呼ばれるoperation $f\taking\NN\times\NN\to\NN$を考えることができる. 例えば$f(2,5)=2*2*2*2*2=32$であり$f(7,2)=49$である. これは実際operationであるが, しかしいかなるモノイドの一部でもない. 一例を挙げると単位元の可能性がある要素が存在しない. 明らかな選択として$e=1$を試みると, $a^1=a$は得られる(good)ものの, $1^a=1$も得られる(bad: 我々はこれが$a$であることを必要とする). また別の点を挙げると, このoperationは結合的ではない. なぜなら一般に$a^{b^c}\neq (a^b)^c$である. 例えば$2^{1^2}=2$しかし$(2^1)^2=4$である.
+
+%One might also attempt to consider an operation $f\taking M\times M\to M$ that, upon closer inspection, aren't even operations. For example, if $M=\ZZ$ then exponentiation is not even an operation. Indeed, $f(2,-1)=2^{-1}=\frac{1}{2}$, and this is not an integer. To have a function $f\taking M\times M\to M$, we need that every element of the domain, in this case every pair of integers, has an output under $f$. So there is no such function $f$. 
+
+詳しく見てみるとoperationですらないoperation $f\taking M\times M\to M$を考えてみるとどうなるだろか. 例えば, $M=\ZZ$とすると, 累乗はoperationですらない. 実際, $f(2,-1)=2^{-1}=\frac{1}{2}$であり, これは整数ではない. 函数$f\taking M\times M\to M$を得るにあたって, 始域の全ての要素, この場合は全ての整数の対が, $f$の下で出力を(終域内に)持つ必要がある. よって(この場合)そのような函数$f$は存在しない. 
 
 \end{example}
 
 \begin{exercise}\label{exc:monoid 1}
-Let $M=\NN$ be the set of natural numbers. Taking $e=1$, come up with a formula for $\star$ that gives $\NN$ the structure of a monoid.
+%Let $M=\NN$ be the set of natural numbers. Taking $e=1$, come up with a formula for $\star$ that gives $\NN$ the structure of a monoid.
+$M=\NN$を自然数の集合とする. $e=1$をとり, $\NN$にモノイド構造を与える$\star$に対する式を考案せよ.
 \end{exercise}
 
 \begin{exercise}
-Come up with an operation on the set $M=\{1,2,3,4\}$, i.e. a legitimate function $f\taking M\times M\to M$, such that $f$ cannot be the multiplication formula for a monoid on $M$. That is, either it is not associative, or no element of $M$ can serve as a unit.
+%Come up with an operation on the set $M=\{1,2,3,4\}$, i.e. a legitimate function $f\taking M\times M\to M$, such that $f$ cannot be the multiplication formula for a monoid on $M$. That is, either it is not associative, or no element of $M$ can serve as a unit.
+集合$M=\{1,2,3,4\}$の上のoperation, i.e. 正当な函数$f\taking M\times M\to M$で$M$上のモノイドに対する積の式を満たしえないところの$f$を, 考案せよ. これは, 結合的ではないか, あるいは$M$のどの要素も単位元となりえないかの, どちらかであればよい.
 \end{exercise}
 
 \begin{exercise}\label{ex:commutative monoid}
