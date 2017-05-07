@@ -1,7 +1,7 @@
 
 %%%%%%%% Chapter %%%%%%%%
 
-\chapter{様々な圏と函手---``圏''を使わずに}\label{chap:categories and functors without admitting it}
+\chapter{様々な圏と函手---“圏”を使わずに}\label{chap:categories and functors without admitting it}
 
 %In this chapter we begin to use our understanding of sets to build more interesting mathematical devices, each of which organizes our understanding of a certain kind of domain. For example, monoids organize our thoughts about agents acting on objects; groups are monoids except restricted to only allow agents to act reversibly. We will then study graphs, which are systems of nodes and arrows that can capture ideas like information flow through a network or model connections between building blocks in a material. We will discuss orders, which can be used to study taxonomies or hierarchies. Finally we take a mathematical look at databases, which actually subsume everything else in the chapter. Databases are connection patterns for structuring information.
 
@@ -9,7 +9,7 @@
 
 %We will see in Chapter \ref{chap:categories} that everything we study in the present chapter is an example of a category. So is $\Set$, the category of sets studied in Chapter \ref{chap:sets}. One way to think of a category is as a set of objects and a connection pattern between them; sets are objects (ovals full of dots if you wish) connected by functions. But each set is itself a category: the objects inside it are just disconnected! Just like a set has an interior view and an exterior view, so will all the categories in this chapter. Each monoid {\em is} a category, but there is also a category {\em of} monoids. 
 
-我々はChapter \ref{chap:categories}で, 我々がそれまでの章で学んだ全ては圏の例であることを見る. $\Set$, Chapter \ref{chap:sets}で学んだ集合の件もまたそうである. 圏を考察する一つのやり方は, 対象の集合とそれらの間の結合パターンとみなすことである. 集合は函数によって結びつけられた対象(もし望むなら点で埋められた楕円形と思ってもよい)である. しかしそれぞれの集合はそれ自体が圏である. その内部の対象は単に結合していないだけだ! このように集合には内側での視点と外側での視点があり, この章での全ての圏もまたそうである. それぞれのモノイド\emph{は}圏であるが, しかしモノイド\emph{の}圏でもある.
+我々はChapter \ref{chap:categories}で, 我々がそれまでの章で学んだ全ては圏の例であることを見る. $\Set$, Chapter \ref{chap:sets}で学んだ集合の圏もまたそうである. 圏を考察する一つのやり方は, 対象の集合とそれらの間の結合パターンとみなすことである. 集合は函数によって結びつけられた対象(もし望むなら点で埋められた楕円形と思ってもよい)である. しかしそれぞれの集合はそれ自体が圏である. その内部の対象は単に結合していないだけだ! このように集合には内側での視点と外側での視点があり, この章での全ての圏もまたそうである. それぞれのモノイド\emph{は}圏であるが, しかしモノイド\emph{の}圏でもある.
 
 %However, we will not really say the word ``category" much if at all in this chapter. It seems preferable to let the ideas rise on their own accord as interesting structures in their own right before explaining that everything in site fits into a single framework. That will be the pleasant reward to come in Chapter \ref{chap:categories}.
 
@@ -160,15 +160,28 @@ $(M,e,\star)$がモノイドであると仮定する. 要素$m_1,m_2,m_3,m_4$が
 
 %% Subsubsection %%
 
-\subsubsection{Free monoids and finitely presented monoids}\label{sec:free monoid}
+%\subsubsection{Free monoids and finitely presented monoids}\label{sec:free monoid}
+\subsubsection{自由モノイドと有限表現モノイド}\label{sec:free monoid}
 
 \begin{definition}\label{def:list}\index{list}
 
-Let $X$ be a set. A {\em list in $X$} is a pair $(n,f)$ where $n\in\NN$ is a natural number (called the {\em length of the list}) and $f\taking\ul{n}\to X$ is a function, where $\ul{n}=\{1,2,\ldots,n\}$. We may denote such a list by 
-$$(n,f)=[f(1),f(2),\ldots,f(n)].$$ 
-The {\em empty list} is the unique list in which $n=0$; we may denote it by $[\;]$. Given an element $x\in X$ the {\em singleton list on $x$} is the list $[x]$. Given a list $L=(n,f)$ and a number $i\in\NN$ with $i\leq n$, the {\em $i$th entry of $L$} is the element $f(i)\in X$. \index{entry!in list}
+%Let $X$ be a set. A {\em list in $X$} is a pair $(n,f)$ where $n\in\NN$ is a natural number (called the {\em length of the list}) and $f\taking\ul{n}\to X$ is a function, where $\ul{n}=\{1,2,\ldots,n\}$. We may denote such a list by 
+%$$(n,f)=[f(1),f(2),\ldots,f(n)].$$ 
+%The {\em empty list} is the unique list in which $n=0$; we may denote it by $[\;]$. Given an element $x\in X$ the {\em singleton list on $x$} is the list $[x]$. Given a list $L=(n,f)$ and a number $i\in\NN$ with $i\leq n$, the {\em $i$th entry of $L$} is the element $f(i)\in X$. \index{entry!in list}
 
-Given two lists $L=(n,f)$ and $L'=(n',f')$, define the {\em concatenation of $L$ and $L'$}\index{list!concatenation}\index{concatenation!of lists}, denoted $L\plpl L'$,\index{a symbol!$\plpl$} to be the list $(n+n',f\plpl f')$, where $f\plpl f'\taking \ul{n+n'}\to X$ is given on $i\leq n+n'$ by
+$X$を集合とする. \emph{$X$でのリスト(list in $X$)}とは対$(n,f)$である. ここで$n\in\NN$は(\emph{リストの長さ(length of the list)}と呼ばれる)自然数であり, $f\taking\ul{n}\to X$は函数, また$\ul{n}=\{1,2,\ldots,n\}$である. われわれはこのようなリストを
+$$(n,f)=[f(1),f(2),\ldots,f(n)]$$
+によって表記する. \emph{空リスト(empty list)}は$n=0$である一意なリストである. 我々はこれを$[\;]$によって表記しよう. 要素$x\in X$が与えられたとき, \emph{$x$の単一要素リスト(singleton list on $x$)}はリスト$[x]$である. リスト$L=(n,f)$と$i\leq n$なる自然数$i\in\NN$が与えられたとき, \emph{$i$th entry of $L$}は要素$f(i)\in X$である.\index{entry!in list}
+
+%Given two lists $L=(n,f)$ and $L'=(n',f')$, define the {\em concatenation of $L$ and $L'$}\index{list!concatenation}\index{concatenation!of lists}, denoted $L\plpl L'$,\index{a symbol!$\plpl$} to be the list $(n+n',f\plpl f')$, where $f\plpl f'\taking \ul{n+n'}\to X$ is given on $i\leq n+n'$ by
+%$$(f\plpl f')(i):=
+%\begin{cases}
+%f(i)&\tn{ if }i\leq n\\
+%f'(i-n)&\tn{ if }i\geq n+1
+%\end{cases}
+%$$
+
+二つのlist $L=(n,f)$と$L'=(n',f')$が与えられたとき, \emph{$L$と$L'$の連結(concatenation of $L$ and $L'$)}\index{list!concatenation}\index{concatenation!of lists}を, $L\plpl L'$,\index{a symbol!$\plpl$}と表記し, $(n+n',f\plpl f')$と定義する. ここで$f\plpl f'\taking \ul{n+n'}\to X$は$i\leq n+n'$について以下で与えられる.
 $$(f\plpl f')(i):=
 \begin{cases}
 f(i)&\tn{ if }i\leq n\\
@@ -179,50 +192,71 @@ $$
 
 \begin{example}
 
-Let $X=\{a,b,c,\ldots,z\}$. The following are elements of $\List(X)$: $$[a,b,c],\;\; [p],\;\; [p,a,a,a,p],\;\; [\;],\;\;\dots$$ The concatenation of $[a,b,c]$ and $[p,a,a,a,p]$ is $[a,b,c,p,a,a,a,p]$. The concatenation of any list $A$ with $[\;]$ is just $A$.
+%Let $X=\{a,b,c,\ldots,z\}$. The following are elements of $\List(X)$: $$[a,b,c],\;\; [p],\;\; [p,a,a,a,p],\;\; [\;],\;\;\dots$$ The concatenation of $[a,b,c]$ and $[p,a,a,a,p]$ is $[a,b,c,p,a,a,a,p]$. The concatenation of any list $A$ with $[\;]$ is just $A$.
+
+$X=\{a,b,c,\ldots,z\}$とする. 以下は$\List(X)$の要素である. $$[a,b,c],\;\; [p],\;\; [p,a,a,a,p],\;\; [\;],\;\;\dots$$ $[a,b,c]$と$[p,a,a,a,p]$の連結は$[a,b,c,p,a,a,a,p]$である. 任意のリスト$A$と$[\;]$の連結は$A$である.
 
 \end{example}
 
 \begin{definition}\label{def:free monoid}\index{monoid!free}
 
-Let $X$ be a set. The {\em free monoid generated by $X$} is the sequence $M:=(\List(X),[\;],\plpl)$, where $\List(X)$ is the set of lists of elements in $X$, where $[\;]\in\List(X)$ is the empty list, and where $\plpl$ is the operation of list concatenation. We refer to $X$ as the set of generators for the monoid $M$.
+%Let $X$ be a set. The {\em free monoid generated by $X$} is the sequence $M:=(\List(X),[\;],\plpl)$, where $\List(X)$ is the set of lists of elements in $X$, where $[\;]\in\List(X)$ is the empty list, and where $\plpl$ is the operation of list concatenation. We refer to $X$ as the set of generators for the monoid $M$.
+
+$X$を集合とする. \emph{$X$によって生成される自由モノイド(free monoid generated by $X$)}とは列$M:=(\List(X),[\;],\plpl)$である. ここで$\List(X)$は$X$内の要素からなるリストの集合であり, $[\;]\in\List(X)$は空リスト, $\plpl$はリスト連結のoperationである. 我々は$X$をモノイド$M$に対する生成子(generator)の集合として参照する.
 
 \end{definition}
 
 \begin{exercise}
-Let $\singleton$ denote a one-element set. 
-\sexc What is the free monoid generated by $\singleton$? 
-\next What is the free monoid generated by $\emptyset$?
+%Let $\singleton$ denote a one-element set. 
+%\sexc What is the free monoid generated by $\singleton$? 
+%\next What is the free monoid generated by $\emptyset$?
+%\endsexc
+$\singleton$が一要素集合を表すとする.
+\sexc $\singleton$によって生成される自由モノイドは何か?
+\next $\emptyset$によって生成される自由モノイドは何か?
 \endsexc
 \end{exercise}
 
-In the definition below, we will define a monoid $M$  by specifying some generators and some relations. Lists of generators provide us all the possible ways to write elements of $M$. The relations allow us to have two such ways of writing the same element. The following definition is a bit dense, so see Example \ref{ex:presented monoid} for a concrete example.
+%In the definition below, we will define a monoid $M$  by specifying some generators and some relations. Lists of generators provide us all the possible ways to write elements of $M$. The relations allow us to have two such ways of writing the same element. The following definition is a bit dense, so see Example \ref{ex:presented monoid} for a concrete example.
+
+以下の定義では, 我々はモノイド$M$を, なんらかの生成子となんらかの関係(relation)を指定することによって定義する. 生成子のリストによって、$M$の要素を書き出す全ての方法が得られる. 関係によって, 同じ要素を書き出す二つの異なった方法を得ることができる. 以下の定義は少々密度が濃い. 完全な例としてはExample \ref{ex:presented monoid}を見るのがよい. 
 
 \begin{definition}[Presented monoid]\label{def:presented monoid}\index{monoid!presented}
 
-Let $G$ be a finite set, let $n\in\NN$ be a natural number,
-\footnote{The number $n\in\NN$ is going to stand for the number of relations we declare.} 
-and for each $1\leq i\leq n$, let $m_i$ and $m_i'$ be elements of $\List(G)$.
-\footnote{Each $m_i$ and $m_i'$ are going to be made equal in the set $M$.} 
-The {\em monoid presented by generators $G$ and relations $\{(m_i,m_i')\|1\leq i\leq n\}$} is the monoid $\mcM=(M,e,\star)$ defined as follows. Let $\sim$ denote the equivalence relation on $\List(G)$ generated by $\{(xm_iy\sim xm_i'y)\|x,y\in\List(G), 1\leq i\leq n\}$, and define $M=\List(G)/\sim$. Let $e=[\;]$ and let $a * b$ be obtained by concatenating representing lists. 
+%Let $G$ be a finite set, let $n\in\NN$ be a natural number,
+%\footnote{The number $n\in\NN$ is going to stand for the number of relations we declare.} 
+%and for each $1\leq i\leq n$, let $m_i$ and $m_i'$ be elements of $\List(G)$.
+%\footnote{Each $m_i$ and $m_i'$ are going to be made equal in the set $M$.} 
+%The {\em monoid presented by generators $G$ and relations $\{(m_i,m_i')\|1\leq i\leq n\}$} is the monoid $\mcM=(M,e,\star)$ defined as follows. Let $\sim$ denote the equivalence relation on $\List(G)$ generated by $\{(xm_iy\sim xm_i'y)\|x,y\in\List(G), 1\leq i\leq n\}$, and define $M=\List(G)/\sim$. Let $e=[\;]$ and let $a * b$ be obtained by concatenating representing lists. 
+
+$G$を有限集合, $n\in\NN$を自然数とし\footnote{数$n\in\NN$は我々が宣言する関係の数を意味することになる.}, それぞれの$1\leq i\leq n$に対して$m_i$と$m_i'$は$\List(G)$の要素であるとする. \footnote{$m_i$と$m_i'$のそれぞれは集合$M$の中で等号を作ることになる.} \emph{生成子$G$と関係$\{(m_i,m_i')\|1\leq i\leq n\}$によって表現されるモノイド(monoid presented by generators $G$ and relations $\{(m_i,m_i')\|1\leq i\leq n\}$)}は, モノイド$\mcM=(M,e,\star)$であり, 以下のように定義される. $\sim$が$\{(xm_iy\sim xm_i'y)\|x,y\in\List(G), 1\leq i\leq n\}$によって生成される$\List(G)$上の同値関係を示すとし, $M=\List(G)/\sim$と定義する. $e=[\;]$とし、また$a * b$を表現しているリストの結合によって得られるとする.
 
 \end{definition}
 
 \begin{remark}
 
-Every free monoid is a presented monoid, because we can just take the set of relations to be empty.
+%Every free monoid is a presented monoid, because we can just take the set of relations to be empty.
+
+全ての自由モノイドは表現モノイドである. なぜなら関係の集合として単に空集合をとることができるからである.
 
 \end{remark}
 
 \begin{example}\label{ex:presented monoid}
 
-Let $G=\{a,b,c,d\}$. Think of these as buttons that can be pressed. The free monoid $\List(G)$ is the set of all ways of pressing buttons, e.g. pressing $a$ then $a$ then $c$ then $c$ then $d$ corresponds to the list $[a,a,c,c,d]$. The idea of presented monoids is that you notice that pressing $[a,a,c]$ always gives the same result as pressing $[d,d]$. You also notice that pressing $[c,a,c,a]$ is the same thing as doing nothing. 
+%Let $G=\{a,b,c,d\}$. Think of these as buttons that can be pressed. The free monoid $\List(G)$ is the set of all ways of pressing buttons, e.g. pressing $a$ then $a$ then $c$ then $c$ then $d$ corresponds to the list $[a,a,c,c,d]$. The idea of presented monoids is that you notice that pressing $[a,a,c]$ always gives the same result as pressing $[d,d]$. You also notice that pressing $[c,a,c,a]$ is the same thing as doing nothing. 
 
-In this case, we would have $m_1=[a,a,c]$, $m_1'=[d,d]$, and $m_2=[c,a,c,a], m_2'=[\;]$ and relations $\{(m_1,m_1'), (m_2,m_2')\}$. Really this means that we're equating $m_1$ with $m_1'$ and $m_2$ with $m_2'$, which for convenience we'll write out:
+$G=\{a,b,c,d\}$とする. これらを押すことのできるボタンであると考える. 自由モノイド$\List(G)$はボタンを押す全てやり方の集合である, e.g. $a$を押して$a$を押して$c$を押して$c$を押して$d$を押すのは, リスト$[a,a,c,c,d]$に対応する. 表現モノイドのアイデアは, $[a,a,c]$と押すのは常に$[d,d]$と押すのと同じ結果を与える, ということである. また, $[c,a,c,a]$と押すことは何も押さないのと同じことであるということに気が付いたとしよう. 
+
+%In this case, we would have $m_1=[a,a,c]$, $m_1'=[d,d]$, and $m_2=[c,a,c,a], m_2'=[\;]$ and relations $\{(m_1,m_1'), (m_2,m_2')\}$. Really this means that we're equating $m_1$ with $m_1'$ and $m_2$ with $m_2'$, which for convenience we'll write out:
+%$${\color{blue}{[a,a,c]}}={\color{blue}{[d,d]}}\hsp\tn{and}\hsp{\color{red}{[a,c,a,c]}}={\color{red}{[\;]}}
+%$$ 
+
+この場合, $m_1=[a,a,c]$, $m_1'=[d,d]$, $m_2=[c,a,c,a]$, $m_2'=[\;]$, および関係$\{(m_1,m_1'), (m_2,m_2')\}$が得られている. 実際にこれが意味するところは, $m_1$と$m_1'$, $m_2$と$m_2'$を等しいと見なすということである. 我々は便利のため以下のように書き出す.
 $${\color{blue}{[a,a,c]}}={\color{blue}{[d,d]}}\hsp\tn{and}\hsp{\color{red}{[a,c,a,c]}}={\color{red}{[\;]}}
 $$ 
 
-To see how this plays out, we give an example of a calculation in $M=\List(G)/\sim$. Namely, 
+%To see how this plays out, we give an example of a calculation in $M=\List(G)/\sim$. Namely, 
+これがどのように働くかをみるために, $M=\List(G)/\sim$での計算の例を与えよう. すなわち,
 \begin{align*}
 [b,c,b,{\color{blue}{d,d}},a,c,a,a,c,d] = [b,c,b,a,a,{\color{red}{c,a,c,a}},a,c,d] &= [b,c,b,a,{\color{blue}{a,a,c}},d]\\
 &= [b,c,b,a,d,d,d].
