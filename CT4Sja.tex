@@ -50,7 +50,7 @@
 }
 
 %\def\tn{\textnormal}
-\newcommand{\tn}[1]{\ifmmode{\text{\normalfont #1}}\else{\normalfont #1}\fi}
+\DeclareRobustCommand{\tn}[1]{\ifmmode{\text{\normalfont #1}}\else{\normalfont #1}\fi}
 \def\mf{\mathfrak}
 \def\mc{\mathcal}
 \newcommand{\qt}[1]{\tn{``}#1\tn{"}}
