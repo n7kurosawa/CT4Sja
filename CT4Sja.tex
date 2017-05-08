@@ -50,39 +50,39 @@
 }
 
 %\def\tn{\textnormal}
-\DeclareRobustCommand{\tn}[1]{\ifmmode{\text{\normalfont #1}}\else{\normalfont #1}\fi}
-\def\mf{\mathfrak}
-\def\mc{\mathcal}
+\DeclareRobustCommand{\tn}[1]{\ifmmode{\text{\normalfont{#1}}}\else{\normalfont{#1}}\fi}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\renewcommand{\mc}[1]{\mathcal{#1}} % overwrite \mc (use 明朝)
 \newcommand{\qt}[1]{\tn{``}#1\tn{"}}
 
-\def\ZZ{{\mathbb Z}}
-\def\QQ{{\mathbb Q}}
-\def\RR{{\mathbb R}}
-\def\CC{{\mathbb C}}
-\def\AA{{\mathbb A}}
-\def\PP{{\mathbb P}}
-\def\NN{{\mathbb N}}
+\newcommand\ZZ{{\mathbb Z}}
+\newcommand\QQ{{\mathbb Q}}
+\newcommand\RR{{\mathbb R}}
+\newcommand\CC{{\mathbb C}}
+\renewcommand\AA{{\mathbb A}} % overwrite Angstroem
+\newcommand\PP{{\mathbb P}}
+\newcommand\NN{{\mathbb N}}
 
 
-\def\Hom{\tn{Hom}}
-\def\Path{\tn{Path}}
-\def\Paths{\tn{Paths}}
-\def\List{\tn{List}}
-\def\Aut{\tn{Aut}}
-\def\im{\tn{im}}
-\def\Fun{\tn{Fun}}
-\def\Ob{\tn{Ob}}
-\def\Skel{\tn{Skel}}
-\def\Op{\tn{Open}}
-\def\PK{\tn{PK}}
-\def\FK{\tn{FK}}
+\newcommand\Hom{\tn{Hom}}
+\newcommand\Path{\tn{Path}}
+\newcommand\Paths{\tn{Paths}}
+\newcommand\List{\tn{List}}
+\newcommand\Aut{\tn{Aut}}
+\newcommand\im{\tn{im}}
+\newcommand\Fun{\tn{Fun}}
+\newcommand\Ob{\tn{Ob}}
+\newcommand\Skel{\tn{Skel}}
+\newcommand\Op{\tn{Open}}
+\newcommand\PK{\tn{PK}}
+\newcommand\FK{\tn{FK}}
 \def\SEL*{\tn{SEL*}}
-\def\Res{\tn{Res}}
-\def\hsp{\hspace{.3in}}
+\newcommand\Res{\tn{Res}}
+\newcommand\hsp{\hspace{.3in}}
 \newcommand{\hsps}[1]{{\hspace{2mm} #1\hspace{2mm}}}
 \newcommand{\tin}[1]{\text{\tiny #1}}
 
-\def\singleton{\{\smiley\}}
+\newcommand\singleton{\{\smiley\}}
 \newcommand{\boxtitle}[1]{\begin{center}#1\end{center}\vspace{-.1in}}
 \newcommand{\singlefun}[1]{\star^{#1}}
 \newcommand{\pullb}[1]{\Delta_{#1}}
@@ -90,44 +90,44 @@
 \newcommand{\rpush}[1]{\Pi_{#1}}
 \def\lcone{^\triangleleft}
 \def\rcone{^\triangleright}
-\def\to{\rightarrow}
-\def\from{\leftarrow}
-\def\down{\downarrrow}
-\def\Down{\Downarrow}
-\def\taking{\colon}
-\def\inj{\hookrightarrow}
-\def\surj{\twoheadrightarrow}
-\def\too{\longrightarrow}
+\renewcommand\to{\rightarrow}
+\newcommand\from{\leftarrow}
+\newcommand\down{\downarrrow}
+\newcommand\Down{\Downarrow}
+\newcommand\taking{\colon}
+\newcommand\inj{\hookrightarrow}
+\newcommand\surj{\twoheadrightarrow}
+\newcommand\too{\longrightarrow}
 \newcommand{\xyright}[1]{\xymatrix{~\ar[r]#1&}}
 \newcommand{\xydown}[1]{\xymatrix{~\ar[d]#1\\~}}
 \newcommand{\xydoown}[1]{\xymatrix{~\ar[ddd]#1\\\parbox{0in}{~}\\\parbox{0in}{~}\\~}}
-\def\fromm{\longleftarrow}
-\def\tooo{\longlongrightarrow}
-\def\tto{\rightrightarrows}
-\def\ttto{\equiv\!\!>}
-\def\ss{\subseteq}
-\def\superset{\supseteq}
-\def\iso{\cong}
-\def\down{\downarrow}
+\newcommand\fromm{\longleftarrow}
+\newcommand\tooo{\longlongrightarrow}
+\newcommand\tto{\rightrightarrows}
+\newcommand\ttto{\equiv\!\!>}
+\renewcommand\ss{\subseteq}
+\newcommand\superset{\supseteq}
+\newcommand\iso{\cong}
+%\def\down{\downarrow}
 \def\|{{\;|\;}}
 \def\m1{{-1}}
 \def\op{^\tn{op}}
-\def\loc{\tn{loc}}
-\def\la{\langle}
-\def\ra{\rangle}
-\def\wt{\widetilde}
-\def\wh{\widehat}
-\def\we{\simeq}
+\newcommand\loc{\tn{loc}}
+\newcommand\la{\langle}
+\newcommand\ra{\rangle}
+\newcommand\wt{\widetilde}
+\newcommand\wh{\widehat}
+\newcommand\we{\simeq}
 \def\ol{\overline}
 \def\ul{\underline}
-\def\plpl{+\!\!+\hspace{1pt}}
-\def\acts{\lefttorightarrow}
-\def\actsRight{\righttoleftarrow}
-\def\vect{\overrightarrow}
-\def\qeq{\mathop{=}^?}
-\def\del{\partial\,}
+\newcommand\plpl{+\!\!+\hspace{1pt}}
+\newcommand\acts{\lefttorightarrow}
+\newcommand\actsRight{\righttoleftarrow}
+\newcommand\vect{\overrightarrow}
+\newcommand\qeq{\mathop{=}^?}
+\newcommand\del{\partial\,}
 
-\def\rr{\raggedright}
+\newcommand\rr{\raggedright}
 
 %\newcommand{\LMO}[1]{\bullet^{#1}}
 %\newcommand{\LTO}[1]{\bullet^{\tn{#1}}}
@@ -143,7 +143,7 @@
 \newcommand{\sq}[4]{\xymatrix{#1\ar[r]\ar[d]&#2\ar[d]\\#3\ar[r]&#4}}
 \newcommand{\namecat}[1]{\begin{center}$#1:=$\end{center}}
 
-\def\monOb{\blacktriangle}
+\newcommand\monOb{\blacktriangle}
 
 \def\ullimit{\ar@{}[rd]|(.3)*+{\lrcorner}}
 \def\urlimit{\ar@{}[ld]|(.3)*+{\llcorner}}
@@ -177,75 +177,75 @@
 \newcommand{\coprodmap}[2]{{\left\{\parbox{.1in}{#1\\#2}\right.}}
 \newcommand{\po}[3]{\coprodmap{#1}{#2}}
 
-\def\id{\tn{id}}
-\def\ids{\tn{ids}}
-\def\Top{{\bf Top}}
-\def\Cat{{\bf Cat}}
-\def\Oprd{{\bf Oprd}}
-\def\Str{{\bf Str}}
-\def\Mon{{\bf Mon}}
-\def\Grp{{\bf Grp}}
-\def\Grph{{\bf Grph}}
-\def\Type{{\bf Type}}
-\def\Supp{{\bf Supp}}
-\def\Dist{{\bf Dist}}
-\def\Vect{{\bf Vect}}
-\def\Kls{{\bf Kls}}
-\def\Prop{{\bf Prop}}
-\def\FLin{{\bf FLin}}
-\def\Set{{\bf Set}}
-\def\Sets{{\bf Sets}}
-\def\PrO{{\bf PrO}}
-\def\Star{{\bf Star}}
-\def\Cob{{\bf Cob}}
-\def\Qry{{\bf Qry}}
-\def\set{{\text \textendash}{\bf Set}}
-\def\sSet{{\bf sSet}}
-\def\sSets{{\bf sSets}}
-\def\Grpd{{\bf Grpd}}
-\def\Pre{{\bf Pre}}
-\def\Shv{{\bf Shv}}
-\def\Rings{{\bf Rings}}
-\def\bD{{\bf \Delta}}
-\def\dispInt{\parbox{.1in}{$\int$}}
-\def\bhline{\Xhline{2\arrayrulewidth}}
-\def\bbhline{\Xhline{2.5\arrayrulewidth}}
-\def\bbbhline{\Xhline{3\arrayrulewidth}}
+\newcommand\id{\tn{id}}
+\newcommand\ids{\tn{ids}}
+\renewcommand\Top{\mathbf{Top}}
+\newcommand\Cat{\mathbf{Cat}}
+\newcommand\Oprd{\mathbf{Oprd}}
+\newcommand\Str{\mathbf{Str}}
+\newcommand\Mon{\mathbf{Mon}}
+\newcommand\Grp{\mathbf{Grp}}
+\newcommand\Grph{\mathbf{Grph}}
+\newcommand\Type{\mathbf{Type}}
+\newcommand\Supp{\mathbf{Supp}}
+\newcommand\Dist{\mathbf{Dist}}
+\newcommand\Vect{\mathbf{Vect}}
+\newcommand\Kls{\mathbf{Kls}}
+\newcommand\Prop{\mathbf{Prop}}
+\newcommand\FLin{\mathbf{FLin}}
+\newcommand\Set{\mathbf{Set}}
+\newcommand\Sets{\mathbf{Sets}}
+\newcommand\PrO{\mathbf{PrO}}
+\newcommand\Star{\mathbf{Star}}
+\newcommand\Cob{\mathbf{Cob}}
+\newcommand\Qry{\mathbf{Qry}}
+\newcommand\set{{\text \textendash}\mathbf{Set}}
+\newcommand\sSet{\mathbf{sSet}}
+\newcommand\sSets{\mathbf{sSets}}
+\newcommand\Grpd{\mathbf{Grpd}}
+\newcommand\Pre{\mathbf{Pre}}
+\newcommand\Shv{\mathbf{Shv}}
+\newcommand\Rings{\mathbf{Rings}}
+\newcommand\bD{\mathbf{\Delta}}
+\newcommand\dispInt{\parbox{.1in}{$\int$}}
+\newcommand\bhline{\Xhline{2\arrayrulewidth}}
+\newcommand\bbhline{\Xhline{2.5\arrayrulewidth}}
+\newcommand\bbbhline{\Xhline{3\arrayrulewidth}}
 
 
-\def\colim{\mathop{\tn{colim}}}
-\def\hocolim{\mathop{\tn{hocolim}}}
+\newcommand\colim{\mathop{\tn{colim}}}
+\newcommand\hocolim{\mathop{\tn{hocolim}}}
 
-\def\mcA{\mc{A}}
-\def\mcB{\mc{B}}
-\def\mcC{\mc{C}}
-\def\mcD{\mc{D}}
-\def\mcE{\mc{E}}
-\def\mcF{\mc{F}}
-\def\mcG{\mc{G}}
-\def\mcH{\mc{H}}
-\def\mcI{\mc{I}}
-\def\mcJ{\mc{J}}
-\def\mcK{\mc{K}}
-\def\mcL{\mc{L}}
-\def\mcM{\mc{M}}
-\def\mcN{\mc{N}}
-\def\mcO{\mc{O}}
-\def\mcP{\mc{P}}
-\def\mcQ{\mc{Q}}
-\def\mcR{\mc{R}}
-\def\mcS{\mc{S}}
-\def\mcT{\mc{T}}
-\def\mcU{\mc{U}}
-\def\mcV{\mc{V}}
-\def\mcW{\mc{W}}
-\def\mcX{\mc{X}}
-\def\mcY{\mc{Y}}
-\def\mcZ{\mc{Z}}
+\newcommand\mcA{\mc{A}}
+\newcommand\mcB{\mc{B}}
+\newcommand\mcC{\mc{C}}
+\newcommand\mcD{\mc{D}}
+\newcommand\mcE{\mc{E}}
+\newcommand\mcF{\mc{F}}
+\newcommand\mcG{\mc{G}}
+\newcommand\mcH{\mc{H}}
+\newcommand\mcI{\mc{I}}
+\newcommand\mcJ{\mc{J}}
+\newcommand\mcK{\mc{K}}
+\newcommand\mcL{\mc{L}}
+\newcommand\mcM{\mc{M}}
+\newcommand\mcN{\mc{N}}
+\newcommand\mcO{\mc{O}}
+\newcommand\mcP{\mc{P}}
+\newcommand\mcQ{\mc{Q}}
+\newcommand\mcR{\mc{R}}
+\newcommand\mcS{\mc{S}}
+\newcommand\mcT{\mc{T}}
+\newcommand\mcU{\mc{U}}
+\newcommand\mcV{\mc{V}}
+\newcommand\mcW{\mc{W}}
+\newcommand\mcX{\mc{X}}
+\newcommand\mcY{\mc{Y}}
+\newcommand\mcZ{\mc{Z}}
 
 \def\undsc{\rule{2mm}{0.4pt}}
-\def\Loop{{\mcL oop}}
-\def\LoopSchema{{\parbox{.5in}{\fbox{\xymatrix{\LMO{s}\ar@(l,u)[]^f}}}}}
+\newcommand\Loop{{\mcL oop}}
+\newcommand\LoopSchema{{\parbox{.5in}{\fbox{\xymatrix{\LMO{s}\ar@(l,u)[]^f}}}}}
 
 \newtheorem{theorem}[subsubsection]{Theorem}
 \newtheorem{lemma}[subsubsection]{Lemma}
@@ -306,20 +306,20 @@
 %\newtheorem{conjecture}[theorem]{Conjecture}
 %\newtheorem{postulate}[theorem]{Postulate}
 
-\def\Finm{{\bf Fin_{m}}}
-\def\Prb{{\bf Prb}}
-\def\Prbs{{\wt{\bf Prb}}}
-\def\El{{\bf El}}
-\def\Gr{{\bf Gr}}
-\def\DT{{\bf DT}}
-\def\DB{{\bf DB}}
-\def\Tables{{\bf Tables}}
-\def\Sch{{\bf Sch}}
-\def\Fin{{\bf Fin}}
-\def\P{{\bf P}}
-\def\SC{{\bf SC}}
-\def\ND{{\bf ND}}
-\def\Poset{{\bf Poset}}
+\newcommand\Finm{\mathbf{Fin_{m}}}
+\newcommand\Prb{\mathbf{Prb}}
+\newcommand\Prbs{{\wt{\mathbf{Prb}}}}
+\newcommand\El{\mathbf{El}}
+\newcommand\Gr{\mathbf{Gr}}
+\newcommand\DT{\mathbf{DT}}
+\newcommand\DB{\mathbf{DB}}
+\newcommand\Tables{\mathbf{Tables}}
+\newcommand\Sch{\mathbf{Sch}}
+\newcommand\Fin{\mathbf{Fin}}
+\renewcommand\P{\mathbf{P}}
+\newcommand\SC{\mathbf{SC}}
+\newcommand\ND{\mathbf{ND}}
+\newcommand\Poset{\mathbf{Poset}}
 
 
 \newcommand{\MainCatLarge}[1]{ 
@@ -330,8 +330,8 @@
 		}}}
 	}
 }
-\def\GrIn{{\bf GrIn}}
-\def\GrInSchema{\xymatrix{\LMO{Ar}\ar@<.5ex>[r]^{src}\ar@<-.5ex>[r]_{tgt}&\LMO{V\!e}}}
+\newcommand\GrIn{\mathbf{GrIn}}
+\newcommand\GrInSchema{\xymatrix{\LMO{Ar}\ar@<.5ex>[r]^{src}\ar@<-.5ex>[r]_{tgt}&\LMO{V\!e}}}
 %\CompileMatrices
 \pdfoutput=1
 
