@@ -357,16 +357,24 @@ $$
 
 %%%% Subsection %%%%
 
-\subsection{Monoid actions}
+%\subsection{Monoid actions}
+\subsection{モノイド作用}
 
-\begin{definition}[Monoid action]\label{def:monoid action}\index{monoid!action}\index{action!of a monoid}
+%\begin{definition}[Monoid action]\label{def:monoid action}\index{monoid!action}\index{action!of a monoid}
+\begin{definition}[モノイド作用]\label{def:monoid action}\index{monoid!action}\index{action!of a monoid}
 
-Let $(M,e,\star)$ be a monoid and let $S$ be a set. An {\em action of $(M,e,\star)$ on $S$}, or simply an {\em action of $M$ on $S$} or an {\em $M$-action on $S$}, is a function $$\acts\;\;\taking M\times S\to S$$\index{a symbol!$\acts$} such that the following conditions hold for all $m,n\in M$ and all $s\in S$:
+%Let $(M,e,\star)$ be a monoid and let $S$ be a set. An {\em action of $(M,e,\star)$ on $S$}, or simply an {\em action of $M$ on $S$} or an {\em $M$-action on $S$}, is a function $$\acts\;\;\taking M\times S\to S$$\index{a symbol!$\acts$} such that the following conditions hold for all $m,n\in M$ and all $s\in S$:
+
+$(M,e,\star)$をモノイドとし, $S$を集合とする. \emph{$S$への$(M,e,\star)$の作用(action of $(M,e,\star)$ on $S$)}あるいは\emph{$S$への$M$-作用($M$-action on $S$)}とは, 全ての$m,n\in M$および$s\in S$に足して以下の条件を全て満たすところの函数$$\acts\;\;\taking M\times S\to S$$\index{a symbol!$\acts$}である.
 \begin{itemize}
 \item $e\acts s=s$
 \item $m\acts(n\acts s)=(m\star n)\acts s$.
+%\footnote{
+%Definition \ref{def:monoid action} actually defines a {\em left action}\index{action!left} of $(M,e,\star)$ on $S$. A {\em right action}\index{action!right} is like a left action except the order of operations is somehow reversed. We will not really use right-actions in this text, but we briefly define it here for completeness. With notation as above, the only difference is in the second condition. We replace it by the condition that for all $m,n\in M$ and all $s\in S$ we have 
+%$$m\acts(n\acts s)=(n\star m)\acts s
+%$$}
 \footnote{
-Definition \ref{def:monoid action} actually defines a {\em left action}\index{action!left} of $(M,e,\star)$ on $S$. A {\em right action}\index{action!right} is like a left action except the order of operations is somehow reversed. We will not really use right-actions in this text, but we briefly define it here for completeness. With notation as above, the only difference is in the second condition. We replace it by the condition that for all $m,n\in M$ and all $s\in S$ we have 
+Definition \ref{def:monoid action}は実際には$S$への\emph{左作用(left action)}\index{action!left}$(M,e,\star)$を定義している. \emph{右作用(right action)}\index{action!right}は左作用と似ているが, 演算の順番がどういうわけか逆であるという点が異なる. 我々はこの文書では右作用を実際に使うことはないが, 完全を期すためにここで手短に定義をしておこう. 上記と同じ記法を用いたとき, 唯一の違いは二番目の条件である. 我々は二番目の条件を以下のように置きかえる. 全ての$m,n\in M$と$s\in S$に対して
 $$m\acts(n\acts s)=(n\star m)\acts s
 $$}
 \end{itemize}
@@ -375,7 +383,8 @@ $$}
 
 \begin{remark}\label{rmk:monoid action}
 
-To be pedantic (and because it's sometimes useful), we may rewrite $\acts$ as $\alpha\taking M\times S\to S$ and restate the conditions from Definition \ref{def:monoid action} as
+%To be pedantic (and because it's sometimes useful), we may rewrite $\acts$ as $\alpha\taking M\times S\to S$ and restate the conditions from Definition \ref{def:monoid action} as
+教育的である(かつ時々役にたつため), 我々は$\acts$を$\alpha\taking M\times S\to S$と書き直し, Definition \ref{def:monoid action}での条件を以下に再掲する.
 \begin{itemize}
 \item $\alpha(e,s)=s$, and
 \item $\alpha(m,\alpha(n,s))=\alpha(m\star n,s)$.
@@ -385,57 +394,89 @@ To be pedantic (and because it's sometimes useful), we may rewrite $\acts$ as $\
 
 \begin{example}\label{ex:clocks}
 
-Let $S=\{0,1,2,\ldots,11\}$ and let $N=(\NN,0,+)$ be the additive monoid of natural numbers (see Example \ref{ex:monoid 0}).  We define a function $\acts\taking\NN\times S\to S$ by taking a pair $(n,s)$ to the remainder that appears when $n+s$ is divided by 12. For example $4\acts 2=6$ and $8\acts 9 = 5$. This function has the structure of a monoid action because the two rules from Definition \ref{def:monoid action} hold.
+%Let $S=\{0,1,2,\ldots,11\}$ and let $N=(\NN,0,+)$ be the additive monoid of natural numbers (see Example \ref{ex:monoid 0}).  We define a function $\acts\taking\NN\times S\to S$ by taking a pair $(n,s)$ to the remainder that appears when $n+s$ is divided by 12. For example $4\acts 2=6$ and $8\acts 9 = 5$. This function has the structure of a monoid action because the two rules from Definition \ref{def:monoid action} hold.
 
-Similarly, let $T$ denote the set of points on a circle, elements of which are denoted by a real number in the interval $[0,12)$, i.e. $$T=\{x\in\RR\|0\leq x< 12\}$$ and let $R=(\RR,0,+)$ denote the additive monoid of real numbers. Then there is an action $R\times T\to T$, similar to the one above (see Exercise \ref{exc:clock}).
+$S=\{0,1,2,\ldots,11\}$とし, $N=(\NN,0,+)$を自然数の加法モノイドとする(see Example \ref{ex:monoid 0}). 函数$\acts\taking\NN\times S\to S$を, 対$(n,s)$を取り, $n+s$を12で割ったときの余りを返す函数として定義する. 例えば, $4\acts 2=6$であり$8\acts 9 = 5$である. この函数はモノイド作用の構造を持つ. なぜならDefinition \ref{def:monoid action}の二つの法則を満たすからだ.
 
-One can think of this as an action of the monoid of time on the clock.
+%Similarly, let $T$ denote the set of points on a circle, elements of which are denoted by a real number in the interval $[0,12)$, i.e. $$T=\{x\in\RR\|0\leq x< 12\}$$ and let $R=(\RR,0,+)$ denote the additive monoid of real numbers. Then there is an action $R\times T\to T$, similar to the one above (see Exercise \ref{exc:clock}).
+
+同じように, $T$が円周上の点の集合を表すとし, その要素は区間$[0,12)$の実数を表示しているとする. i.e. $$T=\{x\in\RR\|0\leq x< 12\}$$ そして$R=(\RR,0,+)$が実数の加法モノイドであるとする. このとき上記のそれと似て作用$R\times T\to T$が存在している(Exercise \ref{exc:clock}を見よ).
+
+%One can think of this as an action of the monoid of time on the clock.
+これは, 時計の上に表示される時間のモノイドの作用として考えることができる.
 
 \end{example}
 
 \begin{exercise}\label{exc:clock}~
-\sexc Realize the set $T:=[0,12)\ss\RR$ as the coequalizer of a pair of arrows $\RR\tto\RR$. 
-\next For any $x\in\RR$, realize the mapping $x\cdot-\taking T\to T$, implied by Example \ref{ex:clocks}, using the universal property of coequalizers. 
-\next Prove that it is an action.
+%\sexc Realize the set $T:=[0,12)\ss\RR$ as the coequalizer of a pair of arrows $\RR\tto\RR$. 
+%\next For any $x\in\RR$, realize the mapping $x\cdot-\taking T\to T$, implied by Example \ref{ex:clocks}, using the universal property of coequalizers. 
+%\next Prove that it is an action.
+%\endsexc
+\sexc 集合$T:=[0,12)\ss\RR$を矢の対$\RR\tto\RR$の余等価子として実現せよ. 
+\next 任意の$x\in\RR$に対して, Example \ref{ex:clocks}によってほめのかされる写像$x\cdot-\taking T\to T$を, 余等価子の普遍性を用いて実現せよ. 
+\next これが作用であることを証明せよ.
 \endsexc
 \end{exercise}
 
 \begin{exercise}
-Let $B$ denote the set of buttons (or positions) of a video game controller (other than, say `start' and `select'), and consider the free monoid $\List(B)$ on $B$. 
-\sexc What would it mean for $\List(B)$ to act on the set of states of some game? Imagine a video game $G'$ that uses the controller, but for which $\List(B)$ would not be said to act on the states of $G'$. Now imagine a simple game $G$ for which $\List(B)$ would be said to act.
-\next Can you think of a state $s$ of $G$, and two distinct elements $\ell,\ell'\in\List(B)$ such that $\ell\acts s=\ell'\acts s$? In video game parlance, what would you call an element $b\in B$ such that, for every state $s\in G$, one has $b\acts s=s$? 
-\next In video game parlance, what would you call a state $s\in S$ such that, for every sequence of buttons $\ell\in\List(B)$, one has $\ell\acts s=s$?
+%Let $B$ denote the set of buttons (or positions) of a video game controller (other than, say `start' and `select'), and consider the free monoid $\List(B)$ on $B$. 
+%\sexc What would it mean for $\List(B)$ to act on the set of states of some game? Imagine a video game $G'$ that uses the controller, but for which $\List(B)$ would not be said to act on the states of $G'$. Now imagine a simple game $G$ for which $\List(B)$ would be said to act.
+%\next Can you think of a state $s$ of $G$, and two distinct elements $\ell,\ell'\in\List(B)$ such that $\ell\acts s=\ell'\acts s$? In video game parlance, what would you call an element $b\in B$ such that, for every state $s\in G$, one has $b\acts s=s$? 
+%\next In video game parlance, what would you call a state $s\in S$ such that, for every sequence of buttons $\ell\in\List(B)$, one has $\ell\acts s=s$?
+%\endsexc
+$B$がテレビゲームのコントローラのボタン(あるいはその位置, あるいはそれに加えてスタートボタンやセレクトボタン)の集合を示しているとし, $B$上の自由モノイド$\List(B)$を考える. 
+\sexc $\List(B)$に対して, あるゲームの状態の集合に作用するとは何を意味しているだろうか? コントローラを使うテレビゲーム$G'$で, しかしそれに対して$\List(B)$は$G'$の状態の集合への作用とは言えないようなものを想像せよ. 次に単純なゲーム$G$で, それに対して$\List(B)$が作用であると言えるものを想像せよ.
+\next $G$の状態$s$と, $\ell\acts s=\ell'\acts s$であるところの二つの異なった状態$\ell,\ell'\in\List(B)$を考えることができるだろうか. テレビゲームの用語では, 全ての$s\in G$に対して$b\acts s=s$が得られるところの要素$b\in B$をなんと呼ぶだろうか?
+\next テレビゲームの用語では, 全てのボタン列$\ell\in\List(B)$に対して$\ell\acts s=s$が得られるところの要素$s\in S$はなんと呼ぶだろうか?
 \endsexc
 \end{exercise}
 
 \begin{application}
 
-Let $f\taking\RR\to\RR$ be a differentiable function of which we want to find roots (points $x\in\RR$ such that $f(x)=0$). Let $x_0\in\RR$ be a starting point. For any $n\in\NN$ we can apply \href{http://en.wikipedia.org/wiki/Newton's_method}{\text Newton's method} to $x_n$ to get $$x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.$$ 
-This is a monoid (namely $\NN$, the free monoid on one generator) acting on a set (namely $\RR$). 
+%Let $f\taking\RR\to\RR$ be a differentiable function of which we want to find roots (points $x\in\RR$ such that $f(x)=0$). Let $x_0\in\RR$ be a starting point. For any $n\in\NN$ we can apply \href{http://en.wikipedia.org/wiki/Newton's_method}{\text Newton's method} to $x_n$ to get $$x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.$$ 
+%This is a monoid (namely $\NN$, the free monoid on one generator) acting on a set (namely $\RR$). 
 
-However, Newton's method can get into trouble. For example at a critical point it causes division by 0, and sometimes it can oscillate or overshoot. In these cases we want to perturb a bit to the left or right. To have these actions available to us, we would add ``perturb" elements to our monoid. Now we have more available actions at any point, but at the cost of using a more complicated monoid.
+$f\taking\RR\to\RR$を, 根($f(x)=0$であるところの$x\in\RR$)を求めたい対象の微分可能な函数としている. $x_0\in\RR$を初期点とする. 任意の$n\in\NN$に対して, $x_n$に\href{http://en.wikipedia.org/wiki/Newton's_method}{Newton法(\text Newton's method)}を適用することができそれによって$$x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}$$が得られる.
+これは集合(すなわち$\RR$)に作用するモノイド(すなわち$\NN$, 一要素上の自由モノイド)である.
 
-When publishing an experimental finding, there may be some deep methodological questions that are not considered suitably important to mention. For example, one may not publish the kind solution finding method (e.g. Newton's method or Runge-Kutta) that was used, nor the set of available actions, e.g. what kinds of perturbation were used by the researcher. However, these may actually influence the reproducibility of results. By using a language such as that of monoid actions, we can align our data model with our unspoken assumptions about how functions are analyzed.
+%However, Newton's method can get into trouble. For example at a critical point it causes division by 0, and sometimes it can oscillate or overshoot. In these cases we want to perturb a bit to the left or right. To have these actions available to us, we would add ``perturb" elements to our monoid. Now we have more available actions at any point, but at the cost of using a more complicated monoid.
+
+しかし, Newton法には問題が生じることがある. 例えば停留点(critical point)では0除算を起こしうるし, 時々振動したり目標を飛びこしてしまったりもする. これらの場合は, 我々は右や左に少し摂動を加えたくなる. これらの操作が使用可能になるようにするために, ``摂動''要素をモノイドに追加しよう. いまや我々は任意の点でより適用範囲が広い操作を手に入れた. ただしより複雑なモノイドを使うという対価を払っている. 
+
+%When publishing an experimental finding, there may be some deep methodological questions that are not considered suitably important to mention. For example, one may not publish the kind solution finding method (e.g. Newton's method or Runge-Kutta) that was used, nor the set of available actions, e.g. what kinds of perturbation were used by the researcher. However, these may actually influence the reproducibility of results. By using a language such as that of monoid actions, we can align our data model with our unspoken assumptions about how functions are analyzed.
+
+実験的発見が公表されるときには, 言及するにふさわしいほど重要だと考えられていなかったなんらかの深い方法論への疑問がしばしば出現する. 例えば, 解を求めるために使用された方法(e.g. Newton法あるいは\href{https://en.wikipedia.org/wiki/Runge\%E2\%80\%93Kutta_methods}{Runge-Kutta法}), あるいは可能な操作の集合, e.g. その研究者がどのような種類の摂動を用いたか, という類のことを公表しないかしれない. しかしながら, これらは実際には結果の再現性に影響するかしれない. モノイド作用のような言語を使用することにより, 我々はどのような函数が解析されたかといった言及されなかった仮定とデータ模型とを連携させることができる.
 
 \end{application}
 
 \begin{remark}
 
-A monoid is useful for understanding how an agent acts on the set of states of an object, but there is only one {\em kind} of action. At any point, all actions are available. In reality it is often the case that contexts can change and different actions are available at different times. For example on a computer, the commands available in one application have no meaning in another. This will get us to categories in the next chapter. 
+%A monoid is useful for understanding how an agent acts on the set of states of an object, but there is only one {\em kind} of action. At any point, all actions are available. In reality it is often the case that contexts can change and different actions are available at different times. For example on a computer, the commands available in one application have no meaning in another. This will get us to categories in the next chapter. 
+
+モノイドは, 対象の状態の集合に対してagentがどのように作用するかを理解するのに便利だが, そこには一つの\emph{類}としての作用しか存在していない. すなわち任意の時点で全ての作用が適用可能である. 現実では, 文脈が変更を受けたり異なった時間に異なった作用が適用可能になることもしばしば起こる. 例えば計算機では, あるアプリケーションで可能な命令は他のアプリケーションでは意味を持たない. 次の章で、我々はこれによって圏へと導かれるだろう.
 
 \end{remark}
 
 
 %% Subsubsection %%
 
-\subsubsection{Monoids actions as ologs}
+%\subsubsection{Monoids actions as ologs}
+\subsubsection{ologとしてのモノイド作用}
 
-If monoids are understood in terms of how they act on sets, then it is reasonable to think of them in terms of ologs. In fact, the ologs associated to monoids are precisely those ologs that have exactly one type (and possibly many arrows and commutative diagrams). 
+%If monoids are understood in terms of how they act on sets, then it is reasonable to think of them in terms of ologs. In fact, the ologs associated to monoids are precisely those ologs that have exactly one type (and possibly many arrows and commutative diagrams). 
+
+もしモノイドが集合へどのように作用するかという観点で理解できるとすれば, モノイドをologのかんんで考えるのは妥当である. 実際のところ正確に, モノイドに関連したologはちょうど1つの型を持つ(そしてたくさんの矢と可換図式を持ちうる) ologである. 
 
 \begin{example}\label{ex:monoid as olog}\index{monoid!olog of}
 
-In this example we show how to associate an olog to a monoid action. Consider the monoid $M$ generated by the set $\{u,d,r\}$, standing for ``up, down, right", and subject to the relations $$[u,d]\sim[\;],\hsp[d,u]\sim[\;],\hsp[u,r]=[r,u],\hsp \tn{and}\hsp [d,r]=[r,d].$$
-We might imagine that $M$ acts on the set of positions for a character in an old video game. In that case the olog corresponding to this action should look something like the following:
+%In this example we show how to associate an olog to a monoid action. Consider the monoid $M$ generated by the set $\{u,d,r\}$, standing for ``up, down, right", and subject to the relations $$[u,d]\sim[\;],\hsp[d,u]\sim[\;],\hsp[u,r]=[r,u],\hsp \tn{and}\hsp [d,r]=[r,d].$$
+%We might imagine that $M$ acts on the set of positions for a character in an old video game. In that case the olog corresponding to this action should look something like the following:
+%\begin{center}
+%\includegraphics[width=\textwidth]{monoidOlog}
+%\end{center}
+
+この例では我々はどのようにologとモノイド作用を関連つければいいかを示す. ``up'', ``down'', ``right''とし理解される集合$\{u,d,r\}$によって生成され, 関係$$[u,d]\sim[\;],\hsp[d,u]\sim[\;],\hsp[u,r]=[r,u],\hsp \tn{and}\hsp [d,r]=[r,d]$$に従うモノイド$M$を考える.
+$M$はある古いテレビゲーム中での文字の位置の集合に作用すると想像してみよう. この場合, この作用に対応するologは以下のようになるべきであろう.
 \begin{center}
 \includegraphics[width=\textwidth]{monoidOlog}
 \end{center}
