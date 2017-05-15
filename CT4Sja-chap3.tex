@@ -485,46 +485,71 @@ $M$はある古いテレビゲーム中での文字の位置の集合に作用�
 
 %% Subsubsection %%
 
-\subsubsection{Finite state machines}\label{sec:FSMs}\index{finite state machine}
+%\subsubsection{Finite state machines}\label{sec:FSMs}\index{finite state machine}
+\subsubsection{有限状態機械}\label{sec:FSMs}\index{finite state machine}
 
-According to Wikipedia, a \href{http://en.wikipedia.org/wiki/Finite_state_machine#Mathematical_model}{\em deterministic finite state machine} is a quintuple $(\Sigma,S,s_0,\delta,F)$, where
+%According to Wikipedia, a \href{http://en.wikipedia.org/wiki/Finite_state_machine#Mathematical_model}{\em deterministic finite state machine} is a quintuple $(\Sigma,S,s_0,\delta,F)$, where
+%\begin{enumerate}
+%\item $\Sigma$ is a finite non-empty set of symbols, called the {\em input alphabet},
+%\item $S$ is a finite, non-empty set, called {\em the state set},
+%\item $\delta\taking \Sigma\times S\to S$ is a function, called the {\em state-transition function}, and
+%\item $s_0\in S$ is an element, called {\em the initial state},
+%\item $F\ss S$ is a subset, called the {\em set of final states}.
+%\end{enumerate}
+
+Wikipediaによると, \href{http://en.wikipedia.org/wiki/Finite_state_machine#Mathematical_model}{\emph{有限状態機械(deterministic finite state machine)}}とは五つ組$(\Sigma,S,s_0,\delta,F)$である. ここで
 \begin{enumerate}
-\item $\Sigma$ is a finite non-empty set of symbols, called the {\em input alphabet},
-\item $S$ is a finite, non-empty set, called {\em the state set},
-\item $\delta\taking \Sigma\times S\to S$ is a function, called the {\em state-transition function}, and
-\item $s_0\in S$ is an element, called {\em the initial state},
-\item $F\ss S$ is a subset, called the {\em set of final states}.
+\item $\Sigma$は空ではない有限の記号の集合であり, \emph{入力文字集合(input alphabet)}と呼ばれる.
+\item $S$は空ではない有限の集合であり, \emph{状態集合(the state set)}と呼ばれる.
+\item $\delta\taking \Sigma\times S\to S$は函数であり, \emph{状態遷移函数(state-transition function)}と呼ばれる.
+\item $s_0\in S$は要素であり, \emph{初期状態(the initial state)}と呼ばれる.
+\item $F\ss S$は部分集合であり, \emph{終了状態の集合(set of final states)}と呼ばれる.
 \end{enumerate}
 
-In this book we will not worry about the initial state and the set of final states, concerning ourselves more with the interaction via $\delta$ of the alphabet $\Sigma$ on the set $S$ of states.
+%In this book we will not worry about the initial state and the set of final states, concerning ourselves more with the interaction via $\delta$ of the alphabet $\Sigma$ on the set $S$ of states.
+
+この本では我々は初期状態と終状態の集合については気をめぐらせないことにして, 状態の集合$S$への文字$\Sigma$の作用$\delta$を通じた相互作用に, 関心を集中することにする.
 
 \begin{figure}[h]
-\begin{center}
+%\begin{center}
+\centering
 \includegraphics[height=2in]{FSM1}
-\end{center}
-\caption{A finite state machine with alphabet $\Sigma=\{a,b\}$ and state set $S=\{\tn{State 0, State 1, State 2}\}$. If pressed, we will make State 0 the initial state and \{State 2\} the set of final states.}\label{fig:fsa}
+%\end{center}
+%\caption{A finite state machine with alphabet $\Sigma=\{a,b\}$ and state set $S=\{\tn{State 0, State 1, State 2}\}$. If pressed, we will make State 0 the initial state and \{State 2\} the set of final states.}\label{fig:fsa}
+\caption{文字$\Sigma=\{a,b\}$と状態$S=\{\tn{State 0, State 1, State 2}\}$を持つ有限状態機械の例. もし要求されたならば, 状態0を初期状態とし, $\{\text{状態} 2\}$を終状態の集合とする.}
 \end{figure}
-The following proposition expresses the notion of finite state automata in terms of free monoids and their actions on finite sets.
+%The following proposition expresses the notion of finite state automata in terms of free monoids and their actions on finite sets.
+以下のpropsitionは自由モノイドと有限集合へのそれらの作用という観点から有限状態オートマトンの概念を表現している.
 
 \begin{proposition}
 
-Let $\Sigma, S$ be finite non-empty sets. Giving a function $\delta\taking\Sigma\times S\to S$ is equivalent to giving an action of the free monoid $\List(\Sigma)$ on $S$. 
+%Let $\Sigma, S$ be finite non-empty sets. Giving a function $\delta\taking\Sigma\times S\to S$ is equivalent to giving an action of the free monoid $\List(\Sigma)$ on $S$. 
+
+$\Sigma$と$S$を有限な空でない集合とする. 函数$\delta\taking\Sigma\times S\to S$を与えることは$S$への自由モノイド$\List(\Sigma)$の作用を与えることと等しい.
 
 \end{proposition}
 
 \begin{proof}
 
-By Definition \ref{def:monoid action}, we know that function $\epsilon\taking\List(\Sigma)\times S\to S$ constitutes an action of the monoid $\List(\Sigma)$ on the set $S$ if and only if, for all $s\in S$ we have $\epsilon([\;],s)=s$, and for any two elements $m,m'\in\List(\Sigma)$ we have $\epsilon(m,\epsilon(m',s))=\epsilon(m\star m',s)$, where $m\star m'$ is the concatenation of lists. Let $$A=\{\epsilon\taking \List(\Sigma)\times S\to S\|\epsilon\tn{ constitutes an action}\}.$$ We need to prove that there is an isomorphism of sets $$\phi\taking A\To{\iso}\Hom_\Set(\Sigma\times S,S).$$
+%By Definition \ref{def:monoid action}, we know that function $\epsilon\taking\List(\Sigma)\times S\to S$ constitutes an action of the monoid $\List(\Sigma)$ on the set $S$ if and only if, for all $s\in S$ we have $\epsilon([\;],s)=s$, and for any two elements $m,m'\in\List(\Sigma)$ we have $\epsilon(m,\epsilon(m',s))=\epsilon(m\star m',s)$, where $m\star m'$ is the concatenation of lists. Let $$A=\{\epsilon\taking \List(\Sigma)\times S\to S\|\epsilon\tn{ constitutes an action}\}.$$ We need to prove that there is an isomorphism of sets $$\phi\taking A\To{\iso}\Hom_\Set(\Sigma\times S,S).$$
 
-Given an element $\epsilon\taking\List(\Sigma)\times S\to S$ in $A$, define $\phi(\epsilon)$ on an element $(\sigma,s)\in\Sigma\times S$ by $\phi(\epsilon)(\sigma,s):=\epsilon([\sigma],s)$, where $[\sigma]$ is the one-element list. We now define $\psi\taking\Hom_\Set(\Sigma\times S,S)\to A$.
+Definition \ref{def:monoid action}により, 函数$\epsilon\taking\List(\Sigma)\times S\to S$が$S$への自由モノイド$\List(\Sigma)$の作用をなすのは, 全ての$s\in S$に対して$\epsilon([\;],s)=s$が得られ, 全ての二要素の組$m,m'\in\List(\Sigma)$に対して$\epsilon(m,\epsilon(m',s))=\epsilon(m\star m',s)$が得られるときであり, かつその時に限る. ここで$m\star m'$はリストの結合である. $$A=\{\epsilon\taking \List(\Sigma)\times S\to S\|\epsilon\tn{ constitutes an action}\}$$とする. 我々は, 集合の同型写像$$\phi\taking A\To{\iso}\Hom_\Set(\Sigma\times S,S)$$が存在することを証明する必要がある.
 
-Given an element $f\in\Hom_\Set(\Sigma\times S,S)$, define $\psi(f)\taking\List(\Sigma)\times S\to S$ on a pair $(L,s)\in\List(\Sigma)\times S$, where $L=[\epsilon_1,\ldots,\epsilon_n]$ as follows. By induction, if $n=0$, put $\psi(f)(L,s)=s$; if $n\geq 1$, let $L'=[\epsilon_1,\ldots,\epsilon_{n-1}]$ and put $\psi(f)(L,s)=\psi(f)(L',f(\epsilon_n,s))$. One checks easily that $\psi(f)$ satisfies the two rules above, making it an action of $\List(\Sigma)$ on $S$. It is also easy to check that $\phi$ and $\psi$ are mutually inverse, completing the proof.
+%Given an element $\epsilon\taking\List(\Sigma)\times S\to S$ in $A$, define $\phi(\epsilon)$ on an element $(\sigma,s)\in\Sigma\times S$ by $\phi(\epsilon)(\sigma,s):=\epsilon([\sigma],s)$, where $[\sigma]$ is the one-element list. We now define $\psi\taking\Hom_\Set(\Sigma\times S,S)\to A$.
+
+$A$の要素$\epsilon\taking\List(\Sigma)\times S\to S$が与えられたとき, 要素$(\sigma,s)\in\Sigma\times S$上に$\phi(\epsilon)(\sigma,s):=\epsilon([\sigma],s)$によって$\phi(\epsilon)$を定義する. ここで$[\sigma]$は一要素リストである. 次に$\psi\taking\Hom_\Set(\Sigma\times S,S)\to A$を定義する.
+
+%Given an element $f\in\Hom_\Set(\Sigma\times S,S)$, define $\psi(f)\taking\List(\Sigma)\times S\to S$ on a pair $(L,s)\in\List(\Sigma)\times S$, where $L=[\epsilon_1,\ldots,\epsilon_n]$ as follows. By induction, if $n=0$, put $\psi(f)(L,s)=s$; if $n\geq 1$, let $L'=[\epsilon_1,\ldots,\epsilon_{n-1}]$ and put $\psi(f)(L,s)=\psi(f)(L',f(\epsilon_n,s))$. One checks easily that $\psi(f)$ satisfies the two rules above, making it an action of $\List(\Sigma)$ on $S$. It is also easy to check that $\phi$ and $\psi$ are mutually inverse, completing the proof.
+
+要素$f\in\Hom_\Set(\Sigma\times S,S)$が与えられたとき, 対$(L,s)\in\List(\Sigma)\times S$上に$\psi(f)\taking\List(\Sigma)\times S\to S$を定義する. ここで$L=[\epsilon_1,\ldots,\epsilon_n]$は以下のように定められる. 帰納的に, $n=0$ならば$\psi(f)(L,s)=s$, $n\geq 1$ならば$L'=[\epsilon_1,\ldots,\epsilon_{n-1}]$, そして$\psi(f)(L,s)=\psi(f)(L',f(\epsilon_n,s))$とする. $\psi(f)$が上記の二つの法則を満たし, $S$への$\List(\Sigma)$の作用を成立させることは簡単に確認できる. 証明を完了するにあたって, $\phi$と$\psi$が互いに逆函数であることも簡単に確認できる.
 
 \end{proof}
 
-We sum up the idea of this section as follows:
+%We sum up the idea of this section as follows:
+この節のアイデアは以下のようにまとめるあげることができる.
 \begin{slogan}
-A finite state machine is an action of a free monoid on a finite set.
+%A finite state machine is an action of a free monoid on a finite set.
+有限状態機械は有限集合への自由モノイドの作用である.
 \end{slogan}
 
 \begin{exercise}
