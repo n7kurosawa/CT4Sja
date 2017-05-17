@@ -684,33 +684,48 @@ $i_5\taking\NN\to\ZZ$が函数$i_5(n)=5*n$を示すとする. よって$i_5(4)=2
 
 \begin{application}\label{app:RNA reader 1}
 
-Let $R=\{a,c,g,u\}$ and let $T=R^3$, the set of triplets in $R$. Let $\mcR=\List(R)$ be the free monoid on $R$ and let $\mcT=\List(T)$ denote the free monoid on $T$. There is a monoid homomorphism $F\taking\mcT\to\mcR$ given by sending $t=(r_1,r_2,r_3)$ to the list $[r_1,r_2,r_3]$.
-\footnote{More precisely, the monoid homomorphism $F$ sends a list $[t_1,t_2,\ldots,t_n]$ to the list $[r_{1,1},r_{1,2},r_{1,3},r_{2,1},r_{2,2},r_{2,3},\ldots,r_{n,1},r_{n,2},r_{n,3}]$, where for each $0\leq i\leq n$ we have $t_i=(r_{i,1},r_{i,2},r_{i,3})$.}
+%Let $R=\{a,c,g,u\}$ and let $T=R^3$, the set of triplets in $R$. Let $\mcR=\List(R)$ be the free monoid on $R$ and let $\mcT=\List(T)$ denote the free monoid on $T$. There is a monoid homomorphism $F\taking\mcT\to\mcR$ given by sending $t=(r_1,r_2,r_3)$ to the list $[r_1,r_2,r_3]$.
+%\footnote{More precisely, the monoid homomorphism $F$ sends a list $[t_1,t_2,\ldots,t_n]$ to the list $[r_{1,1},r_{1,2},r_{1,3},r_{2,1},r_{2,2},r_{2,3},\ldots,r_{n,1},r_{n,2},r_{n,3}]$, where for each $0\leq i\leq n$ we have $t_i=(r_{i,1},r_{i,2},r_{i,3})$.}
 
-If $A$ be the set of amino acids and $\mcA=\List(A)$ the free monoid on $A$, the process of \href{http://en.wikipedia.org/wiki/Translation_(biology)}{\text translation} gives a monoid homomorphism $G\taking\mcT\to\mcA$, turning a list of RNA triplets into a polypeptide. But how do we go from a list of RNA nucleotides to a polypeptide? The answer is that there is no good way to do this mathematically. So what is going wrong?
+$R=\{a,c,g,u\}$とし, $T=R^3$すなわち$R$の三つ組の集合とする. $\mcR=\List(R)$を$R$上の自由モノイドとし, $\mcT=\List(T)$が$T$上の自由モノイドを示しているとする. $t=(r_1,r_2,r_3)$をリスト$[r_1,r_2,r_3]$に送ることによって得られるモノイド準同型$F\taking\mcT\to\mcR$が存在している.
+\footnote{より正確には, モノイド準同型$F$はリスト$[t_1, t_2, \ldots, t_n]$をリスト$[r_{1,1}, r_{1,2}, r_{1,3}, r_{2,1}, r_{2,2}, r_{2,3},\allowbreak \ldots,\allowbreak r_{n,1}, r_{n,2}, r_{n,3}]$に送る. ここでそれぞれの$0\leq i\leq n$に対し$t_i=(r_{i,1}, r_{i,2}, r_{i,3})$とした.}
 
-The answer is that there should not be a monoid homomorphism $\mcR\to\mcA$ because not all sequences of nucleotides produce a polypeptide; for example if the sequence has only two elements, it does not code for a polypeptide. There are several possible remedies to this problem. One is to take the image of $F$, which is a submonoid $\mcR'\ss\mcR$. It is not hard to see that there is a monoid homomorphism $F'\taking\mcR'\to\mcT$, and we can compose it with $G$ to get our desired monoid homomorphism $G\circ F'\taking\mcR'\to\mcA$. 
-\footnote{Adding stop-codons to the mix we can handle more of $\mcR$, e.g. sequences that don't have a multiple-of-three many nucleotides.}
+%If $A$ be the set of amino acids and $\mcA=\List(A)$ the free monoid on $A$, the process of \href{http://en.wikipedia.org/wiki/Translation_(biology)}{\text translation} gives a monoid homomorphism $G\taking\mcT\to\mcA$, turning a list of RNA triplets into a polypeptide. But how do we go from a list of RNA nucleotides to a polypeptide? The answer is that there is no good way to do this mathematically. So what is going wrong?
+
+$A$がアミノ酸の集合で$\mcA=\List(A)$が$A$上の自由モノイドであるとき, \href{http://en.wikipedia.org/wiki/Translation_(biology)}{翻訳(\text{translation})}の機構によって, RNAの三つ組をポリペプチド\footnote{訳注: 小さなタンパク質はポリペプチド(polypeptide)とも呼ばれる.}へ変換するモノイド準同型$G\taking\mcT\to\mcA$が与えられる. しかしどのようにしてRNAヌクレオチドのリストからポリペプチドに移行できるだろうか? これを数学的に行なうよい方法はないというのがその答である. では何が悪くなるのであろうか?
+
+%The answer is that there should not be a monoid homomorphism $\mcR\to\mcA$ because not all sequences of nucleotides produce a polypeptide; for example if the sequence has only two elements, it does not code for a polypeptide. There are several possible remedies to this problem. One is to take the image of $F$, which is a submonoid $\mcR'\ss\mcR$. It is not hard to see that there is a monoid homomorphism $F'\taking\mcR'\to\mcT$, and we can compose it with $G$ to get our desired monoid homomorphism $G\circ F'\taking\mcR'\to\mcA$. 
+%\footnote{Adding stop-codons to the mix we can handle more of $\mcR$, e.g. sequences that don't have a multiple-of-three many nucleotides.}
+
+モノイド準同型$\mcR\to\mcA$は存在するべきではないというのがその答である. なぜなら全てのヌクレオチドの列がポリペプチドを生成するわけではないからである. 例えば, もし列に二つしか要素が含まれていないならば, それはポリペプチドを符号化していない. この問題を修正するにはいくつかの方法がある. 一つは部分モノイド$\mcR'\ss\mcR$であるところの$F$の像を取ることである. モノイド準同型$F'\taking\mcR'\to\mcT$が存在することを見るのは難しくはない. そして$G$と組みあわせて欲しかったモノイド準同型$G\circ F'\taking\mcR'\to\mcA$を得ることができる.
+\footnote{停止コドンを含めることによってより多くの$\mcR$, e.g. ヌクレオチドの数が3の倍数ではない列, を扱えることができる.}
 
 \end{application}
 
 \begin{example}\label{ex:trivial monoid homomorphism}\index{monoid!trivial homomorphism}
 
-Given any monoids $\mcM$ there is a unique monoid homomorphism from $\mcM$ to the trivial monoid $\ul{1}$ (see Example \ref{ex:trivial monoid}). There is also a unique homomorphism $\ul{1}\to\mcM$. These facts together have an upshot: between any two monoids $\mcM$ and $\mcM'$ we can always construct a homomorphism 
-$$\mcM\Too{!}\ul{1}\Too{!}\mcM'$$
-which we call the {\em trivial homomorphism $\mcM\to\mcM'$}.\index{trivial homomorphism!of monoids} A morphism $\mcM\to\mcM'$ that is not trivial is called a {\em nontrivial homomorphism}.
+%Given any monoids $\mcM$ there is a unique monoid homomorphism from $\mcM$ to the trivial monoid $\ul{1}$ (see Example \ref{ex:trivial monoid}). There is also a unique homomorphism $\ul{1}\to\mcM$. These facts together have an upshot: between any two monoids $\mcM$ and $\mcM'$ we can always construct a homomorphism 
+%$$\mcM\Too{!}\ul{1}\Too{!}\mcM'$$
+%which we call the {\em trivial homomorphism $\mcM\to\mcM'$}.\index{trivial homomorphism!of monoids} A morphism $\mcM\to\mcM'$ that is not trivial is called a {\em nontrivial homomorphism}.
+
+任意のモノイド$\mcM$が与えられたとき, $\mcM$から自明なモノイド$\ul{1}$(Example \ref{ex:trivial monoid}を見よ)へのモノイド準同型が一意に存在する. また準同型$\ul{1}\to\mcM$も一意に存在する. この事実を併せるとある結論が得られる. すなわち任意の二つのモノイド$\mcM$と$\mcM'$の間には, 常に\emph{自明な準同型(trivial homomorphism) $\mcM\to\mcM'$}\index{trivial homomorphism!of monoids}と呼ばれる準同型$$\mcM\Too{!}\ul{1}\Too{!}\mcM'$$を構築することができる.
+自明でない射$\mcM\to\mcM'$は\emph{非自明な準同型(nontrivial homomorphism)}と呼ばれる.
 
 \end{example}
 
 \begin{proposition}\label{prop:int to nat trivial}
 
-Let $\mcM=(\ZZ,0,+)$ and $\mcM'=(\NN,0,+)$. The only monoid homomorphism $f\taking\mcM\to\mcM'$ sends every element $m\in\ZZ$ to $0\in\NN$.
+%Let $\mcM=(\ZZ,0,+)$ and $\mcM'=(\NN,0,+)$. The only monoid homomorphism $f\taking\mcM\to\mcM'$ sends every element $m\in\ZZ$ to $0\in\NN$.
+
+$\mcM=(\ZZ,0,+)$および$\mcM'=(\NN,0,+)$とする. 唯一存在するモノイド準同型$f\taking\mcM\to\mcM'$は全ての要素$m\in\ZZ$を$0\in\NN$に送る.
 
 \end{proposition}
 
 \begin{proof}
 
-Let $f\taking\mcM\to\mcM'$ be a monoid homomorphism, and let $n=f(1)$ and $n'=f(-1)$ in $\NN$. Then we know that since $0=1+(-1)$ in $\ZZ$ we must have $0=f(0)=f(1+(-1))=f(1)+f(-1)=n+n'\in\NN$. But if $n\geq 1$ then this is impossible, so $n=0$. Similarly $n'=0$. Any element $m\in\ZZ$ can be written $m=1+1+\cdots+1$ or as $m=-1+-1+\cdots+-1$, and it is easy to see that $f(1)+f(1)+\cdots+f(1)=0=f(-1)+f(-1)+\cdots+f(-1)$. Therefore, $f(m)=0$ for all $m\in\ZZ$. 
+%Let $f\taking\mcM\to\mcM'$ be a monoid homomorphism, and let $n=f(1)$ and $n'=f(-1)$ in $\NN$. Then we know that since $0=1+(-1)$ in $\ZZ$ we must have $0=f(0)=f(1+(-1))=f(1)+f(-1)=n+n'\in\NN$. But if $n\geq 1$ then this is impossible, so $n=0$. Similarly $n'=0$. Any element $m\in\ZZ$ can be written $m=1+1+\cdots+1$ or as $m=-1+-1+\cdots+-1$, and it is easy to see that $f(1)+f(1)+\cdots+f(1)=0=f(-1)+f(-1)+\cdots+f(-1)$. Therefore, $f(m)=0$ for all $m\in\ZZ$. 
+
+$f\taking\mcM\to\mcM'$をモノイド準同型とし, $n=f(1)$と$n'=f(-1)$を$\NN$の要素とする. このとき, $0=1+(-1)$は$\ZZ$に含まれるから, $0=f(0)=f(1+(-1))=f(1)+f(-1)=n+n'\in\NN$でなければならないことが分かる. しかしもし$n\geq 1$であるならばこれは不可能であるから, よって$n=0$である. 同様にして$n'=0$である. 任意の要素$m\in\ZZ$は$m=1+1+\cdots+1$あるいは$m=-1+-1+\cdots+-1$として書くことができ, そして$f(1)+f(1)+\cdots+f(1)=0=f(-1)+f(-1)+\cdots+f(-1)$であることは簡単に見てとれる. それゆえに全ての$m\in\ZZ$に対して$f(m)=0$である.
 
 \end{proof}
 
