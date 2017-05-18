@@ -730,59 +730,79 @@ $f\taking\mcM\to\mcM'$をモノイド準同型とし, $n=f(1)$と$n'=f(-1)$を$\
 \end{proof}
 
 \begin{exercise}
-For any $m\in\NN$ let $i_m\taking\NN\to\ZZ$ be the function $i_m(n)=m*n$. All such functions are monoid homomorphisms $(\NN,0,+)\to(\ZZ,0,+)$. Do any monoid homomorphisms $(\NN,0,+)\to(\ZZ,0,+)$ not come in this way? For example, what about using $n\mapsto 5*n-1$ or $n\mapsto n^2$, or some other function? 
+%For any $m\in\NN$ let $i_m\taking\NN\to\ZZ$ be the function $i_m(n)=m*n$. All such functions are monoid homomorphisms $(\NN,0,+)\to(\ZZ,0,+)$. Do any monoid homomorphisms $(\NN,0,+)\to(\ZZ,0,+)$ not come in this way? For example, what about using $n\mapsto 5*n-1$ or $n\mapsto n^2$, or some other function? 
+任意の$m\in\NN$に対して$i_m\taking\NN\to\ZZ$を函数$i_m(n)=m*n$とする. このような函数は全てモノイド準同型$(\NN,0,+)\to(\ZZ,0,+)$である. 任意のモノイド準同型$(\NN,0,+)\to(\ZZ,0,+)$はこの方法で出て来るものだろうか? 例えば, $n\mapsto 5*n-1$や$n\mapsto n^2$, あるいは他のなんらかの函数を使うのはどうだろうか?
 \end{exercise}
 
 \begin{exercise}
-Let $\mcM:=(\NN,0,+)$ be the additive monoid of natural numbers, let $\mcN=(\RR_{\geq0},0,+)$ be the additive monoid of nonnegative real numbers, and let $\mcP:=(\RR_{>0},1,*)$ be the multiplicitive monoid of positive real numbers. Can you think of any nontrivial monoid homomorphisms of the following sorts: $$\mcM\to\mcN,\hsp\mcM\to\mcP,\hsp\mcN\to\mcP,\hsp \mcN\to\mcM,\hsp\mcP\to\mcN?$$
+%Let $\mcM:=(\NN,0,+)$ be the additive monoid of natural numbers, let $\mcN=(\RR_{\geq0},0,+)$ be the additive monoid of nonnegative real numbers, and let $\mcP:=(\RR_{>0},1,*)$ be the multiplicitive monoid of positive real numbers. Can you think of any nontrivial monoid homomorphisms of the following sorts: $$\mcM\to\mcN,\hsp\mcM\to\mcP,\hsp\mcN\to\mcP,\hsp \mcN\to\mcM,\hsp\mcP\to\mcN?$$
+$\mcM:=(\NN,0,+)$を自然数の加法モノイド, $\mcN=(\RR_{\geq0},0,+)$を非負実数の加法モノイド, $\mcN=(\RR_{\geq0},0,+)$を正実数の乗法モノイドとする. 以下のような種類の, なんらかの非自明モノイド準同型について考えることができるだろうか.  $$\mcM\to\mcN,\hsp\mcM\to\mcP,\hsp\mcN\to\mcP,\hsp \mcN\to\mcM,\hsp\mcP\to\mcN?$$
 \end{exercise}
 
 
 %% Subsubsection %%
 
-\subsubsection{Homomorphisms from free monoids}
+%\subsubsection{Homomorphisms from free monoids}
+\subsubsection{自由モノイドからの準同型}
 
-Recall that $(\NN,0,+)$ is the free monoid on one generator. It turns out that for any other monoid $\mcM=(M,e,\star)$, the set of monoid homomorphisms $\NN\to\mcM$ is in bijection with the set $M$. This is a special case (in which $G$ is a set with one element) of the following proposition.
+%Recall that $(\NN,0,+)$ is the free monoid on one generator. It turns out that for any other monoid $\mcM=(M,e,\star)$, the set of monoid homomorphisms $\NN\to\mcM$ is in bijection with the set $M$. This is a special case (in which $G$ is a set with one element) of the following proposition.
+
+$(\NN,0,+)$は一生成子上の自由モノイドであることを思い出そう. 任意の他のモノイド$\mcM=(M,e,\star)$に対して, モノイド準同型$\NN\to\mcM$の集合は, 集合$M$との間に全単射がある. これは以下のpropositionの($G$が一要素であるという)特殊な場合である.
 
 \begin{proposition}\label{prop:free monoid}
 
-Let $G$ be a set, let $F(G):=(\List(G),[\;],\plpl)$ be the free monoid on $G$, and let $\mcM:=(M,e,\star)$ be any monoid. There is a natural bijection
+%Let $G$ be a set, let $F(G):=(\List(G),[\;],\plpl)$ be the free monoid on $G$, and let $\mcM:=(M,e,\star)$ be any monoid. There is a natural bijection
+%$$\Hom_\Mon(F(G),\mcM)\To{\iso}\Hom_\Set(G,M).$$
+
+$G$を集合, $F(G):=(\List(G),[\;],\plpl)$を$G$上の自由モノイドとし, $\mcM:=(M,e,\star)$を任意のモノイドとする. このとき自然な全単射が存在する.
 $$\Hom_\Mon(F(G),\mcM)\To{\iso}\Hom_\Set(G,M).$$
 
 \end{proposition}
 
 \begin{proof}
 
-We provide a function $\phi\taking\Hom_\Mon(F(G),\mcM)\to\Hom_\Set(G,M)$ and a function $\psi\taking\Hom_\Set(G,M)\to\Hom_\Mon(F(G),\mcM)$ and show that they are mutually inverse. Let us first construct $\phi$. Given a monoid homomorphism $f\taking F(G)\to\mcM$, we need to provide $\phi(f)\taking G\to M$. Given any $g\in G$ we define $\phi(f)(g):=f([g]).$ 
+%We provide a function $\phi\taking\Hom_\Mon(F(G),\mcM)\to\Hom_\Set(G,M)$ and a function $\psi\taking\Hom_\Set(G,M)\to\Hom_\Mon(F(G),\mcM)$ and show that they are mutually inverse. Let us first construct $\phi$. Given a monoid homomorphism $f\taking F(G)\to\mcM$, we need to provide $\phi(f)\taking G\to M$. Given any $g\in G$ we define $\phi(f)(g):=f([g]).$ 
 
-Now let us construct $\psi$. Given $p\taking G\to M$, we need to provide $\psi(p)\taking\List(G)\to\mcM$ such that $\psi(p)$ is a monoid homomorphism. For a list $L=[g_1,\ldots,g_n]\in\List(G)$, define $\psi(p)(L):=p(g_1)\star\cdots\star p(g_n)\in M$. In particular, $\psi(p)([\;])=e$. It is not hard to see that this is a monoid homomorphism. It is also easy to see that $\phi\circ\psi(p)=p$ for all $p\in\Hom_\Set(G,M)$. We show that $\psi\circ\phi(f)=f$ for all $f\in\Hom_\Mon(F(G),\mcM)$. Choose $L=[g_1,\ldots,g_n]\in\List(G)$. Then 
+我々は函数$\phi\taking\Hom_\Mon(F(G),\mcM)\to\Hom_\Set(G,M)$および函数$\psi\taking\Hom_\Set(G,M)\to\Hom_\Mon(F(G),\mcM)$を与え, それらが互いに逆函数であることを示す. 最初に$\phi$を構成しよう. モノイド準同型$f\taking F(G)\to\mcM$が与えられたとき, $\phi(f)\taking G\to M$を与えることが必要である. 任意の$g\in G$が与えられたとき, $\phi(f)(g):=f([g])$と定義する.
+
+%Now let us construct $\psi$. Given $p\taking G\to M$, we need to provide $\psi(p)\taking\List(G)\to\mcM$ such that $\psi(p)$ is a monoid homomorphism. For a list $L=[g_1,\ldots,g_n]\in\List(G)$, define $\psi(p)(L):=p(g_1)\star\cdots\star p(g_n)\in M$. In particular, $\psi(p)([\;])=e$. It is not hard to see that this is a monoid homomorphism. It is also easy to see that $\phi\circ\psi(p)=p$ for all $p\in\Hom_\Set(G,M)$. We show that $\psi\circ\phi(f)=f$ for all $f\in\Hom_\Mon(F(G),\mcM)$. Choose $L=[g_1,\ldots,g_n]\in\List(G)$. Then 
+%$$\psi(\phi f)(L)=(\phi f)(g_1)\star\cdots\star(\phi f)(g_n)=f[g_1]\star\cdots\star f[g_n]=f([g_1,\ldots,g_n])=f(L).$$
+
+次に$\psi$を構成しよう. $p\taking G\to M$が与えられたとき, $\psi(p)$がモノイド準同型であるところの$\psi(p)\taking\List(G)\to\mcM$を与える必要がある. リスト$L=[g_1,\ldots,g_n]\in\List(G)$に対して, $\psi(p)(L):=p(g_1)\star\cdots\star p(g_n)\in M$と定義する. 別に$\psi(p)([\;])=e$とする. これがモノイド準同型であることを見るのは難しくない. 全ての$p\in\Hom_\Set(G,M)$に対して$\phi\circ\psi(p)=p$であることを見るのも簡単である. 我々は全ての$f\in\Hom_\Mon(F(G),\mcM)$に対して$\psi\circ\phi(f)=f$を示す. $L=[g_1,\ldots,g_n]\in\List(G)$を選ぶ. このとき
 $$\psi(\phi f)(L)=(\phi f)(g_1)\star\cdots\star(\phi f)(g_n)=f[g_1]\star\cdots\star f[g_n]=f([g_1,\ldots,g_n])=f(L).$$
 
 \end{proof}
 
 \begin{exercise}
-Let $G=\{a,b\}$, let $\mcM:=(M,e,\star)$ be any monoid, and let $f\taking G\to M$ be given by $f(a)=m$ and $f(b)=n$, where $m,n\in M$. If $\psi\taking\Hom_\Set(G,M)\to\Hom_\Mon(F(G),\mcM)$ is the function from the proof of Proposition \ref{prop:free monoid} and $L=[a,a,b,a,b]$, what is $\psi(f)(L)$ ?
+%Let $G=\{a,b\}$, let $\mcM:=(M,e,\star)$ be any monoid, and let $f\taking G\to M$ be given by $f(a)=m$ and $f(b)=n$, where $m,n\in M$. If $\psi\taking\Hom_\Set(G,M)\to\Hom_\Mon(F(G),\mcM)$ is the function from the proof of Proposition \ref{prop:free monoid} and $L=[a,a,b,a,b]$, what is $\psi(f)(L)$ ?
+$G=\{a,b\}$, $\mcM:=(M,e,\star)$を任意のモノイドとし$f\taking G\to M$を$f(a)=m$および$f(b)=n$で与えるとする ここで$m,n\in M$である. $\psi\taking\Hom_\Set(G,M)\to\Hom_\Mon(F(G),\mcM)$がProposition \ref{prop:free monoid}の証明での函数であり, $L=[a,a,b,a,b]$であるとすれば, $\psi(f)(L)$は何だろうか?
 \end{exercise}
 
 %% Subsubsection %%
 
-\subsubsection{Restriction of scalars}
+%\subsubsection{Restriction of scalars}
+\subsubsection{係数制限}
 
-A monoid homomorphism $f\taking M\to M'$ (see Definition \ref{def:monoid hom}) ensures that the elements of $M$ have a reasonable interpretation in $M'$; they act the same way over in $M'$ as they did back home in $M$. If we have such a homomorphism $f$ and we have an action $\alpha\taking M'\times S\to S$ of $M'$ on a set $S$, then we have a method for allowing $M$ to act on $S$ as well. Namely, we take an element of $M$, send it over to $M'$, and act on $S$. In terms of functions, we compose $\alpha$ with the function $f\times\id_S\taking M\times S\to M'\times S$, to get a function we'll denote $$\Delta_f(\alpha)\taking M\times S\to S.$$ After Proposition \ref{prop:restriction of scalars} we will know that $\Delta_f(\alpha)$ is indeed a monoid action, and we say that it is given by {\em restriction of scalars along $f$}.\index{restriction of scalars}
+%A monoid homomorphism $f\taking M\to M'$ (see Definition \ref{def:monoid hom}) ensures that the elements of $M$ have a reasonable interpretation in $M'$; they act the same way over in $M'$ as they did back home in $M$. If we have such a homomorphism $f$ and we have an action $\alpha\taking M'\times S\to S$ of $M'$ on a set $S$, then we have a method for allowing $M$ to act on $S$ as well. Namely, we take an element of $M$, send it over to $M'$, and act on $S$. In terms of functions, we compose $\alpha$ with the function $f\times\id_S\taking M\times S\to M'\times S$, to get a function we'll denote $$\Delta_f(\alpha)\taking M\times S\to S.$$ After Proposition \ref{prop:restriction of scalars} we will know that $\Delta_f(\alpha)$ is indeed a monoid action, and we say that it is given by {\em restriction of scalars along $f$}.\index{restriction of scalars}
+
+モノイド準同型$f\taking M\to M'$ (Definition \ref{def:monoid hom}を見よ)は, $M$の要素が$M'$において妥当な解釈を持つことを保証している. それらは出自の$M$で作用したのと同じように$M'$の上でも作用する. もしそのような準同型$f$が得られ, 集合$S$への$M'$の作用$\alpha\taking M'\times S\to S$ of $M'$が得られたならば, $M$が$S$へ作用することを許す手段もまた得ることになる. 函数の観点でいえば, 我々は$\alpha$を$f\times\id_S\taking M\times S\to M'\times S$と組み合わせて, $$\Delta_f(\alpha)\taking M\times S\to S$$と書かれる函数を得ることになる. Proposition \ref{prop:restriction of scalars}後には, $\Delta_f(\alpha)$が実際にモノイド作用であることが分かるだろう. これは\emph{restriction of scalars along $f$}\index{restriction of scalars}によって得られたと言う.
 
 \begin{proposition}\label{prop:restriction of scalars}
 
-Let $\mcM:=(M,e,\star)$ and $\mcM':=(M',e',\star')$ be monoids, $f\taking\mcM\to\mcM'$ a monoid homomorphism, $S$ a set, and suppose that $\alpha\taking M'\times S\to S$ is an action of $\mcM'$ on $S$. Then $\Delta_f(\alpha)\taking M\times S\to S$, defined as above, is a monoid action as well.
+%Let $\mcM:=(M,e,\star)$ and $\mcM':=(M',e',\star')$ be monoids, $f\taking\mcM\to\mcM'$ a monoid homomorphism, $S$ a set, and suppose that $\alpha\taking M'\times S\to S$ is an action of $\mcM'$ on $S$. Then $\Delta_f(\alpha)\taking M\times S\to S$, defined as above, is a monoid action as well.
+
+$\mcM:=(M,e,\star)$と$\mcM':=(M',e',\star')$をモノイド, $f\taking\mcM\to\mcM'$をモノイド準同型, $S$を集合, $\alpha\taking M'\times S\to S$を$S$への$\mcM'$の作用とする. このとき, 上記で定義される$\Delta_f(\alpha)\taking M\times S\to S$もまた, モノイド作用である.
 
 \end{proposition}
 
 \begin{proof}
 
-Refer to Remark \ref{rmk:monoid action}; we assume $\alpha$ is a monoid action and want to show that $\Delta_f(\alpha)$ is too. We have $\Delta_f(\alpha)(e,s)=\alpha(f(e),s)=\alpha(e',s)=s$. We also have 
+%Refer to Remark \ref{rmk:monoid action}; we assume $\alpha$ is a monoid action and want to show that $\Delta_f(\alpha)$ is too. We have $\Delta_f(\alpha)(e,s)=\alpha(f(e),s)=\alpha(e',s)=s$. We also have 
+Remark \ref{rmk:monoid action}を参照せよ. $\alpha$がモノイド作用であることを仮定して, $\Delta_f(\alpha)$もモノイド作用であることを示したい. $\Delta_f(\alpha)(e,s)=\alpha(f(e),s)=\alpha(e',s)=s$が得られ, そして以下が得られる. 
 \begin{align*}
 \Delta_f(\alpha)(m,\Delta_f(\alpha)(n,s))=\alpha(f(m),\alpha(f(n),s))&=\alpha(f(m)\star' f(n),s)\\
 &=\alpha(f(m\star n),s)\\
-&=\Delta_f(\alpha)(m\star n,s).
+&=\Delta_f(\alpha)(m\star n,s)
 \end{align*}
 
 \end{proof}
