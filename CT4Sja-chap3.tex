@@ -809,18 +809,23 @@ Remark \ref{rmk:monoid action}を参照せよ. $\alpha$がモノイド作用で�
 
 \begin{example}
 
-Let $\NN$ and $\ZZ$ denote the additive monoids of natural numbers and integers, respectively, and let $i\taking\NN\to\ZZ$ be the inclusion, which we saw in Example \ref{ex:nat to int} is a monoid homomorphism. There is an action $\alpha\taking\ZZ\times\RR\to\RR$ of the monoid $\ZZ$ on the set $\RR$ of real numbers, given by $\alpha(n,x)=n+x$. Clearly, this action works just as well if we restrict our scalars to $\NN\ss\ZZ$, allowing ourselves only to add natural numbers to reals. The action $\Delta_i\alpha\taking\NN\times\RR\to\RR$ is given on $(n,x)\in\NN\times\RR$ by $\Delta_i\alpha(n,x)=\alpha(i(n),x)=\alpha(n,x)=n+x$, just as expected.
+%Let $\NN$ and $\ZZ$ denote the additive monoids of natural numbers and integers, respectively, and let $i\taking\NN\to\ZZ$ be the inclusion, which we saw in Example \ref{ex:nat to int} is a monoid homomorphism. There is an action $\alpha\taking\ZZ\times\RR\to\RR$ of the monoid $\ZZ$ on the set $\RR$ of real numbers, given by $\alpha(n,x)=n+x$. Clearly, this action works just as well if we restrict our scalars to $\NN\ss\ZZ$, allowing ourselves only to add natural numbers to reals. The action $\Delta_i\alpha\taking\NN\times\RR\to\RR$ is given on $(n,x)\in\NN\times\RR$ by $\Delta_i\alpha(n,x)=\alpha(i(n),x)=\alpha(n,x)=n+x$, just as expected.
+
+$\NN$と$\ZZ$がそれぞれ自然数と整数の加法モノイドを表しているとし, $i\taking\NN\to\ZZ$を包含写像とする. Example \ref{ex:nat to int}でみたこれはモノイド準同型である. $\alpha(n,x)=n+x$によって与えられる, 実数の集合$\RR$へのモノイド$\ZZ$の作用$\alpha\taking\ZZ\times\RR\to\RR$が存在する. 明かに, 実数に自然数を足すことのみを許したとし, 係数を$\NN\ss\ZZ$に制限しても, この作用はうまく働く. 予想されるように, 作用$\Delta_i\alpha\taking\NN\times\RR\to\RR$は, $(n,x)\in\NN\times\RR$に対して$\Delta_i\alpha(n,x)=\alpha(i(n),x)=\alpha(n,x)=n+x$によって与えられる.
 
 \end{example}
 
 \begin{example}
 
-Suppose that $V$ is a complex vector space. In particular, this means that the monoid $\CC$ of complex numbers (under multiplication) acts on the elements of $V$. If $i\taking\RR\to\CC$ is the inclusion of the real line inside $\CC$, then $i$ is a monoid homomorphism. Restriction of scalars in the above sense turns $V$ into a real vector space, so the name ``restriction of scalars" is apt.
+%Suppose that $V$ is a complex vector space. In particular, this means that the monoid $\CC$ of complex numbers (under multiplication) acts on the elements of $V$. If $i\taking\RR\to\CC$ is the inclusion of the real line inside $\CC$, then $i$ is a monoid homomorphism. Restriction of scalars in the above sense turns $V$ into a real vector space, so the name ``restriction of scalars" is apt.
+
+$V$を複素ベクトル空間と仮定する. 特に, 複素数の(乗法の)モノイド$\CC$は$V$の要素に作用する, ということをこれは意味している. もし$i\taking\RR\to\CC$が$\CC$の中の実軸への包含写像であるならば, $i$はモノイド準同型である. 上の意味での係数制限は$V$を実ベクトル空間に変換し, よって``係数の制限(restriction of scalars)''という名前がぴったしあてはまる.
 
 \end{example}
 
 \begin{exercise}
-Let $\NN$ be the free monoid on one generator, let $\Sigma=\{a,b\}$, and let $S=\{\tn{State 0, State 1, State 2}\}$. Consider the map of monoids $f\taking\NN\to\List(\Sigma)$ given by sending $1\mapsto [a,b,b]$. The monoid action $\alpha\taking\List(\Sigma)\times S\to S$ given in Example \ref{ex:action table} can be transformed by restriction of scalars along $f$ to an action $\Delta_f(\alpha)$ of $\NN$ on $S$. Write down its action table.
+%Let $\NN$ be the free monoid on one generator, let $\Sigma=\{a,b\}$, and let $S=\{\tn{State 0, State 1, State 2}\}$. Consider the map of monoids $f\taking\NN\to\List(\Sigma)$ given by sending $1\mapsto [a,b,b]$. The monoid action $\alpha\taking\List(\Sigma)\times S\to S$ given in Example \ref{ex:action table} can be transformed by restriction of scalars along $f$ to an action $\Delta_f(\alpha)$ of $\NN$ on $S$. Write down its action table.
+$\NN$を一生成子上の自由モノイドとし, $\Sigma=\{a,b\}$, $S=\{\tn{State 0, State 1, State 2}\}$とする. $1\mapsto [a,b,b]$によって得られるモノイドの写像$f\taking\NN\to\List(\Sigma)$を考える. Example \ref{ex:action table}で与えられるモノイド作用$\alpha\taking\List(\Sigma)\times S\to S$はrestriction of scalars along $f$によって$S$への$\NN$の作用に変換できる. この作用表を書き下せ.
 \end{exercise}
 
 
