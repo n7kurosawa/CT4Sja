@@ -939,37 +939,60 @@ $S$を有限集合とする. \emph{$A$の置換(permutation of $S$)}\index{permu
 Exercise \ref{exc:classify cyclic}では巡回モノイドを分類した. それらのうち群はどれか?
 \end{exercise}
 
-\begin{definition}[Group action]\label{def:group action}\index{group!action}\index{action!of a group}
+%\begin{definition}[Group action]\label{def:group action}\index{group!action}\index{action!of a group}
+\begin{definition}[群作用]\label{def:group action}\index{group!action}\index{action!of a group}
 
-Let $(G,e,\star)$ be a group and $S$ a set. An {\em action} of $G$ on $S$ is a function $\acts\taking G\times S\to S$ such that for all $s\in S$ and $g,g'\in G$, we have
+%Let $(G,e,\star)$ be a group and $S$ a set. An {\em action} of $G$ on $S$ is a function $\acts\taking G\times S\to S$ such that for all $s\in S$ and $g,g'\in G$, we have
+%\begin{itemize}
+%\item $e\acts s=s$ and
+%\item $g\acts(g'\acts s)=(g\star g')\acts s.$
+%\end{itemize}
+%In other words, considering $G$ as a monoid, it is an action in the sense of Definition \ref{def:monoid action}.
+
+$(G,e,\star)$を群とし, $S$を集合とする. $S$への$G$の\emph{作用(action)}は函数$\acts\taking G\times S\to S$で, 全ての$s\in S$と$g,g'\in G$に対して以下をみたすものである.
 \begin{itemize}
-\item $e\acts s=s$ and
-\item $g\acts(g'\acts s)=(g\star g')\acts s.$
+\item $e\acts s=s$
+\item $g\acts(g'\acts s)=(g\star g')\acts s$
 \end{itemize}
-In other words, considering $G$ as a monoid, it is an action in the sense of Definition \ref{def:monoid action}.
+別の言い方をすれば, $G$をモノイドとみなせば, Definition \ref{def:monoid action}の意味でこれは作用である.
 
 \end{definition}
 
 \begin{example}\label{ex:U(1)}\index{a group!$U(1)$}
 
-When a group acts on a set, it has the character of \href{http://en.wikipedia.org/wiki/Symmetry}{\text symmetry}. For example, consider the group whose elements are angles $\theta$. This group may be denoted $U(1)$ and is often formalized as the unit circle in $\CC$ of complex numbers $z=a+bi$ such that $|z|=a^2+b^2=1$. The set of such points is given the structure of a group $(U(1),e,\star)$ by defining the identity element to be $e:=1+0i$ and the group law to be complex multiplication. But for those unfamiliar with complex numbers, this is simply angle addition where we understand that $360^\circ=0^\circ$. If $\theta_1=190^\circ$ and $\theta_2=278^\circ$, then $\theta_1\star\theta_2=468^\circ=108^\circ.$ In the language of complex numbers, $z=e^{i\theta}$.
+%When a group acts on a set, it has the character of \href{http://en.wikipedia.org/wiki/Symmetry}{\text symmetry}. For example, consider the group whose elements are angles $\theta$. This group may be denoted $U(1)$ and is often formalized as the unit circle in $\CC$ of complex numbers $z=a+bi$ such that $|z|=a^2+b^2=1$. The set of such points is given the structure of a group $(U(1),e,\star)$ by defining the identity element to be $e:=1+0i$ and the group law to be complex multiplication. But for those unfamiliar with complex numbers, this is simply angle addition where we understand that $360^\circ=0^\circ$. If $\theta_1=190^\circ$ and $\theta_2=278^\circ$, then $\theta_1\star\theta_2=468^\circ=108^\circ.$ In the language of complex numbers, $z=e^{i\theta}$.
 
-The group $U(1)$ acts on any set that we can picture as having rotational symmetry about a fixed axis, such as the earth around the north-south axis. We will define $S=\{(x,y,z)\in\RR^3\|x^2+y^2+z^2=1\}$, the unit sphere, and understand the rotational action of $U(1)$ on $S$.\index{orbit!rotating earth}
+群が集合に作用するとき, それは\href{http://en.wikipedia.org/wiki/Symmetry}{対称性(symmetry)}の特徴を持つ. 例えば, 角度$\theta$が要素である群を考える. この群は$U(1)$と書かることもあり, $\CC$上の単位円すなわち複素数$z=a+bi$で$|z|=a^2+b^2=1$であるものとしてしばしば定式化される. このような点の集合は, 単位元を$e:=1+0i$, 積の式を複素数の積と定義することによって, 群$(U(1),e,\star)$の構造を与えることができる. 複素数に不慣れな人のために加えると, これは単に$360^\circ=0^\circ$が分かっている上での角度の足し算である. もし$\theta_1=190^\circ$で$\theta_2=278^\circ$ならば, $\theta_1\star\theta_2=468^\circ=108^\circ$である. 複素数の言葉では, $z=e^{i\theta}$である.
 
-We first show that $U(1)$ acts on $\RR^3$ by $\theta\acts(x,y,z)=(x\cos\theta+y\sin\theta, -x\sin\theta+y\cos\theta,z)$, or with matrix notation as 
+%The group $U(1)$ acts on any set that we can picture as having rotational symmetry about a fixed axis, such as the earth around the north-south axis. We will define $S=\{(x,y,z)\in\RR^3\|x^2+y^2+z^2=1\}$, the unit sphere, and understand the rotational action of $U(1)$ on $S$.\index{orbit!rotating earth}
+
+群$U(1)$は, 例えば地軸回りの地球のような, 固定された軸について回転対称性を持つように描けるような任意の集合に対して作用する. 単位球面$S=\{(x,y,z)\in\RR^3\|x^2+y^2+z^2=1\}$を定義し, $S$への$U(1)$の回転作用を理解してみよう.\index{orbit!rotating earth}
+
+%We first show that $U(1)$ acts on $\RR^3$ by $\theta\acts(x,y,z)=(x\cos\theta+y\sin\theta, -x\sin\theta+y\cos\theta,z)$, or with matrix notation as 
+%$$\theta\acts(x,y,z)
+%:=(x,y,z)\left(\begin{array}{ccc}
+%\cos(\theta)&-\sin(\theta)&0\\
+%\sin(\theta)&\cos(\theta)&0\\
+%0&0&1\end{array}\right)
+%$$
+%\href{http://en.wikipedia.org/wiki/List_of_trigonometric_identities#Matrix_form}{\text Trigonometric identities} ensure that this is indeed an action.
+
+最初に$U(1)$が$\RR^3$へ作用することを示そう. これは$\theta\acts(x,y,z)=(x\cos\theta+y\sin\theta, -x\sin\theta+y\cos\theta,z)$によって, あるいは行列表示
 $$\theta\acts(x,y,z)
 :=(x,y,z)\left(\begin{array}{ccc}
 \cos(\theta)&-\sin(\theta)&0\\
 \sin(\theta)&\cos(\theta)&0\\
 0&0&1\end{array}\right)
 $$
-\href{http://en.wikipedia.org/wiki/List_of_trigonometric_identities#Matrix_form}{\text Trigonometric identities} ensure that this is indeed an action.
+による. \href{http://en.wikipedia.org/wiki/List_of_trigonometric_identities#Matrix_form}{三角函数の公式}からこれが実際に作用であることは保証されている.
 
-In terms of action tables, we would need infinitely many columns to express this action. Here is a sample
+%In terms of action tables, we would need infinitely many columns to express this action. Here is a sample
+作用表の観点では, 我々はこの作用を表現するのに無限の行を必要とする. 下記は一つの例である.
 $$
 \begin{tabular}{| l || l | l | l |}
 \bhline
-\multicolumn{4}{|c|}{Action of $U(1)$ on $\RR^3$}\\\bhline
+%\multicolumn{4}{|c|}{Action of $U(1)$ on $\RR^3$}\\\bhline
+\multicolumn{4}{|c|}{\text{$\RR^3$への$U(1)$の作用}}\\\bhline
 {$\RR^3$}&{$\theta=45^\circ$}&{$\theta=90^\circ$}&{$\theta=100^\circ$}\\\bbhline
 (0,0,0)&(0,0,0)&(0,0,0)&(0,0,0)\\\hline
 (1,0,0)&(.71,.71,0)&(0,1,0)&(-.17,.98,0)\\\hline
@@ -979,7 +1002,12 @@ $\vdots$&$\vdots$&$\vdots$&$\vdots$\\\bhline
 \end{tabular}
 $$
 
-Finally, we are looking to see that the action preserves length so that if $(x,y,z)\in S$ then $\theta\acts(x,y,z)\in S$; this way we will have confirmed that $U(1)$ indeed acts on $S$. The calculation begins by assuming $x^2+y^2+z^2=1$ and checks 
+%Finally, we are looking to see that the action preserves length so that if $(x,y,z)\in S$ then $\theta\acts(x,y,z)\in S$; this way we will have confirmed that $U(1)$ indeed acts on $S$. The calculation begins by assuming $x^2+y^2+z^2=1$ and checks 
+%$$
+%(x\cos\theta+y\sin\theta)^2+(-x\sin\theta+y\cos\theta)^2+z^2=x^2+y^2+z^2=1.
+%$$
+
+最後に, $(x,y,z)\in S$ならば$\theta\acts(x,y,z)\in S$であるために, この作用が長さを保存しすることを見てみよう. この方法で, 我々は$U(1)$が実際に$S$へ作用することを確かめることになる. 計算としては, 最初に$x^2+y^2+z^2=1$を仮定し, そして以下を確かめればよい.
 $$
 (x\cos\theta+y\sin\theta)^2+(-x\sin\theta+y\cos\theta)^2+z^2=x^2+y^2+z^2=1.
 $$
@@ -987,37 +1015,51 @@ $$
 \end{example}
 
 \begin{exercise}\label{exc:permutation group}
-Let $X$ be a set and consider the group of permutations of $X$ (see Exercise \ref{exc:permutation}), which we will denote $\Sigma_X$\index{a group!$\Sigma_X$}. Find a canonical action of $\Sigma_X$ on $X$.
+%Let $X$ be a set and consider the group of permutations of $X$ (see Exercise \ref{exc:permutation}), which we will denote $\Sigma_X$\index{a group!$\Sigma_X$}. Find a canonical action of $\Sigma_X$ on $X$.
+$X$を集合とする. $X$の置換群(Exercise \ref{exc:permutation}を見よ)を考え, これを$\Sigma_X$\index{a group!$\Sigma_X$}で示すことにする. $X$への$\Sigma_X$の標準作用(canonical action)を見出せ.
 \end{exercise}
 
 \begin{definition}
 
-Let $G$ be a group acting on a set $X$. For any point $x\in X$, the {\em orbit of $x$},\index{orbit}\index{action!orbit of} denoted $Gx$, is the set 
+%Let $G$ be a group acting on a set $X$. For any point $x\in X$, the {\em orbit of $x$},\index{orbit}\index{action!orbit of} denoted $Gx$, is the set 
+%$$Gx:=\{x'\in X\|\exists g\in G \tn{ such that }gx=x'\}.$$
+
+$G$を$X$への群作用とする. 任意の点$x\in X$に対して, $Gx$で示される\emph{$x$の軌道(orbit of $x$)}\index{orbit}\index{action!orbit of}は以下の集合である.
 $$Gx:=\{x'\in X\|\exists g\in G \tn{ such that }gx=x'\}.$$
 
 \end{definition}
 
 \begin{application}
 
-Let $S$ be the surface of the earth, understood as a sphere, and let $G=U(1)$ be the group of angles acting on $S$ as in Example \ref{ex:U(1)}. The orbit of any point $p=(x,y,z)\in S$ is the set of points on the same latitude line as $p$.
+%Let $S$ be the surface of the earth, understood as a sphere, and let $G=U(1)$ be the group of angles acting on $S$ as in Example \ref{ex:U(1)}. The orbit of any point $p=(x,y,z)\in S$ is the set of points on the same latitude line as $p$.
 
-One may also consider a small band around the earth, i.e. the set $A=\{(x,y,z)\|1.0\leq x^2+y^2+z^2\leq 1.05\}$. The action of $U(1)\acts S$ extends to an action $U(1)\acts A$. The orbits are latitude-lines-at-altitude. A simplifying assumption in \href{http://en.wikipedia.org/wiki/Climatology}{\text climatology} may be given by assuming that $U(1)$ acts on all currents in the atmosphere in an appropriate sense. That way, instead of considering movement within the whole space $A$, we only allow movement that behaves the same way throughout each orbit of the group action.
+地球を球体と理解するとし, $S$をその表面とする. $G=U(1)$をExample \ref{ex:U(1)}での$S$へ作用する角度の群とする. 任意の点$p=(x,y,z)\in S$の軌道は$p$と同じ緯度の点の集合である.
+
+%One may also consider a small band around the earth, i.e. the set $A=\{(x,y,z)\|1.0\leq x^2+y^2+z^2\leq 1.05\}$. The action of $U(1)\acts S$ extends to an action $U(1)\acts A$. The orbits are latitude-lines-at-altitude. A simplifying assumption in \href{http://en.wikipedia.org/wiki/Climatology}{\text climatology} may be given by assuming that $U(1)$ acts on all currents in the atmosphere in an appropriate sense. That way, instead of considering movement within the whole space $A$, we only allow movement that behaves the same way throughout each orbit of the group action.
+
+地球の周囲に狭い帯状領域を考えてみたいかもしれない, i.e. 集合$A=\{(x,y,z)\|1.0\leq x^2+y^2+z^2\leq 1.05\}$. 作用$U(1)\acts S$は作用$U(1)\acts A$に拡張される. 軌道は緯度上の緯線である. \href{http://en.wikipedia.org/wiki/Climatology}{気候学(climatology)}における仮定を単純化すれば, おそらく全ての大気の流れについて適切な意味において$U(1)$が作用するという仮定を与えるということであろう. この方法では, 全空間$A$の中での動きを考慮するかわりに, 我々はそれぞれの群作用の軌道を通じて同じようにふるまう動きだけを許している.
 
 \end{application}
 
 \begin{exercise}~
-\sexc Consider the $U(1)$ action on $\RR^3$ given in Example \ref{ex:U(1)}. Describe the set of orbits of this action.
-\next What are the orbits of the action of the permutation group $\Sigma_{\{1,2,3\}}$ on the set $\{1,2,3\}$? (See Exercise \ref{exc:permutation group}.)
+%\sexc Consider the $U(1)$ action on $\RR^3$ given in Example \ref{ex:U(1)}. Describe the set of orbits of this action.
+%\next What are the orbits of the action of the permutation group $\Sigma_{\{1,2,3\}}$ on the set $\{1,2,3\}$? (See Exercise \ref{exc:permutation group}.)
+%\endsexc
+\sexc Example \ref{ex:U(1)}で与えられた$\RR^3$への作用$U(1)$を考える. この作用の軌道の集合を記述せよ.
+\next 集合$\{1,2,3\}$への置換群$\Sigma_{\{1,2,3\}}$の作用の軌道は何だろうか? (Exercise \ref{exc:permutation group}を見よ.)
 \endsexc
 \end{exercise}
 
 \begin{exercise}
-Let $G$ be a group and $X$ a set on which $G$ acts by $\acts\taking G\times X\to X$. Is ``being in the same orbit" an equivalence relation on $X$? 
+%Let $G$ be a group and $X$ a set on which $G$ acts by $\acts\taking G\times X\to X$. Is ``being in the same orbit" an equivalence relation on $X$? 
+$G$を群, $X$を$\acts\taking G\times X\to X$によって$G$が作用するところの集合とする. ``同じ軌道である''ことは$X$での同値関係であるか?
 \end{exercise}
 
 \begin{definition}\label{def:group homomorphism}\index{group!homomorphism of}
 
-Let $G$ and $G'$ be groups. A {\em group homomorphism} $f\taking G\to G'$ is defined to be a monoid homomorphism $G\to G'$, where $G$ and $G'$ are being regarded as monoids in accordance with Definition \ref{def:group}.
+%Let $G$ and $G'$ be groups. A {\em group homomorphism} $f\taking G\to G'$ is defined to be a monoid homomorphism $G\to G'$, where $G$ and $G'$ are being regarded as monoids in accordance with Definition \ref{def:group}.
+
+$G$と$G'$を群とする. \emph{群準同型(group homomorphism)}はモノイド準同型$G\to G'$として定義される. ここで$G$ と$G'$はDefinition \ref{def:group}に一致するモノイドとみなされている.
 
 \end{definition}
 
