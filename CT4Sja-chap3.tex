@@ -829,3 +829,556 @@ $\NN$を一生成子上の自由モノイドとし, $\Sigma=\{a,b\}$, $S=\{\tn{S
 \end{exercise}
 
 
+
+%%%%%% Section %%%%%%
+
+%\section{Groups}\label{sec:groups}
+\section{群}\label{sec:groups}
+
+%Groups are monoids in which every element has an inverse. If we think of these structures in terms of how they act on sets, the difference between groups and monoids is that the action of every group element can be undone. One way of thinking about groups is in terms of symmetries. For example, the rotations and reflections of a square form a group. 
+
+群は, 全ての要素がその逆元を持っているモノイドである. どのようにしてそれらが集合に作用するかという観点でその構造を考えたならば, 群とモノイドの差異は全ての群の要素による作用はなかったことにできるという点にある. 群について考える一つの道筋は対称性の観点である. 例えば, 正方形の回転と鏡映は群を形成する.
+
+%Another way to think of the difference between monoids and groups is in terms of time. Monoids are likely useful in thinking about diffusion, in which time plays a role and things cannot be undone. Groups are more likely useful in thinking about mechanics, where actions are time-reversible. 
+
+モノイドと群の間の差異を考えるまた別の道筋は, 時間の観点である. モノイドは拡散を考える時におそらく便利であろう. そこでは時間が役割を果たし物事はなかったことにできない. 群は力学を考える時におそらく便利であろう. そこでは作用は時間に対して可逆である.
+
+%%%% Subsection %%%%
+
+%\subsection{Definition and examples}
+\subsection{定義と例}
+
+\begin{definition}\label{def:group}\index{group}\index{monoid!inverse of an element in}
+
+%Let $(M,e,\star)$ be a monoid. An element $m\in M$ is said to {\em have an inverse} if there exists an $m'\in M$ such that $mm'=e$ and $m'm=e$. A {\em group} is a monoid $(M,e,\star)$ in which every element $m\in M$ has an inverse.
+
+$(M,e,\star)$をモノイドとする. 要素$m\in M$は$mm'=e$かつ$m'm=e$であるところの要素$m'\in M$が存在するときに\emph{逆元を持つ(have an inverse)}と言う. \emph{群(group)}は全ての要素$m\in M$が逆元を持つモノイド$(M,e,\star)$である.
+
+\end{definition}
+
+\begin{proposition}
+
+%Suppose that $\mcM:=(M,e,\star)$ is a monoid and let $m\in M$ be an element. Then $m$ has at most one inverse.
+%\footnote{If $\mcM$ is a group then every element $m$ has exactly one inverse.}
+
+$\mcM:=(M,e,\star)$をモイノドと仮定し, $m\in M$をその要素とする. このとき$m$は逆元を最大でも一つしか持たない.
+\footnote{$\mcM$が群であるならば全ての要素$m$はちょうど一つだけ逆元を持つ.}
+
+\end{proposition}
+
+\begin{proof}
+
+%Suppose that both $m'$ and $m''$ are inverses of $m$; we want to show that $m'=m''$. This follows by the associative law for monoids:
+%$$m'=m'(mm'')=(m'm)m''=m''.$$
+
+$m'$と$m''$の両者が$m$の逆元だと仮定する. $m'=m''$であることを示したい. これはモノイドの結合則により従う.
+$$m'=m'(mm'')=(m'm)m''=m''.$$
+
+\end{proof}
+
+\begin{example}
+
+%The additive monoid $(\NN,0,+)$ is not a group because none of its elements are invertible, except for $0$. However, the monoid of integers $(\ZZ,0,+)$ is a group. The monoid of clock positions from Example \ref{ex:cyclic} is also a group. For example the inverse of $Q^5$ is $Q^7$ because $Q^5\star Q^7=e=Q^7\star Q^5$.
+
+加法モノイド$(\NN,0,+)$は群ではない. なぜなら$0$を除いてそのどの要素も可逆ではないからだ. しかしながら, 整数のモノイド$(\ZZ,0,+)$は群である. Example \ref{ex:cyclic}での時計の針の位置のモノイドもまた群である. 例えば$Q^5\star Q^7=e=Q^7\star Q^5$であるから, $Q^5$の逆元は$Q^7$である.
+
+\end{example}
+
+\begin{example}
+
+%Consider a square centered at the origin in $\RR^2$. It has rotational and mirror symmetries. There are eight of these, which we denote $$\{e,\rho,\rho^2,\rho^3,\phi,\phi\rho,\phi\rho^2,\phi\rho^3\},$$ where $\rho$ stands for $90^\circ$ counterclockwise rotation and $\phi$ stands for horizontal-flip (across the vertical axis). So relations include $\rho^4=e$, $\phi^2=e$, and $\rho^3\phi=\phi\rho$.
+
+$\RR^2$の原点に中心がある正方形を考える. これは回転と鏡映の対称性を持つ. 対称性は8個あり, これを$$\{e,\rho,\rho^2,\rho^3,\phi,\phi\rho,\phi\rho^2,\phi\rho^3\},$$と表記する. ここで$\rho$は$90^\circ$の反時計回りの回転を表しており, $\phi$は(縦軸を中心とした)左右反転を表している. よって関係には$\rho^4=e$や$\phi^2=e$, $\rho^3\phi=\phi\rho$が含まれている.
+
+\end{example}
+
+\begin{example}\label{ex:important groups}
+
+%The set of $3\times 3$ matrices can be given the structure of a monoid, where the identity element is the $3\times 3$ identity matrix, the multiplication is matrix multiplication. The subset of invertible matrices forms a group, called {\em the general linear group of dimension 3}\index{a group!$GL_3$} and denoted $GL_3$. Inside of $GL_3$ is the so-called {\em orthogonal group}, denoted $O_3$, of matrices $M$ such that $M^\m1=M^\top$. These matrices correspond to symmetries of the sphere centered at the origin.
+
+$3\times 3$の行列の集合にはモノイドの構造を与えることができる. ここで単位元は$3\times 3$の単位行列であり, 積は行列の積である. 可逆行列の部分集合は群をなし, \emph{3次元の一般線形群(the general linear group of dimension 3)}\index{a group!$GL_3$}と呼ばれ$GL_3$と表記される. $GL_3$の中には$O_3$で表記されるいわゆる\emph{直交群(orthogonal group)}, $M^\m1=M^\top$であるところの行列$M$が存在する. これらの行列は, 原点に中心がある球の対称性に対応している.
+
+%Another interesting group is the Euclidean group\index{a group!$E_3$} $E(3)$ which consists of all {\em isometries} of $\RR^3$, i.e. all functions $\RR^3\to\RR^3$ that preserve distances.  
+
+また別の興味深い群として, $\RR^3$上の全ての\emph{等距変換(isometry)}, i.e. 距離を保つ函数$\RR^3\to\RR^3$の全てからなるユークリッド群\index{a group!$E_3$} $E(3)$がある.
+
+\end{example}
+
+\begin{application}\label{app:groups for symmetry}\index{symmetry}
+
+%In \href{http://en.wikipedia.org/wiki/Crystallography}{\text crystallography} one is often concerned with the symmetries that arise in the arrangement $A$ of atoms in a molecule. To think about symmetries in terms of groups, we first define an {\em atom-arrangement} to be a finite subset $i\taking A\ss\RR^3$. A symmetry in this case is an isometry of $\RR^3$ (see Example \ref{ex:important groups}), say $f\taking\RR^3\to\RR^3$ such that there exists a dotted arrow making the diagram below commute:
+%$$
+%\xymatrix{A\ar@{-->}[r]\ar[d]_i&A\ar[d]^i\\\RR^3\ar[r]_f&\RR^3}
+%$$
+%That is, it's an isometry of $\RR^3$ such that each atom of $A$ is sent to a position currently occupied by an atom of $A$. It is not hard to show that the set of such isometries forms a group, called the \href{http://en.wikipedia.org/wiki/Space_group}{\em space group}\index{space group} of the crystal.
+
+\href{http://en.wikipedia.org/wiki/Crystallography}{結晶学(crystallography)}では, 分子の内部の\footnote{訳注: 正確には単位胞(unit cell). 一分子の対称性を議論する際に用いられる, 並進対称性を含まない群は\href{http://en.wikipedia.org/wiki/Point_group}{\emph{点群(point group)}}\index{point group}と呼ばれる.}原子の配置$A$によって生起する対称性をしばしば考察することになる. 群の観点で対称性について考えるために, 我々は最初に$i\taking A\ss\RR^3$の有限部分集合になるように\emph{原子配置(atom-arrangement)}を定義する. この場合の対称性は$\RR^3$の等距変換(Example \ref{ex:important groups}を見よ)であり, 言い換えれば下記の図式を可換にする破線矢印が存在するところの$f\taking\RR^3\to\RR^3$である. 
+$$
+\xymatrix{A\ar@{-->}[r]\ar[d]_i&A\ar[d]^i\\\RR^3\ar[r]_f&\RR^3}
+$$
+これはすなわち, $A$のそれぞれの原子を, $A$の(同じ種類の)原子が占めている場所へと送る等距変換である. これらの等距変換による集合が, 結晶の\href{http://en.wikipedia.org/wiki/Space_group}{\emph{空間群(space group)}}\index{space group}と呼ばれる群を形成することを示すのは難しくない.
+\end{application}
+
+\begin{exercise}\label{exc:permutation}\index{set!permutation of}
+%Let $S$ be a finite set. A {\em permutation of $S$}\index{permutation} is an isomorphism $f\taking S\To{\iso}S$. 
+$S$を有限集合とする. \emph{$A$の置換(permutation of $S$)}\index{permutation}は同型写像$f\taking S\To{\iso}S$である.
+\begin{center}
+\parbox{2.3in}{
+\includegraphics[height=2in]{SetPermutation}}
+\end{center}
+%\sexc Come up with an identity, and a  multiplication formula, such that the set of permutations of $S$ forms a monoid. 
+%\next Is it a group?
+%\endsexc
+\sexc $S$の置換の集合がモノイドをなすような単位元と積の式を見出せ.
+\next それは群か?
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+%In Exercise \ref{exc:classify cyclic} you classified the cyclic monoids. Which of them are groups? 
+Exercise \ref{exc:classify cyclic}では巡回モノイドを分類した. それらのうち群はどれか?
+\end{exercise}
+
+\begin{definition}[Group action]\label{def:group action}\index{group!action}\index{action!of a group}
+
+Let $(G,e,\star)$ be a group and $S$ a set. An {\em action} of $G$ on $S$ is a function $\acts\taking G\times S\to S$ such that for all $s\in S$ and $g,g'\in G$, we have
+\begin{itemize}
+\item $e\acts s=s$ and
+\item $g\acts(g'\acts s)=(g\star g')\acts s.$
+\end{itemize}
+In other words, considering $G$ as a monoid, it is an action in the sense of Definition \ref{def:monoid action}.
+
+\end{definition}
+
+\begin{example}\label{ex:U(1)}\index{a group!$U(1)$}
+
+When a group acts on a set, it has the character of \href{http://en.wikipedia.org/wiki/Symmetry}{\text symmetry}. For example, consider the group whose elements are angles $\theta$. This group may be denoted $U(1)$ and is often formalized as the unit circle in $\CC$ of complex numbers $z=a+bi$ such that $|z|=a^2+b^2=1$. The set of such points is given the structure of a group $(U(1),e,\star)$ by defining the identity element to be $e:=1+0i$ and the group law to be complex multiplication. But for those unfamiliar with complex numbers, this is simply angle addition where we understand that $360^\circ=0^\circ$. If $\theta_1=190^\circ$ and $\theta_2=278^\circ$, then $\theta_1\star\theta_2=468^\circ=108^\circ.$ In the language of complex numbers, $z=e^{i\theta}$.
+
+The group $U(1)$ acts on any set that we can picture as having rotational symmetry about a fixed axis, such as the earth around the north-south axis. We will define $S=\{(x,y,z)\in\RR^3\|x^2+y^2+z^2=1\}$, the unit sphere, and understand the rotational action of $U(1)$ on $S$.\index{orbit!rotating earth}
+
+We first show that $U(1)$ acts on $\RR^3$ by $\theta\acts(x,y,z)=(x\cos\theta+y\sin\theta, -x\sin\theta+y\cos\theta,z)$, or with matrix notation as 
+$$\theta\acts(x,y,z)
+:=(x,y,z)\left(\begin{array}{ccc}
+\cos(\theta)&-\sin(\theta)&0\\
+\sin(\theta)&\cos(\theta)&0\\
+0&0&1\end{array}\right)
+$$
+\href{http://en.wikipedia.org/wiki/List_of_trigonometric_identities#Matrix_form}{\text Trigonometric identities} ensure that this is indeed an action.
+
+In terms of action tables, we would need infinitely many columns to express this action. Here is a sample
+$$
+\begin{tabular}{| l || l | l | l |}
+\bhline
+\multicolumn{4}{|c|}{Action of $U(1)$ on $\RR^3$}\\\bhline
+{$\RR^3$}&{$\theta=45^\circ$}&{$\theta=90^\circ$}&{$\theta=100^\circ$}\\\bbhline
+(0,0,0)&(0,0,0)&(0,0,0)&(0,0,0)\\\hline
+(1,0,0)&(.71,.71,0)&(0,1,0)&(-.17,.98,0)\\\hline
+(0,1,-4.2)&(-.71,.71,-4.2)&(-1,0,-4.2)&(-.98,-.17,-4.2)\\\hline
+(3,4,2)&(4.95,.71,2)&(-4,3,2)&(3.42,-3.65,2)\\\hline
+$\vdots$&$\vdots$&$\vdots$&$\vdots$\\\bhline
+\end{tabular}
+$$
+
+Finally, we are looking to see that the action preserves length so that if $(x,y,z)\in S$ then $\theta\acts(x,y,z)\in S$; this way we will have confirmed that $U(1)$ indeed acts on $S$. The calculation begins by assuming $x^2+y^2+z^2=1$ and checks 
+$$
+(x\cos\theta+y\sin\theta)^2+(-x\sin\theta+y\cos\theta)^2+z^2=x^2+y^2+z^2=1.
+$$
+
+\end{example}
+
+\begin{exercise}\label{exc:permutation group}
+Let $X$ be a set and consider the group of permutations of $X$ (see Exercise \ref{exc:permutation}), which we will denote $\Sigma_X$\index{a group!$\Sigma_X$}. Find a canonical action of $\Sigma_X$ on $X$.
+\end{exercise}
+
+\begin{definition}
+
+Let $G$ be a group acting on a set $X$. For any point $x\in X$, the {\em orbit of $x$},\index{orbit}\index{action!orbit of} denoted $Gx$, is the set 
+$$Gx:=\{x'\in X\|\exists g\in G \tn{ such that }gx=x'\}.$$
+
+\end{definition}
+
+\begin{application}
+
+Let $S$ be the surface of the earth, understood as a sphere, and let $G=U(1)$ be the group of angles acting on $S$ as in Example \ref{ex:U(1)}. The orbit of any point $p=(x,y,z)\in S$ is the set of points on the same latitude line as $p$.
+
+One may also consider a small band around the earth, i.e. the set $A=\{(x,y,z)\|1.0\leq x^2+y^2+z^2\leq 1.05\}$. The action of $U(1)\acts S$ extends to an action $U(1)\acts A$. The orbits are latitude-lines-at-altitude. A simplifying assumption in \href{http://en.wikipedia.org/wiki/Climatology}{\text climatology} may be given by assuming that $U(1)$ acts on all currents in the atmosphere in an appropriate sense. That way, instead of considering movement within the whole space $A$, we only allow movement that behaves the same way throughout each orbit of the group action.
+
+\end{application}
+
+\begin{exercise}~
+\sexc Consider the $U(1)$ action on $\RR^3$ given in Example \ref{ex:U(1)}. Describe the set of orbits of this action.
+\next What are the orbits of the action of the permutation group $\Sigma_{\{1,2,3\}}$ on the set $\{1,2,3\}$? (See Exercise \ref{exc:permutation group}.)
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Let $G$ be a group and $X$ a set on which $G$ acts by $\acts\taking G\times X\to X$. Is ``being in the same orbit" an equivalence relation on $X$? 
+\end{exercise}
+
+\begin{definition}\label{def:group homomorphism}\index{group!homomorphism of}
+
+Let $G$ and $G'$ be groups. A {\em group homomorphism} $f\taking G\to G'$ is defined to be a monoid homomorphism $G\to G'$, where $G$ and $G'$ are being regarded as monoids in accordance with Definition \ref{def:group}.
+
+\end{definition}
+
+%%%%%% Section %%%%%%
+
+\section{Graphs}\label{sec:graphs}
+
+In this course, unless otherwise specified, whenever we speak of graphs we are not talking about curves in the plane, such as parabolas, or pictures of functions generally. We are speaking of systems of vertices and arrows.
+
+We will take our graphs to be {\em directed}, meaning that every arrow points {\em from} a vertex {\em to} a vertex; rather than merely connecting vertices, arrows will have direction. If $a$ and $b$ are vertices, there can be many arrows from $a$ to $b$, or none at all. There can be arrows from $a$ to itself. Here is the formal definition in terms of sets and functions.
+
+%%%% Subsection %%%%
+
+\subsection{Definition and examples}
+
+\begin{definition}\label{def:graph}\index{graph}
+
+A {\em graph} $G$ consists of a sequence $G:=(V,A,src,tgt)$ where 
+\begin{itemize}
+\item $V$ is a set, called {\em the set of vertices of $G$} (singular:{\em vertex}),\index{vertex}
+\item $A$ is a set, called {\em the set of arrows of $G$},\index{arrow}
+\item $src\taking A\to V$ is a function, called {\em the source function for $G$}, and
+\item $tgt\taking A\to V$ is a function, called {\em the target function for $G$}.
+\end{itemize}
+Given an arrow $a\in A$ we refer to $src(a)$ as the {\em source vertex} of $a$ and to $tgt(a)$ as the {\em target vertex} of $a$.
+
+\end{definition}
+
+To draw a graph, first draw a dot for every element of $V$. Then for every element $a\in A$, draw an arrow connecting dot $src(a)$ to dot $tgt(a)$.
+
+\begin{example}[Graph]\label{ex:graph}
+
+Here is a picture of a graph $G=(V,A,src,tgt)$:
+\begin{align}\label{dia:graph}
+G:=\parbox{2in}{\fbox{\xymatrix{\bullet^v\ar[r]^f&\bullet^w\ar@/_1pc/[r]_h\ar@/^1pc/[r]^g&\bullet^x\\\bullet^y\ar@(l,u)[]^i\ar@/^1pc/[r]^j&\bullet^z\ar@/^1pc/[l]^k}}}
+\end{align} 
+We have $V=\{v,w,x,y,z\}$ and $A=\{f,g,h,i,j,k\}$. The source and target functions $src,tgt\taking A\to V$ can be captured in the table to the left below:
+\begin{align*}
+\begin{array}{| l || l | l |}\bhline
+{\bf A}&{\bf src}&{\bf tgt}\\\bbhline
+f&v&w\\\hline
+g&w&x\\\hline
+h&w&x\\\hline
+i&y&y\\\hline
+j&y&z\\\hline
+k&z&y\\\bhline
+\end{array}
+\hspace{1in}
+\begin{array}{| l |}\bhline
+{\bf V}\\\bbhline
+v\\\hline
+w\\\hline
+x\\\hline
+y\\\hline
+z\\\bhline
+\end{array}
+\end{align*}
+In fact, all of the data of the graph $G$ is captured in the two tables above---together they tell us the sets $A$ and $V$ and the functions $src$ and $tgt$.
+\end{example}
+
+\begin{example}
+
+Every olog has an underlying graph. The additional information in an olog has to do with which pairs of paths are declared equivalent, as well as text that has certain English-readability rules.\index{olog!underlying graph}
+
+\end{example}
+
+\begin{exercise}
+\sexc Draw the graph corresponding to the following tables:
+\begin{align*}
+\begin{array}{| l || l | l |}\bhline
+{\bf A}&{\bf src}&{\bf tgt}\\\bbhline
+f&v&w\\\hline
+g&v&w\\\hline
+h&v&w\\\hline
+i&x&w\\\hline
+j&z&w\\\hline
+k&z&z\\\bhline
+\end{array}
+\hspace{1in}
+\begin{array}{| l |}\bhline
+{\bf V}\\\bbhline
+u\\\hline
+v\\\hline
+w\\\hline
+x\\\hline
+y\\\hline
+z\\\bhline
+\end{array}
+\end{align*}
+\next Write down two tables, as above, corresponding to the following graph:
+$$\fbox{\xymatrix{
+\LMO{a}\ar[r]^{1}&\LMO{b}\ar[r]^2\ar@/^1pc/[r]^3&\LMO{c}\ar@/^1pc/[l]^4\ar[r]^5&\LMO{d}\\
+\LMO{e}&\LMO{f}\ar[l]^6\ar[r]_7&\LMO{g}\ar[ur]_8}}
+$$
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}$. Draw them and choose an arbitrary function $f\taking A\to B$ and draw it. Let $A\sqcup B$ be the coproduct of $A$ and $B$ (Definition \ref{def:coproduct}) and let $A\To{i_1}A\sqcup B\From{i_2}B$ be the two inclusions. Consider the two functions $src,tgt\taking A\to A\sqcup B$, where $src=i_1$ and $tgt$ is the composition $A\To{f}B\To{i_2}A\sqcup B$. Draw the associated graph $(A\sqcup B,A,src,tgt)$.
+\end{exercise}
+
+\begin{exercise}~
+\sexc Let $V$ be a set. Suppose we just draw the elements of $V$ as vertices and have no arrows between them. Is this a graph?
+\next Given $V$, is there any other ``canonical" or somehow automatic non-random procedure for generating a graph with those vertices? 
+\endsexc
+\end{exercise}
+
+\begin{example}
+
+Recall from Construction \ref{const:bipartite} the notion of bipartite graph, which we defined to be a span (i.e. pair of functions, see Definition \ref{def:span}) $A\From{f}R\To{g}B$. Now that we have a formal definition of graph, we might hope that bipartite graphs fit in, and they do. Let $V=A\sqcup B$ and let $i\taking A\to V$ and $j\taking B\to V$ be the inclusions. Let $src=i\circ f\taking R\to V$ and let $tgt=j\circ g\taking R\to V$ be the composites.
+$$
+\xymatrix{&A\ar[dr]^i\\R\ar@/^1pc/[rr]_{src}\ar@/_1pc/[rr]^{tgt}\ar[ur]^f\ar[dr]_g&&V\\&B\ar[ur]_j}
+$$ 
+Then $(V,R,src,tgt)$ is a graph that would be drawn exactly as we specified the drawing of spans in Construction \ref{const:bipartite}.
+
+\end{example}
+
+\begin{example}\label{ex:[n] as graph}
+
+Let $n\in\NN$ be a natural number. The {\em chain graph of length $n$},\index{graph!chain} denoted $[n]$ is the graph depicted here:
+$$
+\xymatrix{
+\LMO{0}\ar[r]&\LMO{1}\ar[r]&\cdots\ar[r]&\LMO{n}
+}
+$$
+In general $[n]$ has $n$ arrows and $n+1$ vertices. In particular, when $n=0$ we have that $[0]$ is the graph consisting of a single vertex and no arrows. 
+
+\end{example}
+
+\begin{example}\label{ex:ZxG}
+
+Let $G=(V,A,src,tgt)$ be a graph; we want to spread it out over discrete time, so that each arrow does not occur within a given time-slice but instead over a quantum unit of time. 
+
+Let $N=(\NN,\NN,n\mapsto n,n\mapsto n+1)$ be the graph depicted 
+$$\xymatrix{\LMO{0}\ar[r]^0&\LMO{1}\ar[r]^1&\LMO{2}\ar[r]^2&\cdots}$$
+When we get to limits in a category, we will understand that products can be taken in the category of graphs (see  Example \ref{ex:product of graphs}), and $N\times G$ will make sense. For now, we construct it by hand.
+
+Let $T(G)=(V\times \NN,A\times\NN,src',tgt')$ be a new graph, where for $a\in A$ and $n\in\NN$ we have $src'(a,n):=(src(a),n)$ and $tgt'(a,n)=(tgt(a),n+1)$. This may be a bit much to swallow, so try to simply understand what is being done in the following example. 
+
+Let $G$ be the graph drawn below 
+$$\xymatrix{\LMO{a}\ar@(ul,ur)[]^f\ar[d]_g\\\LMO{b}}$$
+Then $T(G)$ will be the graph 
+$$\xymatrix@=30pt{
+\LMO{a0}\ar[r]^{f0}\ar[rd]_{g0}&\LMO{a1}\ar[r]^{f1}\ar[rd]_{g1}&\LMO{a2}\ar[r]^{f2}\ar[rd]_{g2}&\cdots\\
+\LMO{b0}&\LMO{b1}&\LMO{b2}&\cdots
+}
+$$
+As you can see, $f$-arrows still take $a$'s to $a$'s and $g$-arrows still take $a$'s to $b$'s, but they always march forward in time.
+
+\end{example}
+
+\begin{exercise}\label{exc:secret turing}
+Let $G$ be the graph depicted below:
+$$
+\xymatrix{\LMO{a}\ar@/^1pc/[rr]^w\ar@(lu,ld)[]_x&&\LMO{b}\ar@/^1pc/[ll]^y\ar@(ur,dr)[]^z}
+$$
+Draw (using ellipses ``$\cdots$" if necessary) the graph $T(G)$ defined in Example \ref{ex:ZxG}.
+\end{exercise}
+
+\begin{exercise}\label{exc:lattice}
+Consider the infinite graph $G=(V,A,src,tgt)$ depicted below,
+$$
+\xymatrix{
+\vdots&\vdots&\vdots\\
+(0,2)\ar[r]\ar[u]&(1,2)\ar[r]\ar[u]&(2,2)\ar[r]\ar[u]&\cdots\\
+(0,1)\ar[r]\ar[u]&(1,1)\ar[r]\ar[u]&(2,1)\ar[r]\ar[u]&\cdots\\
+(0,0)\ar[r]\ar[u]&(1,0)\ar[r]\ar[u]&(2,0)\ar[r]\ar[u]&\cdots}
+$$
+\sexc Write down the sets $A$ and $V$. 
+\next What are the source and target function $A\to V$?  
+\endsexc
+\end{exercise}
+
+\begin{exercise}\label{exc:(co)equalizer of graph}
+A graph is a pair of functions $A\tto V$. This sets up the notion of equalizer and coequalizer (see Definitions \ref{def:equalizer} and \ref{def:coequalizer}). 
+\sexc What feature of a graph is captured by the equalizer of its source and target functions? 
+\next What feature of a graph is captured by the coequalizer of its source and target functions?
+\endsexc
+\end{exercise}
+
+%%%% Subsection %%%%
+
+\subsection{Paths in a graph}\label{sec:paths in graph}\index{graph!paths}
+
+We all know what a path in a graph is, especially if we understand that a path must always follow the direction of arrows. The following definition makes this idea precise. In particular, one can have paths of any finite length $n\in\NN$, even length $0$ or $1$. Also, we want to be able to talk about the source vertex and target vertex of a path, as well as concatenation of paths.
+
+\begin{definition}\label{def:paths in graph}
+
+Let $G=(V,A,src,tgt)$ be a graph. A {\em path of length $n$}\index{path} in $G$, denoted $p\in\Path_G^{(n)}$\index{a symbol!$\Path$} is a head-to-tail sequence \begin{align}\label{dia:path}p=(v_0\To{a_1}v_1\To{a_2}v_2\To{a_3}\ldots\To{a_n}v_n)\end{align} of arrows in $G$, which we denote by $v_0 a_1 a_2 \ldots a_n$. In particular we have canonical isomorphisms $\Path_G^{(1)}\iso A$ and $\Path_G^{(0)}\iso V$; we refer to the path of length 0 on vertex $v$ as the {\em trivial path on $v$} and denote it simply by $v$. We denote by $\Path_G$ the set of paths in $G$, $$\Path_G:=\bigcup_{n\in\NN}\Path_G^{(n)}.$$ Every path $p\in\Path_G$ has a source vertex and a target vertex, and we may denote these by $\ol{src},\ol{tgt}\taking\Path_G\to V$. If $p$ is a path with $\ol{src}(p)=v$ and $\ol{tgt}(p)=w$, we may denote it by $p\taking v\to w$. Given two vertices $v,w\in V$, we write $\Path_G(v,w)$ to denote the set of all paths $p\taking v\to w$.
+
+There is a concatenation operation on paths.\index{concatenation!of paths} Given a path $p\taking v\to w$ and $q\taking w\to x$, we define the concatenation, denoted $p q\taking v\to x$ in the obvious way. If $p=va_1,a_2\ldots a_m$ and $q= wb_1b_2\ldots b_n$ then $pq=va_1\ldots a_mb_1\ldots b_n.$ In particular, if $p$ (resp. $r$) is the trivial path on vertex $v$ (resp. vertex $w$) then for any path $q\taking v\to w$, we have $pq=q$ (resp. $qr=q$). 
+
+\end{definition}
+
+\begin{example}
+
+In Diagram (\ref{dia:graph}), page \pageref{dia:graph}, there are no paths from $v$ to $y$, one path ($f$) from $v$ to $w$, two paths ($fg$ and $fh$) from $v$ to $x$, and infinitely many paths $$\{y i^{p_1}(jk)^{q_1}\cdots i^{p_n}(jk)^{q_n}\;|\;n,p_1,q_1,\ldots,p_n,q_n\in\NN\}$$ from $y$ to $y$. There are other paths as well, including the five trivial paths.
+
+\end{example}
+
+\begin{exercise}
+How many paths are there in the following graph? 
+$$\xymatrix{\LMO{1}\ar[r]^{f}&\LMO{2}\ar[r]^{g}&\LMO{3}}$$
+\end{exercise}
+
+\begin{exercise}
+Let $G$ be a graph and consider the set $\Path_G$ of paths in $G$. Suppose someone claimed that there is a monoid structure on the set $\Path_G$, where the multiplication formula is given by concatenation of paths. Are they correct? Why or why not? Hint: what should be the identity element?
+\end{exercise}
+
+
+%%%% Subsection %%%%
+
+\subsection{Graph homomorphisms}
+
+A graph $(V,A,src,tgt)$ involves two sets and two functions. For two graphs to be comparable, their two sets and their two functions should be appropriately comparable.\index{appropriate comparison}
+
+\begin{definition}\label{def:graph homomorphism}\index{graph!homomorphism}
+
+Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be graphs. A {\em graph homomorphism $f$ from $G$ to $G'$}, denoted $f\taking G\to G'$, consists of two functions $f_0\taking V\to V'$ and $f_1\taking A\to A'$ such that the two diagrams below commute:
+\begin{align}\label{dia:graph hom}
+\xymatrix{A\ar[r]^{f_1}\ar[d]_{src}&A'\ar[d]^{src'}\\V\ar[r]_{f_0}&V'
+}\hspace{1in}
+\xymatrix{A\ar[r]^{f_1}\ar[d]_{tgt}&A'\ar[d]^{tgt'}\\V\ar[r]_{f_0}&V'
+}
+\end{align}
+
+\end{definition}
+
+\begin{remark}
+
+The above conditions (\ref{dia:graph hom}) may look abstruse at first, but they encode a very important idea, roughly stated ``arrows are bound to their vertices". Under a map of graphs $G\to G'$ , one cannot flippantly send an arrow of $G$ any old arrow of $G'$: it must still connect the vertices it connected before. Below is an example of a mapping that does not respect this condition: $a$ connects $1$ and $2$ before, but not after:
+$$
+\fbox{\xymatrix{\LMO{\color{red}{1}}\ar[r]^{a}&\LMO{\color{blue}{2}}}}
+\xymatrix{~\ar[rr]^{1\mapsto 1',2\mapsto 2', a\mapsto a'}&\hsp&~}
+\fbox{\xymatrix{\LMO{\color{red}{1'}}&\LMO{\color{blue}{2'}}\ar[r]^{a'}&\LMO{\color{ForestGreen}{3'}}}}
+$$
+The commutativity of the diagrams in (\ref{dia:graph hom}) is exactly what is needed to ensure that arrows are handled in the expected way by a proposed graph homomorphism.
+ 
+\end{remark}
+
+\begin{example}[Graph homomorphism]\label{ex:graph hom}
+
+Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be the graphs drawn to the left and right (respectively) below:
+\begin{align}\label{dia:graph hom example}
+\parbox{1.5in}{\fbox{\xymatrix{\LMO{\color{red}{1}}\ar[r]^a\ar@/^1pc/[d]^d\ar@/_1pc/[d]_c&\LMO{\color{ForestGreen}{2}}\ar[r]^b&\LMO{\color{red}{3}}\\\LMO{4}&\LMO{\color{blue}{5}}\ar[r]^e&\LMO{\color{blue}{6}}}}}
+\parbox{1in}{\xymatrix{~\ar[rr]^{\parbox{.8in}{\vspace{-.2in}\footnotesize$1\mapsto 1', 2\mapsto 2',\\ 3\mapsto 1',4\mapsto 4',\\ 5\mapsto 5',6\mapsto5'$}}&\hsp&~}}
+\parbox{.8in}{\fbox{\xymatrix{\LMO{\color{red}{1'}}\ar@<.5ex>[r]^w\ar[d]_y&\LMO{\color{ForestGreen}{2'}}\ar@<.5ex>[l]^x\\\LMO{4'}&\LMO{\color{blue}{5'}}\ar@(r,u)[]_z}}}
+\end{align}
+The colors indicate our choice of function $f_0\taking V\to V'$. Given that choice, condition (\ref{dia:graph hom}) imposes in this case that there is a unique choice of graph homomorphism $f\taking G\to G'$. 
+
+\end{example}
+
+\begin{exercise}~
+\sexc Where are $a,b,c,d,e$ sent under $f_1\taking A\to A'$ in Diagram (\ref{dia:graph hom example})? 
+\next Choose a couple elements of $A$ and check that they behave as specified by Diagram (\ref{dia:graph hom}).
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Let $G$ be a graph, let $n\in\NN$ be a natural number, and let $[n]$ be the chain graph of length $n$, as in Example \ref{ex:[n] as graph}. Is a path of length $n$ in $G$ the same thing as a graph homomorphism $[n]\to G$, or are there subtle differences? More precisely, is there always an isomorphism between the set of graph homomorphisms $[n]\to G$ and the set $\Path_G^{(n)}$ of length-$n$ paths in $G$?
+\end{exercise}
+
+\begin{exercise}
+Given a morphism of graphs $f\taking G\to G'$, there an induced function $\Path(f)\taking\Path(G)\to\Path(G')$. 
+\sexc Is it the case that for every $n\in\NN$, the function $\Path(f)$ carries $\Path^{(n)}(G)$ to $\Path^{(n)}(G')$, or can path lengths change in this process?
+\next Suppose that $f_0$ and $f_1$ are injective (meaning no two distinct vertices in $G$ are sent to the same vertex (respectively for arrows) under $f$). Does this imply that $\Path(f)$ is also injective (meaning no two distinct paths are sent to the same path under $f$)?
+\next Suppose that $f_0$ and $f_1$ are surjective (meaning every vertex in $G'$ and every arrow in $G'$ is in the image of $f$). Does this imply that $\Path(f)$ is also surjective? Hint: at least one of the answers to these three questions is ``no".
+\endsexc
+\end{exercise}
+
+\begin{exercise}\label{exc:single condition for graph hom}
+
+Given a graph $(V,A,src,tgt)$, let $i\taking A\to V\times V$ be function guaranteed by the universal property for products, as applied to $src,tgt\taking A\to V$. One might hope to summarize Condition (\ref{dia:graph hom}) for graph homomorphisms by the commutativity of the single square 
+\begin{align}\label{dia:equiv graph hom}
+\xymatrix{A\ar[r]^{f_1}\ar[d]_{i}&A'\ar[d]^{i'}\\V\times V\ar[r]_{f_0\times f_0}&V'\times V'.}
+\end{align}
+Is the commutativity of the diagram in (\ref{dia:equiv graph hom}) indeed equivalent to the commutativity of the diagrams in (\ref{dia:graph hom})?
+\end{exercise}
+
+%% Subsubsection %%
+
+\subsubsection{Binary relations and graphs}
+
+\begin{definition}\label{def:binary relation}\index{relation!binary}
+
+Let $X$ be a set. A {\em binary relation on $X$} is a subset $R\ss X\times X$. 
+
+\end{definition}
+
+If $X=\NN$ is the set of integers, then the usual $\leq$ defines a relation on $X$: given $(m,n)\in\NN\times\NN$, we put $(m,n)\in R$ iff $m\leq n$. As a table it might be written as to the left
+\begin{align}\label{dia:3 relations}
+\begin{tabular}{|p{.7cm}|p{.7cm}|}
+\bhline
+\multicolumn{2}{|c|}{$m\leq n$}\\\bhline
+m&n\\\bbhline
+0&0\\\hline
+0&1\\\hline
+1&1\\\hline
+0&2\\\hline
+1&2\\\hline
+2&2\\\hline
+0&3\\\bhline
+$\vdots$&$\vdots$\\\hline
+\end{tabular}
+\hspace{1in}
+\begin{tabular}{|p{.7cm}|p{.7cm}|}
+\bhline
+\multicolumn{2}{|c|}{$n=5m$}\\\bhline
+m&n\\\bbhline
+0&0\\\hline
+1&5\\\hline
+2&10\\\hline
+3&15\\\hline
+4&20\\\hline
+5&25\\\hline
+6&30\\\bhline
+$\vdots$&$\vdots$\\\hline
+\end{tabular}
+\hspace{1in}
+\begin{tabular}{|p{.7cm}|p{.7cm}|}
+\bhline
+\multicolumn{2}{|c|}{$|n-m|\leq 1$}\\\bhline
+m&n\\\bbhline
+0&0\\\hline
+0&1\\\hline
+1&0\\\hline
+1&1\\\hline
+1&2\\\hline
+2&1\\\hline
+2&2\\\hline
+$\vdots$&$\vdots$\\\hline
+\end{tabular}
+\end{align}
+The middle table is the relation $\{(m,n)\in\NN\times\NN\|n=5m\}\ss\NN\times\NN$ and the right-hand table is the relation $\{(m,n)\in\NN\times\NN\||n-m|\leq 1\}\ss\NN\times\NN$. 
+
+\begin{exercise}
+A relation on $\RR$ is a subset of $\RR\times\RR$, and one can indicate such a subset of the plane by shading. Choose an error bound $\epsilon>0$ and draw the relation one might refer to as ``$\epsilon$-approximation". To say it another way, draw the relation ``$x$ is within $\epsilon$ of $y$".
+\end{exercise}
+
+\begin{exercise}[Binary relations to graphs]\label{exc:rel to graph}\index{relation!graph of}
+
+\sexc If $R\ss S\times S$ is a binary relation, find a natural way to make a graph out of it, having vertices $S$. 
+\next What is the set $A$ of arrows? 
+\next What are the source and target functions $src,tgt\taking A\to S$?
+\next Take the left-hand table in (\ref{dia:3 relations}) and consider its first $7$ rows (i.e. forget the $\vdots$). Draw the corresponding graph (do you see a tetrahedron?). 
+\next Do the same for the right-hand table.
+\endsexc
+\end{exercise}
+
+\begin{exercise}[Graphs to binary relations]\label{ex:graph to rel}~
+\sexc If $(V,A,src,tgt)$ is a graph, find a natural way to make a binary relation $R\ss V\times V$ out of it. 
+\next Take the left-hand graph $G$ from (\ref{dia:graph hom example}) and write out the corresponding binary relation in table form.
+\endsexc
+\end{exercise}
+
+\begin{exercise}[Going around the loops]
+\sexc Given a binary relation $R\ss S\times S$, you know from Exercise \ref{exc:rel to graph} how to construct a graph out of it, and from Exercise \ref{ex:graph to rel} how to make a new binary relation out of that. How does the resulting relation compare with the original?
+\next Given a graph $(V,A,src,tgt)$, you know from Exercise \ref{ex:graph to rel} how to make a new binary relation out of it, and from Exercise \ref{exc:rel to graph} how to construct a new graph out of that. How does the resulting graph compare with the original? 
+\endsexc
+\end{exercise}
+
+
+
+
