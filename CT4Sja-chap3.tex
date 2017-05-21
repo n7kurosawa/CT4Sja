@@ -1065,41 +1065,62 @@ $G$と$G'$を群とする. \emph{群準同型(group homomorphism)}はモノイ�
 
 %%%%%% Section %%%%%%
 
-\section{Graphs}\label{sec:graphs}
+%\section{Graphs}\label{sec:graphs}
+\section{グラフ}\label{sec:graphs}
 
-In this course, unless otherwise specified, whenever we speak of graphs we are not talking about curves in the plane, such as parabolas, or pictures of functions generally. We are speaking of systems of vertices and arrows.
+%In this course, unless otherwise specified, whenever we speak of graphs we are not talking about curves in the plane, such as parabolas, or pictures of functions generally. We are speaking of systems of vertices and arrows.
 
-We will take our graphs to be {\em directed}, meaning that every arrow points {\em from} a vertex {\em to} a vertex; rather than merely connecting vertices, arrows will have direction. If $a$ and $b$ are vertices, there can be many arrows from $a$ to $b$, or none at all. There can be arrows from $a$ to itself. Here is the formal definition in terms of sets and functions.
+この教程では特に指定しない限り, 我々がグラフ(graph)と言うときには常に, 放物線のような平面上の曲線や, あるいはもっと一般の函数の図などを, 語ってはいない. 我々は頂点と矢印(辺)からなる系について語っている.
+
+%We will take our graphs to be {\em directed}, meaning that every arrow points {\em from} a vertex {\em to} a vertex; rather than merely connecting vertices, arrows will have direction. If $a$ and $b$ are vertices, there can be many arrows from $a$ to $b$, or none at all. There can be arrows from $a$ to itself. Here is the formal definition in terms of sets and functions.
+
+我々は\emph{有向(directed)}グラフを扱うことにする. 有向という言葉が意味するところは, 全ての矢印はある頂点\emph{から}ある頂点\emph{に向って}いるということである. 矢印は単に頂点を結ぶのではなく, 向きを持つ. もし$a$と$b$が頂点ならば, $a$から$b$への多くの矢印が存在しうるし, あるいは全く存在しない. $a$からそれ自身への矢印も存在しうる. 以下は集合と函数の観点においての形式的な定義である.
 
 %%%% Subsection %%%%
 
-\subsection{Definition and examples}
+%\subsection{Definition and examples}
+\subsection{定義と例}
 
 \begin{definition}\label{def:graph}\index{graph}
 
-A {\em graph} $G$ consists of a sequence $G:=(V,A,src,tgt)$ where 
+%A {\em graph} $G$ consists of a sequence $G:=(V,A,src,tgt)$ where 
+%\begin{itemize}
+%\item $V$ is a set, called {\em the set of vertices of $G$} (singular:{\em vertex}),\index{vertex}
+%\item $A$ is a set, called {\em the set of arrows of $G$},\index{arrow}
+%\item $src\taking A\to V$ is a function, called {\em the source function for $G$}, and
+%\item $tgt\taking A\to V$ is a function, called {\em the target function for $G$}.
+%\end{itemize}
+%Given an arrow $a\in A$ we refer to $src(a)$ as the {\em source vertex} of $a$ and to $tgt(a)$ as the {\em target vertex} of $a$.
+
+\emph{グラフ(graph)}$G$は列$G:=(V,A,\src,\tgt)$からなる. ここで
 \begin{itemize}
-\item $V$ is a set, called {\em the set of vertices of $G$} (singular:{\em vertex}),\index{vertex}
-\item $A$ is a set, called {\em the set of arrows of $G$},\index{arrow}
-\item $src\taking A\to V$ is a function, called {\em the source function for $G$}, and
-\item $tgt\taking A\to V$ is a function, called {\em the target function for $G$}.
+\item $V$は集合であり, \emph{$G$の頂点集合(the set of vertices\footnote{単数形: \emph{vertex}.} of $G$)}\index{vertex}と呼ばれる.
+\item $A$は集合であり, \emph{$G$の矢の集合(the set of arrows of $G$)}\index{arrow}と呼ばれる.
+\item $\src\taking A\to V$は函数であり, \emph{$G$に対する始点函数(the source function for $G$)}と呼ばれる.
+\item $\tgt\taking A\to V$は函数であり, \emph{$G$に対する終点函数(the target function for $G$)}と呼ばれる.
 \end{itemize}
-Given an arrow $a\in A$ we refer to $src(a)$ as the {\em source vertex} of $a$ and to $tgt(a)$ as the {\em target vertex} of $a$.
+矢$a\in A$が与えられたとき, 我々は$\src(a)$を$a$の\emph{始点(source vertex)}, $\tgt(a)$を$a$の\emph{終点(target vertex)}として参照する.
 
 \end{definition}
 
-To draw a graph, first draw a dot for every element of $V$. Then for every element $a\in A$, draw an arrow connecting dot $src(a)$ to dot $tgt(a)$.
+%To draw a graph, first draw a dot for every element of $V$. Then for every element $a\in A$, draw an arrow connecting dot $\src(a)$ to dot $\tgt(a)$.
 
-\begin{example}[Graph]\label{ex:graph}
+グラフを描く際には, 最小に$V$の要素それぞれに対して点を描き, 次にそれぞれの要素$a\in A$に対して, 点$src(a)$と$tgt(a)$を結ぶ矢を描く.
 
-Here is a picture of a graph $G=(V,A,src,tgt)$:
+%\begin{example}[Graph]\label{ex:graph}
+\begin{example}[グラフ]\label{ex:graph}
+
+%Here is a picture of a graph $G=(V,A,src,tgt)$:
+これはグラフ$G=(V,A,\src,\tgt)$の図である.
 \begin{align}\label{dia:graph}
 G:=\parbox{2in}{\fbox{\xymatrix{\bullet^v\ar[r]^f&\bullet^w\ar@/_1pc/[r]_h\ar@/^1pc/[r]^g&\bullet^x\\\bullet^y\ar@(l,u)[]^i\ar@/^1pc/[r]^j&\bullet^z\ar@/^1pc/[l]^k}}}
 \end{align} 
-We have $V=\{v,w,x,y,z\}$ and $A=\{f,g,h,i,j,k\}$. The source and target functions $src,tgt\taking A\to V$ can be captured in the table to the left below:
+%We have $V=\{v,w,x,y,z\}$ and $A=\{f,g,h,i,j,k\}$. The source and target functions $src,tgt\taking A\to V$ can be captured in the table to the left below:
+$V=\{v,w,x,y,z\}$であり$A=\{f,g,h,i,j,k\}$である. 始点函数および終点函数$\src,\tgt\taking A\to V$は左下の表によって把握することができる.
 \begin{align*}
 \begin{array}{| l || l | l |}\bhline
-{\bf A}&{\bf src}&{\bf tgt}\\\bbhline
+%{\bf A}&{\bf src}&{\bf tgt}\\\bbhline
+{A}&{\src}&{\tgt}\\\bbhline
 f&v&w\\\hline
 g&w&x\\\hline
 h&w&x\\\hline
@@ -1109,7 +1130,8 @@ k&z&y\\\bhline
 \end{array}
 \hspace{1in}
 \begin{array}{| l |}\bhline
-{\bf V}\\\bbhline
+%{\bf V}\\\bbhline
+{V}\\\bbhline
 v\\\hline
 w\\\hline
 x\\\hline
@@ -1117,12 +1139,15 @@ y\\\hline
 z\\\bhline
 \end{array}
 \end{align*}
-In fact, all of the data of the graph $G$ is captured in the two tables above---together they tell us the sets $A$ and $V$ and the functions $src$ and $tgt$.
+%In fact, all of the data of the graph $G$ is captured in the two tables above---together they tell us the sets $A$ and $V$ and the functions $src$ and $tgt$.
+実際, グラフ$G$の全てのデータは上記の二つの表によって把握可能である---二つを併せることによって集合$A$, 集合$V$, そして函数$\src$および$\tgt$を知ることができる.
 \end{example}
 
 \begin{example}
 
-Every olog has an underlying graph. The additional information in an olog has to do with which pairs of paths are declared equivalent, as well as text that has certain English-readability rules.\index{olog!underlying graph}
+%Every olog has an underlying graph. The additional information in an olog has to do with which pairs of paths are declared equivalent, as well as text that has certain English-readability rules.\index{olog!underlying graph}
+
+全てのologには基底となるグラフがある. ologの追加情報は, 英語で読むための法則を持つことだけでなく, どの経路の対が透過であると宣言をとり扱う.\index{olog!underlying graph}
 
 \end{example}
 
