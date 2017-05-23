@@ -1105,7 +1105,7 @@ $G$と$G'$を群とする. \emph{群準同型(group homomorphism)}はモノイ�
 
 %To draw a graph, first draw a dot for every element of $V$. Then for every element $a\in A$, draw an arrow connecting dot $\src(a)$ to dot $\tgt(a)$.
 
-グラフを描く際には, 最小に$V$の要素それぞれに対して点を描き, 次にそれぞれの要素$a\in A$に対して, 点$src(a)$と$tgt(a)$を結ぶ矢を描く.
+グラフを描く際には, 最小に$V$の要素それぞれに対して点を描き, 次にそれぞれの要素$a\in A$に対して, 点$\src(a)$と$\tgt(a)$を結ぶ矢を描く.
 
 %\begin{example}[Graph]\label{ex:graph}
 \begin{example}[グラフ]\label{ex:graph}
@@ -1152,10 +1152,12 @@ z\\\bhline
 \end{example}
 
 \begin{exercise}
-\sexc Draw the graph corresponding to the following tables:
+%\sexc Draw the graph corresponding to the following tables:
+\sexc 以下の表に対応するグラフを描け.
 \begin{align*}
 \begin{array}{| l || l | l |}\bhline
-{\bf A}&{\bf src}&{\bf tgt}\\\bbhline
+%{\bf A}&{\bf src}&{\bf tgt}\\\bbhline
+{A}&{\src}&{\tgt}\\\bbhline
 f&v&w\\\hline
 g&v&w\\\hline
 h&v&w\\\hline
@@ -1165,7 +1167,8 @@ k&z&z\\\bhline
 \end{array}
 \hspace{1in}
 \begin{array}{| l |}\bhline
-{\bf V}\\\bbhline
+%{\bf V}\\\bbhline
+{V}\\\bbhline
 u\\\hline
 v\\\hline
 w\\\hline
@@ -1174,7 +1177,8 @@ y\\\hline
 z\\\bhline
 \end{array}
 \end{align*}
-\next Write down two tables, as above, corresponding to the following graph:
+%\next Write down two tables, as above, corresponding to the following graph:
+\next 上記のように, 下記のグラフに対応する二つの表を書け.
 $$\fbox{\xymatrix{
 \LMO{a}\ar[r]^{1}&\LMO{b}\ar[r]^2\ar@/^1pc/[r]^3&\LMO{c}\ar@/^1pc/[l]^4\ar[r]^5&\LMO{d}\\
 \LMO{e}&\LMO{f}\ar[l]^6\ar[r]_7&\LMO{g}\ar[ur]_8}}
@@ -1183,69 +1187,111 @@ $$
 \end{exercise}
 
 \begin{exercise}
-Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}$. Draw them and choose an arbitrary function $f\taking A\to B$ and draw it. Let $A\sqcup B$ be the coproduct of $A$ and $B$ (Definition \ref{def:coproduct}) and let $A\To{i_1}A\sqcup B\From{i_2}B$ be the two inclusions. Consider the two functions $src,tgt\taking A\to A\sqcup B$, where $src=i_1$ and $tgt$ is the composition $A\To{f}B\To{i_2}A\sqcup B$. Draw the associated graph $(A\sqcup B,A,src,tgt)$.
+%Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}$. Draw them and choose an arbitrary function $f\taking A\to B$ and draw it. Let $A\sqcup B$ be the coproduct of $A$ and $B$ (Definition \ref{def:coproduct}) and let $A\To{i_1}A\sqcup B\From{i_2}B$ be the two inclusions. Consider the two functions $src,tgt\taking A\to A\sqcup B$, where $src=i_1$ and $tgt$ is the composition $A\To{f}B\To{i_2}A\sqcup B$. Draw the associated graph $(A\sqcup B,A,src,tgt)$.
+$A=\{1,2,3,4,5\}$で $B=\{a,b,c\}$とする. $A$と$B$を描いて任意の函数$f\taking A\to B$を選べ. $A\sqcup B$を$A$と$B$の余積(Definition \ref{def:coproduct})とし, $A\To{i_1}A\sqcup B\From{i_2}B$を二つの包含函数とする. $\src,\tgt\taking A\to A\sqcup B$を考える. ここで$\src=i_1$とし, $\tgt$を合成$A\To{f}B\To{i_2}A\sqcup B$とした. 関連するグラフ$(A\sqcup B,A,\src,\tgt)$を描け.
 \end{exercise}
 
 \begin{exercise}~
-\sexc Let $V$ be a set. Suppose we just draw the elements of $V$ as vertices and have no arrows between them. Is this a graph?
-\next Given $V$, is there any other ``canonical" or somehow automatic non-random procedure for generating a graph with those vertices? 
+%\sexc Let $V$ be a set. Suppose we just draw the elements of $V$ as vertices and have no arrows between them. Is this a graph?
+%\next Given $V$, is there any other ``canonical" or somehow automatic non-random procedure for generating a graph with those vertices? 
+%\endsexc
+\sexc $V$を集合とする. $V$の要素を頂点として描き, それらの間に一本も矢がないと仮定する. これはグラフか?
+\next $V$が与えられたとき, これらの頂点からグラフを生成する, 他の``canonical''あるいはなんらかの自動的で乱択的ではない手続きがあるだろうか?
 \endsexc
 \end{exercise}
 
 \begin{example}
 
-Recall from Construction \ref{const:bipartite} the notion of bipartite graph, which we defined to be a span (i.e. pair of functions, see Definition \ref{def:span}) $A\From{f}R\To{g}B$. Now that we have a formal definition of graph, we might hope that bipartite graphs fit in, and they do. Let $V=A\sqcup B$ and let $i\taking A\to V$ and $j\taking B\to V$ be the inclusions. Let $src=i\circ f\taking R\to V$ and let $tgt=j\circ g\taking R\to V$ be the composites.
+%Recall from Construction \ref{const:bipartite} the notion of bipartite graph, which we defined to be a span (i.e. pair of functions, see Definition \ref{def:span}) $A\From{f}R\To{g}B$. Now that we have a formal definition of graph, we might hope that bipartite graphs fit in, and they do. Let $V=A\sqcup B$ and let $i\taking A\to V$ and $j\taking B\to V$ be the inclusions. Let $src=i\circ f\taking R\to V$ and let $tgt=j\circ g\taking R\to V$ be the composites.
+%$$
+%\xymatrix{&A\ar[dr]^i\\R\ar@/^1pc/[rr]_{src}\ar@/_1pc/[rr]^{tgt}\ar[ur]^f\ar[dr]_g&&V\\&B\ar[ur]_j}
+%$$ 
+%Then $(V,R,src,tgt)$ is a graph that would be drawn exactly as we specified the drawing of spans in Construction \ref{const:bipartite}.
+
+Construction \ref{const:bipartite}での二部グラフの概念を思いだそう. 我々はこれをスパン(i.e. 函数の対. Definition \ref{def:span}を見よ)$A\From{f}R\To{g}B$と定義した. 今や我々はグラフの形式的な定義を手に入れた. 次は二部グラフをその概念にまたグラフをスパンの概念にあてはめたい. $V=A\sqcup B$とし, $i\taking A\to V$ and $j\taking B\to V$を包含函数とする. $\src=i\circ f\taking R\to V$とし, $\tgt=j\circ g\taking R\to V$を合成とする.
 $$
-\xymatrix{&A\ar[dr]^i\\R\ar@/^1pc/[rr]_{src}\ar@/_1pc/[rr]^{tgt}\ar[ur]^f\ar[dr]_g&&V\\&B\ar[ur]_j}
+\xymatrix{&A\ar[dr]^i\\R\ar@/^1pc/[rr]_{\src}\ar@/_1pc/[rr]^{\tgt}\ar[ur]^f\ar[dr]_g&&V\\&B\ar[ur]_j}
 $$ 
-Then $(V,R,src,tgt)$ is a graph that would be drawn exactly as we specified the drawing of spans in Construction \ref{const:bipartite}.
+このとき, $(V,R,\src,\tgt)$は, Construction \ref{const:bipartite}のスパンの描き方として詳細を述べたのとかっちり同じ描き方をすることになるグラフである.
 
 \end{example}
 
 \begin{example}\label{ex:[n] as graph}
 
-Let $n\in\NN$ be a natural number. The {\em chain graph of length $n$},\index{graph!chain} denoted $[n]$ is the graph depicted here:
+%Let $n\in\NN$ be a natural number. The {\em chain graph of length $n$},\index{graph!chain} denoted $[n]$ is the graph depicted here:
+%$$
+%\xymatrix{
+%\LMO{0}\ar[r]&\LMO{1}\ar[r]&\cdots\ar[r]&\LMO{n}
+%}
+%$$
+%In general $[n]$ has $n$ arrows and $n+1$ vertices. In particular, when $n=0$ we have that $[0]$ is the graph consisting of a single vertex and no arrows. 
+
+$n\in\NN$を自然数とする. $[n]$で示される\emph{長さ$n$の連鎖グラフ(chain graph of length $n$)}\index{graph!chain}は以下に描画されるグラフである.
 $$
 \xymatrix{
 \LMO{0}\ar[r]&\LMO{1}\ar[r]&\cdots\ar[r]&\LMO{n}
 }
 $$
-In general $[n]$ has $n$ arrows and $n+1$ vertices. In particular, when $n=0$ we have that $[0]$ is the graph consisting of a single vertex and no arrows. 
+一般に$[n]$は$n$本の矢と$n+1$個の頂点を持つ. 特に, $n=0$のとき$[0]$は単一の頂点を持ち矢を持たないグラフである.
 
 \end{example}
 
 \begin{example}\label{ex:ZxG}
 
-Let $G=(V,A,src,tgt)$ be a graph; we want to spread it out over discrete time, so that each arrow does not occur within a given time-slice but instead over a quantum unit of time. 
+%Let $G=(V,A,src,tgt)$ be a graph; we want to spread it out over discrete time, so that each arrow does not occur within a given time-slice but instead over a quantum unit of time. 
 
-Let $N=(\NN,\NN,n\mapsto n,n\mapsto n+1)$ be the graph depicted 
+$G=(V,A,\src,\tgt)$をグラフとする. 我々は離散的な時間の上をこれによって覆い尽したい. これによってそれぞれの矢は与えられた時間の断片の中に局在するかわりに, 量子的な時間単位の上に遍在することになる.
+
+%Let $N=(\NN,\NN,n\mapsto n,n\mapsto n+1)$ be the graph depicted 
+%$$\xymatrix{\LMO{0}\ar[r]^0&\LMO{1}\ar[r]^1&\LMO{2}\ar[r]^2&\cdots}$$
+%When we get to limits in a category, we will understand that products can be taken in the category of graphs (see  Example \ref{ex:product of graphs}), and $N\times G$ will make sense. For now, we construct it by hand.
+
+$N=(\NN,\NN,n\mapsto n,n\mapsto n+1)$を以下で描画されるグラフとする.
 $$\xymatrix{\LMO{0}\ar[r]^0&\LMO{1}\ar[r]^1&\LMO{2}\ar[r]^2&\cdots}$$
-When we get to limits in a category, we will understand that products can be taken in the category of graphs (see  Example \ref{ex:product of graphs}), and $N\times G$ will make sense. For now, we construct it by hand.
+圏論での極限の概念を知れば, 積はグラフの圏(Example \ref{ex:product of graphs}を見よ)として理解でき, $N\times G$が意味を持つことが分かる. 今のところは, 我々は手作業でこれを構成することにする.
 
-Let $T(G)=(V\times \NN,A\times\NN,src',tgt')$ be a new graph, where for $a\in A$ and $n\in\NN$ we have $src'(a,n):=(src(a),n)$ and $tgt'(a,n)=(tgt(a),n+1)$. This may be a bit much to swallow, so try to simply understand what is being done in the following example. 
+%Let $T(G)=(V\times \NN,A\times\NN,src',tgt')$ be a new graph, where for $a\in A$ and $n\in\NN$ we have $src'(a,n):=(src(a),n)$ and $tgt'(a,n)=(tgt(a),n+1)$. This may be a bit much to swallow, so try to simply understand what is being done in the following example. 
 
-Let $G$ be the graph drawn below 
+$T(G)=(V\times \NN,A\times\NN,\src',\tgt')$を新しいグラフとする. ここで$a\in A$と$n\in\NN$に対して$\src'(a,n):=(src(a),n)$および$\tgt'(a,n)=(tgt(a),n+1)$とする. これは少々飲み込みにくいかもしれない. よって, 以下の例で何がなされたかを簡単に理解することを試みよう.
+
+%Let $G$ be the graph drawn below 
+%$$\xymatrix{\LMO{a}\ar@(ul,ur)[]^f\ar[d]_g\\\LMO{b}}$$
+%Then $T(G)$ will be the graph 
+%$$\xymatrix@=30pt{
+%\LMO{a0}\ar[r]^{f0}\ar[rd]_{g0}&\LMO{a1}\ar[r]^{f1}\ar[rd]_{g1}&\LMO{a2}\ar[r]^{f2}\ar[rd]_{g2}&\cdots\\
+%\LMO{b0}&\LMO{b1}&\LMO{b2}&\cdots
+%}
+%$$
+%As you can see, $f$-arrows still take $a$'s to $a$'s and $g$-arrows still take $a$'s to $b$'s, but they always march forward in time.
+
+$G$を以下に描かれたグラフとする.
 $$\xymatrix{\LMO{a}\ar@(ul,ur)[]^f\ar[d]_g\\\LMO{b}}$$
-Then $T(G)$ will be the graph 
+このとき$T(G)$はグラフ
 $$\xymatrix@=30pt{
 \LMO{a0}\ar[r]^{f0}\ar[rd]_{g0}&\LMO{a1}\ar[r]^{f1}\ar[rd]_{g1}&\LMO{a2}\ar[r]^{f2}\ar[rd]_{g2}&\cdots\\
 \LMO{b0}&\LMO{b1}&\LMO{b2}&\cdots
 }
 $$
-As you can see, $f$-arrows still take $a$'s to $a$'s and $g$-arrows still take $a$'s to $b$'s, but they always march forward in time.
+になる. 見てとれるように, $f$の矢は依然として$a$から$a$であり$g$の矢は依然として$a$から$b$である. しかしどちらも時間に中で常に前方向へ進行している.
 
 \end{example}
 
 \begin{exercise}\label{exc:secret turing}
-Let $G$ be the graph depicted below:
+%Let $G$ be the graph depicted below:
+%$$
+%\xymatrix{\LMO{a}\ar@/^1pc/[rr]^w\ar@(lu,ld)[]_x&&\LMO{b}\ar@/^1pc/[ll]^y\ar@(ur,dr)[]^z}
+%$$
+%Draw (using ellipses ``$\cdots$" if necessary) the graph $T(G)$ defined in Example \ref{ex:ZxG}.
+$G$を以下で描画されるグラフとする.
 $$
 \xymatrix{\LMO{a}\ar@/^1pc/[rr]^w\ar@(lu,ld)[]_x&&\LMO{b}\ar@/^1pc/[ll]^y\ar@(ur,dr)[]^z}
 $$
-Draw (using ellipses ``$\cdots$" if necessary) the graph $T(G)$ defined in Example \ref{ex:ZxG}.
+Example \ref{ex:ZxG}で定義されるグラフ$T(G)$を(必要があれば省略記号``$\cdots$''を用いて)描け.
 \end{exercise}
 
 \begin{exercise}\label{exc:lattice}
-Consider the infinite graph $G=(V,A,src,tgt)$ depicted below,
+%Consider the infinite graph $G=(V,A,src,tgt)$ depicted below,
+以下で描画される無限グラフ$G=(V,A,\src,\tgt)$を考える.
 $$
 \xymatrix{
 \vdots&\vdots&\vdots\\
@@ -1253,15 +1299,22 @@ $$
 (0,1)\ar[r]\ar[u]&(1,1)\ar[r]\ar[u]&(2,1)\ar[r]\ar[u]&\cdots\\
 (0,0)\ar[r]\ar[u]&(1,0)\ar[r]\ar[u]&(2,0)\ar[r]\ar[u]&\cdots}
 $$
-\sexc Write down the sets $A$ and $V$. 
-\next What are the source and target function $A\to V$?  
+%\sexc Write down the sets $A$ and $V$. 
+%\next What are the source and target function $A\to V$?  
+%\endsexc
+\sexc 集合$A$と$V$を書き下せ.
+\next 始点函数および終点函数$A\to V$は何か?
 \endsexc
 \end{exercise}
 
 \begin{exercise}\label{exc:(co)equalizer of graph}
-A graph is a pair of functions $A\tto V$. This sets up the notion of equalizer and coequalizer (see Definitions \ref{def:equalizer} and \ref{def:coequalizer}). 
-\sexc What feature of a graph is captured by the equalizer of its source and target functions? 
-\next What feature of a graph is captured by the coequalizer of its source and target functions?
+%A graph is a pair of functions $A\tto V$. This sets up the notion of equalizer and coequalizer (see Definitions \ref{def:equalizer} and \ref{def:coequalizer}). 
+%\sexc What feature of a graph is captured by the equalizer of its source and target functions? 
+%\next What feature of a graph is captured by the coequalizer of its source and target functions?
+%\endsexc
+グラフは函数の対$A\tto V$である. ここから等価子と余等価子を作ることができる(Definitions \ref{def:equalizer}と\ref{def:coequalizer}を見よ).
+\sexc 始点函数と終点函数の等価子によって, グラフのどんな性質がとらえられるだろうか?
+\next 始点函数と終点函数の余等価子によって, グラフのどんな性質がとらえられるだろうか?
 \endsexc
 \end{exercise}
 
