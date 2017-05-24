@@ -1103,7 +1103,7 @@ $G$と$G'$を群とする. \emph{群準同型(group homomorphism)}はモノイ�
 
 \end{definition}
 
-%To draw a graph, first draw a dot for every element of $V$. Then for every element $a\in A$, draw an arrow connecting dot $\src(a)$ to dot $\tgt(a)$.
+%To draw a graph, first draw a dot for every element of $V$. Then for every element $a\in A$, draw an arrow connecting dot $src(a)$ to dot $tgt(a)$.
 
 グラフを描く際には, 最小に$V$の要素それぞれに対して点を描き, 次にそれぞれの要素$a\in A$に対して, 点$\src(a)$と$\tgt(a)$を結ぶ矢を描く.
 
@@ -1361,43 +1361,66 @@ $G$をグラフとして, $G$の経路の集合$\Path_G$について考える. �
 
 %%%% Subsection %%%%
 
-\subsection{Graph homomorphisms}
+%\subsection{Graph homomorphisms}
+\subsection{グラフ準同型}
 
-A graph $(V,A,src,tgt)$ involves two sets and two functions. For two graphs to be comparable, their two sets and their two functions should be appropriately comparable.\index{appropriate comparison}
+%A graph $(V,A,src,tgt)$ involves two sets and two functions. For two graphs to be comparable, their two sets and their two functions should be appropriately comparable.\index{appropriate comparison}
+
+グラフ$(V,A,\src,\tgt)$には二つの集合と二つの函数が関わっている. 二つのグラフが比較可能であるためには, それらの二つの集合と二つの函数が適切に比較できなければならない.\index{appropriate comparison}
 
 \begin{definition}\label{def:graph homomorphism}\index{graph!homomorphism}
 
-Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be graphs. A {\em graph homomorphism $f$ from $G$ to $G'$}, denoted $f\taking G\to G'$, consists of two functions $f_0\taking V\to V'$ and $f_1\taking A\to A'$ such that the two diagrams below commute:
+%Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be graphs. A {\em graph homomorphism $f$ from $G$ to $G'$}, denoted $f\taking G\to G'$, consists of two functions $f_0\taking V\to V'$ and $f_1\taking A\to A'$ such that the two diagrams below commute:
+%\begin{align}\label{dia:graph hom}
+%\xymatrix{A\ar[r]^{f_1}\ar[d]_{src}&A'\ar[d]^{src'}\\V\ar[r]_{f_0}&V'
+%}\hspace{1in}
+%\xymatrix{A\ar[r]^{f_1}\ar[d]_{tgt}&A'\ar[d]^{tgt'}\\V\ar[r]_{f_0}&V'
+%}
+%\end{align}
+
+$G=(V,A,\src,\tgt)$と$G'=(V',A',\src',\tgt')$をグラフとする. \emph{$G$から$G'$へのグラフ準同型$f$(graph homomorphism $f$ from $G$ to $G'$)}は, $f\taking G\to G'$で示され, 以下の図式を可換にするところの二つの函数$f_0\taking V\to V'$および$f_1\taking A\to A'$からなる.
 \begin{align}\label{dia:graph hom}
-\xymatrix{A\ar[r]^{f_1}\ar[d]_{src}&A'\ar[d]^{src'}\\V\ar[r]_{f_0}&V'
+\xymatrix{A\ar[r]^{f_1}\ar[d]_{\src}&A'\ar[d]^{\src'}\\V\ar[r]_{f_0}&V'
 }\hspace{1in}
-\xymatrix{A\ar[r]^{f_1}\ar[d]_{tgt}&A'\ar[d]^{tgt'}\\V\ar[r]_{f_0}&V'
+\xymatrix{A\ar[r]^{f_1}\ar[d]_{\tgt}&A'\ar[d]^{\tgt'}\\V\ar[r]_{f_0}&V'
 }
 \end{align}
+
 
 \end{definition}
 
 \begin{remark}
 
-The above conditions (\ref{dia:graph hom}) may look abstruse at first, but they encode a very important idea, roughly stated ``arrows are bound to their vertices". Under a map of graphs $G\to G'$ , one cannot flippantly send an arrow of $G$ any old arrow of $G'$: it must still connect the vertices it connected before. Below is an example of a mapping that does not respect this condition: $a$ connects $1$ and $2$ before, but not after:
+%The above conditions (\ref{dia:graph hom}) may look abstruse at first, but they encode a very important idea, roughly stated ``arrows are bound to their vertices". Under a map of graphs $G\to G'$ , one cannot flippantly send an arrow of $G$ any old arrow of $G'$: it must still connect the vertices it connected before. Below is an example of a mapping that does not respect this condition: $a$ connects $1$ and $2$ before, but not after:
+%$$
+%\fbox{\xymatrix{\LMO{\color{red}{1}}\ar[r]^{a}&\LMO{\color{blue}{2}}}}
+%\xymatrix{~\ar[rr]^{1\mapsto 1',2\mapsto 2', a\mapsto a'}&\hsp&~}
+%\fbox{\xymatrix{\LMO{\color{red}{1'}}&\LMO{\color{blue}{2'}}\ar[r]^{a'}&\LMO{\color{ForestGreen}{3'}}}}
+%$$
+%The commutativity of the diagrams in (\ref{dia:graph hom}) is exactly what is needed to ensure that arrows are handled in the expected way by a proposed graph homomorphism.
+
+上記の条件\eqref{dia:graph hom}は最初は難解すぎるように見えるかもしれない. しかしこれは非常に重要なアイデア, 大雑把に述べると``矢はその頂点に束縛されている''というアイデアを言いかえている. グラフ間の写像$G\to G'$の下では, 軽々しく$G$の矢を$G'$の任意の古い矢に送ることはできない. 矢はそれまで結びついていた頂点に依然として結びついていなければならない. 下記はこの条件を尊重していない写像の例である. $a$はもともと$1$と$2$と繋がっていたが, 移った先ではそうではない.
 $$
 \fbox{\xymatrix{\LMO{\color{red}{1}}\ar[r]^{a}&\LMO{\color{blue}{2}}}}
 \xymatrix{~\ar[rr]^{1\mapsto 1',2\mapsto 2', a\mapsto a'}&\hsp&~}
 \fbox{\xymatrix{\LMO{\color{red}{1'}}&\LMO{\color{blue}{2'}}\ar[r]^{a'}&\LMO{\color{ForestGreen}{3'}}}}
 $$
-The commutativity of the diagrams in (\ref{dia:graph hom}) is exactly what is needed to ensure that arrows are handled in the expected way by a proposed graph homomorphism.
+この\eqref{dia:graph hom}での図式の可換性は, 矢が与えられたグラフ準同型によって期待されるように扱えることを保証するために丁度必要とされるところのものである.
  
 \end{remark}
 
-\begin{example}[Graph homomorphism]\label{ex:graph hom}
+%\begin{example}[Graph homomorphism]\label{ex:graph hom}
+\begin{example}[グラフ準同型]\label{ex:graph hom}
 
-Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be the graphs drawn to the left and right (respectively) below:
+%Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be the graphs drawn to the left and right (respectively) below:
+$G=(V,A,src,tgt)$と$G'=(V',A',src',tgt')$を, 以下で左と右にそれぞれ描かれているグラフとする.
 \begin{align}\label{dia:graph hom example}
 \parbox{1.5in}{\fbox{\xymatrix{\LMO{\color{red}{1}}\ar[r]^a\ar@/^1pc/[d]^d\ar@/_1pc/[d]_c&\LMO{\color{ForestGreen}{2}}\ar[r]^b&\LMO{\color{red}{3}}\\\LMO{4}&\LMO{\color{blue}{5}}\ar[r]^e&\LMO{\color{blue}{6}}}}}
 \parbox{1in}{\xymatrix{~\ar[rr]^{\parbox{.8in}{\vspace{-.2in}\footnotesize$1\mapsto 1', 2\mapsto 2',\\ 3\mapsto 1',4\mapsto 4',\\ 5\mapsto 5',6\mapsto5'$}}&\hsp&~}}
 \parbox{.8in}{\fbox{\xymatrix{\LMO{\color{red}{1'}}\ar@<.5ex>[r]^w\ar[d]_y&\LMO{\color{ForestGreen}{2'}}\ar@<.5ex>[l]^x\\\LMO{4'}&\LMO{\color{blue}{5'}}\ar@(r,u)[]_z}}}
 \end{align}
-The colors indicate our choice of function $f_0\taking V\to V'$. Given that choice, condition (\ref{dia:graph hom}) imposes in this case that there is a unique choice of graph homomorphism $f\taking G\to G'$. 
+%The colors indicate our choice of function $f_0\taking V\to V'$. Given that choice, condition (\ref{dia:graph hom}) imposes in this case that there is a unique choice of graph homomorphism $f\taking G\to G'$. 
+色は我々が選んだ函数$f_0\taking V\to V'$を指し示している. ある函数の選択が与えられたとき, 条件\eqref{dia:graph hom}が課されることによって, この場合にはグラフ準同型$f\taking G\to G'$として一意な選択しか存在しない.
 
 \end{example}
 
