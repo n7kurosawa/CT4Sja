@@ -1320,31 +1320,42 @@ $$
 
 %%%% Subsection %%%%
 
-\subsection{Paths in a graph}\label{sec:paths in graph}\index{graph!paths}
+%\subsection{Paths in a graph}\label{sec:paths in graph}\index{graph!paths}
+\subsection{グラフにおける経路}\label{sec:paths in graph}\index{graph!paths}
 
-We all know what a path in a graph is, especially if we understand that a path must always follow the direction of arrows. The following definition makes this idea precise. In particular, one can have paths of any finite length $n\in\NN$, even length $0$ or $1$. Also, we want to be able to talk about the source vertex and target vertex of a path, as well as concatenation of paths.
+%We all know what a path in a graph is, especially if we understand that a path must always follow the direction of arrows. The following definition makes this idea precise. In particular, one can have paths of any finite length $n\in\NN$, even length $0$ or $1$. Also, we want to be able to talk about the source vertex and target vertex of a path, as well as concatenation of paths.
+
+我々はみなグラフの経路が何であるかを知っている. 特に経路が矢の方向に常に従わなければならないと理解しているならば. 以下の定義によってこのアイデアを正確になる. とりわけ, 任意の長さ$n\in\NN$の経路, 長さ$0$や$1$の経路すらも得ることができる. また, 我々は経路の結合だけでなく, 経路の始点および終点についても語ることを可能にしたい.
 
 \begin{definition}\label{def:paths in graph}
 
-Let $G=(V,A,src,tgt)$ be a graph. A {\em path of length $n$}\index{path} in $G$, denoted $p\in\Path_G^{(n)}$\index{a symbol!$\Path$} is a head-to-tail sequence \begin{align}\label{dia:path}p=(v_0\To{a_1}v_1\To{a_2}v_2\To{a_3}\ldots\To{a_n}v_n)\end{align} of arrows in $G$, which we denote by $v_0 a_1 a_2 \ldots a_n$. In particular we have canonical isomorphisms $\Path_G^{(1)}\iso A$ and $\Path_G^{(0)}\iso V$; we refer to the path of length 0 on vertex $v$ as the {\em trivial path on $v$} and denote it simply by $v$. We denote by $\Path_G$ the set of paths in $G$, $$\Path_G:=\bigcup_{n\in\NN}\Path_G^{(n)}.$$ Every path $p\in\Path_G$ has a source vertex and a target vertex, and we may denote these by $\ol{src},\ol{tgt}\taking\Path_G\to V$. If $p$ is a path with $\ol{src}(p)=v$ and $\ol{tgt}(p)=w$, we may denote it by $p\taking v\to w$. Given two vertices $v,w\in V$, we write $\Path_G(v,w)$ to denote the set of all paths $p\taking v\to w$.
+%Let $G=(V,A,src,tgt)$ be a graph. A {\em path of length $n$}\index{path} in $G$, denoted $p\in\Path_G^{(n)}$\index{a symbol!$\Path$} is a head-to-tail sequence \begin{align}\label{dia:path}p=(v_0\To{a_1}v_1\To{a_2}v_2\To{a_3}\ldots\To{a_n}v_n)\end{align} of arrows in $G$, which we denote by $v_0 a_1 a_2 \ldots a_n$. In particular we have canonical isomorphisms $\Path_G^{(1)}\iso A$ and $\Path_G^{(0)}\iso V$; we refer to the path of length 0 on vertex $v$ as the {\em trivial path on $v$} and denote it simply by $v$. We denote by $\Path_G$ the set of paths in $G$, $$\Path_G:=\bigcup_{n\in\NN}\Path_G^{(n)}.$$ Every path $p\in\Path_G$ has a source vertex and a target vertex, and we may denote these by $\ol{src},\ol{tgt}\taking\Path_G\to V$. If $p$ is a path with $\ol{src}(p)=v$ and $\ol{tgt}(p)=w$, we may denote it by $p\taking v\to w$. Given two vertices $v,w\in V$, we write $\Path_G(v,w)$ to denote the set of all paths $p\taking v\to w$.
 
-There is a concatenation operation on paths.\index{concatenation!of paths} Given a path $p\taking v\to w$ and $q\taking w\to x$, we define the concatenation, denoted $p q\taking v\to x$ in the obvious way. If $p=va_1,a_2\ldots a_m$ and $q= wb_1b_2\ldots b_n$ then $pq=va_1\ldots a_mb_1\ldots b_n.$ In particular, if $p$ (resp. $r$) is the trivial path on vertex $v$ (resp. vertex $w$) then for any path $q\taking v\to w$, we have $pq=q$ (resp. $qr=q$). 
+$G=(V,A,\src,\tgt)$をグラフとする. $p\in\Path_G^{(n)}$\index{a symbol!$\Path$}で示される, $G$の\emph{長さ$n$の経路(path of length $n$)}\index{path}は, 頭部から尾部への直鎖状の$G$の矢の列\begin{align}\label{dia:path}p=(v_0\To{a_1}v_1\To{a_2}v_2\To{a_3}\ldots\To{a_n}v_n)\end{align}である. 我々はこれを$v_0 a_1 a_2 \ldots a_n$と表す. 特に, 標準同型写像$\Path_G^{(1)}\iso A$および$\Path_G^{(0)}\iso V$が存在する. 頂点$v$上の長さ0の経路を\emph{$v$上の自明な経路(trivial path on $v$)}として参照し, 簡単に$v$で示す. 我々は$\Path_G$によって$G$上の経路の集合を示す. $$\Path_G:=\bigcup_{n\in\NN}\Path_G^{(n)}.$$ 全ての経路$p\in\Path_G$は始点と終点を持つ. 我々はこれらを$\ol{\src},\ol{\tgt}\taking\Path_G\to V$で示すことにしよう. $p$が経路で$\ol{\src}(p)=v$かつ$\ol{\tgt}(p)=w$であるならば, これを$p\taking v\to w$で示すことにしよう. 与えられた二つの頂点$v,w\in V$について, $\Path_G(v,w)$と書いて$p\taking v\to w$なる経路全ての集合を示すことにする.
+
+%There is a concatenation operation on paths.\index{concatenation!of paths} Given a path $p\taking v\to w$ and $q\taking w\to x$, we define the concatenation, denoted $p q\taking v\to x$ in the obvious way. If $p=va_1,a_2\ldots a_m$ and $q= wb_1b_2\ldots b_n$ then $pq=va_1\ldots a_mb_1\ldots b_n.$ In particular, if $p$ (resp. $r$) is the trivial path on vertex $v$ (resp. vertex $w$) then for any path $q\taking v\to w$, we have $pq=q$ (resp. $qr=q$). 
+
+経路には連結演算が存在する.\index{concatenation!of paths} 経路$p\taking v\to w$と$q\taking w\to x$が与えられたとき, 我々は明らかな方法で結合演算を定義し, $p q\taking v\to x$で示す. もし$p=va_1,a_2\ldots a_m$で$q= wb_1b_2\ldots b_n$ならば$pq=va_1\ldots a_mb_1\ldots b_n.$である. とくに, もし$q$ (あるいは$r$)が頂点$v$ (あるいは頂点$w$)上の自明な経路であれば, 任意の経路$q\taking v\to w$に対して$pq=q$ (あるいは$qr=q$)が得られる.
 
 \end{definition}
 
 \begin{example}
 
-In Diagram (\ref{dia:graph}), page \pageref{dia:graph}, there are no paths from $v$ to $y$, one path ($f$) from $v$ to $w$, two paths ($fg$ and $fh$) from $v$ to $x$, and infinitely many paths $$\{y i^{p_1}(jk)^{q_1}\cdots i^{p_n}(jk)^{q_n}\;|\;n,p_1,q_1,\ldots,p_n,q_n\in\NN\}$$ from $y$ to $y$. There are other paths as well, including the five trivial paths.
+%In Diagram (\ref{dia:graph}), page \pageref{dia:graph}, there are no paths from $v$ to $y$, one path ($f$) from $v$ to $w$, two paths ($fg$ and $fh$) from $v$ to $x$, and infinitely many paths $$\{y i^{p_1}(jk)^{q_1}\cdots i^{p_n}(jk)^{q_n}\;|\;n,p_1,q_1,\ldots,p_n,q_n\in\NN\}$$ from $y$ to $y$. There are other paths as well, including the five trivial paths.
+
+\pageref{dia:graph}ページのDiagram \eqref{dia:graph}では, $v$から$y$への経路は存在せず, $v$から$w$への1本の経路($f$)が存在し, $v$から$x$への2本の経路($fg$および$fh$)が存在し, $y$から$y$への無限の経路$$\{y i^{p_1}(jk)^{q_1}\cdots i^{p_n}(jk)^{q_n}\;|\;n,p_1,q_1,\ldots,p_n,q_n\in\NN\}$$が存在している. また経路は他にも, 5本の自明な経路を含めて存在している.
 
 \end{example}
 
 \begin{exercise}
-How many paths are there in the following graph? 
+%How many paths are there in the following graph? 
+以下のグラフには何本の経路があるか?
 $$\xymatrix{\LMO{1}\ar[r]^{f}&\LMO{2}\ar[r]^{g}&\LMO{3}}$$
 \end{exercise}
 
 \begin{exercise}
-Let $G$ be a graph and consider the set $\Path_G$ of paths in $G$. Suppose someone claimed that there is a monoid structure on the set $\Path_G$, where the multiplication formula is given by concatenation of paths. Are they correct? Why or why not? Hint: what should be the identity element?
+%Let $G$ be a graph and consider the set $\Path_G$ of paths in $G$. Suppose someone claimed that there is a monoid structure on the set $\Path_G$, where the multiplication formula is given by concatenation of paths. Are they correct? Why or why not? Hint: what should be the identity element?
+$G$をグラフとして, $G$の経路の集合$\Path_G$について考える. 誰かが, $\Path_G$には積の式が経路の連結によって与えられるところのモノイド構造が存在していると主張したと仮定しよう. これは正しいだろうか? 正しい, あるいは正しくないのはなぜか? ヒント: 単位元は何であるべきだろうか?
 \end{exercise}
 
 
