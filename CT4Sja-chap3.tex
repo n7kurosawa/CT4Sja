@@ -1425,30 +1425,43 @@ $G=(V,A,src,tgt)$と$G'=(V',A',src',tgt')$を, 以下で左と右にそれぞれ
 \end{example}
 
 \begin{exercise}~
-\sexc Where are $a,b,c,d,e$ sent under $f_1\taking A\to A'$ in Diagram (\ref{dia:graph hom example})? 
-\next Choose a couple elements of $A$ and check that they behave as specified by Diagram (\ref{dia:graph hom}).
+%\sexc Where are $a,b,c,d,e$ sent under $f_1\taking A\to A'$ in Diagram (\ref{dia:graph hom example})? 
+%\next Choose a couple elements of $A$ and check that they behave as specified by Diagram (\ref{dia:graph hom}).
+%\endsexc
+\sexc Diagram (\ref{dia:graph hom example})において, $a,b,c,d,e$は$f_1\taking A\to A'$によってどこに送られるだろうか? 
+\next $A$から要素を二つ選び, 具体的にDiagram (\ref{dia:graph hom})のようなふるまいをするかを確認せよ.
 \endsexc
 \end{exercise}
 
 \begin{exercise}
-Let $G$ be a graph, let $n\in\NN$ be a natural number, and let $[n]$ be the chain graph of length $n$, as in Example \ref{ex:[n] as graph}. Is a path of length $n$ in $G$ the same thing as a graph homomorphism $[n]\to G$, or are there subtle differences? More precisely, is there always an isomorphism between the set of graph homomorphisms $[n]\to G$ and the set $\Path_G^{(n)}$ of length-$n$ paths in $G$?
+%Let $G$ be a graph, let $n\in\NN$ be a natural number, and let $[n]$ be the chain graph of length $n$, as in Example \ref{ex:[n] as graph}. Is a path of length $n$ in $G$ the same thing as a graph homomorphism $[n]\to G$, or are there subtle differences? More precisely, is there always an isomorphism between the set of graph homomorphisms $[n]\to G$ and the set $\Path_G^{(n)}$ of length-$n$ paths in $G$?
+$G$をグラフ, $n\in\NN$を自然数, $[n]$をExample \ref{ex:[n] as graph}で記述された長さ$n$の連鎖グラフとする. $G$での経路の長さ$n$はグラフ準同型$[n]\to G$と同じものか, あるいは微妙な違いが存在するだろうか? より正確にいうならば, グラフ準同型$[n]\to G$の集合と長さ$n$の$G$における経路の集合$\Path_G^{(n)}$との間には, 常に同型写像が存在するだろうか?
 \end{exercise}
 
 \begin{exercise}
-Given a morphism of graphs $f\taking G\to G'$, there an induced function $\Path(f)\taking\Path(G)\to\Path(G')$. 
-\sexc Is it the case that for every $n\in\NN$, the function $\Path(f)$ carries $\Path^{(n)}(G)$ to $\Path^{(n)}(G')$, or can path lengths change in this process?
-\next Suppose that $f_0$ and $f_1$ are injective (meaning no two distinct vertices in $G$ are sent to the same vertex (respectively for arrows) under $f$). Does this imply that $\Path(f)$ is also injective (meaning no two distinct paths are sent to the same path under $f$)?
-\next Suppose that $f_0$ and $f_1$ are surjective (meaning every vertex in $G'$ and every arrow in $G'$ is in the image of $f$). Does this imply that $\Path(f)$ is also surjective? Hint: at least one of the answers to these three questions is ``no".
+%Given a morphism of graphs $f\taking G\to G'$, there an induced function $\Path(f)\taking\Path(G)\to\Path(G')$. 
+%\sexc Is it the case that for every $n\in\NN$, the function $\Path(f)$ carries $\Path^{(n)}(G)$ to $\Path^{(n)}(G')$, or can path lengths change in this process?
+%\next Suppose that $f_0$ and $f_1$ are injective (meaning no two distinct vertices in $G$ are sent to the same vertex (respectively for arrows) under $f$). Does this imply that $\Path(f)$ is also injective (meaning no two distinct paths are sent to the same path under $f$)?
+%\next Suppose that $f_0$ and $f_1$ are surjective (meaning every vertex in $G'$ and every arrow in $G'$ is in the image of $f$). Does this imply that $\Path(f)$ is also surjective? Hint: at least one of the answers to these three questions is ``no".
+%\endsexc
+グラフの射$f\taking G\to G'$が与えられたとき, そこから誘導される函数$\Path(f)\taking\Path(G)\to\Path(G')$が存在する. 
+\sexc 全ての$n\in\NN$に対して, $\Path(f)$が$\Path^{(n)}(G)$を$\Path^{(n)}(G')$へ移すというのは事実だろうか? あるいはこの過程で経路の長さは変わりうるだろうか?
+\next $f_0$と$f_1$を単射である(すなわち$G$のどの相異なる二つの頂点も$f$によって同じ頂点に送られない(矢に対しても同様))と仮定する. このことは$\Path(f)$もまた単射である(すなわちどの相異なる二つの経路も$f$によって同じ経路に送られない)ことを含意するだろうか?
+\next $f_0$と$f_1$を全射である(すなわち$G'$の全ての頂点と$G'$の全ての矢が$f$の像に含まれている)と仮定する. このことは$\Path(f)$もまた全射であることを含意するだろうか? ヒント: これらの三つの問題のうち, 少なくとも一つは答えが``no''である.
 \endsexc
 \end{exercise}
 
 \begin{exercise}\label{exc:single condition for graph hom}
-
-Given a graph $(V,A,src,tgt)$, let $i\taking A\to V\times V$ be function guaranteed by the universal property for products, as applied to $src,tgt\taking A\to V$. One might hope to summarize Condition (\ref{dia:graph hom}) for graph homomorphisms by the commutativity of the single square 
+%Given a graph $(V,A,src,tgt)$, let $i\taking A\to V\times V$ be function guaranteed by the universal property for products, as applied to $src,tgt\taking A\to V$. One might hope to summarize Condition (\ref{dia:graph hom}) for graph homomorphisms by the commutativity of the single square 
+%\begin{align}\label{dia:equiv graph hom}
+%\xymatrix{A\ar[r]^{f_1}\ar[d]_{i}&A'\ar[d]^{i'}\\V\times V\ar[r]_{f_0\times f_0}&V'\times V'.}
+%\end{align}
+%Is the commutativity of the diagram in (\ref{dia:equiv graph hom}) indeed equivalent to the commutativity of the diagrams in (\ref{dia:graph hom})?
+グラフ$(V,A,\src,\tgt)$が与えられたとき, $i\taking A\to V\times V$を積の普遍的性質を$\src,\tgt\taking A\to V$に適用することにより存在が保証されているところの函数とする. グラフ準同型に対するCondition (\ref{dia:graph hom})を単一の四角形
 \begin{align}\label{dia:equiv graph hom}
 \xymatrix{A\ar[r]^{f_1}\ar[d]_{i}&A'\ar[d]^{i'}\\V\times V\ar[r]_{f_0\times f_0}&V'\times V'.}
 \end{align}
-Is the commutativity of the diagram in (\ref{dia:equiv graph hom}) indeed equivalent to the commutativity of the diagrams in (\ref{dia:graph hom})?
+の可換性によってまとめたいと思うかもしれない. (\ref{dia:equiv graph hom})の図式における可換性は(\ref{dia:graph hom})の図式における可換性と実際に等価だろうか?
 \end{exercise}
 
 %% Subsubsection %%
