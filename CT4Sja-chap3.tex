@@ -1466,15 +1466,18 @@ $G$をグラフ, $n\in\NN$を自然数, $[n]$をExample \ref{ex:[n] as graph}で
 
 %% Subsubsection %%
 
-\subsubsection{Binary relations and graphs}
+%\subsubsection{Binary relations and graphs}
+\subsubsection{二項関係とグラフ}
 
 \begin{definition}\label{def:binary relation}\index{relation!binary}
 
-Let $X$ be a set. A {\em binary relation on $X$} is a subset $R\ss X\times X$. 
+%Let $X$ be a set. A {\em binary relation on $X$} is a subset $R\ss X\times X$. 
+$X$を集合とする. \emph{$X$上の二項関係(binary relation on $X$)}とは部分集合$R\ss X\times X$である.
 
 \end{definition}
 
-If $X=\NN$ is the set of integers, then the usual $\leq$ defines a relation on $X$: given $(m,n)\in\NN\times\NN$, we put $(m,n)\in R$ iff $m\leq n$. As a table it might be written as to the left
+%If $X=\NN$ is the set of integers, then the usual $\leq$ defines a relation on $X$: given $(m,n)\in\NN\times\NN$, we put $(m,n)\in R$ iff $m\leq n$. As a table it might be written as to the left
+$X=\NN$が整数の集合であるならば, 通常の$\leq$は$X$上の関係を定義している. すなわち$(m,n)\in\NN\times\NN$が与えられたとき, $m\leq n$かつその時に限り$(m,n)\in R$とする. 表としては, 左のように書ける.
 \begin{align}\label{dia:3 relations}
 \begin{tabular}{|p{.7cm}|p{.7cm}|}
 \bhline
@@ -1518,31 +1521,48 @@ m&n\\\bbhline
 $\vdots$&$\vdots$\\\hline
 \end{tabular}
 \end{align}
-The middle table is the relation $\{(m,n)\in\NN\times\NN\|n=5m\}\ss\NN\times\NN$ and the right-hand table is the relation $\{(m,n)\in\NN\times\NN\||n-m|\leq 1\}\ss\NN\times\NN$. 
+%The middle table is the relation $\{(m,n)\in\NN\times\NN\|n=5m\}\ss\NN\times\NN$ and the right-hand table is the relation $\{(m,n)\in\NN\times\NN\||n-m|\leq 1\}\ss\NN\times\NN$. 
+真ん中の表は関係$\{(m,n)\in\NN\times\NN\|n=5m\}\ss\NN\times\NN$であり, 右側の表は関係$\{(m,n)\in\NN\times\NN\||n-m|\leq 1\}\ss\NN\times\NN$である.
 
 \begin{exercise}
-A relation on $\RR$ is a subset of $\RR\times\RR$, and one can indicate such a subset of the plane by shading. Choose an error bound $\epsilon>0$ and draw the relation one might refer to as ``$\epsilon$-approximation". To say it another way, draw the relation ``$x$ is within $\epsilon$ of $y$".
+%A relation on $\RR$ is a subset of $\RR\times\RR$, and one can indicate such a subset of the plane by shading. Choose an error bound $\epsilon>0$ and draw the relation one might refer to as ``$\epsilon$-approximation". To say it another way, draw the relation ``$x$ is within $\epsilon$ of $y$".
+$\RR$上の関係は$\RR\times\RR$の部分集合である. 平面上のこのよう部分集合は影を付けて指し示すことができる. 誤差の上限$\epsilon>0$を設定し, ``$\epsilon$-近似''として参照できるところの関係を描け. 別の方向から言うならば, ``$x$ が$y$の$\epsilon$内にいる''という関係を描け.
 \end{exercise}
 
-\begin{exercise}[Binary relations to graphs]\label{exc:rel to graph}\index{relation!graph of}
+%\begin{exercise}[Binary relations to graphs]\label{exc:rel to graph}\index{relation!graph of}
+\begin{exercise}[二項関係からグラフへ]\label{exc:rel to graph}\index{relation!graph of}~
 
-\sexc If $R\ss S\times S$ is a binary relation, find a natural way to make a graph out of it, having vertices $S$. 
-\next What is the set $A$ of arrows? 
-\next What are the source and target functions $src,tgt\taking A\to S$?
-\next Take the left-hand table in (\ref{dia:3 relations}) and consider its first $7$ rows (i.e. forget the $\vdots$). Draw the corresponding graph (do you see a tetrahedron?). 
-\next Do the same for the right-hand table.
+%\sexc If $R\ss S\times S$ is a binary relation, find a natural way to make a graph out of it, having vertices $S$. 
+%\next What is the set $A$ of arrows? 
+%\next What are the source and target functions $src,tgt\taking A\to S$?
+%\next Take the left-hand table in (\ref{dia:3 relations}) and consider its first $7$ rows (i.e. forget the $\vdots$). Draw the corresponding graph (do you see a tetrahedron?). 
+%\next Do the same for the right-hand table.
+%\endsexc
+\sexc $R\ss S\times S$が二項関係であるとしたとき, そこから頂点$S$を持つグラフを作り出す自然な方法を見出せ.
+\next 矢の集合$A$はなんだろうか? 
+\next 始点および終点函数$\src,\tgt\taking A\to S$はなんだろうか?
+\next \eqref{dia:3 relations}の左側の表に注目し, その最初の7行を考える(i.e. $\vdots$部分を忘れさる). 対応するグラフを描け(君は三角錐を見たことがあるか?). 
+\next 右側の表で同じことをせよ.
 \endsexc
 \end{exercise}
 
-\begin{exercise}[Graphs to binary relations]\label{ex:graph to rel}~
-\sexc If $(V,A,src,tgt)$ is a graph, find a natural way to make a binary relation $R\ss V\times V$ out of it. 
-\next Take the left-hand graph $G$ from (\ref{dia:graph hom example}) and write out the corresponding binary relation in table form.
+%\begin{exercise}[Graphs to binary relations]\label{ex:graph to rel}~
+\begin{exercise}[グラフから二項関係へ]\label{ex:graph to rel}~
+%\sexc If $(V,A,src,tgt)$ is a graph, find a natural way to make a binary relation $R\ss V\times V$ out of it. 
+%\next Take the left-hand graph $G$ from (\ref{dia:graph hom example}) and write out the corresponding binary relation in table form.
+%\endsexc
+\sexc $(V,A,\src,\tgt)$をグラフとしたとき, そこから二項関係$R\ss V\times V$を作る自然な方法を見出せ.  
+\next \eqref{dia:graph hom example}の左側のグラフに注目し, 対応する二項関係を表の形で書き出せ.
 \endsexc
 \end{exercise}
 
-\begin{exercise}[Going around the loops]
-\sexc Given a binary relation $R\ss S\times S$, you know from Exercise \ref{exc:rel to graph} how to construct a graph out of it, and from Exercise \ref{ex:graph to rel} how to make a new binary relation out of that. How does the resulting relation compare with the original?
-\next Given a graph $(V,A,src,tgt)$, you know from Exercise \ref{ex:graph to rel} how to make a new binary relation out of it, and from Exercise \ref{exc:rel to graph} how to construct a new graph out of that. How does the resulting graph compare with the original? 
+%\begin{exercise}[Going around the loops]
+\begin{exercise}[Going around the loops]~
+%\sexc Given a binary relation $R\ss S\times S$, you know from Exercise \ref{exc:rel to graph} how to construct a graph out of it, and from Exercise \ref{ex:graph to rel} how to make a new binary relation out of that. How does the resulting relation compare with the original?
+%\next Given a graph $(V,A,src,tgt)$, you know from Exercise \ref{ex:graph to rel} how to make a new binary relation out of it, and from Exercise \ref{exc:rel to graph} how to construct a new graph out of that. How does the resulting graph compare with the original? 
+%\endsexc
+\sexc 二項関係$R\ss S\times S$が与えられたとき, Exercise \ref{exc:rel to graph}によってそこからどのようにグラフを構成すればよいかが分かる. また Exercise \ref{ex:graph to rel}によってそこからどのようにして新しい二項関係を作り出せばよいかが分かる. 結果の二項関係を元のそれと比較するとどうなるだろうか?
+\next グラフ$(V,A,\src,\tgt)$が与えられたとき, Exercise \ref{ex:graph to rel}によってそこからどのように二項関係を作ればよいかが分かる. またExercise \ref{exc:rel to graph}によってそこからどのようにして新しいグラフを構成すればよいかが分かる. 結果の新しいグラフを元のそれと比較するとどうなるだろうか?
 \endsexc
 \end{exercise}
 
