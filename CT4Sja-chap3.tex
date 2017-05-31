@@ -1856,59 +1856,96 @@ $X$を人間の集合とし$R\ss X\times X$を$x$が$y$の子であるときに$
 
 %%%% Subsection %%%%
 
-\subsection{Meets and joins}\label{sec:meets and joins}
+%\subsection{Meets and joins}\label{sec:meets and joins}
+\subsection{交わりと結び}\label{sec:meets and joins}
 
-Let $X$ be any set. Recall from Definition \ref{def:subobject classifier} that the powerset of $X$, denoted $\PP(X)$ is the set of subsets of $X$. There is a natural order on $\PP(X)$ given by the subset relationship, as exemplified in Exercise \ref{exc:power poset}. Given two elements $a,b\in\PP(X)$ we can consider them as subsets of $X$ and take their intersection as an element of $\PP(X)$ which we denote $a\wedge b$. We can also consider them as subsets of $X$ and take their union as an element of $\PP(X)$ which we denote $a\vee b$. The intersection and union operations are generalized in the following definition.
+%Let $X$ be any set. Recall from Definition \ref{def:subobject classifier} that the powerset of $X$, denoted $\PP(X)$ is the set of subsets of $X$. There is a natural order on $\PP(X)$ given by the subset relationship, as exemplified in Exercise \ref{exc:power poset}. Given two elements $a,b\in\PP(X)$ we can consider them as subsets of $X$ and take their intersection as an element of $\PP(X)$ which we denote $a\wedge b$. We can also consider them as subsets of $X$ and take their union as an element of $\PP(X)$ which we denote $a\vee b$. The intersection and union operations are generalized in the following definition.
+
+$X$を集合とする. Definition \ref{def:subobject classifier}より, $\PP(X)$で示される$X$のべき集合は$X$の部分集合の集合であることを思い出そう. Exercise \ref{exc:power poset}で例示されたように, 部分集合関係によって与えられる$\PP(X)$上の自然な順序が存在している. 二つの要素$a,b\in\PP(X)$が与えれたとき, 我々はこれらを$X$の部分集合とみなすことができ, そしてその共通部分を$a\wedge b$で示されるところの$\PP(X)$の要素としてとることができる. 我々はまたこれらを$X$の部分集合とみなすことができ, そしてそれらの合併を$a\vee b$で現わされるところの$\PP(X)$の要素としてとることができる. 共通部分と合併の操作は以下の定義によって一般化される.
 
 \begin{definition}\label{def:meets and joins}\index{preorder!meet}\index{preorder!join}\index{meet}\index{join}
 
-Let $(S,\leq)$ be a preorder and let $s,t\in S$ be elements. A {\em meet of $s$ and $t$} is an element $w\in S$ satisfying the following universal property: 
-\begin{itemize}
-\item $w\leq s$ and $w\leq t$ and, 
-\item for any $x\in S$, if $x\leq s$ and $x\leq t$ then $x\leq w$.
-\end{itemize}
-If $w$ is a meet of $s$ and $t$, we write $w\iso s\wedge t$.
+%Let $(S,\leq)$ be a preorder and let $s,t\in S$ be elements. A {\em meet of $s$ and $t$} is an element $w\in S$ satisfying the following universal property: 
+%\begin{itemize}
+%\item $w\leq s$ and $w\leq t$ and, 
+%\item for any $x\in S$, if $x\leq s$ and $x\leq t$ then $x\leq w$.
+%\end{itemize}
+%If $w$ is a meet of $s$ and $t$, we write $w\iso s\wedge t$.
 
-A {\em join of $s$ and $t$} is an element $w\in S$ satisfying the following universal property: 
+$(S,\leq)$を前順序とし, $s,t\in S$を要素とする. \emph{$s$と$t$の交わり(meet of $s$ and $t$)}とは以下の普遍的性質を満たす要素$w\in S$である.
 \begin{itemize}
-\item $s\leq w$ and $t\leq w$ and, 
-\item for any $x\in S$, if $s\leq x$ and $t\leq x$ then $w\leq x$.
+\item $w\leq s$かつ$w\leq t$,
+\item 任意の$x\in S$に対して, $x\leq s$および$x\leq t$ならば$x\leq w$.
 \end{itemize}
-If $w$ is a join of $s$ and $t$, we write $w\iso s\vee t$.
+$w$が$s$と$t$の交わりのとき, 我々は$w\iso s\wedge t$と書く.
+
+%A {\em join of $s$ and $t$} is an element $w\in S$ satisfying the following universal property: 
+%\begin{itemize}
+%\item $s\leq w$ and $t\leq w$ and, 
+%\item for any $x\in S$, if $s\leq x$ and $t\leq x$ then $w\leq x$.
+%\end{itemize}
+%If $w$ is a join of $s$ and $t$, we write $w\iso s\vee t$.
+
+\emph{$s$と$t$の結び(join of $s$ and $t$)}とは以下の普遍的性質を満たす要素$w\in S$である.
+\begin{itemize}
+\item $s\leq w$かつ$t\leq w$, 
+\item 任意の$x\in S$に対して, $s\leq x$および$t\leq x$ならば$w\leq x$.
+\end{itemize}
+$w$が$s$と$t$の結びのとき, 我々は$w\iso s\vee t$と書く.
 
 \end{definition}
 
-That is, the meet of $s$ and $t$ is the biggest thing smaller than both, i.e. a {\em greatest lower bound}, and the join of $s$ and $t$ is the smallest thing bigger than both, i.e. a {\em least upper bound}. Note that the meet of $s$ and $t$ might be $s$ or $t$ itself.  Note that $s$ and $t$ may have more than one meet (or more than one join). However, any two meets of $s$ and $t$ must be in the same clique, by the universal property (and the same for joins).
+%That is, the meet of $s$ and $t$ is the biggest thing smaller than both, i.e. a {\em greatest lower bound}, and the join of $s$ and $t$ is the smallest thing bigger than both, i.e. a {\em least upper bound}. Note that the meet of $s$ and $t$ might be $s$ or $t$ itself.  Note that $s$ and $t$ may have more than one meet (or more than one join). However, any two meets of $s$ and $t$ must be in the same clique, by the universal property (and the same for joins).
+
+これはすなわち, $s$と$t$の交わりは両者より小さいものの中での最大, i.e. \emph{最大下界(greatest lower bound)}であり, $s$と$t$の結びは両者より大きいものの中での最小, i.e. \emph{最小上界(least upper bound)}である. $s$と$t$の交わりは$s$あるいは$t$自身であるかもしれないことに注意せよ. また$s$と$t$は複数の交わり(あるいは複数の結び)を持つかもしれないことに注意せよ. しかし, 任意の二つの$s$と$t$の交わりは, その普遍的性質によって同じクリークにいなければならない(同じことは結びにも言える).
 
 \begin{exercise}
-Consider the partial order from Example \ref{ex:pre not par}. 
-\sexc What is the join of \fakebox{a diamond} and \fakebox{a heart}? 
-\next What is the meet of \fakebox{a black card} and \fakebox{a queen}? 
-\next What is the meet of \fakebox{a diamond} and \fakebox{a card}?
+%Consider the partial order from Example \ref{ex:pre not par}. 
+%\sexc What is the join of \fakebox{a diamond} and \fakebox{a heart}? 
+%\next What is the meet of \fakebox{a black card} and \fakebox{a queen}? 
+%\next What is the meet of \fakebox{a diamond} and \fakebox{a card}?
+%\endsexc
+Example \ref{ex:pre not par}での半順序を考える.
+\sexc \fakebox{a diamond}と\fakebox{a heart}の結びはなにか?
+\next \fakebox{a black card}と\fakebox{a queen}の交わりはなにか?
+\next \fakebox{a diamond}と\fakebox{a card}の交わりはなにか?
 \endsexc
 \end{exercise}
 
-Not every two elements in a preorder need have a meet, nor need they have a join. 
+%Not every two elements in a preorder need have a meet, nor need they have a join. 
+前順序の全ての二要素が交わりを持つ必要はないし, 結びを持つ必要もない.
 
 \begin{exercise}\label{exc:not all meets and joins}~
-\sexc If possible, find two elements in the partial order from Example \ref{ex:pre not par} that do not have a meet.
-\footnote{Use the displayed preorder, not any kind of ``completion of what's there".} 
-\next If possible, find two elements that do not have a join (in that preorder).
+%\sexc If possible, find two elements in the partial order from Example \ref{ex:pre not par} that do not have a meet.
+%\footnote{Use the displayed preorder, not any kind of ``completion of what's there".} 
+%\next If possible, find two elements that do not have a join (in that preorder).
+%\endsexc
+\sexc もし可能であるならば, Example \ref{ex:pre not par}での半順序から交わりを持たない二つの要素を見出せ.
+\footnote{表示されている前順序を用い, ``そこにあるものを補完する''といった類のことを使わないように.} 
+\next もし可能であるならば, (その前順序から)結びを持たない二つの要素を見出せ.
 \endsexc
 \end{exercise}
 
 \begin{exercise}
-As mentioned in the introduction to this section, the power set $S:=\PP(X)$ of any set $X$ naturally has the structure of a partial order. Its elements $s\in S$ correspond to subsets $s\ss X$, and we put $s\leq t$ if and only if $s\ss t$ as subsets of $X$. The meet of two elements is their intersection as subsets of $X$, $s\wedge t= s\cap t$, and the join of two elements is their union as subsets of $X$, $s\vee t=s\cup t$.
-\sexc Is it possible to put a monoid structure on the set $S$ in which the multiplication formula is given by meets? If so, what would the identity element be?
-\next Is it possible to put a monoid structure on the set $S$ in which the multiplication formula is given by joins? If so, what would the identity element be?
+%As mentioned in the introduction to this section, the power set $S:=\PP(X)$ of any set $X$ naturally has the structure of a partial order. Its elements $s\in S$ correspond to subsets $s\ss X$, and we put $s\leq t$ if and only if $s\ss t$ as subsets of $X$. The meet of two elements is their intersection as subsets of $X$, $s\wedge t= s\cap t$, and the join of two elements is their union as subsets of $X$, $s\vee t=s\cup t$.
+導入の節で言及したように, 任意の集合$X$のべき集合$S:=\PP(X)$は自然に半順序の構造を持つ. その要素$s\in S$は部分集合$s\ss X$に対応し, $X$の部分集合として$s\ss t$かつそのときに限り$s\leq t$とする. 二つの要素の交わりは$X$の部分集合としてのその共通部分, $s\vee t=s\cup t$であり, 二つの要素の結びは$X$の要素としてのその合併, $s\vee t=s\cup t$である.
+%\sexc Is it possible to put a monoid structure on the set $S$ in which the multiplication formula is given by meets? If so, what would the identity element be?
+%\next Is it possible to put a monoid structure on the set $S$ in which the multiplication formula is given by joins? If so, what would the identity element be?
+%\endsexc
+\sexc $S$上に, 積の式が交わりによって与えられるモノイド構造を入れることは可能だろうか? もし可能ならば, 単位元はなにになるだろうか?
+\next $S$上に, 積の式が結びによって与えられるモノイド構造を入れることは可能だろうか? もし可能ならば, 単位元はなにになるだろうか?
 \endsexc
 \end{exercise}
 
-\begin{example}[Trees]\label{ex:tree}
+%\begin{example}[Trees]\label{ex:tree}
+\begin{example}[木]\label{ex:tree}
 
-A {\em tree}\index{tree}\index{order!tree}, i.e. a system of nodes and branches, all of which emanate from a single node called the {\em root}\index{tree!root}, is a partial order, but generally not a linear order. A tree $(T,\leq)$ can either be oriented toward the root (so the root is the largest element) or away from the root (so the root is the smallest element); let's only consider the latter. 
+%A {\em tree}\index{tree}\index{order!tree}, i.e. a system of nodes and branches, all of which emanate from a single node called the {\em root}\index{tree!root}, is a partial order, but generally not a linear order. A tree $(T,\leq)$ can either be oriented toward the root (so the root is the largest element) or away from the root (so the root is the smallest element); let's only consider the latter. 
 
-Below is a tree, pictured as a graph. The root is labeled $e$.
+\emph{木(tree)}\index{tree}\index{order!tree}, i.e. 節(node)と枝(brancch)からなり, それら全てが\emph{根(root)}\index{tree!root}と呼ばれる単一の節から発している系, は半順序であるが, しかし一般には線形順序ではない. 木$(T,\leq)$は根の方に配向できるし(根は最大要素である), また根の反対方向に配向することもできる(根は最小要素である). ここでは後者のみを考えることにしよう.
+
+%Below is a tree, pictured as a graph. The root is labeled $e$.
+下記は木であり, グラフとして描かれている. 根は$e$と名付けられている.
 \begin{align}\label{dia:tree}
 \xymatrix@=10pt{
 &&&&&&\LMO{a}\\
@@ -1919,42 +1956,58 @@ Below is a tree, pictured as a graph. The root is labeled $e$.
 }
 \end{align}
 
-In a tree, every pair of elements $s, t\in T$ has a meet $s\wedge t$ (their closest mutual ancestor). On the other hand if $s$ and $t$ have a join $c=s\vee t$ then either $c=s$ or $c=t$. 
+%In a tree, every pair of elements $s, t\in T$ has a meet $s\wedge t$ (their closest mutual ancestor). On the other hand if $s$ and $t$ have a join $c=s\vee t$ then either $c=s$ or $c=t$. 
+この木では, 全ての要素の対$s, t\in T$は交わり$s\wedge t$(直近の共通の先祖)を持つ. その一方で, もし$s$と$t$が結び$c=s\vee t$を持つならば$c=s$あるいは$c=t$のいずれかである.
 
 \end{example}
 
 \begin{exercise}
-Consider the tree drawn in (\ref{dia:tree}).
-\sexc What is the meet $i\wedge h$?
-\next What is the meet $h\wedge b$?
-\next What is the join $b\vee a$?
-\next What is the join $b\vee g$?
+%Consider the tree drawn in (\ref{dia:tree}).
+%\sexc What is the meet $i\wedge h$?
+%\next What is the meet $h\wedge b$?
+%\next What is the join $b\vee a$?
+%\next What is the join $b\vee g$?
+%\endsexc
+\eqref{dia:tree}で描かれた木について考える.
+\sexc 交わり$i\wedge h$は何か?
+\next 交わり$h\wedge b$は何か?
+\next 結び$b\vee a$は何か?
+\next 結び$b\vee g$は何か?
 \endsexc
 \end{exercise}
 
-\subsection{Opposite order}
+%\subsection{Opposite order}
+\subsection{逆順序}
 
 \begin{definition}\label{def:opposite order}\index{order!opposite}
 
-Let $\mcS:=(S,\leq)$ be a preorder. The {\em opposite preorder}, denoted $\mcS\op$ is the preorder $(S,\leq\op)$ having the same set of elements but where $s\leq\op s'$ iff $s'\leq s$.
+%Let $\mcS:=(S,\leq)$ be a preorder. The {\em opposite preorder}, denoted $\mcS\op$ is the preorder $(S,\leq\op)$ having the same set of elements but where $s\leq\op s'$ iff $s'\leq s$.
+$\mcS:=(S,\leq)$を前順序とする. $\mcS\op$で示される\emph{逆前順序(opposite preorder)}は, 同じ要素の集合を持つが$s'\leq s$のときかつそのときに限り$s\leq\op s'$である前順序$(S,\leq\op)$である.
 
 \end{definition}
 
 \begin{example}
 
-Recall the preorder $\mcN:=(\NN,{\tt divides})$ from Exercise \ref{exc:divides as po}. Then $\mcN\op$ is the set of natural numbers but where $m\leq n$ iff $m$ is a multiple of $n$. So $6\leq 2$ and $6\leq 3$.
+%Recall the preorder $\mcN:=(\NN,{\tt divides})$ from Exercise \ref{exc:divides as po}. Then $\mcN\op$ is the set of natural numbers but where $m\leq n$ iff $m$ is a multiple of $n$. So $6\leq 2$ and $6\leq 3$.
+
+Exercise \ref{exc:divides as po}での前順序$\mcN:=(\NN,{\tt divides})$を思い出そう. このとき$\mcN\op$は自然数の集合で$m$が$n$の倍数のときかつそのときに限り$m\leq n$である. よって$6\leq 2$かつ$6\leq 3$である.
 
 \end{example}
 
 \begin{exercise}
-Suppose that $\mcS:=(S,\leq)$ is a preorder. 
-\sexc If $\mcS$ is a partial order, is $\mcS\op$ also a partial order? 
-\next If $\mcS$ is a linear order, is $\mcS\op$ a linear order?
+%Suppose that $\mcS:=(S,\leq)$ is a preorder. 
+%\sexc If $\mcS$ is a partial order, is $\mcS\op$ also a partial order? 
+%\next If $\mcS$ is a linear order, is $\mcS\op$ a linear order?
+%\endsexc
+$\mcS:=(S,\leq)$を前順序と仮定する.
+\sexc もし$\mcS$が半順序なら, $\mcS\op$は半順序だろうか?
+\next もし$\mcS$が線形順序なら, $\mcS\op$は線形順序だろうか?
 \endsexc
 \end{exercise}
 
 \begin{exercise}
-Suppose that $\mcS:=(S,\leq)$ is a preorder, and that $s_1,s_2\in S$ have join $t$ in $\mcS$. The preorder $\mcS\op$ has the same elements as $\mcS$. Is $t$ the join of $s_1$ and $s_2$ in $\mcS\op$, or is it their meet, or is it not necessarily their meet nor their join?
+%Suppose that $\mcS:=(S,\leq)$ is a preorder, and that $s_1,s_2\in S$ have join $t$ in $\mcS$. The preorder $\mcS\op$ has the same elements as $\mcS$. Is $t$ the join of $s_1$ and $s_2$ in $\mcS\op$, or is it their meet, or is it not necessarily their meet nor their join?
+$\mcS:=(S,\leq)$を前順序と仮定し, $s_1,s_2\in S$が$\mcS$に結び$t$を持つとする. 逆前順序$\mcS\op$は$\mcS$と同じ要素を持つ. $\mcS\op$において$t$は$s_1$と$s_2$の結びだろうか? あるいは交わりだろうか? あるいは交わりか結びである必要はないのだろうか?
 \end{exercise}
 
 %%%% Subsection %%%%
