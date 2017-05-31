@@ -2012,34 +2012,48 @@ $\mcS:=(S,\leq)$を前順序と仮定し, $s_1,s_2\in S$が$\mcS$に結び$t$を
 
 %%%% Subsection %%%%
 
-\subsection{Morphism of orders}
+%\subsection{Morphism of orders}
+\subsection{順序間の射}
 
-An order $(S,\leq)$, be it a preorder, a partial order, or a linear order, involves a set and a binary relations. For two orders to be comparable, their sets and their relations should be appropriately comparable.\index{appropriate comparison}
+%An order $(S,\leq)$, be it a preorder, a partial order, or a linear order, involves a set and a binary relations. For two orders to be comparable, their sets and their relations should be appropriately comparable.\index{appropriate comparison}
+
+順序$(S,\leq)$は, それば前順序であれ, 半順序であれ, 線形順序であれ, 集合と二項関係を要件とする. 二つの順序が比較可能であるためには, その集合とその関係が適切に比較できるべきである.\index{appropriate comparison}
 
 \begin{definition}\label{def:morphism of orders}\index{order!morphism}
 
-Let $\mcS:=(S,\leq)$ and $\mcS':=(S',\leq')$ be preorders (respectively partial orders or linear orders). A {\em morphism of preorders} (resp. {\em of partial orders} or {\em of linear orders}) $f$ {\em from $\mcS$ to $\mcS'$}, denoted $f\taking\mcS\to\mcS'$, is a function $f\taking S\to S'$ such that, for every pair of elements $s_1,s_2\in S$, if $s_1\leq s_2$ then $f(s_1)\leq' f(s_2)$.
+%Let $\mcS:=(S,\leq)$ and $\mcS':=(S',\leq')$ be preorders (respectively partial orders or linear orders). A {\em morphism of preorders} (resp. {\em of partial orders} or {\em of linear orders}) $f$ {\em from $\mcS$ to $\mcS'$}, denoted $f\taking\mcS\to\mcS'$, is a function $f\taking S\to S'$ such that, for every pair of elements $s_1,s_2\in S$, if $s_1\leq s_2$ then $f(s_1)\leq' f(s_2)$.
 
+$\mcS:=(S,\leq)$と$\mcS':=(S',\leq')$を前順序(あるいは半順序または線形順序)とする. \emph{$\mcS$から$\mcS'$への(from $\mcS$ to $\mcS'$)}
+\emph{前順序間の射(morphism of preorders)} (あるいは\emph{半順序間の射(morphism of partial orders)}または\emph{線形順序間の射(morphism of linear orders)}) $f$ は$f\taking\mcS\to\mcS'$で示され, 全ての要素の対$s_1,s_2\in S$に対して$s_1\leq s_2$ならば$f(s_1)\leq' f(s_2)$を満たすところの函数$f\taking S\to S'$である.
 \end{definition}
 
 \begin{example}
 
-Let $X$ and $Y$ be sets, let $f\taking X\to Y$ be a function. Then for every subset $X'\ss X$, its image $f(X')\ss Y$ is a subset (see Section \ref{sec:functions}). Thus we have a function $F\taking\PP(X)\to\PP(Y)$, given by taking images. This is a morphism of partial orders $(\PP(X),\ss)\to(\PP(Y),\ss)$. Indeed, if $a\ss b$ in $\PP(X)$ then $f(a)\ss f(b)$ in $\PP(Y)$.
+%Let $X$ and $Y$ be sets, let $f\taking X\to Y$ be a function. Then for every subset $X'\ss X$, its image $f(X')\ss Y$ is a subset (see Section \ref{sec:functions}). Thus we have a function $F\taking\PP(X)\to\PP(Y)$, given by taking images. This is a morphism of partial orders $(\PP(X),\ss)\to(\PP(Y),\ss)$. Indeed, if $a\ss b$ in $\PP(X)$ then $f(a)\ss f(b)$ in $\PP(Y)$.
+
+$X$と$Y$を集合とし, $f\taking X\to Y$を函数とする. このとき全ての部分集合$X'\ss X$に対して, その像$f(X')\ss Y$は部分集合である(Section \ref{sec:functions}を見よ). よって函数$F\taking\PP(X)\to\PP(Y)$を, 像をとることによって与えることができる. これは半順序間の射$(\PP(X),\ss)\to(\PP(Y),\ss)$である. 実際, もし$\PP(X)$において$a\ss b$であるならば$\PP(Y)$において$f(a)\ss f(b)$である.
 
 \end{example}
 
 \begin{application}
 
-It's often said that ``a team is only as strong as its weakest member". Is this true for materials? The hypothesis that a material is only as strong as its weakest constituent can be understood as follows. 
+%It's often said that ``a team is only as strong as its weakest member". Is this true for materials? The hypothesis that a material is only as strong as its weakest constituent can be understood as follows. 
 
-Recall from the introduction to this section (see \ref{sec:orders}, page \pageref{sec:orders}) that we can put several different orders on the set $M$ of materials. One example there was the order given by constituency ($m\leq_C m'$ if $m$ is an ingredient or constituent of $m'$). Another order is given by strength: $m\leq_S m'$ if $m'$ is stronger than $m$ (in some fixed setting). 
+しばしば``チームの強さとは一番弱いメンバーの強さである''と言われる. これは物質に対しても真だろうか? 物質の強さはその一番弱い構成要素と同じの強さしかないという仮説は, 以下のようにして理解できる. 
 
-Is it true that if material $m$ is a constituent of material $m'$ then the strength of $m'$ is less than or equal to the strength of $m$? This is the substance of our quote above. Mathematically the question would be posed, ``is there a morphism of preorders $(M,\leq_C)\too(M,\leq_S\op)$?"
+%Recall from the introduction to this section (see \ref{sec:orders}, page \pageref{sec:orders}) that we can put several different orders on the set $M$ of materials. One example there was the order given by constituency ($m\leq_C m'$ if $m$ is an ingredient or constituent of $m'$). Another order is given by strength: $m\leq_S m'$ if $m'$ is stronger than $m$ (in some fixed setting). 
+
+この章の導入(\ref{sec:orders}章, \pageref{sec:orders}ページを見よ)において, 物質の集合$M$上にいくつかの異なる順序を入れることができたのを思い出そう. 一つ目の例は構成要素によって与えられるものである($m$が$m'$の部分か構成要素であるならば$m\leq_C m'$). また別の順序は強度によって与えられる. $m\leq_S m'$となるのは(ある固定された設定の下で)$m'$が$m$より強度があるときである.
+
+%Is it true that if material $m$ is a constituent of material $m'$ then the strength of $m'$ is less than or equal to the strength of $m$? This is the substance of our quote above. Mathematically the question would be posed, ``is there a morphism of preorders $(M,\leq_C)\too(M,\leq_S\op)$?"
+
+物質$m$が物質$m'$の構成要素であるならば$m'$の強度は$m$の強度以下であるというのは真であろうか? これこそが我々が上で引用した句の本質である. 数学的にはこの問いは次のように提出されるだろう. ``前順序間の射$(M,\leq_C)\too(M,\leq_S\op)$は存在するか?''
 
 \end{application}
 
 \begin{exercise}
-Let $X$ and $Y$ be sets, let $f\taking X\to Y$ be a function. Then for every subset $Y'\ss Y$, its preimage $f^\m1(Y')\ss X$ is a subset (see Definition \ref{def:preimage}). Thus we have a function $F\taking\PP(Y)\to\PP(X)$, given by taking preimages. Is it a morphism of partial orders?
+%Let $X$ and $Y$ be sets, let $f\taking X\to Y$ be a function. Then for every subset $Y'\ss Y$, its preimage $f^\m1(Y')\ss X$ is a subset (see Definition \ref{def:preimage}). Thus we have a function $F\taking\PP(Y)\to\PP(X)$, given by taking preimages. Is it a morphism of partial orders?
+$X$と$Y$を集合とし, $f\taking X\to Y$を函数とする. このとき, 全ての部分集合$Y'\ss Y$に対して, その前像$f^\m1(Y')\ss X$は部分集合である(Definition \ref{def:preimage}を見よ). すなわち我々は前像をとることによって函数$F\taking\PP(Y)\to\PP(X)$を与えることができる. これは半順序間の射か?
 \end{exercise}
 
 \begin{example}\label{ex:discrete and indiscrete}
