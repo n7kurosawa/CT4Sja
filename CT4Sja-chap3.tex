@@ -1602,7 +1602,7 @@ $\RR$上の関係は$\RR\times\RR$の部分集合である. 平面上のこの�
 %\end{description}
 %We denote such a preorder (or partial order or linear order) by $(S,\leq)$.
 
-$S$を集合とし$R\ss S\times S$を$S$上の二項関係とする. $(s,s')\in R$であるとき$(s,s')\in R$と書くことにしよう. このとき全ての$s,s',s''\in S$に対し以下がみたされるならば$R$は\emph{前順序(preorder)}\index{order!preorder}と呼ばれる.
+$S$を集合とし$R\ss S\times S$を$S$上の二項関係とする. $(s,s')\in R$であるとき$(s,s')\in R$と書くことにしよう. このとき全ての$s,s',s''\in S$に対し以下がみたされるならば$R$は\emph{前順序(preorder)}\index{order!preorder}と呼ばれる\footnote{訳注: 音読みすると全順序と区別ができないため、しばしばプレ順序とも呼ばれる.}.
 \begin{description}
 \item[反射性(Reflexivity)] $s\leq s$,
 \item[推移性(Transitivity)] if $s\leq s'$かつ$s'\leq s''$ならば$s\leq s''$.
@@ -2058,37 +2058,54 @@ $X$と$Y$を集合とし, $f\taking X\to Y$を函数とする. このとき, 全
 
 \begin{example}\label{ex:discrete and indiscrete}
 
-Let $S$ be a set. The smallest preorder structure that can be put on $S$ is to say $a\leq b$ iff $a=b$. This is indeed reflexive and transitive, and it is called the {\em discrete preorder on $S$}.\index{preorder!discrete}
+%Let $S$ be a set. The smallest preorder structure that can be put on $S$ is to say $a\leq b$ iff $a=b$. This is indeed reflexive and transitive, and it is called the {\em discrete preorder on $S$}.\index{preorder!discrete}
 
-The largest preorder structure that can be put on $S$ is to say $a\leq b$ for all $a,b\in S$. This again is reflexive and transitive, and it is called the {\em indiscrete preorder on $S$}.\index{preorder!indiscrete}
+$S$を集合とする. $S$上に入れることができる最小の前順序構造は$a=b$であるときかつそのときに限り$a\leq b$としたものである. これは実際反射的かつ推移的であり, \emph{$S$上の離散前順序(discrete preorder on $S$)}と呼ばれる.\index{preorder!discrete}
+
+%The largest preorder structure that can be put on $S$ is to say $a\leq b$ for all $a,b\in S$. This again is reflexive and transitive, and it is called the {\em indiscrete preorder on $S$}.\index{preorder!indiscrete}
+
+$S$上に入れることができる最大の前順序構造は全ての$a,b\in S$に対して$a\leq b$としたものである. これもまた反射的かつ推移的であり, \emph{$S$上の密着前順序(indiscrete preorder on $S$)}と呼ばれる.\index{preorder!indiscrete}
 
 \end{example}
 
 \begin{exercise}
-Let $S$ be a set and let $(T,\leq_T)$ be a preorder. Let $\leq_D$ be the discrete preorder on $S$. Given a morphism of preorders $(S,\leq_D)\to (T,\leq_T)$ we get a function $S\to T$. 
-\sexc Which functions $S\to T$ arise in this way? 
-\next Given a morphism of preorders $(T,\leq_T)\to(S,\leq_D)$, we get a function $T\to S$. In terms of $\leq_T$, which functions $T\to S$ arise in this way?
+%Let $S$ be a set and let $(T,\leq_T)$ be a preorder. Let $\leq_D$ be the discrete preorder on $S$. Given a morphism of preorders $(S,\leq_D)\to (T,\leq_T)$ we get a function $S\to T$. 
+%\sexc Which functions $S\to T$ arise in this way? 
+%\next Given a morphism of preorders $(T,\leq_T)\to(S,\leq_D)$, we get a function $T\to S$. In terms of $\leq_T$, which functions $T\to S$ arise in this way?
+%\endsexc
+$S$を集合とし, $(T,\leq_T)$を前順序とする. $\leq_D$を$S$上の離散前順序とする. 前順序間の射$(S,\leq_D)\to (T,\leq_T)$が与えられたとき函数$S\to T$が得られる.
+\sexc この方法でどの函数$S\to T$が生起するか?
+\next 前順序間の射$(T,\leq_T)\to(S,\leq_D)$が与えられたとき函数$T\to S$が得られる. $\leq_T$の観点からは, この方法でどの函数$T\to S$が生起するか?
 \endsexc
 \end{exercise}
 
 \begin{exercise}
-Let $S$ be a set and let $(T,\leq_T)$ be a preorder. Let $\leq_I$ be the indiscrete preorder on $S$. Given a morphism of preorders $(S,\leq_I)\to (T,\leq_T)$ we get a function $S\to T$. 
-\sexc In terms of $\leq_T$, which functions $S\to T$ arise in this way? 
-\next Given a morphism of preorders $(T,\leq_T)\to(S,\leq_I)$, we get a function $T\to S$. In terms of $\leq_T$, which functions $T\to S$ arise in this way?
+%Let $S$ be a set and let $(T,\leq_T)$ be a preorder. Let $\leq_I$ be the indiscrete preorder on $S$. Given a morphism of preorders $(S,\leq_I)\to (T,\leq_T)$ we get a function $S\to T$. 
+%\sexc In terms of $\leq_T$, which functions $S\to T$ arise in this way? 
+%\next Given a morphism of preorders $(T,\leq_T)\to(S,\leq_I)$, we get a function $T\to S$. In terms of $\leq_T$, which functions $T\to S$ arise in this way?
+%\endsexc
+$S$を集合とし$(T,\leq_T)$を前順序とする. $\leq_I$を$S$上の密着前順序とする. 前順序間の射$(S,\leq_I)\to (T,\leq_T)$が与えられたとき函数$S\to T$が得られる.
+\sexc $\leq_T$の観点からは, この方法でどの函数$S\to T$が生起するか?
+\next 前順序間の射$(T,\leq_T)\to(S,\leq_I)$が与えられたとき, 函数$T\to S$が得られる. $\leq_T$の観点からは, この方法でどの函数$T\to S$が生起するか?
 \endsexc
 \end{exercise}
 
 %%%% Subsection %%%%
 
-\subsection{Other applications}
+%\subsection{Other applications}
+\subsection{その他の応用}
 
 %% Subsubsection %%
 
-\subsubsection{Biological classification}\index{biological classification}
+%\subsubsection{Biological classification}\index{biological classification}
+\subsubsection{生物学的分類}\index{biological classification}
 
-\href{http://en.wikipedia.org/wiki/Biological_classification}{\text Biological classification} is a method for dividing the set of organisms into distinct classes, called taxa. In fact, it turns out that such a classification, say a phylogenetic tree, can be understood as a partial order $C$ on the set of taxa. The typical {\em ranking} of these taxa, including kingdom, phylum, etc., can be understood as morphism of orders $f\taking C\to [n]$, for some $n\in\NN$. 
+%\href{http://en.wikipedia.org/wiki/Biological_classification}{\text Biological classification} is a method for dividing the set of organisms into distinct classes, called taxa. In fact, it turns out that such a classification, say a phylogenetic tree, can be understood as a partial order $C$ on the set of taxa. The typical {\em ranking} of these taxa, including kingdom, phylum, etc., can be understood as morphism of orders $f\taking C\to [n]$, for some $n\in\NN$. 
 
-For example we may have a tree (see Example \ref{ex:tree}) that looks like this 
+\href{http://en.wikipedia.org/wiki/Biological_classification}{生物学的分類(Biological classification)}は有機体の集合を分類群(taxa)と呼ばれる相異なる種類に分割する方法である. 実際, このような分類, すなわち系統樹は, 分類群の集合上の半順序$C$として理解できる. これらの分類群を表象する\emph{階級(ranking)}, すなわち界, 門, etc., はある$n\in\NN$に対しての順序間の射$f\taking C\to [n]$として理解できる.
+
+%For example we may have a tree (see Example \ref{ex:tree}) that looks like this 
+例えば, 以下のように書ける木(Example \ref{ex:tree}を見よ)を得ることができるだろう. 
 $$
 \xymatrix@=10pt{
 &&\LTO{Archaea}\ar[rr]&&\LTO{Pyrodicticum}\\
@@ -2098,79 +2115,120 @@ $$
 &&\LTO{Eukaryota}\ar[rr]\ar[urr]&&\LTO{Animals}\ar[rrr]&&&\LTO{Homo Sapien}}
 $$
 
-We also have a linear order that looks like this:
+%We also have a linear order that looks like this:
+我々は, 以下のように書ける線形順序を得ることもできる.
 $$
 \xymatrix{\LTO{Life}\ar[r]&\LTO{Domain}\ar[r]&\LTO{Kingdom}\ar[r]&\LTO{Phylum}\ar[r]&\cdots\ar[r]&\LTO{Genus}\ar[r]&\LTO{Species}}
 $$
-and the ranking system that puts Eukaryota at Domain and Hopo Sapien at Species is an order-preserving function from the dots upstairs to the dots downstairs; that is, it is a morphism of preorders.
+%and the ranking system that puts Eukaryota at Domain and Hopo Sapien at Species is an order-preserving function from the dots upstairs to the dots downstairs; that is, it is a morphism of preorders.
+このドメインにEukaryotaがあり種にHomo Sapienがある階級の系は, 上層階層の点から下層階層の点への順序保存函数である. これはすなわち, これは前順序間の射である.
 
 \begin{exercise}
-Since the phylogenetic tree is a tree, it has all meets.
-\sexc Determine the meet of dogs and humans. 
-\next If we did not require the phylogenetic partial order to be a tree, what would it mean if two taxa (nodes in the phylogenetic partial order), say $a$ and $b$, had join $c$ with $c\neq a$ and $c\neq b$?
+%Since the phylogenetic tree is a tree, it has all meets.
+%\sexc Determine the meet of dogs and humans. 
+%\next If we did not require the phylogenetic partial order to be a tree, what would it mean if two taxa (nodes in the phylogenetic partial order), say $a$ and $b$, had join $c$ with $c\neq a$ and $c\neq b$?
+%\endsexc
+系統樹は木であるから, その全てに交わりがある. 
+\sexc 犬と人との交わりを決定せよ.
+\next 系統の半順序が木であることを要求しなかった場合には, 二つの分類群(系統の半順序における節) $a$と$b$が$c\neq a$かつ$c\neq b$なる交わり$c$を持つということは何を意味するだろうか?
 \endsexc
 \end{exercise}
 
 \begin{exercise}~
-\sexc In your favorite scientific realm, are there any interesting classification systems that are actually orders? 
-\next Choose one; what would meets and joins mean in that setting?
+%\sexc In your favorite scientific realm, are there any interesting classification systems that are actually orders? 
+%\next Choose one; what would meets and joins mean in that setting?
+%\endsexc
+\sexc 読者のお気に入りの科学領域には, 実際に順序となっている興味深い分類の系はあるだろうか?
+\next その一つを選んでみよう. その設定の下では交わりと結びは何を意味するだろうか?
 \endsexc
 \end{exercise}
 
 %% Subsubsection %%
 
-\subsubsection{Security}\index{security}
+%\subsubsection{Security}\index{security}
+\subsubsection{セキュリティ}\index{security}
 
-Security, say of sensitive information, is based on two things: a security clearance and ``need to know." The former, security clearance might have levels like ``confidential", ``secret", ``top secret". But maybe we can throw in ``president" and some others too, like ``plebe". 
+%Security, say of sensitive information, is based on two things: a security clearance and ``need to know." The former, security clearance might have levels like ``confidential", ``secret", ``top secret". But maybe we can throw in ``president" and some others too, like ``plebe". 
+
+セキュリティ, 例えば機密情報などについてのそれは, 二つの物事からなる. セキュリティ許容度(security clearance)と最小権限原則(need-to-know)である. 前者のセキュリティ許容度は``confidential'', ``secret'', ``top secret''などのレベルからなるであろう. しかし我々は``president''やその他のもの, ''plebe''といったものに投げこむこともできるかもしれない. 
 
 \begin{exercise}
-Does it appear that security clearance is a preorder, a partial order, or a linear order?
+%Does it appear that security clearance is a preorder, a partial order, or a linear order?
+セキュリティ許容度は前順序か, 半順序か, それとも線形順序か?
 \end{exercise}
 
-Need-to-know is another classification of people. For each bit of information, we do not necessarily want everyone to know about it, even everyone of the specified clearance. It is only disseminated to those that need to know. 
+%Need-to-know is another classification of people. For each bit of information, we do not necessarily want everyone to know about it, even everyone of the specified clearance. It is only disseminated to those that need to know. 
+
+最小権限原則はまた別の人間の分類である. 情報のそれぞれのビットに対して, 我々は全ての人間がそれを知ることを必ずしも望まない. たとえ全ての人間が特定のセキュリティ許容度をみたしていたとしても. 機密情報はそれを知る必要がある(need to know)人間に対してのみ広げるべきである.
 
 \begin{exercise}
-Let $P$ be the set of all people and let $\ol{I}$ be the set of all pieces of information known by the government. For each subset $I\ss\ol{I}$, let $K(I)\ss P$ be the set of people that need to know every piece of information in $I$. Let $S=\{K(I)\|I\ss\ol{I}\}$ be the set of all ``need-to-know groups", with the subset relation denoted $\leq$. 
+%Let $P$ be the set of all people and let $\ol{I}$ be the set of all pieces of information known by the government. For each subset $I\ss\ol{I}$, let $K(I)\ss P$ be the set of people that need to know every piece of information in $I$. Let $S=\{K(I)\|I\ss\ol{I}\}$ be the set of all ``need-to-know groups", with the subset relation denoted $\leq$. 
 
-\sexc Is $(S,\leq)$ a preorder? If not, find a nearby preorder. 
-\next If $I_1\ss I_2$ do we always have $K(I_1)\ss K(I_2)$ or $K(I_2)\ss K(I_1)$ or possibly neither? 
-\next Should the preorder $(S,\leq)$ have all meets? 
-\next Should $(S,\leq)$ have all joins?
+$P$を全ての人間の集合とし, $\ol{I}$を政府が知る全ての情報の集合とする. それぞれの部分集合$I\ss\ol{I}$に対して, $K(I)\ss P$を$I$の情報の全ての知る必要がある人間の集合とする. $S=\{K(I)\|I\ss\ol{I}\}$を全ての``最小権限を持つグループ''で, $\leq$によって示される部分集合関係を持つものとする. 
+
+%\sexc Is $(S,\leq)$ a preorder? If not, find a nearby preorder. 
+%\next If $I_1\ss I_2$ do we always have $K(I_1)\ss K(I_2)$ or $K(I_2)\ss K(I_1)$ or possibly neither? 
+%\next Should the preorder $(S,\leq)$ have all meets? 
+%\next Should $(S,\leq)$ have all joins?
+%\endsexc
+
+\sexc $(S,\leq)$は前順序か? もしそうでないならば, よく似た前順序を見出せ.
+\next $I_1\ss I_2$ならば常に$K(I_1)\ss K(I_2)$あるいは$K(I_2)\ss K(I_1)$が得られるか, あるいはどちらも得られないだろうか?
+\next 前順序$(S,\leq)$は全て交わりを持つか?
+\next $(S,\leq)$は全て結びを持つか?
 \endsexc
 \end{exercise}
 
 %% Subsubsection %%
 
-\subsubsection{Spaces, e.g. geography}\index{space}
+%\subsubsection{Spaces, e.g. geography}\index{space}
+\subsubsection{空間, e.g. 地理}\index{space}
 
-Consider closed curves that can be drawn in the plane $\RR^2$, e.g. circles, ellipses, and kidney-bean shaped curves. The interiors of these closed curves (not including the boundary itself) are called {\em basic open sets in $\RR^2$}. The good thing about such an interior $U$ is that any point $p\in U$ is not on the boundary, so no matter how close $p$ is to the boundary of $U$, there will always be a tiny basic open set surrounding $p$ and completely contained in $U$. In fact, the union of any collection of basic open sets still has this property. An {\em open set in $\RR^2$} is any subset $U\ss \RR^2$ that can be formed as the union of a collection of basic open sets.
+%Consider closed curves that can be drawn in the plane $\RR^2$, e.g. circles, ellipses, and kidney-bean shaped curves. The interiors of these closed curves (not including the boundary itself) are called {\em basic open sets in $\RR^2$}. The good thing about such an interior $U$ is that any point $p\in U$ is not on the boundary, so no matter how close $p$ is to the boundary of $U$, there will always be a tiny basic open set surrounding $p$ and completely contained in $U$. In fact, the union of any collection of basic open sets still has this property. An {\em open set in $\RR^2$} is any subset $U\ss \RR^2$ that can be formed as the union of a collection of basic open sets.
+
+平面$\RR^2$上に描かれた閉曲線, e.g. 円, 楕円, いんげん豆の型の曲線などを考える. これらの曲線の内部領域(境界それ自身は含まない)は\emph{$\RR^2$の基本開集合(basic open sets in $\RR^2$)}と呼ばれる. このような内部領域$U$のよい性質は, 任意の点$p\in U$は境界にはなく, よって$p$が$U$の境界にどれだけ近くとも, $p$を囲み$U$に完全に包まれている小さな基本開集合が常に存在している. 実際, 基本開集合の任意の集まりの合併は依然としてこの性質を持っている. \emph{$\RR^2$の開集合(open set in $\RR^2$)}は任意の部分集合$U\ss \RR^2$であり, 基本開集合の集まりの合併として表現できるものである.
 
 \begin{example}
 
-Let $U=\{(x,y)\in\RR^2\|x>0\}$. To see that $U$ is open, define the following sets: for any $a,b\in\RR$, let $S(a,b)$ be the square parallel to the axes, with side length 1, where the upper left corner is $(a,b)$. Let $S'(a,b)$ be the interior of $S(a,b)$. Then each $S'(a,b)$ is open, and $U$ is the union of $S'(a,b)$ over the collection of all $a>0$ and all $b$,$$U=\bigcup_{\parbox{.35in}{\tiny$a,b\in\RR,\\~\;\;a>0$}}S'(a,b).$$ 
+%Let $U=\{(x,y)\in\RR^2\|x>0\}$. To see that $U$ is open, define the following sets: for any $a,b\in\RR$, let $S(a,b)$ be the square parallel to the axes, with side length 1, where the upper left corner is $(a,b)$. Let $S'(a,b)$ be the interior of $S(a,b)$. Then each $S'(a,b)$ is open, and $U$ is the union of $S'(a,b)$ over the collection of all $a>0$ and all $b$,$$U=\bigcup_{\parbox{.35in}{\tiny$a,b\in\RR,\\~\;\;a>0$}}S'(a,b).$$ 
+
+$U=\{(x,y)\in\RR^2\|x>0\}$とする. $U$が開集合であることを見るために, 以下の集合を定義する. 任意の$a,b\in\RR$に対して, $S(a,b)$を軸に平行な四角形で, 横の長さが1, 左上の角が$(a,b)$にあるものとする. $S'(a,b)$を$S(a,b)$の内部領域とする. このときそれぞれの$S'(a,b)$は開集合であり, $U$は全ての$a>0$と全て$b$の集まりの上における$S'(a,b)$の合併である. $$U=\bigcup_{\parbox{.35in}{\tiny$a,b\in\RR,\\~\;\;a>0$}}S'(a,b).$$
 
 \end{example}\index{geography}
 
-The idea of open sets extends to spaces beyond $\RR^2$. For example, on the earth one could define a basic open set to be the interior of any region one can ``draw a circle around" (with a metaphorical pen), and define open sets to be unions of basic open sets. 
+%The idea of open sets extends to spaces beyond $\RR^2$. For example, on the earth one could define a basic open set to be the interior of any region one can ``draw a circle around" (with a metaphorical pen), and define open sets to be unions of basic open sets. 
+
+開集合のアイデアは$\RR^2$を越えた空間へと拡張される. 例えば, 地球上において誰かが(比喩的なペンで)``描いた円''の領域の内部として基本開集合を定義することができ, そして基本開集合の合併として開集合を定義することができる. 
 
 \begin{exercise}
-Let $S$ be the set of open subsets on earth, as defined in the above paragraph. 
-\sexc If $\leq$ is the subset relation, is $(S,\leq)$ a preorder or a partial order? 
-\next Does it have meets, does it have joins?
+%Let $S$ be the set of open subsets on earth, as defined in the above paragraph. 
+%\sexc If $\leq$ is the subset relation, is $(S,\leq)$ a preorder or a partial order? 
+%\next Does it have meets, does it have joins?
+%\endsexc
+$S$を, 上の段落のように定義された, 地球上の開部分集合の集合とする. 
+\sexc $\leq$が部分集合関係のとき, $(S,\leq)$は前順序かあるいは半順序か?
+\next これは交わりを持つか. また結びを持つか?
 \endsexc
 \end{exercise}
 
 \begin{exercise}\label{exc:cosheaf of temps}
 
-Let $S$ be the set of open subsets of earth as defined above. To each open subset of earth suppose we know the range of recorded temperature throughout $s$ (i.e. the low and high throughout the region). Thus to each element $s\in S$ we assign an interval $T(s):=\{x\in\RR\|a\leq x\leq b\}$. If we order the set $V$ of intervals of $\RR$ by the subset relation, it gives a partial order on $V$. 
-\sexc Does our assignment $T\taking S\to V$ amount to a morphism of orders? 
-\next Does it preserve meets or joins? (Hint: it doesn't preserve both.)
+%Let $S$ be the set of open subsets of earth as defined above. To each open subset of earth suppose we know the range of recorded temperature throughout $s$ (i.e. the low and high throughout the region). Thus to each element $s\in S$ we assign an interval $T(s):=\{x\in\RR\|a\leq x\leq b\}$. If we order the set $V$ of intervals of $\RR$ by the subset relation, it gives a partial order on $V$. 
+%\sexc Does our assignment $T\taking S\to V$ amount to a morphism of orders? 
+%\next Does it preserve meets or joins? (Hint: it doesn't preserve both.)
+%\endsexc
+$S$を上記のように定義された地球上の開部分集合の集合とする. それぞれの地球上の開部分集合に対して, $s$全体で記録された温度の範囲(i.e. 領域全体での最高気温と最低気温)を, 我々は知っていると仮定する. すなわちそれぞれの要素$s\in S$に対して区間$T(s):=\{x\in\RR\|a\leq x\leq b\}$を割り当てることができる. もし我々が$\RR$の区間の集合$V$を部分集合関係によって順序付けするならば, これは$V$上の半順序を与える.
+\sexc 我々の割り当て$T\taking S\to V$は順序間の射になるだろうか?
+\next これは交わりあるいは結びを保存するだろうか? (ヒント: どちらも保存しない.)
 \endsexc
 \end{exercise}
 
 \begin{exercise}~
-\sexc Can you think of a space relevant to your favorite area of science for which it makes sense to assign an interval of real numbers to each open set somehow, analogously to Exercise \ref{exc:cosheaf of temps}? For example for a sample of some material under stress, perhaps the strain on each open set is somehow an interval? 
-\next Repeat the questions from Exercise \ref{exc:cosheaf of temps}.
+%\sexc Can you think of a space relevant to your favorite area of science for which it makes sense to assign an interval of real numbers to each open set somehow, analogously to Exercise \ref{exc:cosheaf of temps}? For example for a sample of some material under stress, perhaps the strain on each open set is somehow an interval? 
+%\next Repeat the questions from Exercise \ref{exc:cosheaf of temps}.
+%\endsexc
+\sexc Exercise \ref{exc:cosheaf of temps}と同様に, 読者のお気に入りの科学分野で, それに対してそれぞれの開区間に実数の区間をどうにかして割りあてることが意味を持つところのものを, 考えることができるだろうか? 例えば応力下でのある物質のサンプルに対して, それぞれの開区間での歪みはどうにかすると区間になるだろうか? 
+\next Exercise \ref{exc:cosheaf of temps}の問いに対して上を繰り返せ.
 \endsexc
 \end{exercise}
 
