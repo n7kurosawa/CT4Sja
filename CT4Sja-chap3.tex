@@ -2257,7 +2257,7 @@ $S$を上記のように定義された地球上の開部分集合の集合と�
 
 %A database is a collection of tables, each table $T$ of which consists of a set of columns and a set of rows. We roughly explain the role of tables, columns, and rows as follows. The existence of table $T$ suggests the existence of a fixed methodology for observing objects or events of a certain type. Each column $c$ in $T$ prescribes a single kind or method of observation, so that the datum inhabiting any cell in column $c$ refers to an observation of that kind. Each row $r$ in $T$ has a fixed sourcing event or object, which can be observed using the methods prescribed by the columns. The cell $(r,c)$ refers to the observation of kind $c$ made on event $r$. All of the rows in $T$ should refer to uniquely identifiable objects or events of a single type, and the name of the table $T$ should refer to that type.
 
-データベース(database)はテーブル(table)の集まりであり, そのテーブル$T$のそれぞれは列(column)の集合と行(row)の集合からなる. おおざっぱにテーブル, 列, 行の役割を説明すると以下のようになる. テーブル$T$の存在はある型の観測対象(object)あるいは事象(event)に対するある定められた方法論が存在する示唆している. $T$におけるそれぞれの列$c$は単一の測定の種類あるいは方法を規定している. よって列$c$の任意の升目にあるデータ要素はその種類の観測を参照している. テーブル$T$のそれぞれの列はある定められたデータの源となる対象あるいは事象であり, この対象や事象は列によって規定された方法を用いて観測することができる. 升目(cell) $(r,c)$は事象$r$に対して行なわれた種$c$の観測を参照する. $T$の全ての行は一意に識別可能な単一の型の対象あるいは事象を参照しているべきであり, テーブル$T$の名前はその型を参照しているべきである. 
+データベース(database)はテーブル(table)の集まりであり, そのテーブル$T$のそれぞれは列(column)の集合と行(row)の集合からなる\footnote{訳注: テーブル, 行, 列はそれぞれ関係(relation), タプル(tuple), 属性(attribute)と呼ばれることもある.}. おおざっぱにテーブル, 列, 行の役割を説明すると以下のようになる. テーブル$T$の存在はある型の観測対象(object)あるいは事象(event)に対するある定められた方法論が存在する示唆している. $T$におけるそれぞれの列$c$は単一の測定の種類あるいは方法を規定している. よって列$c$の任意の升目にあるデータ要素はその種類の観測を参照している. テーブル$T$のそれぞれの列はある定められたデータの源となる対象あるいは事象であり, この対象や事象は列によって規定された方法を用いて観測することができる. 升目(cell) $(r,c)$は事象$r$に対して行なわれた種$c$の観測を参照する. $T$の全ての行は一意に識別可能な単一の型の対象あるいは事象を参照しているべきであり, テーブル$T$の名前はその型を参照しているべきである. 
 
 \begin{example}\label{ex:graphene}
 
@@ -2267,8 +2267,10 @@ $S$を上記のように定義された地球上の開部分集合の集合と�
 
 \begin{align}\label{ex:first tables}\footnotesize
 \begin{tabular}{| l || l | l | l |}\bhline
-\multicolumn{4}{|c|}{Graphene sample}\\\bhline
-{\bf ID}&{\bf Source}&{\bf Stress}&{\bf Strain}\\\bbhline
+%\multicolumn{4}{|c|}{Graphene sample}\\\bhline
+\multicolumn{4}{|c|}{\texttt{Graphene sample}}\\\bhline
+%{\bf ID}&{\bf Source}&{\bf Stress}&{\bf Strain}\\\bbhline
+\textbf{ID}&\textbf{Source}&\textbf{Stress}&\textbf{Strain}\\\bbhline
 A118-1&C Smkt&0&0\\\hline
 A118-2&C Smkt&0.02&20\\\hline
 A118-3&C Smkt&0.05&40\\\hline
@@ -2277,8 +2279,11 @@ A118-5&AC&0.1&80\\\hline
 A118-6&C Plat&0.1&82\\\bhline
 \end{tabular}\hsp
 \begin{tabular}{| l || l | l |}\bhline
-\multicolumn{3}{|c|}{Supplier}\\\bhline
-{\bf ID}&{\bf Full name}&{\bf Phone}\\\bbhline
+%\multicolumn{3}{|c|}{Supplier}\\\bhline
+\multicolumn{3}{|c|}{\texttt{Supplier}}\\\bhline
+%{\bf ID}&{\bf Full name}&{\bf Phone}\\\bbhline
+\textbf{ID}&\textbf{Full name}&\textbf{Phone}\\\bbhline
+%C Smkt&Carbon Supermarket&(541)781-6611\\\hline
 C Smkt&Carbon Supermarket&(541) 781-6611\\\hline
 AC&Advanced Chemical&(410) 693-0818\\\hline
 C Plat&Carbon Platform&(510) 719-2857\\\hline
@@ -2289,7 +2294,7 @@ APP&Acme Pen and Paper&(617) 823-5603\\\bhline
 
 %In the first table, titled ``Graphene sample", the rows refer to graphene samples, and the table is so named. Each graphene sample can be observed according to the source supplier from which it came, the strain that it was subjected to, and the stress that it carried. These observations are the columns.  In the second table, the rows refer to suppliers of various things, and the table is so named. Each supplier can be observed according to its full name and its phone number; these are the columns.
 
-``Graphene sample''と題された最初のテーブルでは, 行はグラフェンの試料(graphene sample)を参照しており, そしてテーブルはそのように題されている. それぞれのグラフェン試料はそれの出自であるところの供給者によって, それが受けた伸びとそれが受けた応力を測定されていることがある. これらの測定はテーブルの列である. 二番目のテーブルでは, 行はいろいろなものの供給者であり, そしてテーブルもそのように題されている. それぞれの供給者はその氏名と電話番号によって観測できる. これらはテーブルの行である.
+``Graphene sample''と題された最初のテーブルでは, 行はグラフェンの試料(graphene sample)を参照しており, そしてテーブルはそのように題されている. それぞれのグラフェン試料はそれの出自であるところの供給者によって, それが受けた伸びとそれが受けた応力を測定されていることがある. これらの測定はテーブルの列である\footnote{訳注: \pageref{translator footnote dimension and uncertainty}ページの脚注もみよ.}. 二番目のテーブルでは, 行はいろいろなものの供給者であり, そしてテーブルもそのように題されている. それぞれの供給者はその氏名と電話番号によって観測できる. これらはテーブルの行である.
 
 %In the left-hand table it appears either that each graphene sample was used only once, or that the person recording the data did not keep track of which samples were reused. If such details become important later, the lab may want to change the layout of the first table by adding on the appropriate column. This can be accomplished using morphisms of schemas, which will be discussed in Section \ref{sec:sch as category}.
 
@@ -2299,39 +2304,71 @@ APP&Acme Pen and Paper&(617) 823-5603\\\bhline
 
 %% Subsubsection %%
 
-\subsubsection{Primary keys, foreign keys, and data columns}\index{database!primary key}\index{database!foreign key}
+%\subsubsection{Primary keys, foreign keys, and data columns}\index{database!primary key}\index{database!foreign key}
+\subsubsection{主キー, 外部キー, データ列}\index{database!primary key}\index{database!foreign key}
 
-There is a bit more structure in the above tables (Example \ref{ex:first tables}) then may first meet the eye. Each table has a {\em primary ID column}, found on the left, as well as some {\em data columns} and some {\em foreign key columns}. The primary key column is tasked with uniquely identifying different rows. Each data column houses elementary data of a certain sort. Perhaps most interesting from a structural point of view are the foreign key columns, because they link one table to another, creating a connection pattern between tables. Each foreign key column houses data that needs to be further unpacked. It thus refers us to another {\em foreign} table, in particular the primary ID column of that table. In Example \ref{ex:first tables} the {\tt Source} column was a foreign key to the {\tt Supplier} table.
+%There is a bit more structure in the above tables (Example \ref{ex:first tables}) then may first meet the eye. Each table has a {\em primary ID column}, found on the left, as well as some {\em data columns} and some {\em foreign key columns}. The primary key column is tasked with uniquely identifying different rows. Each data column houses elementary data of a certain sort. Perhaps most interesting from a structural point of view are the foreign key columns, because they link one table to another, creating a connection pattern between tables. Each foreign key column houses data that needs to be further unpacked. It thus refers us to another {\em foreign} table, in particular the primary ID column of that table. In Example \ref{ex:first tables} the {\tt Source} column was a foreign key to the {\tt Supplier} table.
 
-Here is another example, lifted from \cite{Sp2}.
+上記のテーブル(Example \ref{ex:first tables})には, 最初に目に入るよりも少しだけ多くの構造が存在している. それぞれのテーブルには, 左側に\emph{主ID列(primary ID column)}が, いくつかの\emph{データ列(data column)}やいくかつの\emph{外部キー列(foreign key column)}に加えて存在している. 主キー列は異なった行は一意に識別するという仕事を担っている. それぞれのデータ列にはなんらか種類の基礎的なデータがいる. おそらく構造という観点においてもっとも興味深いのは外部キー列である. なぜなら外部キー列はあるテーブルと他のテーブルとを結びつけ, テーブル間を結ぶパターンを作るからだ. それぞれの外部キー列にはそこからさらに展開されることとなるデータがある. すなわち外部キーによって\emph{外部の(foreign)}テーブル, 特にそのテーブルの主キーID列を我々は参照することになる. 例えばExample \ref{ex:first tables}では\texttt{Source}列は\texttt{Supplier}テーブルへの外部キーである.
+
+%Here is another example, lifted from \cite{Sp2}.
+以下は, \cite{Sp2}から借用してきた, また別の例である.
 
 \begin{example}\label{ex:department store 1}
 
-Consider the bookkeeping necessary to run a department store. We keep track of a set of employees and a set of departments. For each employee $e$, we keep track of
+%Consider the bookkeeping necessary to run a department store. We keep track of a set of employees and a set of departments. For each employee $e$, we keep track of
+%\begin{enumerate}[\hsp E.1\;]
+%\item the {\bf first} name of $e$, which is a {\tt FirstNameString},
+%\item the {\bf last} name of $e$, which is a {\tt LastNameString},
+%\item the {\bf manager} of $e$, which is an {\tt Employee}, and
+%\item the department that $e$ {\bf works in}, which is a {\tt Department}.
+%\end{enumerate}
+%For each department $d$, we keep track of
+%\begin{enumerate}[\hsp D.1\;]
+%\item the {\bf name} of $d$, which is a {\tt DepartmentNameString}, and
+%\item the {\bf secretary} of $d$, which is an {\tt Employee}.
+%\end{enumerate}
+
+百貨店を経営するにあたって必要な帳簿について考える. 我々は従業員の集合と部署の集合を注視している. それぞれの従業員$e$に対して, 我々は以下に注目する.
 \begin{enumerate}[\hsp E.1\;]
-\item the {\bf first} name of $e$, which is a {\tt FirstNameString},
-\item the {\bf last} name of $e$, which is a {\tt LastNameString},
-\item the {\bf manager} of $e$, which is an {\tt Employee}, and
-\item the department that $e$ {\bf works in}, which is a {\tt Department}.
+\item $e$の\textbf{名前}(first name), これは\texttt{FirstNameString}である.
+\item $e$の\textbf{名字}(last name), これは\texttt{LastNameString}である.
+\item $e$の\textbf{管理者}(manager), これは\texttt{Employee}である.
+\item $e$の\textbf{働いている}部署(department), これは\texttt{Department}である.
 \end{enumerate}
-For each department $d$, we keep track of
+それぞれの部署$d$に対して, 我々は以下に注目する.
 \begin{enumerate}[\hsp D.1\;]
-\item the {\bf name} of $d$, which is a {\tt DepartmentNameString}, and
-\item the {\bf secretary} of $d$, which is an {\tt Employee}.
+\item $d$の\textbf{部署名}(name), これを\texttt{DepartmentNameString}である.
+\item $d$の\textbf{秘書}(secretary), これは\texttt{Employee}である.
 \end{enumerate}
 
-Above we can suppose that E.1, E.2, and D.1 are data columns (referring to names of various sorts), and E.3, E.4, and D.2 are foreign key columns (referring to managers, secretaries, etc.). 
+%Above we can suppose that E.1, E.2, and D.1 are data columns (referring to names of various sorts), and E.3, E.4, and D.2 are foreign key columns (referring to managers, secretaries, etc.). 
 
-Display (\ref{dia:instance on maincat}) shows how such a database might look at a particular moment in time. 
+上記において我々はE.1, E.2, D.1を(様々なものごとの名前を参照する)データ列, そしてE.3, E.4, D.2を外部キー列(管理者, 秘書, etc.を参照する)外部キー列と, 考えることができる.
+
+%Display (\ref{dia:instance on maincat}) shows how such a database might look at a particular moment in time. 
+%\begin{align}\label{dia:instance on maincat}\index{a schema!department store}
+%&\footnotesize
+%\begin{tabular}{| l || l | l | l | l |}\bhline
+%\multicolumn{5}{| c |}{{\tt Employee}}\\\bhline 
+%{\bf ID}&{\bf first}&{\bf last}&{\bf manager}&{\bf worksIn}\\\bbhline 101&David&Hilbert&103&q10\\\hline 102&Bertrand&Russell&102&x02\\\hline 103&Emmy&Noether&103&q10\\\bhline
+%\end{tabular}&\hsp\footnotesize
+%\begin{tabular}{| l || l | l |}\bhline
+%\multicolumn{3}{| c |}{{\tt Department}}\\
+%\bhline {\bf ID}&{\bf name}&{\bf secretary}\\\bbhline q10&Sales&101\\\hline x02&Production&102\\\bhline
+%\end{tabular}
+%\end{align}\vspace{.1in}
+
+Display (\ref{dia:instance on maincat})はある時点においてこのようなデータベースがとりうるであろう姿を示している.
 \begin{align}\label{dia:instance on maincat}\index{a schema!department store}
 &\footnotesize
 \begin{tabular}{| l || l | l | l | l |}\bhline
-\multicolumn{5}{| c |}{{\tt Employee}}\\\bhline 
-{\bf ID}&{\bf first}&{\bf last}&{\bf manager}&{\bf worksIn}\\\bbhline 101&David&Hilbert&103&q10\\\hline 102&Bertrand&Russell&102&x02\\\hline 103&Emmy&Noether&103&q10\\\bhline
+\multicolumn{5}{| c |}{\texttt{Employee}}\\\bhline 
+{\bf ID}&{\bf first}&\textbf{last}&\textbf{manager}&\textbf{worksIn}\\\bbhline 101&David&Hilbert&103&q10\\\hline 102&Bertrand&Russell&102&x02\\\hline 103&Emmy&Noether&103&q10\\\bhline
 \end{tabular}&\hsp\footnotesize
 \begin{tabular}{| l || l | l |}\bhline
-\multicolumn{3}{| c |}{{\tt Department}}\\
-\bhline {\bf ID}&{\bf name}&{\bf secretary}\\\bbhline q10&Sales&101\\\hline x02&Production&102\\\bhline
+\multicolumn{3}{| c |}{\texttt{Department}}\\
+\bhline \textbf{ID}&\textbf{name}&\textbf{secretary}\\\bbhline q10&Sales&101\\\hline x02&Production&102\\\bhline
 \end{tabular}
 \end{align}\vspace{.1in}
 
