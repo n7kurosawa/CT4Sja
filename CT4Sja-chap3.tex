@@ -2376,27 +2376,43 @@ Display (\ref{dia:instance on maincat})はある時点においてこのよう�
 
 %% Subsubsection %%
 
-\subsubsection{Business rules}\index{database!business rules}
+%\subsubsection{Business rules}\index{database!business rules}
+\subsubsection{仕事でのきまり}\index{database!business rules}
 
-Looking at the tables from Example \ref{ex:department store 1}, one may notice a few patterns. First, every employee works in the same department as his or manager. Second, every department's secretary works in that department. Perhaps the business counts on these rules for the way it structures itself. In that case the database should enforce those rules, i.e. it should check that whenever the data is updated, it conforms to the rules: 
+%Looking at the tables from Example \ref{ex:department store 1}, one may notice a few patterns. First, every employee works in the same department as his or manager. Second, every department's secretary works in that department. Perhaps the business counts on these rules for the way it structures itself. In that case the database should enforce those rules, i.e. it should check that whenever the data is updated, it conforms to the rules: 
+
+Example \ref{ex:department store 1}でのテーブルを見てみると, いくつかのパターンに気づくだろう. 一つめは, 各々の従業員はその管理者と同じ部署で働いている. 二つめは, 各々の部署の秘書はその部署で働いている. おそらく仕事では, それ自身の構造をきめるための方法としてこれらのきまりにたよっているのだろう. このような場合, データベースはこれらのきまりを強制するべきである, i.e. データが更新されるときは, いつ何時でも以下のきまりに従っているか確認するべきである. 
+
+%\begin{enumerate}[\hsp Rule 1\;]
+%\item For every employee $e$, the {\bf manager} of $e$ {\bf works in} the same department that $e$ {\bf works in}.
+%\item For every department $d$, the {\bf secretary} of $d$ {\bf works in} department $d$.
+%\end{enumerate}
+%\vspace{-.3in}\begin{align}\label{dia:rules}\end{align}\vspace{-.3in}
 
 \begin{enumerate}[\hsp Rule 1\;]
-\item For every employee $e$, the {\bf manager} of $e$ {\bf works in} the same department that $e$ {\bf works in}.
-\item For every department $d$, the {\bf secretary} of $d$ {\bf works in} department $d$.
+\item 各々の従業員$e$に対して, $e$の\textbf{管理者}は$e$が\textbf{働いている}部署と同じ部署で\textbf{働いている}.
+\item 各々の部署$d$に対して, $d$の\textbf{秘書}は部署$d$で\textbf{働いている}.
 \end{enumerate}
 \vspace{-.3in}\begin{align}\label{dia:rules}\end{align}\vspace{-.3in}
 
-Together, the statements E.1, E.2, E.3, E.4, D.1, and D.2 from Example \ref{ex:department store 1} and Rule 1 and Rule 2, constitute what we will call the {\em schema} of the database.\index{schema!of a database}\index{database!schema} We will formalize this idea in Section \ref{sec:schemas}.
+%Together, the statements E.1, E.2, E.3, E.4, D.1, and D.2 from Example \ref{ex:department store 1} and Rule 1 and Rule 2, constitute what we will call the {\em schema} of the database.\index{schema!of a database}\index{database!schema} We will formalize this idea in Section \ref{sec:schemas}.
+
+これらを併せたもの, すなわちstatement Example \ref{ex:department store 1} における E.1, E.2, E.3, E.4, D.1, D.2, およびRule 1とRule 2は, 我々がデータベースの\emph{スキーマ(schema)}と呼ぶことになるところのものを構成する. \index{schema!of a database}\index{database!schema} 我々はSection \ref{sec:schemas}でこのアイデアを形式化する.
 
 %% Subsubsection %%
 
-\subsubsection{Data columns as foreign keys}
+%\subsubsection{Data columns as foreign keys}
+\subsubsection{外部キーとしてのデータ列}
 
-To make everything consistent, we could even say that data columns are specific kinds of foreign keys. That is, each data column constitutes a foreign key to some non-branching {\em leaf table}\index{schema!leaf table}, which has no additional data. 
+%To make everything consistent, we could even say that data columns are specific kinds of foreign keys. That is, each data column constitutes a foreign key to some non-branching {\em leaf table}\index{schema!leaf table}, which has no additional data. 
+
+全てを一貫性のあるものにするためには, データ列は特殊な外部キーであるともいえなくはない. これはすなわち, それぞれのデータ列はある枝分れのない\emph{葉のテーブル}\index{schema!leaf table}から構成され, そこには追加のデータがないとみなすということである.
 
 \begin{example}\label{ex:department store 2}
 
-Consider again Example \ref{ex:department store 1}. Note that first names and last names had a particular type, which we all but ignored above. We could cease to ignore them by adding three tables, as follows.
+%Consider again Example \ref{ex:department store 1}. Note that first names and last names had a particular type, which we all but ignored above. We could cease to ignore them by adding three tables, as follows.
+
+Example \ref{ex:department store 1}を再び考察する. 名前と名字にはある特定の型があるが, それを以前の我々はほとんど無視していたことに注意しよう. 我々は, 3つのテーブルを以下のように加えることによって, これらを無視することを止めることができる.
 
 \begin{align}\label{dia:instance on maincat 2}\footnotesize
 \begin{tabular}{| l ||}\bhline
@@ -2413,7 +2429,9 @@ Consider again Example \ref{ex:department store 1}. Note that first names and la
 \end{tabular}
 \end{align}
 
-In combination, Displays (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) form a collection of tables with the property that every column is either a primary key or a foreign key. The notion of data column is now subsumed under the notion of foreign key column. Everything is either a primary key (one per table, labeled ID) or a foreign key column (everything else).
+%In combination, Displays (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) form a collection of tables with the property that every column is either a primary key or a foreign key. The notion of data column is now subsumed under the notion of foreign key column. Everything is either a primary key (one per table, labeled ID) or a foreign key column (everything else).
+
+組み合わせれば, Displays \eqref{dia:instance on maincat}と\eqref{dia:instance on maincat 2}は全ての列が主キーであるか外部キーであるかのどちらかであるという性質を持つテーブルの集まりを形成する. データ列という概念はいまや外部キー列の概念に包摂される. 全ては主キー(テーブルあたり一つの, 名付けられたID)であるか, あるいは外部キー列(それ以外の全て)である.
 
 \end{example}
 
