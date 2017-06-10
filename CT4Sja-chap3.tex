@@ -2437,65 +2437,101 @@ Example \ref{ex:department store 1}を再び考察する. 名前と名字には�
 
 %%%% Subsection %%%%
 
-\subsection{Schemas}\label{sec:schemas}
+%\subsection{Schemas}\label{sec:schemas}
+\subsection{スキーマ}\label{sec:schemas}
 
-The above section may all seem intuitive or reasonable in some ways, but also a bit difficult to fully grasp, perhaps. It would be nice to summarize what is happening in a picture. Such a picture, which will basically be a graph, should capture the {\em conceptual layout} to which the data conforms, without yet being concerned with the individual data that may populate the tables in this instant. We proceed at first by example, giving the precise definition in Definition \ref{def:schema}.
+%The above section may all seem intuitive or reasonable in some ways, but also a bit difficult to fully grasp, perhaps. It would be nice to summarize what is happening in a picture. Such a picture, which will basically be a graph, should capture the {\em conceptual layout} to which the data conforms, without yet being concerned with the individual data that may populate the tables in this instant. We proceed at first by example, giving the precise definition in Definition \ref{def:schema}.
+
+上記の節は, 全てが直感的あるいはある点で納得はできるが, しかしおそらく全体像を把握するには少し難しいようにも見える. 何が起こっているのかを図でまとめるのはよいことだと思われる. このような図は, 基本的にはグラフになるが, 事例の中でテーブルを占めている個々でデータに気を使うことなく, データが従う\emph{概念構造(conceptual layout)}を把えているべきである. 我々はまずは例から始め, 正確な定義はDefinition \ref{def:schema}で与えることにする. 
 
 \begin{example}\label{ex:department store 3}
 
-In Examples \ref{ex:department store 1} and \ref{ex:department store 2}, the conceptual layout for a department store was given, and some example tables were shown. We were instructed to keep track of employees, departments, and six types of data (E.1, E.2, E.3, E.4, D.1, and D.2), and we were instructed to follow two rules (Rule 1, Rule 2). All of this is summarized in the following picture:
+%In Examples \ref{ex:department store 1} and \ref{ex:department store 2}, the conceptual layout for a department store was given, and some example tables were shown. We were instructed to keep track of employees, departments, and six types of data (E.1, E.2, E.3, E.4, D.1, and D.2), and we were instructed to follow two rules (Rule 1, Rule 2). All of this is summarized in the following picture:
+%\begin{align}\label{dia:maincat schema}
+%\MainCatLarge{\mcC:=\tn{ Schema for tables (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) conforming to (\ref{dia:rules})}}
+%\end{align}
+%The five tables from (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) are seen as five vertices; this is also the number of primary ID columns. The six foreign key columns from (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) are seen as six arrows; each points from a table to a foreign table. The two rules from (\ref{dia:rules}) are seen as statements at the top of Display (\ref{dia:maincat schema}).We will explain path equivalences in Definition \ref{def:congruence}.
+
+Example \ref{ex:department store 1}とExample \ref{ex:department store 2}では, 百貨店の概念構造が与えられており,いくつかの例のテーブルが示されている. 我々は従業員, 部署, そして6種類の型のデータ(E.1, E.2, E.3, E.4, D.1, D.2)を注視するように指示されており, また二つの決まりごと(Rule 1, Rule 2)を守るように指示されている. これらの全ては以下の図にまとめることができる. 
 \begin{align}\label{dia:maincat schema}
 \MainCatLarge{\mcC:=\tn{ Schema for tables (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) conforming to (\ref{dia:rules})}}
 \end{align}
-The five tables from (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) are seen as five vertices; this is also the number of primary ID columns. The six foreign key columns from (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) are seen as six arrows; each points from a table to a foreign table. The two rules from (\ref{dia:rules}) are seen as statements at the top of Display (\ref{dia:maincat schema}).We will explain path equivalences in Definition \ref{def:congruence}.
+\eqref{dia:instance on maincat}と\eqref{dia:instance on maincat 2}での5つのテーブルは, 5つの頂点としてみることができる. これはまた主ID列の数でもある. \eqref{dia:instance on maincat}と\eqref{dia:instance on maincat 2}での6つの外部キー列は6本の矢として見ることができる. それぞれはテーブルから外部テーブルを指している. \eqref{dia:rules}での二つのきまりはDisplay (\ref{dia:maincat schema})の上部にある言明として見ることができる. 我々はDefinition \ref{def:congruence}で経路等価性について説明する. 
 
 \end{example}
 
 \begin{exercise}\label{exc:schema for first tables}
-Come up with a schema (consisting of dots and arrows) describing the conceptual layout of information presented in Example \ref{ex:graphene}. 
+%Come up with a schema (consisting of dots and arrows) describing the conceptual layout of information presented in Example \ref{ex:graphene}. 
+Example \ref{ex:graphene}で提示された情報の概念構造を記述する(点と矢で構成された)スキーマを提案せよ.
 \end{exercise}
 
-In order to define schemas, we must first define the notion of schematic equivalence relation, which is to hold on the set of paths of a graph $G$ (see Section \ref{sec:paths in graph}). Such an equivalence relation (in addition to being reflexive, symmetric, and transitive) has two sorts of additional properties: equivalent paths must have the same source and target, and the composition of equivalent paths with other equivalent paths must yield equivalent paths. Formally we have Definition \ref{def:congruence}.
+%In order to define schemas, we must first define the notion of schematic equivalence relation, which is to hold on the set of paths of a graph $G$ (see Section \ref{sec:paths in graph}). Such an equivalence relation (in addition to being reflexive, symmetric, and transitive) has two sorts of additional properties: equivalent paths must have the same source and target, and the composition of equivalent paths with other equivalent paths must yield equivalent paths. Formally we have Definition \ref{def:congruence}.
+
+スキーマを定義するため, 我々はまずスキーマ的同値関係の概念を定義しなければならない. これはグラフ$G$の経路(Section \ref{sec:paths in graph}の見よ)の集合を理解するためのものである. このような同値関係は(反射性, 対称性, 推移性に加えて)二種の追加の性質を持っている. 等価経路は同じ始点と終点を持っていなければならず, そして等価経路と他の等価経路の合成は等価経路にならなければならない. 形式的にはDefinition \ref{def:congruence}となる. 
 
 \begin{definition}\label{def:congruence}\index{PED}\index{congruence}\index{schema!Path equivalence declaration (PED)}\index{schema!congruence}\
 
-Let $G=(V,A,src,tgt)$ be a graph, and let $\Path_G$ denote the set of paths in $G$ (see Definition \ref{def:paths in graph}). A {\em path equivalence declaration} (or {\em PED}) is an expression of the form $p\simeq q$ where $p,q\in\Path_G$ have the same source and target, $src(p)=src(q)$ and $tgt(p)=tgt(q)$. 
+%Let $G=(V,A,src,tgt)$ be a graph, and let $\Path_G$ denote the set of paths in $G$ (see Definition \ref{def:paths in graph}). A {\em path equivalence declaration} (or {\em PED}) is an expression of the form $p\simeq q$ where $p,q\in\Path_G$ have the same source and target, $src(p)=src(q)$ and $tgt(p)=tgt(q)$. 
 
-A {\em congruence} on $G$ is a relation $\simeq$ on $\Path_G$ that has the following properties: 
+$G=(V,A,\src,\tgt)$をグラフとし, $\Path_G$は$G$の経路を示すとする(Definition \ref{def:paths in graph}を見よ). \emph{経路同値宣言}\emph{(path equivalence declaration}あるいは\emph{PED)}は $p\simeq q$の形をとる式である. ここで$p,q\in\Path_G$はそれぞれが同じ始点と終点を持つ, すなわち$\src(p)=\src(q)$かつ$\tgt(p)=\tgt(q)$.
+
+%A {\em congruence} on $G$ is a relation $\simeq$ on $\Path_G$ that has the following properties: 
+%\begin{enumerate}
+%\item The relation $\simeq$ is an equivalence relation.
+%\item If $p\simeq q$ then $src(p)=src(q)$.
+%\item If $p\simeq q$ then $tgt(p)=tgt(q)$.
+%\item Suppose $p,q\taking b\to c$ are paths, and $m\taking a\to b$ is an arrow. If $p\simeq q$ then $mp\simeq mq$. 
+%\item Suppose $p,q\taking a\to b$ are paths, and $n\taking b\to c$ is an arrow. If $p\simeq q$ then $pn\simeq qn$.
+%\end{enumerate}
+
+$G$上の\emph{合同関係(congruence)}は, 以下の性質を持つ$\Path_G$上の関係$\simeq$である.
 \begin{enumerate}
-\item The relation $\simeq$ is an equivalence relation.
-\item If $p\simeq q$ then $src(p)=src(q)$.
-\item If $p\simeq q$ then $tgt(p)=tgt(q)$.
-\item Suppose $p,q\taking b\to c$ are paths, and $m\taking a\to b$ is an arrow. If $p\simeq q$ then $mp\simeq mq$. 
-\item Suppose $p,q\taking a\to b$ are paths, and $n\taking b\to c$ is an arrow. If $p\simeq q$ then $pn\simeq qn$.
+\item $\simeq$は同値関係である.
+\item $p\simeq q$ならば$\src(p)=\src(q)$.
+\item $p\simeq q$ならば$\tgt(p)=\tgt(q)$.
+\item $p,q\taking b\to c$が経路であるとし, $m\taking a\to b$が矢であるとする. このとき$p\simeq q$ならば$mp\simeq mq$. 
+\item $p,q\taking a\to b$が経路であるとし, $n\taking b\to c$が矢であるとする. このとき$p\simeq q$ならば$pn\simeq qn$.
 \end{enumerate}
 
 \end{definition}
 
-Any set of path equivalence declarations (PEDs) generates a congruence. We tend to elide the difference between a congruence and the set of PEDs that generates it.
+%Any set of path equivalence declarations (PEDs) generates a congruence. We tend to elide the difference between a congruence and the set of PEDs that generates it.
+
+経路等価宣言(PED)の任意の集合は合同関係を生成する. 我々は合同関係(の集合)とそれを生成するPEDの集合との間の区別をしばしば省略することになる. 
 
 \begin{exercise}\label{exc:generating congruence}
-Consider the graph shown in (\ref{dia:maincat schema}), and the two declarations shown at the top. They generate a congruence. 
-\sexc Is it true that the following PED is an element of this congruence? $$\tn{{\tt Employee} manager manager worksIn $\stackrel{?}{\simeq}$ {\tt Employee} worksIn}$$ \next What about this one? $$\tn{{\tt Employee} worksIn secretary $\stackrel{?}{\simeq}$ {\tt Employee}}$$ 
-\next What about this one? $$\tn{{\tt Department} secretary manager worksIn name $\stackrel{?}{\simeq}$ {\tt Department} name}$$
+%Consider the graph shown in (\ref{dia:maincat schema}), and the two declarations shown at the top. They generate a congruence. 
+%\sexc Is it true that the following PED is an element of this congruence? $$\tn{{\tt Employee} manager manager worksIn $\stackrel{?}{\simeq}$ {\tt Employee} worksIn}$$ \next What about this one? $$\tn{{\tt Employee} worksIn secretary $\stackrel{?}{\simeq}$ {\tt Employee}}$$ 
+%\next What about this one? $$\tn{{\tt Department} secretary manager worksIn name $\stackrel{?}{\simeq}$ {\tt Department} name}$$
+%\endsexc
+\eqref{dia:maincat schema}で示されているグラフと, その上に示されている二つの宣言について考える. これらは合同関係を生成する.
+\sexc 以下のPEDはこの合同関係の要素だろうか? $$\tn{\texttt{Employee} manager manager worksIn $\stackrel{?}{\simeq}$ \texttt{Employee} worksIn}$$
+\next これについてはどうだろうか? $$\tn{\texttt{Employee} worksIn secretary $\stackrel{?}{\simeq}$ \texttt{Employee}}$$
+\next これについてはどうだろうか? $$\tn{\texttt{Department} secretary manager worksIn name $\stackrel{?}{\simeq}$ \texttt{Department} name}$$
 \endsexc
 \end{exercise}
 
 \begin{lemma}\label{lemma:composing PEDs}
 
-Suppose that $G$ is a graph and $\simeq$ is a congruence on $G$. Suppose $p\simeq q\taking a\to b$ and $r\simeq s\taking b\to c$. Then $pr\simeq qs$.
+%Suppose that $G$ is a graph and $\simeq$ is a congruence on $G$. Suppose $p\simeq q\taking a\to b$ and $r\simeq s\taking b\to c$. Then $pr\simeq qs$.
+
+$G$をグラフとし, $\simeq$を$G$上の合同関係とする. $p\simeq q\taking a\to b$および$r\simeq s\taking b\to c$を仮定する. このとき$pr\simeq qs$である.
 
 \end{lemma}
 
 \begin{proof}
 
-The picture to have in mind is this: $$\xymatrix@=13pt{&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[dr]&&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[dr]\\\LMO{a}\ar@{}[rrrr]|{\simeq}\ar[ur]\ar[dr]\ar@{-->}@/^1.5pc/[rrrr]_p\ar@{-->}@/_1.5pc/[rrrr]^q&&&&\LMO{b}\ar@{}[rrrr]|{\simeq}\ar[ur]\ar[dr]\ar@{-->}@/^1.5pc/[rrrr]_r\ar@{-->}@/_1.5pc/[rrrr]^s&&&&\LMO{c}\\&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[ur]&&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[ur]}$$ Applying condition (3) from Definition \ref{def:congruence} to each arrow in path $p$, it follows by induction that $pr\simeq ps$. Applying condition (4) to each arrow in path $s$, it follows similarly that $ps\simeq qs$. Because $\simeq$ is an equivalence relation, it follows that $pr\simeq qs$. 
+%The picture to have in mind is this: $$\xymatrix@=13pt{&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[dr]&&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[dr]\\\LMO{a}\ar@{}[rrrr]|{\simeq}\ar[ur]\ar[dr]\ar@{-->}@/^1.5pc/[rrrr]_p\ar@{-->}@/_1.5pc/[rrrr]^q&&&&\LMO{b}\ar@{}[rrrr]|{\simeq}\ar[ur]\ar[dr]\ar@{-->}@/^1.5pc/[rrrr]_r\ar@{-->}@/_1.5pc/[rrrr]^s&&&&\LMO{c}\\&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[ur]&&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[ur]}$$ Applying condition (3) from Definition \ref{def:congruence} to each arrow in path $p$, it follows by induction that $pr\simeq ps$. Applying condition (4) to each arrow in path $s$, it follows similarly that $ps\simeq qs$. Because $\simeq$ is an equivalence relation, it follows that $pr\simeq qs$. 
+
+念頭にある図は以下である. $$\xymatrix@=13pt{&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[dr]&&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[dr]\\\LMO{a}\ar@{}[rrrr]|{\simeq}\ar[ur]\ar[dr]\ar@{-->}@/^1.5pc/[rrrr]_p\ar@{-->}@/_1.5pc/[rrrr]^q&&&&\LMO{b}\ar@{}[rrrr]|{\simeq}\ar[ur]\ar[dr]\ar@{-->}@/^1.5pc/[rrrr]_r\ar@{-->}@/_1.5pc/[rrrr]^s&&&&\LMO{c}\\&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[ur]&&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[ur]}$$ Definition \ref{def:congruence}の条件(4)を経路$p$のそれぞれの矢に適用することにより, 帰納的に$pr\simeq ps$が導かれる. 条件(5)を経路$s$のそれぞれの矢に適用することにより, 同様に$ps\simeq qs$が導かれる. $\simeq$は同値関係であるから, $pr\simeq qs$が導かれる.
 
 \end{proof}
 
 \begin{definition}\label{def:schema}\index{schema}\index{database!schema}
 
-A {\em database schema} (or simply {\em schema}) $\mcC$ consists of a pair $\mcC:=(G,\simeq)$ where $G$ is a graph and $\simeq$ is a congruence on $G$. 
+%A {\em database schema} (or simply {\em schema}) $\mcC$ consists of a pair $\mcC:=(G,\simeq)$ where $G$ is a graph and $\simeq$ is a congruence on $G$. 
+
+\emph{データベーススキーマ(database schema)} (あるいは単に\emph{スキーマ(schema)}) $\mcC$は対$\mcC:=(G,\simeq)$からなる, ここで$G$はグラフであり$\simeq$は$G$上の合同関係である.
 
 \end{definition}
 
