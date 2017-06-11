@@ -2456,7 +2456,7 @@ Example \ref{ex:department store 1}とExample \ref{ex:department store 2}では,
 \begin{align}\label{dia:maincat schema}
 \MainCatLarge{\mcC:=\tn{ Schema for tables (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) conforming to (\ref{dia:rules})}}
 \end{align}
-\eqref{dia:instance on maincat}と\eqref{dia:instance on maincat 2}での5つのテーブルは, 5つの頂点としてみることができる. これはまた主ID列の数でもある. \eqref{dia:instance on maincat}と\eqref{dia:instance on maincat 2}での6つの外部キー列は6本の矢として見ることができる. それぞれはテーブルから外部テーブルを指している. \eqref{dia:rules}での二つのきまりはDisplay (\ref{dia:maincat schema})の上部にある言明として見ることができる. 我々はDefinition \ref{def:congruence}で経路等価性について説明する. 
+\eqref{dia:instance on maincat}と\eqref{dia:instance on maincat 2}での5つのテーブルは, 5つの頂点としてみることができる. これはまた主ID列の数でもある. \eqref{dia:instance on maincat}と\eqref{dia:instance on maincat 2}での6つの外部キー列は6本の矢として見ることができる. それぞれはテーブルから外部テーブルを指している. \eqref{dia:rules}での二つのきまりはDisplay (\ref{dia:maincat schema})の上部にある言明として見ることができる. 我々はDefinition \ref{def:congruence}で経路同値性について説明する. 
 
 \end{example}
 
@@ -2497,7 +2497,7 @@ $G$上の\emph{合同関係(congruence)}は, 以下の性質を持つ$\Path_G$�
 
 %Any set of path equivalence declarations (PEDs) generates a congruence. We tend to elide the difference between a congruence and the set of PEDs that generates it.
 
-経路等価宣言(PED)の任意の集合は合同関係を生成する. 我々は合同関係(の集合)とそれを生成するPEDの集合との間の区別をしばしば省略することになる. 
+経路同値宣言(PED)の任意の集合は合同関係を生成する. 我々は合同関係(の集合)とそれを生成するPEDの集合との間の区別をしばしば省略することになる. 
 
 \begin{exercise}\label{exc:generating congruence}
 %Consider the graph shown in (\ref{dia:maincat schema}), and the two declarations shown at the top. They generate a congruence. 
@@ -2668,17 +2668,34 @@ $P$をチェスを指すプログラムとする. 駒の配置(ゲームの履�
 
 \subsubsection{Ologging schemas}\label{sec:olog as db schema}\index{olog!as database schema}
 
-It should be clear that a database schema is nothing but an olog in disguise. The difference is basically the readability requirements for ologs. There is an important new addition in this section, namely that we can fill out an olog with data. Conversely, we have seen that databases are not any harder to understand than ologs are.
+%It should be clear that a database schema is nothing but an olog in disguise. The difference is basically the readability requirements for ologs. There is an important new addition in this section, namely that we can fill out an olog with data. Conversely, we have seen that databases are not any harder to understand than ologs are.
+
+データベーススキーマは見掛けを変えたologに他ならないことは, もう明かであろう. 違いは基本的にはologに対しては英語として読めることが求められているという点である. この章ではologの概念に重要な事項を加える, すなわちologにはデータを記入することができるという点である. 逆に言えば, データベースを理解することはologを理解することと同程度にしか難しくはないことを見る.
 
 \begin{example}\label{ex:orbits}
 
-Consider the olog 
+%Consider the olog 
+%\begin{align}\label{dia:moon1}\obox{}{.5in}{a moon}\Too{\tn{orbits}}\obox{}{.5in}{a planet}\end{align}
+%We can document some instances of this relationship using the following tables: 
+%\begin{align}\label{dia:moon2}
+%\begin{tabular}{| c || c |}\bhline
+%\multicolumn{2}{| c |}{\bf orbits}\\\bhline
+%{\bf a moon}&{\bf a planet}\\\bbhline
+%The Moon&Earth\\\hline 
+%Phobos&Mars\\\hline 
+%Deimos&Mars\\\hline 
+%Ganymede & Jupiter\\\hline
+%Titan & Saturn\\\bhline
+%\end{tabular}
+%\end{align}  
+
+以下のologを考える.
 \begin{align}\label{dia:moon1}\obox{}{.5in}{a moon}\Too{\tn{orbits}}\obox{}{.5in}{a planet}\end{align}
-We can document some instances of this relationship using the following tables: 
+我々はこの関係のいくつかの事例を以下のテーブルを用いて文章化できる.
 \begin{align}\label{dia:moon2}
 \begin{tabular}{| c || c |}\bhline
-\multicolumn{2}{| c |}{\bf orbits}\\\bhline
-{\bf a moon}&{\bf a planet}\\\bbhline
+\multicolumn{2}{| c |}{\textbf{orbits}}\\\bhline
+\textbf{a moon}& \textbf{a planet}\\\bbhline
 The Moon&Earth\\\hline 
 Phobos&Mars\\\hline 
 Deimos&Mars\\\hline 
@@ -2687,28 +2704,42 @@ Titan & Saturn\\\bhline
 \end{tabular}
 \end{align}  
 
-Clearly, this table of instances can be updated as more moons are discovered by the author (be it by telescope, conversation, or research).
+%Clearly, this table of instances can be updated as more moons are discovered by the author (be it by telescope, conversation, or research).
+
+明らかに, 衛星がolog作者によって発見されるたびに(それが望遠鏡によってであれ, 会話によってであれ, 研究によってであれ), この事例のテーブルは更新することができる.
 
 \end{example}
 
 \begin{exercise}
-In fact, Example \ref{ex:orbits} did not follow Rules \ref{rules:schema to tables}. Strictly following those rules, copy over the data from (\ref{dia:moon2}) into tables that are in accordance with schema (\ref{dia:moon1}).
+%In fact, Example \ref{ex:orbits} did not follow Rules \ref{rules:schema to tables}. Strictly following those rules, copy over the data from (\ref{dia:moon2}) into tables that are in accordance with schema (\ref{dia:moon1}).
+実際には, Example \ref{ex:orbits}はRule \ref{rules:schema to tables}に従っていない. これらの規則を厳密に守り, \eqref{dia:moon2}のデータをスキーマ\eqref{dia:moon1}に合致するテーブルへと書き写せ.
 \end{exercise}
 
 \begin{exercise}~
-\sexc Write down a schema, in terms of the boxes \fakebox{a thing I own} and \fakebox{a place} and one additional arrow, that might help one remember where they decided to put ``random" things. 
-\next What is a good label for the arrow? 
-\next Fill in some rows of the corresponding set of tables for your own case.
+%\sexc Write down a schema, in terms of the boxes \fakebox{a thing I own} and \fakebox{a place} and one additional arrow, that might help one remember where they decided to put ``random" things. 
+%\next What is a good label for the arrow? 
+%\next Fill in some rows of the corresponding set of tables for your own case.
+%\endsexc
+\sexc 箱\fakebox{a thing I own}, \fakebox{a place}, および追加で一本の矢を用いた, ``無作為に''ものを置く場所を決めることの想起を助けるであろうスキーマを書き下せ.
+\next この矢に対するよい見出しは何になるだろうか?
+\next 対応するテーブルの集合の行をいくつか, 読者自身の事例で埋めよ.
 \endsexc
 \end{exercise}
 
 \begin{exercise}\label{exc:father and child}
-Consider the olog 
+%Consider the olog 
+%$$
+%\xymatrix{\obox{C}{.4in}{a child}\LA{rr}{has}&&\obox{F}{.5in}{a father}\ar@/^1pc/[ll]^{\tn%{has as first}}\ar@/_1pc/[ll]_{\tn{has as tallest}}}
+%$$
+%\sexc What path equivalence declarations would be appropriate for this olog? You can use $f\taking F\to C$, $t\taking F\to C$, and $h\taking C\to F$ if you prefer. 
+%\next How many PEDs are in the congruence?
+%\endsexc
+以下のologを考える.
 $$
 \xymatrix{\obox{C}{.4in}{a child}\LA{rr}{has}&&\obox{F}{.5in}{a father}\ar@/^1pc/[ll]^{\tn{has as first}}\ar@/_1pc/[ll]_{\tn{has as tallest}}}
 $$
-\sexc What path equivalence declarations would be appropriate for this olog? You can use $f\taking F\to C$, $t\taking F\to C$, and $h\taking C\to F$ if you prefer. 
-\next How many PEDs are in the congruence?
+\sexc このologに対してどのような経路同値宣言が適切だろうか? よいと思うならば$f\taking F\to C$, $t\taking F\to C$, および$h\taking C\to F$を用いてもよい. 
+\next 合同関係のなかにはいくつPEDがあるだろうか?
 \endsexc
 \end{exercise}
 
