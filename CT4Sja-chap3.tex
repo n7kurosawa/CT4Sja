@@ -2257,7 +2257,7 @@ $S$を上記のように定義された地球上の開部分集合の集合と�
 
 %A database is a collection of tables, each table $T$ of which consists of a set of columns and a set of rows. We roughly explain the role of tables, columns, and rows as follows. The existence of table $T$ suggests the existence of a fixed methodology for observing objects or events of a certain type. Each column $c$ in $T$ prescribes a single kind or method of observation, so that the datum inhabiting any cell in column $c$ refers to an observation of that kind. Each row $r$ in $T$ has a fixed sourcing event or object, which can be observed using the methods prescribed by the columns. The cell $(r,c)$ refers to the observation of kind $c$ made on event $r$. All of the rows in $T$ should refer to uniquely identifiable objects or events of a single type, and the name of the table $T$ should refer to that type.
 
-データベース(database)はテーブル(table)の集まりであり, そのテーブル$T$のそれぞれは列(column)の集合と行(row)の集合からなる\footnote{訳注: テーブル, 行, 列はそれぞれ関係(relation), タプル(tuple), 属性(attribute)と呼ばれることもある.}. おおざっぱにテーブル, 列, 行の役割を説明すると以下のようになる. テーブル$T$の存在はある型の観測対象(object)あるいは事象(event)に対するある定められた方法論が存在する示唆している. $T$におけるそれぞれの列$c$は単一の測定の種類あるいは方法を規定している. よって列$c$の任意の升目にあるデータ要素はその種類の観測を参照している. テーブル$T$のそれぞれの列はある定められたデータの源となる対象あるいは事象であり, この対象や事象は列によって規定された方法を用いて観測することができる. 升目(cell) $(r,c)$は事象$r$に対して行なわれた種$c$の観測を参照する. $T$の全ての行は一意に識別可能な単一の型の対象あるいは事象を参照しているべきであり, テーブル$T$の名前はその型を参照しているべきである. 
+データベース(database)はテーブル(table)の集まりであり, そのテーブル$T$のそれぞれは列(column)の集合と行(row)の集合からなる\footnote{訳注: テーブル, 行, 列はそれぞれ関係(relation), タプル(tuple), 属性(attribute)と呼ばれることもある.}. おおざっぱにテーブル, 列, 行の役割を説明すると以下のようになる. テーブル$T$の存在はある型の観測対象(object)あるいは事象(event)に対するある定められた方法論が存在することを示唆している. $T$におけるそれぞれの列$c$は単一の測定の種類あるいは方法を規定している. よって列$c$の任意の升目にあるデータ要素はその種類の観測を参照している. テーブル$T$のそれぞれの列はある定められたデータの源となる対象あるいは事象であり, この対象や事象は列によって規定された方法を用いて観測することができる. 升目(cell) $(r,c)$は事象$r$に対して行なわれた種$c$の観測を参照する. $T$の全ての行は一意に識別可能な単一の型の対象あるいは事象を参照しているべきであり, テーブル$T$の名前はその型を参照しているべきである. 
 
 \begin{example}\label{ex:graphene}
 
@@ -2397,7 +2397,7 @@ Example \ref{ex:department store 1}でのテーブルを見てみると, いく�
 
 %Together, the statements E.1, E.2, E.3, E.4, D.1, and D.2 from Example \ref{ex:department store 1} and Rule 1 and Rule 2, constitute what we will call the {\em schema} of the database.\index{schema!of a database}\index{database!schema} We will formalize this idea in Section \ref{sec:schemas}.
 
-これらを併せたもの, すなわちstatement Example \ref{ex:department store 1} における E.1, E.2, E.3, E.4, D.1, D.2, およびRule 1とRule 2は, 我々がデータベースの\emph{スキーマ(schema)}と呼ぶことになるところのものを構成する. \index{schema!of a database}\index{database!schema} 我々はSection \ref{sec:schemas}でこのアイデアを形式化する.
+これらを併せたもの, すなわちExample \ref{ex:department store 1} における言明 E.1, E.2, E.3, E.4, D.1, D.2, およびRule 1とRule 2は, 我々がデータベースの\emph{スキーマ(schema)}と呼ぶことになるところのものを構成する. \index{schema!of a database}\index{database!schema} 我々はSection \ref{sec:schemas}でこのアイデアを形式化する.
 
 %% Subsubsection %%
 
@@ -2537,30 +2537,69 @@ $G$をグラフとし, $\simeq$を$G$上の合同関係とする. $p\simeq q\tak
 
 \begin{example}
 
-The picture drawn in (\ref{dia:maincat schema}) has the makings of a schema. Pictured is a graph with two PEDs; these generate a congruence, as discussed in Exercise \ref{exc:generating congruence}.  
+%The picture drawn in (\ref{dia:maincat schema}) has the makings of a schema. Pictured is a graph with two PEDs; these generate a congruence, as discussed in Exercise \ref{exc:generating congruence}.  
+
+\eqref{dia:maincat schema}で描かれている図はスキーマを構成している. 描かれているものは二つのPEDを伴うグラフである. これらはExercise \ref{exc:generating congruence}で議論した合同関係を生成する.
 
 \end{example}
 
-A schema can be converted into a system of tables each with a primary key and some number of foreign keys referring to other tables, as discussed in Section \ref{sec:what are dbs}. Definition \ref{def:schema} gives a precise conceptual understanding of what a schema is, and the following rules describe how to convert such a thing into a table layout.
+%A schema can be converted into a system of tables each with a primary key and some number of foreign keys referring to other tables, as discussed in Section \ref{sec:what are dbs}. Definition \ref{def:schema} gives a precise conceptual understanding of what a schema is, and the following rules describe how to convert such a thing into a table layout.
+
+スキーマは, Section \ref{sec:what are dbs}で議論したように, それぞれのテーブルが主キーと他のテーブルを参照するいくつかの外部キーから構成される, テーブルの系に変換することができる. Definition \ref{def:schema}によってスキーマとは何であるかの正確な概念的理解が与えられる. 以下の規則はこのような物事をどのようにしてテーブルの設計に変換すればよいかを述べている.
 
 \begin{rules}\label{rules:schema to tables}\index{olog!rules}
 
-Converting a schema $\mcC=(G,\simeq)$ into a table layout should be done as follows:
+%Converting a schema $\mcC=(G,\simeq)$ into a table layout should be done as follows:
+%\begin{enumerate}[(i)]
+%\item There should be a table for every vertex in $G$ and if the vertex is named, the table should have that name;
+%\item Each table should have a left-most column called ID, set apart from the other columns by a double vertical line; and
+%\item To each arrow $a$ in $G$ having source vertex $s:=src(a)$ and target vertex $t:=tgt(a)$, there should be a foreign key column $a$ in table $s$, referring to table $t$; if the arrow $a$ is named, column $a$ should have that name.
+%\end{enumerate}
+
+スキーマ$\mcC=(G,\simeq)$からテーブル設計への変換は以下に従って行なうべきである.
 \begin{enumerate}[(i)]
-\item There should be a table for every vertex in $G$ and if the vertex is named, the table should have that name;
-\item Each table should have a left-most column called ID, set apart from the other columns by a double vertical line; and
-\item To each arrow $a$ in $G$ having source vertex $s:=src(a)$ and target vertex $t:=tgt(a)$, there should be a foreign key column $a$ in table $s$, referring to table $t$; if the arrow $a$ is named, column $a$ should have that name.
+\item $G$の全ての頂点に対してテーブルが存在するべきであり, もしその頂点が名付けられているならばテーブルもその名前を持つべきである.
+\item それぞれのテーブルはIDと呼ばれる最左の列を持つべきであり, その集合は他の列と二重の縦線
+区分けされているべきである.
+\item 始点$s:=\src(a)$および終点$t:=\tgt(a)$を持つ$G$のそれぞれの矢$a$に対して, テーブル$t$を参照する外部キーの列$a$がテーブル$s$に存在しているべきである. もし矢$a$が名付けられているならば, 列$a$もその名前を持つべきである.
 \end{enumerate}
 
 \end{rules}
 
-\begin{example}[Discrete dynamical system]\label{ex:dds}\index{dynamical system!discrete}
+%\begin{example}[Discrete dynamical system]\label{ex:dds}\index{dynamical system!discrete}
+\begin{example}[離散力学系]\label{ex:dds}\index{dynamical system!discrete}
 
-Consider the schema 
+%Consider the schema 
+%\begin{align}\label{dia:loop}
+%\Loop:=\LoopSchema
+%\end{align}
+%in which the congruence is trivial (i.e. generated by the empty set of PEDs.) This schema is quite interesting. It encodes a set $s$ and a function $f\taking s\to s$. Such a thing is called a {\em discrete dynamical system}. One imagines $s$ as the set of states and, for any state $x\in s$, a notion of ``next state" $f(x)\in s$. For example
+%\begin{align}\label{dia:dds data}
+%\begin{tabular}{| l || c |}\bhline
+%\multicolumn{2}{| c |}{s}\\\bhline 
+%{\bf ID}&{\bf f}\\\bbhline
+%A & B\\\hline
+%B & C\\\hline
+%C & C\\\hline
+%D & B\\\hline
+%E & C\\\hline
+%F & G\\\hline
+%G & H\\\hline
+%H & G\\\hline
+%\end{tabular}
+%\hspace{.5in}\text{...pictured...}\hspace{.5in}
+%\parbox{1.4in}{\fbox{\xymatrix@=7pt{
+%\LMO{A}\ar[rr]&&\LMO{B}\ar[rr]&&\LMO{C}\ar@(u,r)[]^~\\
+%\LMO{D\ar[urr]}&&\LMO{E}\ar[urr]\\
+%\LMO{F}\ar[rr]&&\LMO{G}\ar@/^.5pc/[rr]&&\LMO{H}\ar@/^.5pc/[ll]^~
+%}}}
+%\end{align}
+
+合同関係が自明(i.e. 空集合のPEDから生成される合同関係を持つ)スキーマ
 \begin{align}\label{dia:loop}
 \Loop:=\LoopSchema
 \end{align}
-in which the congruence is trivial (i.e. generated by the empty set of PEDs.) This schema is quite interesting. It encodes a set $s$ and a function $f\taking s\to s$. Such a thing is called a {\em discrete dynamical system}. One imagines $s$ as the set of states and, for any state $x\in s$, a notion of ``next state" $f(x)\in s$. For example
+を考える. このスキーマは非常に興味深い. これは集合$s$と函数$f\taking s\to s$を符号化している. このような対象は\emph{離散力学系(discrete dynamical system)}と呼ばれる. $s$を状態の集合であると思えば, 任意の状態$x\in s$に対して``次の状態'' $f(x)\in s$を考えることができる. 例えば, 
 \begin{align}\label{dia:dds data}
 \begin{tabular}{| l || c |}\bhline
 \multicolumn{2}{| c |}{s}\\\bhline 
@@ -2574,7 +2613,7 @@ F & G\\\hline
 G & H\\\hline
 H & G\\\hline
 \end{tabular}
-\hspace{.5in}\text{...pictured...}\hspace{.5in}
+\hspace{.5in}\text{...図で描くと...}\hspace{.5in}
 \parbox{1.4in}{\fbox{\xymatrix@=7pt{
 \LMO{A}\ar[rr]&&\LMO{B}\ar[rr]&&\LMO{C}\ar@(u,r)[]^~\\
 \LMO{D\ar[urr]}&&\LMO{E}\ar[urr]\\
@@ -2586,28 +2625,42 @@ H & G\\\hline
 
 \begin{application}
 
-Imagine a \href{http://en.wikipedia.org/wiki/Chronon}{\text quantum-time} universe in which there are discrete time steps. We model it as a discrete dynamical system, i.e. a table of the form (\ref{dia:dds data}). For every possible state of the universe we include a row in the table. The state in the next instant is recorded in the second column.
+%Imagine a \href{http://en.wikipedia.org/wiki/Chronon}{\text quantum-time} universe in which there are discrete time steps. We model it as a discrete dynamical system, i.e. a table of the form (\ref{dia:dds data}). For every possible state of the universe we include a row in the table. The state in the next instant is recorded in the second column.
+
+\href{http://en.wikipedia.org/wiki/Chronon}{時間が量子化されている}宇宙を想像してみよう. そこでは時間は離散的である. 我々はこれを離散力学系として, i.e. テーブル\eqref{dia:dds data}の形で模型化できる. 宇宙の全ての可能な状態に対して我々はテーブルに行を含める. ある状態の次の瞬間における状態は二番目の列に記載する. 
 
 \end{application}
 
-\begin{example}[Finite hierarchy]\label{ex:finite hierarchy}\index{hierarchy}
+%\begin{example}[Finite hierarchy]\label{ex:finite hierarchy}\index{hierarchy}
+\begin{example}[有限の階層]\label{ex:finite hierarchy}\index{hierarchy}
 
-The schema $\Loop$ can also be used to encode hierarchies, such as the manager relation from Examples \ref{ex:department store 1} and \ref{ex:department store 3}, 
+%The schema $\Loop$ can also be used to encode hierarchies, such as the manager relation from Examples \ref{ex:department store 1} and \ref{ex:department store 3}, 
+%$$\fbox{\xymatrix{\LTO{E}\ar@(l,u)[]^{\tn{mgr}}}}$$
+%One problem with this, however, is if a schema has even one loop, then it can have infinitely many paths (corresponding, e.g. to an employees manager's manager's manager's ... manager). 
+
+スキーマ$\Loop$は階層構造を符号化することに使うこともできる. 例えばExamples \ref{ex:department store 1}とExample \ref{ex:department store 3}の管理者関係は
 $$\fbox{\xymatrix{\LTO{E}\ar@(l,u)[]^{\tn{mgr}}}}$$
-One problem with this, however, is if a schema has even one loop, then it can have infinitely many paths (corresponding, e.g. to an employees manager's manager's manager's ... manager). 
+である. しかし, これについては一つ問題がある. それはスキーマが一つでもループ構造を持っていれば, そこには無限に多くの経路が存在する点である(対応する例としては, ある従業員の管理者の管理者の管理者の......管理者).
 
-Sometimes we know that in a given company that process eventually ends, a famous example being that at Ben and Jerry's ice cream, there were only seven levels. In that case we know that an employee's 8th level manager is equal to his or her 7th level manager. This can be encoded by the PED $${\tt E} \tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\simeq{\tt E}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}$$ or more concisely, $\tn{mgr}^8=\tn{mgr}^7$.
+%Sometimes we know that in a given company that process eventually ends, a famous example being that at Ben and Jerry's ice cream, there were only seven levels. In that case we know that an employee's 8th level manager is equal to his or her 7th level manager. This can be encoded by the PED $${\tt E} \tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\simeq{\tt E}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}$$ or more concisely, $\tn{mgr}^8=\tn{mgr}^7$.
+
+しばしば, 考察対象の会社においてはこの過程は実質的に終了するということがあらかじめ分かっている. 有名な例はBen \& Jerry'sアイスクリームであり, \footnote{訳注: Ben \& Jerry's Homemade Holdingsが製造・販売する, アメリカを代表するアイスクリームのブランドの一つ.} この会社には7番目の階層までしか存在ない. この場合, 従業員の8番目の階層の管理者はその従業員の7番目の階層の管理者と同じであることが分かっている. これはPED$${\tt E} \tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\simeq{\tt E}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}$$あるいはもっと簡潔に表記した$\tn{mgr}^8=\tn{mgr}^7$によって, 符号化することができる.
 
 \end{example}
 
 \begin{exercise}
-Is there any nontrivial PED on $\Loop$ that holds for the data in Example \ref{ex:dds}? If so, what is it and how many equivalence classes of paths in $\Loop$ are there after you impose that relation?
+%Is there any nontrivial PED on $\Loop$ that holds for the data in Example \ref{ex:dds}? If so, what is it and how many equivalence classes of paths in $\Loop$ are there after you impose that relation?
+Example \ref{ex:dds}のデータを取り扱える$\Loop$上の非自明なPEDは存在するだろうか? もし存在するならば, それを課した後にはどれだけの数の経路の同値類があるだろうか?
 \end{exercise}
 
 \begin{exercise}
-Let $P$ be a chess-playing program. Given any position (including the history of the game and choice of whose turn it is), $P$ will make a move. 
-\sexc Is this an example of a discrete dynamical system? 
-\next How do the rules for ending the game in a win or draw play out in this model? (Look up online how chess games end if you don't know.)
+%Let $P$ be a chess-playing program. Given any position (including the history of the game and choice of whose turn it is), $P$ will make a move. 
+%\sexc Is this an example of a discrete dynamical system? 
+%\next How do the rules for ending the game in a win or draw play out in this model? (Look up online how chess games end if you don't know.)
+%\endsexc
+$P$をチェスを指すプログラムとする. 駒の配置(ゲームの履歴とそれぞれの局面で選ばれた手)が与えられたとき, $P$は次の手を生成する.
+\sexc これは離散力学系の例になっているだろうか?
+\next 勝ちや引き分けといったゲームの終了に対するルールは, この模型ではどのようにふるまうことになるだろうか? (もしチェスの終了に関するルールを知らないならばウェブで調べてみよう.)
 \endsexc
 \end{exercise}
 
