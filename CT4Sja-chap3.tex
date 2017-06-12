@@ -2666,7 +2666,8 @@ $P$をチェスを指すプログラムとする. 駒の配置(ゲームの履�
 
 %% Subsubsection %%
 
-\subsubsection{Ologging schemas}\label{sec:olog as db schema}\index{olog!as database schema}
+%\subsubsection{Ologging schemas}\label{sec:olog as db schema}\index{olog!as database schema}
+\subsubsection{ologとスキーマ}\label{sec:olog as db schema}\index{olog!as database schema}
 
 %It should be clear that a database schema is nothing but an olog in disguise. The difference is basically the readability requirements for ologs. There is an important new addition in this section, namely that we can fill out an olog with data. Conversely, we have seen that databases are not any harder to understand than ologs are.
 
@@ -2745,27 +2746,83 @@ $$
 
 %%%% Subsection %%%%
 
-\subsection{Instances}
+%\subsection{Instances}
+\subsection{事例}
 
-Given a database schema $(G,\simeq)$, an instance of it is just a bunch of tables whose data conform to the specified layout. These can be seen throughout the previous section, most explicitly in the relationship between schema (\ref{dia:maincat schema}) and tables (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}), and between schema (\ref{dia:loop}) and table (\ref{dia:dds data}). Below is the mathematical definition.
+%Given a database schema $(G,\simeq)$, an instance of it is just a bunch of tables whose data conform to the specified layout. These can be seen throughout the previous section, most explicitly in the relationship between schema (\ref{dia:maincat schema}) and tables (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}), and between schema (\ref{dia:loop}) and table (\ref{dia:dds data}). Below is the mathematical definition.
+
+データベーススキーマ$(G,\simeq)$が与えられたとき, その事例とは特定の配置に合致するデータを持つ, テーブル群である. これらはこれまでの節を通じて見ることができる. 具体的にはスキーマ\eqref{dia:maincat schema}とテーブル\eqref{dia:instance on maincat}およびテーブル\eqref{dia:instance on maincat 2}の間の関係, またスキーマ\eqref{dia:loop}と\eqref{dia:dds data}の間の関係である. 以下はその数学的な定義である.
 
 \begin{definition}\label{def:instance}\index{database!instance}\index{instance}
 
-Let $\mcC=(G,\simeq)$ where $G=(V,A,src,tgt)$. An {\em instance on $\mcC$}, denoted $(\PK,\FK)\taking\mcC\to\Set$, is defined as follows: One announces some constituents (A. primary ID part, B. foreign key part) and asserts that they conform to a law (1. preservation of congruence). Specifically, one announces
+%Let $\mcC=(G,\simeq)$ where $G=(V,A,src,tgt)$. An {\em instance on $\mcC$}, denoted $(\PK,\FK)\taking\mcC\to\Set$, is defined as follows: One announces some constituents (A. primary ID part, B. foreign key part) and asserts that they conform to a law (1. preservation of congruence). Specifically, one announces
+%\begin{enumerate}[\hsp A.]
+%\item a function $\PK\taking V\to \Set$; i.e. to each vertex $v\in V$ one provides a set $\PK(v)$;\footnote{The elements of $\PK(v)$ will be listed as the rows of table $v$, or more precisely as the leftmost cells of these rows.} and
+%\item for every arrow $a\in A$ with $v=src(a)$ and $w=tgt(a)$, a function $\FK(a)\taking\PK(v)\to\PK(w)$.
+%\footnote{The arrow $a$ will correspond to a column, and to each row $r\in\PK(v)$ the $(r,a)$ cell will contain the datum $\FK(a)(r)$.}
+%\end{enumerate}
+%One asserts that the following law holds for any vertices $v, w$ and paths $p=va_1a_2\ldots a_m$ and $q=va_1'a_2'\ldots a_n'$ from $v$ to $w$:
+%\begin{enumerate}[\hsp 1.]
+%\item If $p\simeq q$ then for all $x\in\PK(v)$, we have $$\FK(a_m)\circ\cdots\circ\FK(a_2)\circ\FK(a_1)(x)=\FK(a_n')\circ\cdots\circ\FK(a_2')\circ\FK(a_1')(x)$$ in $\PK(w).$
+%\end{enumerate}
+
+$\mcC=(G,\simeq)$で$G=(V,A,\src,\tgt)$とする. \emph{$\mcC$の事例(instance on $\mcC$)}は$(\PK,\FK)\taking\mcC\to\Set$と表記され, 以下のように定義される.  構成物(A. 主キー部分, B. 外部キー部分)を告知し, それらが法則(1. 合同関係の保存)に従うことを表明する. 具体的には, 
 \begin{enumerate}[\hsp A.]
-\item a function $\PK\taking V\to \Set$; i.e. to each vertex $v\in V$ one provides a set $\PK(v)$;\footnote{The elements of $\PK(v)$ will be listed as the rows of table $v$, or more precisely as the leftmost cells of these rows.} and
-\item for every arrow $a\in A$ with $v=src(a)$ and $w=tgt(a)$, a function $\FK(a)\taking\PK(v)\to\PK(w)$.
-\footnote{The arrow $a$ will correspond to a column, and to each row $r\in\PK(v)$ the $(r,a)$ cell will contain the datum $\FK(a)(r)$.}
+\item 函数$\PK\taking V\to \Set$; i.e. それぞれの頂点$v\in V$に対して集合$\PK(v)$を与える.\footnote{$\PK(v)$の要素はテーブル$v$の行, あるいはより正確にはこれらの行の最左の升目として記載される.}
+\item 各々の$v=\src(a)$かつ$w=\tgt(a)$なる矢$a\in A$に対して函数$\FK(a)\taking\PK(v)\to\PK(w)$.
+\footnote{矢$a$は列に対応することになる. そしてそれぞれの行$r\in\PK(v)$に対して升目$(r,a)$はデータ$\FK(a)(r)$を含む.}
 \end{enumerate}
-One asserts that the following law holds for any vertices $v, w$ and paths $p=va_1a_2\ldots a_m$ and $q=va_1'a_2'\ldots a_n'$ from $v$ to $w$:
+を告知し, 任意の頂点$v, w$と$v$から$w$への経路$p=va_1a_2\ldots a_m$および$q=va_1'a_2'\ldots a_n'$に対して以下の法則が成立することを表明する.
 \begin{enumerate}[\hsp 1.]
-\item If $p\simeq q$ then for all $x\in\PK(v)$, we have $$\FK(a_m)\circ\cdots\circ\FK(a_2)\circ\FK(a_1)(x)=\FK(a_n')\circ\cdots\circ\FK(a_2')\circ\FK(a_1')(x)$$ in $\PK(w).$
+\item $p\simeq q$ならば, 全ての$x\in\PK(v)$に対して, $\PK(w)$では$$\FK(a_m)\circ\cdots\circ\FK(a_2)\circ\FK(a_1)(x)=\FK(a_n')\circ\cdots\circ\FK(a_2')\circ\FK(a_1')(x)$$が得られる.
 \end{enumerate}
 
 \end{definition}
 
 \begin{exercise}\label{ex:self email}
-Consider the olog pictured below: 
+%Consider the olog pictured below: 
+%$$\mcC:=
+%\fbox{\parbox{3.1in}{
+%\xymatrix{
+%\obox{}{.7in}{a self-email}\LA{r}{is}&\obox{}{.5in}{an email}\ar@/^1pc/[r]^{\tn{is sent by}}\ar@/_1pc/[r]_{\tn{is sent to}}&\obox{}{.5in}{a person}}~\\\\
+%\parbox{3.1in}{Given $x$, a self-email, consider the following. \\
+%We know that $x$ is a self-email, which is an email, which is sent by a person that we'll call $P(x)$.\\
+%We also know that $x$ is a self-email, which is an email, which is sent to a person that we'll call $Q(x)$.\\
+%Fact: whenever $x$ is a self-email, we will have $P(x)=Q(x)$}
+%}}
+%$$
+%\begin{align}\label{dia:self email}
+%\begin{tabular}{| l || l |}\bhline
+%\multicolumn{2}{| c |}{{\tt a self-email}}\\\bhline
+%{\bf ID}&{\bf is}\\\bbhline 
+%SEm1207&Em1207\\\hline 
+%SEm1210&Em1210\\\hline 
+%SEm1211&Em1211\\\bhline
+%\end{tabular}&\hsp
+%\begin{tabular}{| l || l | l |}\bhline
+%\multicolumn{3}{| c |}{{\tt an email}}\\\bhline 
+%{\bf ID}&{\bf is sent by}&{\bf is sent to}\\\bbhline 
+%Em1206&Bob&Sue\\\hline 
+%Em1207 &Carl&Carl\\\hline 
+%Em1208&Sue & Martha\\\hline 
+%Em1209&Chris&Bob\\\hline 
+%Em1210&Chris&Chris\\\hline 
+%Em1211&Julia&Julia\\\hline 
+%Em1212&Martha&Chris\\\bhline
+%\end{tabular}\hsp
+%\begin{tabular}{| l ||}\bhline
+%\multicolumn{1}{| c |}{{\tt a person}}\\\bhline 
+%{\bf ID}\\\bbhline 
+%Bob\\\hline 
+%Carl\\\hline 
+%Chris\\\hline 
+%Julia\\\hline 
+%Martha\\\hline 
+%Sue\\\bhline
+%\end{tabular}
+%\end{align}\normalsize 
+
+以下に描画されたologを考える.
 $$\mcC:=
 \fbox{\parbox{3.1in}{
 \xymatrix{
@@ -2778,15 +2835,15 @@ Fact: whenever $x$ is a self-email, we will have $P(x)=Q(x)$}
 $$
 \begin{align}\label{dia:self email}
 \begin{tabular}{| l || l |}\bhline
-\multicolumn{2}{| c |}{{\tt a self-email}}\\\bhline
-{\bf ID}&{\bf is}\\\bbhline 
+\multicolumn{2}{| c |}{\texttt{a self-email}}\\\bhline
+\textbf{ID}&\textbf{is}\\\bbhline 
 SEm1207&Em1207\\\hline 
 SEm1210&Em1210\\\hline 
 SEm1211&Em1211\\\bhline
 \end{tabular}&\hsp
 \begin{tabular}{| l || l | l |}\bhline
-\multicolumn{3}{| c |}{{\tt an email}}\\\bhline 
-{\bf ID}&{\bf is sent by}&{\bf is sent to}\\\bbhline 
+\multicolumn{3}{| c |}{\texttt{an email}}\\\bhline 
+\textbf{ID}&\textbf{is sent by}&\textbf{is sent to}\\\bbhline 
 Em1206&Bob&Sue\\\hline 
 Em1207 &Carl&Carl\\\hline 
 Em1208&Sue & Martha\\\hline 
@@ -2796,8 +2853,8 @@ Em1211&Julia&Julia\\\hline
 Em1212&Martha&Chris\\\bhline
 \end{tabular}\hsp
 \begin{tabular}{| l ||}\bhline
-\multicolumn{1}{| c |}{{\tt a person}}\\\bhline 
-{\bf ID}\\\bbhline 
+\multicolumn{1}{| c |}{\texttt{a person}}\\\bhline 
+\textbf{ID}\\\bbhline 
 Bob\\\hline 
 Carl\\\hline 
 Chris\\\hline 
@@ -2807,10 +2864,15 @@ Sue\\\bhline
 \end{tabular}
 \end{align}\normalsize 
 
-\sexc What is the set $\PK(\fakebox{an email})$? 
-\next What is the set $\PK(\fakebox{a person})$? 
-\next What is the function $\FK(\tn{is sent by})\taking\PK(\fakebox{an email})\to\PK(\fakebox{a person})$?
-\next Interpret the sentences at the bottom of $\mcC$ as the Englishification of a simple path equivalence declaration. Is it satisfied by the instance (\ref{dia:self email}); that is, does law 1. from Definition \ref{def:instance} hold?\index{Englishifiication}
+%\sexc What is the set $\PK(\fakebox{an email})$? 
+%\next What is the set $\PK(\fakebox{a person})$? 
+%\next What is the function $\FK(\tn{is sent by})\taking\PK(\fakebox{an email})\to\PK(\fakebox{a person})$?
+%\next Interpret the sentences at the bottom of $\mcC$ as the Englishification of a simple path equivalence declaration. Is it satisfied by the instance (\ref{dia:self email}); that is, does law 1. from Definition \ref{def:instance} hold?\index{Englishifiication}
+%\endsexc
+\sexc 集合$\PK(\fakebox{an email})$は何か? 
+\next 集合$\PK(\fakebox{a person})$は何か? 
+\next 函数$\FK(\tn{is sent by})\taking\PK(\fakebox{an email})\to\PK(\fakebox{a person})$は何か?
+\next $\mcC$の下の文書を英語化した単純な経路同値宣言として解釈せよ. 事例\eqref{dia:self email}はこれを満たす. これはすなわち, Definition \ref{def:instance}の法則1を満たすということだろうか?\index{Englishifiication}
 \endsexc
 \end{exercise}
 
