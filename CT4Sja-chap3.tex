@@ -2876,34 +2876,54 @@ Sue\\\bhline
 \endsexc
 \end{exercise}
 
-\begin{example}[Monoid action table]\label{ex:monoid action table}
+%\begin{example}[Monoid action table]\label{ex:monoid action table}
+\begin{example}[モノイド作用表]\label{ex:monoid action table}
 
-In Example \ref{ex:monoid as olog}, we saw how a monoid $\mcM$ could be captured as an olog with only one object. As a database schema, this means there is only one table. Every generator of $\mcM$ would be a column of the table. The notion of database instance for such a schema is precisely the notion of action table from Section \ref{sec:monoid action table}. Note that a monoid can act on itself, in which case this action table is the monoid's multiplication table as in Example \ref{ex:multiplication table}, but it can also act on any other set as in Example \ref{ex:action table}. If $\mcM$ acts on a set $S$, then the set of rows in the action table will be $S$.
+%In Example \ref{ex:monoid as olog}, we saw how a monoid $\mcM$ could be captured as an olog with only one object. As a database schema, this means there is only one table. Every generator of $\mcM$ would be a column of the table. The notion of database instance for such a schema is precisely the notion of action table from Section \ref{sec:monoid action table}. Note that a monoid can act on itself, in which case this action table is the monoid's multiplication table as in Example \ref{ex:multiplication table}, but it can also act on any other set as in Example \ref{ex:action table}. If $\mcM$ acts on a set $S$, then the set of rows in the action table will be $S$.
+
+我々はExample \ref{ex:monoid as olog}で, どのようにすればモノイド$\mcM$を対象が一つしかないologとして把握できるかを見た. データベーススキーマとして見た場合, このことはテーブルが一つだけ存在していることを意味している. 各々の$\mcM$の生成子はテーブルの列になる. このようなスキーマのデータベース事例の概念は, Section \ref{sec:monoid action table}での作用表の概念に正確に対応している. モノイドはそれ自身に作用することができ, この場合には作用表はExample \ref{ex:multiplication table}でのようなモノイドの積の表になるが, しかし一方でExample \ref{ex:action table}のように任意の他の集合に作用できることにも注意しよう. $\mcM$が集合$S$に作用するならば, 作用表の行の集合は$S$になる.
 
 \end{example}
 
 \begin{exercise}
-Draw (as a graph) the schema for which Table \ref{dia:action table for FSM} is an instance.
+%Draw (as a graph) the schema for which Table \ref{dia:action table for FSM} is an instance.
+Table \ref{dia:action table for FSM}がその事例となるようなスキーマを(グラフとして)描け.
 \end{exercise}
 
 \begin{exercise}
-Suppose that $\mcM$ is a monoid and some instance of it is written out in table form. It's possible that $\mcM$ is a group. What evidence in an instance table for $\mcM$ might suggest that $\mcM$ is a group? 
+%Suppose that $\mcM$ is a monoid and some instance of it is written out in table form. It's possible that $\mcM$ is a group. What evidence in an instance table for $\mcM$ might suggest that $\mcM$ is a group? 
+$\mcM$はモノイドで, そのいくつかの事例がテーブルの形で書き下されているとする. $\mcM$が群でありうる. $\mcM$の事例のテーブルにおいて, $\mcM$が群であることを示唆する証拠はどのようなものがあるだろうか? 
 \end{exercise}
 
 %% Subsubsection %%
 
-\subsubsection{Paths through a database}
+%\subsubsection{Paths through a database}
+\subsubsection{データベースを通る経路}
 
-Let $\mcC:=(G,\simeq)$ be a schema and let $(\PK,\FK)\taking\mcC\to\Set$ be an instance on $\mcC$. Then for every arrow $a\taking v\to w$ in $G$ we get a function $\FK(a)\taking\PK(v)\to\PK(w)$. Functions can be composed, so in fact for every path through $G$ we get a function. Namely, if $p=v_0a_1,a_2,\ldots,a_n$ is a path from $v_0$ to $v_n$ then the instance provides a function $$\FK(p):=\FK(a_n)\circ\cdots\FK(a_2)\circ\FK(a_1)\taking\PK(v_0)\to\PK(v_n),$$ which first made an appearance as part of Law 1 in Definition \ref{def:instance}.
+%Let $\mcC:=(G,\simeq)$ be a schema and let $(\PK,\FK)\taking\mcC\to\Set$ be an instance on $\mcC$. Then for every arrow $a\taking v\to w$ in $G$ we get a function $\FK(a)\taking\PK(v)\to\PK(w)$. Functions can be composed, so in fact for every path through $G$ we get a function. Namely, if $p=v_0a_1,a_2,\ldots,a_n$ is a path from $v_0$ to $v_n$ then the instance provides a function $$\FK(p):=\FK(a_n)\circ\cdots\FK(a_2)\circ\FK(a_1)\taking\PK(v_0)\to\PK(v_n),$$ which first made an appearance as part of Law 1 in Definition \ref{def:instance}.
+
+$\mcC:=(G,\simeq)$をスキーマとし$(\PK,\FK)\taking\mcC\to\Set$を$\mcC$の事例とする. このとき$G$の各々の矢$a\taking v\to w$に対して函数$\FK(a)\taking\PK(v)\to\PK(w)$が得られる. 函数は合成可能であり, よって実際には$G$を通る全ての経路に対して函数が得られる. すなわち, $p=v_0a_1,a_2,\ldots,a_n$が$v_0$から$v_n$への経路であるならば, その事例によって函数$$\FK(p):=\FK(a_n)\circ\cdots\FK(a_2)\circ\FK(a_1)\taking\PK(v_0)\to\PK(v_n)$$が得られ, これはまずはDefinition \ref{def:instance}の法則1としての外見を持つ.
 
 \begin{example}\label{ex:paths as functions}
 
-Consider the department store schema from Example \ref{ex:department store 3}, and in (\ref{dia:maincat schema}) the path $[\tn{worksIn, secretary, last}]$ which points from {\tt Employee} to {\tt LastNameString}. The instance will let us interpret this path as a function from the set of employees to the set of last names; this could be a useful function to have around. The instance from (\ref{dia:instance on maincat}) would yield the following function 
+%Consider the department store schema from Example \ref{ex:department store 3}, and in (\ref{dia:maincat schema}) the path $[\tn{worksIn, secretary, last}]$ which points from {\tt Employee} to {\tt LastNameString}. The instance will let us interpret this path as a function from the set of employees to the set of last names; this could be a useful function to have around. The instance from (\ref{dia:instance on maincat}) would yield the following function 
+
+Example \ref{ex:department store 3}の百貨店のスキーマと, \eqref{dia:maincat schema}の\texttt{Employee}から\texttt{LastNameString}への経路$[\tn{worksIn, secretary, last}]$を考える. この事例では経路は従業員の集合から名字の集合への函数として解釈できる. これは身につけておくと便利な函数になりうるだろう. (\ref{dia:instance on maincat})の事例では以下の函数が導かれる.
+
+%\begin{align*}
+%\begin{tabular}{| l || l |}\bhline
+%\multicolumn{2}{| c |}{{\tt Employee}}\\\bhline 
+%{\bf ID}&{\bf Secr. name}\\\bbhline 
+%101&Hilbert\\\hline 
+%102&Russell\\\hline 
+%103&Hilbert\\\bhline
+%\end{tabular}
+%\end{align*}
 
 \begin{align*}
 \begin{tabular}{| l || l |}\bhline
-\multicolumn{2}{| c |}{{\tt Employee}}\\\bhline 
-{\bf ID}&{\bf Secr. name}\\\bbhline 
+\multicolumn{2}{| c |}{\texttt{Employee}}\\\bhline 
+\textbf{ID}&\textbf{Secr. name}\\\bbhline 
 101&Hilbert\\\hline 
 102&Russell\\\hline 
 103&Hilbert\\\bhline
@@ -2913,12 +2933,16 @@ Consider the department store schema from Example \ref{ex:department store 3}, a
 \end{example}
 
 \begin{exercise}
-Consider the path $p:=[f,f]$ on the $\Loop$ schema from (\ref{dia:loop}). Using the instance from (\ref{dia:dds data}), where $\PK(s)=\{A,B,C,D,E,F,G,H\}$, interpret $p$ as a function $\PK(s)\to\PK(s)$, and write this as a 2-column table, as above in Example \ref{ex:paths as functions}.
+%Consider the path $p:=[f,f]$ on the $\Loop$ schema from (\ref{dia:loop}). Using the instance from (\ref{dia:dds data}), where $\PK(s)=\{A,B,C,D,E,F,G,H\}$, interpret $p$ as a function $\PK(s)\to\PK(s)$, and write this as a 2-column table, as above in Example \ref{ex:paths as functions}.
+\eqref{dia:loop}の$\Loop$スキーマ上の経路$p:=[f,f]$を考える. \eqref{dia:dds data}の事例($\PK(s)=\{A,B,C,D,E,F,G,H\}$である)を用いて, $p$を函数$\PK(s)\to\PK(s)$と解釈し, 上記Example \ref{ex:paths as functions}でのような2列のテーブルとしてこれを書け.
 \end{exercise}
 
 \begin{exercise}~
-\sexc Given an instance $(\PK,\FK)$ on a schema $\mcC$, and given a trivial path $p$ (i.e. $p$ has length 0; it starts at some vertex but doesn't go anywhere), what function does $p$ yield?
-\next What are the domain and codomain of $p$?
+%\sexc Given an instance $(\PK,\FK)$ on a schema $\mcC$, and given a trivial path $p$ (i.e. $p$ has length 0; it starts at some vertex but doesn't go anywhere), what function does $p$ yield?
+%\next What are the domain and codomain of $p$?
+%\endsexc
+\sexc スキーマ$\mcC$上の事例$(\PK,\FK)$と自明な経路$p$ (i.e. $p$の長さは0. $p$はある頂点から出発するがどこへも行かない.)が与えられたとき, $p$から得られる函数はなにか?
+\next $p$の始域と終域はなにか?
 \endsexc
 \end{exercise}
 
