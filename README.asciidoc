@@ -2,14 +2,14 @@
 
 == これは何?
 
-David I. Spivakによる書籍, _Category Theory for the Sciences_  (MIT Press, 2014) の [preprint版(old version)](https://arxiv.org/abs/1302.6946)の非公式な日本語訳です. 2017年6月の段階で3章まで翻訳しています.
+David I. Spivakによる書籍, _Category Theory for the Sciences_  (MIT Press, 2014) の https://arxiv.org/abs/1302.6946[preprint版(old version)] の非公式な日本語訳です. 2017年6月の段階で3章まで翻訳しています.
 
 == コンパイル方法
 
-[arxivのページ](https://arxiv.org/abs/1302.6946)からソースコードを取得して, このレポジトリのファイルと同じ場所に展開し, `CT4Sja.tex`をコンパイルして下さい.
+https://arxiv.org/abs/1302.6946[arxivのページ] からソースコードを取得して, このレポジトリのファイルと同じ場所に展開し, `CT4Sja.tex` をコンパイルして下さい.
 日本語環境としてはluatex-jaを用いています. たぶんtexlive2015あたりより新しいlualatexならコンパイルできると思います.
 
 == その他
 
-原著は[Creative Commons Attribution 3.0 (CC BY 3.0)](https://creativecommons.org/licenses/by/3.0/deed.ja)の下で配布されています. 翻訳も同じくCC BY 3.0の下にあるとします.
+原著は https://creativecommons.org/licenses/by/3.0/deed.ja[Creative Commons Attribution 3.0 (CC BY 3.0)] の下で配布されています. 翻訳も同じくCC BY 3.0の下にあるとします.
 
